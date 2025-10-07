@@ -1,10 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefObject } from "react";
 
-export default function useInView(ref, options = { threshold: 0.3 }) {
+export default function useInView(
+  ref: RefObject<Element | null>,
+  options: IntersectionObserverInit = { threshold: 0.3 }
+) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const current = ref.current;
+    if (!current) return;
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -13,10 +17,10 @@ export default function useInView(ref, options = { threshold: 0.3 }) {
       }
     }, options);
 
-    observer.observe(ref.current);
+    observer.observe(current);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      observer.unobserve(current);
     };
   }, [ref, options]);
 

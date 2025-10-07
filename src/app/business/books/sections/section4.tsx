@@ -159,7 +159,7 @@ export default function AutomationSection(): JSX.Element {
               muted
               loop
             >
-              <source src="videos/business/books/Ai-driven_automation.mp4" type="video/mp4" />
+              <source src="/videos/business/books/Ai-driven_automation.mp4" type="video/mp4" />
             </video>
           </div>
         </FadeUp>

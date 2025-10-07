@@ -73,14 +73,14 @@ export default function Footer(): JSX.Element {
   ];
 
   const socialLinks: SocialLink[] = [
-    { href: "https://www.facebook.com/people/Accqrate/100077291530631/", src: "/images/business/books/facebook.svg" },
-    { href: "https://www.linkedin.com/showcase/accqrate", src: "/images/business/books/linkedin.svg" },
-    { href: "https://twitter.com/accqrate_erp", src: "/images/business/books/twitter.svg" },
-    { href: "https://www.instagram.com/accqrateerp/", src: "/images/business/books/instagram.svg" },
-    { href: "https://www.youtube.com/channel/UCAzO34h3KxRrObyRor70D9A", src: "/images/business/books/youtube.svg" },
-    { href: "https://www.reddit.com/user/Accqrate_ERP", src: "/images/business/books/reddit.svg" },
-    { href: "https://www.snapchat.com/add/accqrate", src: "/images/business/books/snapchat.svg" },
-    { href: "https://api.whatsapp.com/send/?phone=966541999357&type=phone_number&app_absent=0", src: "/images/business/books/whatsapp.svg" },
+    { href: "https://www.facebook.com/people/Accqrate/100077291530631/", src: "/images/facebook.svg" },
+    { href: "https://www.linkedin.com/showcase/accqrate", src: "/images/linkedin.svg" },
+    { href: "https://twitter.com/accqrate_erp", src: "/images/twitter.svg" },
+    { href: "https://www.instagram.com/accqrateerp/", src: "/images/instagram.svg" },
+    { href: "https://www.youtube.com/channel/UCAzO34h3KxRrObyRor70D9A", src: "/images/youtube.svg" },
+    { href: "https://www.reddit.com/user/Accqrate_ERP", src: "/images/reddit.svg" },
+    { href: "https://www.snapchat.com/add/accqrate", src: "/images/snapchat.svg" },
+    { href: "https://api.whatsapp.com/send/?phone=966541999357&type=phone_number&app_absent=0", src: "/images/whatsapp.svg" },
   ];
 
   if (loading || !isVisible) {

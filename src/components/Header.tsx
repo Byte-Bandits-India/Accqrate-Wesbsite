@@ -93,85 +93,85 @@ const menus = [
     sections: [
       {
         heading: "Business Solution",
-        images: "/images/business/books/NavBar/line/pro1.svg",
+        images: "/images/header/line/pro1.svg",
         subItems: [
           {
             title: "Accqrate Books",
             description: "Manage customer relationships efficiently.",
-            img: "/images/business/books/NavBar/fill/Books.svg",
+            img: "/images/header/fill/Books.svg",
             href: "/business/books",
           },
           {
             title: "Accqrate CRM",
             description: "Manage customer relationships efficiently.",
-            img: "/images/business/books/NavBar/fill/crm.svg",
+            img: "/images/header/fill/crm.svg",
             href: "/products/crm",
           },
           {
             title: "Accqrate Plan360",
             description: "Automate HR workflows and employee management.",
-            img: "/images/business/books/NavBar/fill/plan.svg",
+            img: "/images/header/fill/plan.svg",
             href: "/products/hr",
           },
           {
             title: "Accqrate Service",
             description: "Manage customer relationships efficiently.",
-            img: "/images/business/books/NavBar/fill/service.svg",
+            img: "/images/header/fill/service.svg",
             href: "/products/crm",
           },
           {
             title: "Accqrate People",
             description: "Manage customer relationships efficiently.",
-            img: "/images/business/books/NavBar/fill/people.svg",
+            img: "/images/header/fill/people.svg",
             href: "/products/crm",
           },
           {
             title: "Accqrate Retail",
             description: "Automate HR workflows and employee management.",
-            img: "/images/business/books/NavBar/fill/retail.svg",
+            img: "/images/header/fill/retail.svg",
             href: "/business/retail",
           },
           {
             title: "Accqrate Factory",
             description: "Manage customer relationships efficiently.",
-            img: "/images/business/books/NavBar/fill/Factory.svg",
+            img: "/images/header/fill/Factory.svg",
             href: "/products/crm",
           },
           {
             title: "Accqrate Filehub",
             description: "Automate HR workflows and employee management.",
-            img: "/images/business/books/NavBar/fill/Filehub.svg",
+            img: "/images/header/fill/Filehub.svg",
             href: "/products/hr",
           },
         ],
       },
       {
         heading: "Enterprise Solution",
-        images: "/images/business/books/NavBar/line/pro2.svg",
+        images: "/images/header/line/pro2.svg",
         subItems: [
           {
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
-            img: "/images/business/books/NavBar/fill/one.svg",
+            img: "/images/header/fill/one.svg",
             href: "/products/erp",
           },
         ],
       },
       {
         heading: "E-Invoicing Solution",
-        images: "/images/business/books/NavBar/line/pro3.svg",
+        images: "/images/header/line/pro3.svg",
         subItems: [
           {
             title: "Standalone E-invoicing Solution",
             description: "Sample content will be replaced",
             href: "images/business/books/",
-            img: "/images/business/books/NavBar/fill/standalone.svg",
+            img: "/images/header/fill/standalone.svg",
           },
           {
             title: "E-invoicing Integration Solution",
             description: "Sample content will be replaced",
             href: "images/business/books/NavBar/fill/e-invoice.svg",
-            img: "/images/business/books/NavBar/fill/e-invoice.svg",
+            img: "/images/header/fill/e-invoice.svg",
           },
         ],
       },
@@ -190,13 +190,13 @@ const menus = [
             title: "About us",
             description: "Insights, tips and industry news",
             href: "/resources/blog",
-            icon: "/images/business/books/NavBar/line/about.svg",
+            icon: "/images/header/line/about.svg",
           },
           {
             title: "Blogs",
             description: "Live and recorded sessions from experts",
             href: "/resources/webinars",
-            icon: "/images/business/books/NavBar/line/blog.svg",
+            icon: "/images/header/line/blog.svg",
           },
         ],
       },
@@ -208,13 +208,13 @@ const menus = [
             title: "Announcements",
             description: "Find answers to common questions",
             href: "/resources/help",
-            icon: "/images/business/books/NavBar/line/anounce.svg",
+            icon: "/images/header/line/anounce.svg",
           },
           {
             title: "FAQs",
             description: "Connect with other users",
             href: "/resources/forum",
-            icon: "/images/business/books/NavBar/line/faq.svg",
+            icon: "/images/header/line/faq.svg",
           },
         ],
       },
@@ -226,13 +226,13 @@ const menus = [
             title: "Webinars",
             description: "In-depth analysis and research",
             href: "/resources/whitepapers",
-            icon: "/images/business/books/NavBar/line/webinars.svg",
+            icon: "/images/header/line/webinars.svg",
           },
           {
             title: "VAT Calculator",
             description: "Real-world success stories",
             href: "/resources/case-studies",
-            icon: "/images/business/books/NavBar/line/cal.svg",
+            icon: "/images/header/line/cal.svg",
           },
         ],
       },
@@ -266,9 +266,9 @@ const languages: Language[] = [
 ];
 
 const countries: Country[] = [
-  { name: "Saudi Arabia", code: "SA", flag: "/images/business/books/flag-saudi-arabia.svg" },
-  { name: "UAE", code: "AE", flag: "/images/business/books/flag-uae.svg" },
-  { name: "Oman", code: "OM", flag: "/images/business/books/flag-oman.svg" },
+  { name: "Saudi Arabia", code: "SA", flag: "/images/header/language/flag-saudi-arabia.svg" },
+  { name: "UAE", code: "AE", flag: "/images/header/language/flag-uae.svg" },
+  { name: "Oman", code: "OM", flag: "/images/header/language/flag-oman.svg" },
 ];
 
 // ===================== Components =====================
@@ -394,15 +394,6 @@ const Header: React.FC = () => {
   }, [pathname]);
 
   useEffect(() => {
-    const handleRouteChange = () => setIsMobileMenuOpen(false);
-    router.events?.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events?.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router]);
-
-
-  useEffect(() => {
     const computeHeaderHeight = () => {
       const h = headerRef.current?.getBoundingClientRect().height || 0;
       setHeaderHeight(h);
@@ -467,6 +458,14 @@ const Header: React.FC = () => {
         />
       )}
 
+      {/* Background overlay when menu is open */}
+      {activeMenu && (
+        <div
+          className="nav-overlay fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
+          onClick={() => setActiveMenu("")}
+        />
+      )}
+
       <header
         ref={headerRef}
         className="xl:sticky xl:top-0 z-50 m-0 p-0 w-full bg-white xl:border-b border-gray-200"
@@ -501,14 +500,14 @@ const Header: React.FC = () => {
                             />
                           </button>
 
-                          {activeMenu === menu.id && (
+                          {activeMenu === menu.id && activeMenuData && (
                             <div
                               ref={menuRef}
                               className="fixed left-0 right-0 top-0 w-[1044px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
                               style={{ top: headerHeight }}
                             >
                               <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
-                                {activeMenuData?.type === "mega" ? (
+                                {activeMenuData.type === "mega" ? (
                                   <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
                                     {/* Categories */}
                                     <div className="col-span-1 border-r pr-6 mb-2">
@@ -526,7 +525,9 @@ const Header: React.FC = () => {
                                             onClick={() => handleSectionChange(section.heading)}
                                           >
                                             <div className="flex items-center gap-2">
-                                              <img src={section.images || ""} alt={section.heading} className="w-4 h-4" />
+                                              {"images" in section && section.images && (
+                                                <img src={section.images} alt={section.heading} className="w-4 h-4" />
+                                              )}
                                               <span>{section.heading}</span>
                                             </div>
                                           </li>
@@ -547,7 +548,7 @@ const Header: React.FC = () => {
                                               key={item.title}
                                               title={item.title}
                                               href={item.href}
-                                              img={item.img}
+                                              img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
                                               onClick={handleMenuItemClick}
                                             >
                                               {item.description}
@@ -556,7 +557,7 @@ const Header: React.FC = () => {
                                       </ul>
                                     </div>
                                   </div>
-                                ) : activeMenuData?.type === "simple" ? (
+                                ) : activeMenuData.type === "simple" ? (
                                   <div className="w-full max-w-7xl mx-auto mb-2">
                                     <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
                                       Resources
@@ -571,7 +572,7 @@ const Header: React.FC = () => {
                                                 key={i}
                                                 title={item.title}
                                                 href={item.href}
-                                                img={item.icon}
+                                                img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
                                                 onClick={handleMenuItemClick}
                                               >
                                               </ResourcesListItem>
@@ -581,7 +582,7 @@ const Header: React.FC = () => {
                                       ))}
                                     </div>
                                   </div>
-                                ) : (
+                                ) : activeMenuData.type === "stories" ? (
                                   <div className="w-full max-w-7xl mx-auto mb-4">
                                     <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
                                       Success Stories
@@ -590,14 +591,12 @@ const Header: React.FC = () => {
                                       {activeMenuData.sections.map((section, index) => (
                                         <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
                                           <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                          <p className="text-sm text-gray-500 mb-4">{section.description}</p>
                                           <ul className="space-y-4">
                                             {section.subItems.map((item, i) => (
                                               <SuccessStoriesListItem
                                                 key={i}
                                                 title={item.title}
                                                 href={item.href}
-                                                stats={item.stats}
                                                 onClick={handleMenuItemClick}
                                               >
                                                 {item.description}
@@ -608,7 +607,7 @@ const Header: React.FC = () => {
                                       ))}
                                     </div>
                                   </div>
-                                )}
+                                ) : null}
 
                                 {/* CTA */}
                                 <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
@@ -640,7 +639,6 @@ const Header: React.FC = () => {
                                     </span>
                                   </Link>
                                 </div>
-
                               </div>
                             </div>
                           )}
@@ -702,7 +700,6 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
               <Accordion type="single" collapsible className="w-full">
@@ -716,7 +713,8 @@ const Header: React.FC = () => {
                         {sections.map((section, sectionIndex) => (
                           <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
                             <AccordionTrigger className="flex items-center justify-start gap-2 text-gray-700 font-medium">
-                              {section.images && (
+                              {/* Safe check for images property */}
+                              {'images' in section && section.images && (
                                 <img src={section.images} alt={section.heading} className="w-4 h-4" />
                               )}
                               <span>{section.heading}</span>
@@ -728,7 +726,8 @@ const Header: React.FC = () => {
                                     key={i}
                                     className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
                                   >
-                                    {item.img && (
+                                    {/* Safe check for img property */}
+                                    {'img' in item && item.img && (
                                       <img src={item.img} alt={item.title} className="w-5 h-5" />
                                     )}
                                     <Link
