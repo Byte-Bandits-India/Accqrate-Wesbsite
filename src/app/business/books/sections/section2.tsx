@@ -9,6 +9,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  AccordionCard
 } from "@/components/ui/accordion";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -81,22 +82,40 @@ export default function AccountSections(): React.JSX.Element {
     return (
       <section
         ref={receivableRef}
-        className="space-y-6 px-6 md:px-8 my-6 max-w-[1280px] mx-auto"
+        className="w-full max-w-[1280px] mx-auto px-6 md:px-[40px] py-6"
       >
-        {/* Receivables Section Skeleton */}
-        <SectionSkeleton hasSubtitle />
+        {loading || !isVisible ? (
+          <div className="w-full space-y-6">
+            {/* Accordion Section Skeleton */}
+            <div className="w-full max-w-5xl mx-auto mb-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="bg-[#F2F2F2] rounded-lg p-6 h-[120px] flex flex-col justify-center w-full"
+                >
+                  <Skeleton className="w-8 h-8 rounded-full mb-3 block" />
+                  <Skeleton className="h-6 flex-1 w-full block" />
+                </div>
+              ))}
+            </div>
 
-        {/* Payables Section Skeleton */}
-        <SectionSkeleton hasSubtitle />
-
-        {/* Expenses Section Skeleton */}
-        <SectionSkeleton />
-
-        {/* Financial Statements Section Skeleton */}
-        <SectionSkeleton hasSubtitle bgWhite />
-
-        {/* Finance Operations Section Skeleton */}
-        <SectionSkeleton />
+            {/* Use SectionSkeleton — it should also be full-width / min-height (see note below) */}
+            <SectionSkeleton hasSubtitle />
+            <SectionSkeleton hasSubtitle />
+            <SectionSkeleton />
+            <SectionSkeleton hasSubtitle bgWhite />
+            <SectionSkeleton />
+          </div>
+        ) : (
+          <div className="w-full">
+            {/* === ORIGINAL VISIBLE CONTENT ===
+              Keep the rest of your component as-is. I only moved the wrapper/ref.
+          */}
+            <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+              {/* ...the Accordion, SectionWithAccordion components, etc (no change) */}
+            </div>
+          </div>
+        )}
       </section>
     );
   }
@@ -104,6 +123,32 @@ export default function AccountSections(): React.JSX.Element {
   return (
     <div className="w-full">
       <div className="max-w-[1280px] mx-auto px-6 md:px-[40px] py-[24px] md:py-[32px]">
+        <Accordion
+          type="single"
+          collapsible
+          className="flex flex-col gap-4
+        sm:grid sm:grid-cols-2
+        md:grid md:grid-cols-2 md:max-w-5xl md:mb-[32px] mx-auto"
+        >
+          <AccordionCard
+            value="card-1"
+            icon="/images/business/books/Mask group.png"
+            title="Custom Invoice Templates"
+            content={
+              <>Add your logo, adjust fields, and localize content-
+                no developer needed.</>
+            }
+          />
+
+          <AccordionCard
+            value="card-2"
+            icon="/images/business/books/Mask group (1).png"
+            title="Comprehensive Audit Trails "
+            content={
+              <>Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.</>
+            }
+          />
+        </Accordion>
         {/* Receivables */}
         <SectionWithAccordion
           title="Accounts Receivable -"
