@@ -135,7 +135,7 @@ const menus = [
             title: "Accqrate Factory",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/Factory.svg",
-            href: "/business/crm",
+            href: "/business/factory",
           },
           {
             title: "Accqrate Filehub",
@@ -153,7 +153,7 @@ const menus = [
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
-            href: "/products/erp",
+            href: "/business/one",
           },
         ],
       },
