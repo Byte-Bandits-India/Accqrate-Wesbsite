@@ -28,43 +28,7 @@ module.exports = {
         card: "#8A8A8A",
         black: "#000000",
       },
-  		fontSize: {
-  			  "fluid-h1": "clamp(2.5rem, 6vw, 4rem)",
-        // 2.5rem = 40px (min)
-        // 6vw → 86px @1440px, 115px @1920px
-        // 4rem = 64px (max)
-
-        "fluid-h2": "clamp(1.5rem, 4vw, 2.25rem)",
-        // 1.5rem = 24px (min)
-        // 4vw → 57px @1440px, 76px @1920px
-        // 2.25rem = 36px (max)
-
-        "fluid-h3": "clamp(1.25rem, 3vw, 1.5rem)",
-        // 1.25rem = 20px (min)
-        // 3vw → 43px @1440px, 58px @1920px
-        // 1.5rem = 24px (max)
-
-        "fluid-body": "clamp(1rem, 2.5vw, 1.25rem)",
-        // 1rem = 16px (min)
-        // 2.5vw → 36px @1440px, 48px @1920px
-        // 1.25rem = 20px (max)
-
-        "fluid-caption": "clamp(0.875rem, 2vw, 1rem)",
-        // 0.875rem = 14px (min)
-        // 2vw → 29px @1440px, 38px @1920px
-        // 1rem = 16px (max)
-
-        "fluid-small": "clamp(0.75rem, 1.5vw, 0.875rem)",
-        // 0.75rem = 12px (min)
-        // 1.5vw → 22px @1440px, 29px @1920px
-        // 0.875rem = 14px (max)  		
-		},	
-		 spacing: {
-        "fluid-section": "clamp(2rem, 5vw, 4rem)",
-        // 2rem = 32px (min)
-        // 5vw → 72px @1440px, 96px @1920px
-        // 4rem = 64px (max)
-      },
+  	
   		keyframes: {
   			scrollLeft: {
   				'0%': {
@@ -125,5 +89,35 @@ module.exports = {
       },
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),
+      function ({ addComponents }) {
+      addComponents({
+        ".text-fluid-h1": {
+          fontSize: "36px",
+          "@screen md": { fontSize: "54px" },
+          "@screen lg": { fontSize: "72px" },
+        },
+        ".text-fluid-h2": {
+          fontSize: "24px",
+          "@screen md": { fontSize: "32px" },
+          "@screen lg": { fontSize: "36px" },
+        },
+        ".text-fluid-h3": {
+          fontSize: "16px",
+          "@screen md": { fontSize: "18px" },
+          "@screen lg": { fontSize: "20px" },
+        },
+        ".text-fluid-body": {
+          fontSize: "20px",
+          "@screen md": { fontSize: "24px" },
+          "@screen lg": { fontSize: "30px" },
+        },
+        ".text-fluid-small": {
+          fontSize: "14px",
+          "@screen md": { fontSize: "16px" },
+          "@screen lg": { fontSize: "18px" },
+        },
+      });
+    },
+  ],
 }
