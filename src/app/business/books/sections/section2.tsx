@@ -28,15 +28,15 @@ export default function AccountSections(): React.JSX.Element {
     () => [
       { title: "Automated Invoicing", content: "Generate, send, and track customer invoices in one click." },
       { title: "Payment Tracking", content: "Real-time view of outstanding, overdue, and incoming payments." },
-      { title: "Receipts & Reconciliations", content: "Instantly post customer payments; AI matches receipts to open invoices." },
-      { title: "Aging Analysis", content: "Visual dashboards and reports flag slow-paying accounts for action." },
+      { title: "Receipts & Reconciliations", content: "Instantly post customer payments, AI matches receipts to open invoices." },
+      { title: "Aging Analysis", content: "Visual dashboards and reports flag slow paying accounts for action." },
     ],
     []
   );
 
   const payableDropdowns = useMemo<DropdownItem[]>(
     () => [
-      { title: "Smart Invoice Capture", content: "Snap, or scan; AI reads and maps them instantly." },
+      { title: "Smart Invoice Capture", content: "Snap or scan AI reads and maps them instantly." },
       { title: "Approval Routing", content: "Automated checks flag out-of-policy spends and duplicates." },
       { title: "Automated Payments", content: "Route expenses to the right managers for instant digital sign-off." },
       { title: "Supplier Payments", content: "See spend by department, project, or cost center in real time." },
@@ -47,11 +47,11 @@ export default function AccountSections(): React.JSX.Element {
 
   const expenseDropdowns = useMemo<DropdownItem[]>(
     () => [
-      { title: "AI-Powered Capture", content: "Snap, or scan; AI reads and maps them instantly." },
+      { title: "AI-Powered Capture", content: "Snap or scan AI reads and maps them instantly." },
       { title: "Policy Enforcement", content: "Automated checks flag out-of-policy spends and duplicates." },
       { title: "Approval Workflows", content: "Route expenses to the right managers for instant digital sign-off." },
       { title: "Live Dashboards", content: "See spend by department, project, or cost center in real time." },
-      { title: "Mobile-Friendly", content: "Submit, review, and approve on any device - no paper, no delays." },
+      { title: "Mobile-Friendly", content: "Submit, review, and approve on any device no paper, no delays." },
     ],
     []
   );
@@ -60,8 +60,8 @@ export default function AccountSections(): React.JSX.Element {
     () => [
       { title: "Live Financials", content: "P&L, Balance Sheet, Trial Balance, and Cash Flow always up-to-date." },
       { title: "Regulatory Formats", content: "Instantly generate statements in KSA or IFRS layouts, as required." },
-      { title: "Drill Down Detail", content: "Click any line for instant drill-down to source transactions." },
-      { title: "Division & Consolidation", content: "Produce division-wise, consolidated, or project-based financials." },
+      { title: "Drill Down Detail", content: "Click any line for instant drill down to source transactions." },
+      { title: "Division & Consolidation", content: "Produce division wise, consolidated, or project-based financials." },
       { title: "Export & Share", content: "One-click PDF/XLS export; schedule auto-email to management or auditors." },
     ],
     []
@@ -71,9 +71,9 @@ export default function AccountSections(): React.JSX.Element {
     () => [
       { title: "Live Financial Dashboards", content: "See your business performance in real time, visualized clearly." },
       { title: "Automated Bank Reconciliation", content: "Match transactions automatically and reduce manual effort." },
-      { title: "Advanced Reporting", content: "Get deep insights with customizable, drill-down reports." },
+      { title: "Advanced Reporting", content: "Get deep insights with customizable, drill down reports." },
       { title: "Multi-Entity, Multi-Currency", content: "Consolidate accounts and report across companies or divisions in one click." },
-      { title: "Customizable Chart of Accounts", content: "Adapt to any business or regulatory need—flexibility without complexity." },
+      { title: "Customizable Chart of Accounts", content: "Adapt to any business or regulatory need flexibility without complexity." },
     ],
     []
   );
@@ -135,7 +135,7 @@ export default function AccountSections(): React.JSX.Element {
             icon="/images/business/books/Mask group.png"
             title="Custom Invoice Templates"
             content={
-              <>Add your logo, adjust fields, and localize content-
+              <>Add your logo, adjust fields, and localize content
                 no developer needed.</>
             }
           />
@@ -145,13 +145,13 @@ export default function AccountSections(): React.JSX.Element {
             icon="/images/business/books/Mask group (1).png"
             title="Comprehensive Audit Trails "
             content={
-              <>Every transaction and e-invoice is tracked, always audit-ready for ZATCA and KSA requirements.</>
+              <>Every transaction and e-invoice is tracked, always audit ready for ZATCA and KSA requirements.</>
             }
           />
         </Accordion>
         {/* Receivables */}
         <SectionWithAccordion
-          title="Accounts Receivable -"
+          title="Accounts Receivable "
           subtitle="Accelerate your cash flow"
           description="Stay on top of collections and improve working capital  without chasing payments manually."
           items={receivableDropdowns}
@@ -160,7 +160,7 @@ export default function AccountSections(): React.JSX.Element {
 
         {/* Payables */}
         <SectionWithAccordion
-          title="Accounts Payable -"
+          title="Accounts Payable "
           subtitle="Control Vendor Spend"
           description="Eliminate late fees, maintain supplier trust, and get full visibility into every dirham out."
           items={payableDropdowns}
@@ -177,7 +177,7 @@ export default function AccountSections(): React.JSX.Element {
 
         {/* Financial Statements */}
         <SectionWithAccordion
-          title="Financial Statements -"
+          title="Financial Statements "
           subtitle="Audit-Ready, Always-On"
           description="Move beyond monthly closings generate real-time, regulation ready financials anytime."
           items={financialDropdowns}
@@ -303,7 +303,7 @@ function SectionWithAccordion({
                 <AccordionTrigger className="text-[16px] md:text-[16px] lg:text-[18px] font-normal">
                   {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px] font-normal">
+                <AccordionContent className="text-[14px] md:text-[16px]  font-normal">
                   {item.content}
                 </AccordionContent>
               </AccordionItem>
