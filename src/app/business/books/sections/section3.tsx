@@ -26,7 +26,7 @@ export default function Section3(): React.JSX.Element {
   // Seamless Integration
   const integrationDropdowns: DropdownItem[] = [
     { title: "Instant ERP Integration", content: "Add procurement, inventory, payroll, and HR modules without migrations or reimplementation." },
-    { title: "API & Marketplace", content: "Connect to banks, e-commerce, or any third-party  future-proof your finance stack." },
+    { title: "API & Marketplace", content: "Connect to banks, e-commerce, or any third-party future-proof your finance stack." },
     { title: "No Vendor Lock-in", content: "Data is always yours; export, back up, and migrate on demand." },
   ];
 
@@ -138,7 +138,7 @@ export default function Section3(): React.JSX.Element {
                   <AccordionTrigger className="text-[16px] md:text-[16px] lg:text-[18px] font-normal">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
+                  <AccordionContent className="text-[14px] md:text-[16px] ">
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>
@@ -180,7 +180,7 @@ export default function Section3(): React.JSX.Element {
                   <AccordionTrigger className="text-[16px] md:text-[16px] lg:text-[18px] font-normal">
                     {item.title}
                   </AccordionTrigger>
-                  <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px]">
+                  <AccordionContent className="text-[14px] md:text-[16px] ">
                     {item.content}
                   </AccordionContent>
                 </AccordionItem>
