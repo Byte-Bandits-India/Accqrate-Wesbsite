@@ -139,24 +139,24 @@ export default function Hero(): JSX.Element {
       ref={heroRef}
       className="w-full font-inter flex flex-col items-center justify-center text-center px-6 md:px-[32px]"
     >
-      <div className="w-full max-w-[1280px] mx-auto mt-[62px] md:mt-[90px] lg:mt-[125px]">
+       <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
         {/* Headings */}
-        <h1 className="text-fluid-h1 tracking-heading font-semibold text-[#333333] mb-[24px] lg:mb-[60px]">
-          Accqrate <span className="text-[#1976D2] ">Books</span>
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px] tracking-heading md:mb-[40px] lg:mb-[60px]">
+          Accqrate <span className="text-[#1976D2]">Books</span>
         </h1>
-        <div className="max-w-[1000px] mx-auto ">
-          <h2 className="text-[20px] md:text-[24px] leading-tight lg:text-[30px] font-medium text-[#333333]  mb-[24px] lg:mb-[40px]">
-            <span className="text-[#1976D2] font-medium ">ZATCA Approved</span>{" "}
+        <div className="max-w-[1000px] mx-auto">
+          <h2 className="text-fluid-body font-medium text-[#333333] tracking-para mb-[24px]">
+            <span className="text-[#1976D2] font-semibold md:font-medium leading-tight">ZATCA Approved</span>{" "}
             Accounting Software for Saudi Arabia
-          </h2>
-          <p className="text-[14px]  md:text-[18px] leading-tight lg:text-[20px]  md:font-semibold mb-[16px] md:mb-[24px] lg:mb-[40px]">
+          </h2> 
+          <p className="text-[14px] md:text-[18px] lg:text-[20px] tracking-para md:font-semibold leading-tight mb-[16px] md:mb-[24px] text-[#333333]">
             Run your entire business accounting faster,<br className="hidden md:block" /> smarter, always ZATCA Phase-2 ready.
           </p>
 
 
           {/* Supporting text */}
-          <p className="text-[#737373] tracking-para text-fluid-small md:hidden">
-            Launch your store in minutes, manage everything in one place from sales to stock,
+          <p className="text-[#737373] text-fluid-small md:hidden">
+            Launch your store in minutes, manage everything in one place—from sales to stock,
             from any device.
           </p>
           <p className="text-[#737373] md:text-[16px] hidden md:block text-fluid-body">
@@ -196,9 +196,9 @@ export default function Hero(): JSX.Element {
       </div>
 
 
-      {/* Trusted text */}
-      <FadeUp className="mb-[20px] md:mb-[40px]">
-        <h3 className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-[#333333] text-center mx-auto tracking-para">
+       {/* Trusted text */}
+      <FadeUp className="mb-8 md:mb-[40px]">
+        <h3 className="text-fluid-h3 font-medium text-[#333333] text-center mx-auto">
           Trusted by <span className="text-[#1976D2] font-bold">5,000+</span> Saudi and GCC companies for ZATCA e-invoicing <br className="hidden md:block" /> compliance
           and business accounting.
         </h3>
