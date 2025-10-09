@@ -96,18 +96,16 @@ export default function Onboarding(): JSX.Element {
       <section id="OnboardSection" className="w-full mt-[32px] md:mt-[56px]">
         <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
           {/* Heading */}
-          <FadeUp>
-            <h2 className="text-[24px] md:hidden leading-tight tracking-heading md:text-[32px] lg:text-[36px] font-inter text-[#000000] text-center mb-2 md:mb-6">
-              Effortless <span className="text-[#1976D2]">Onboarding</span> & <br />
+           <FadeUp>
+            <h2 className="text-fluid-h2 tracking-para leading-tight font-inter text-[#000000] text-center mb-6">
+              Effortless <span className="text-[#1976D2]">Onboarding</span> &
               Flexible Deployment
             </h2>
-            <h2 className=" hidden md:block leading-tight tracking-heading text-[36px] font-medium  font-inter text-[#333333] text-center mb-2 md:mb-4">
-              Effortless <span className="text-[#1976D2]">Onboarding</span>  Flexible Deployment
-            </h2>
+
             {/* Shared description */}
-            <p className=" md:mb-[32px] mb-4  tracking-para md:max-w-2xl leading-tight mx-auto text-[#737373] text-[14px] md:text-[16px] text-center">
-              Accqrate Books is fully cloud native  no complex installations, no
-              specialized IT needed. Set <br className="hidden" /> up your accounting in minutes, not weeks.
+            <p className="text-center text-fluid-small mb-[24px] md:mb-[32px] tracking-para text-[#737373] leading-tight max-w-4xl mx-auto">
+              Accqrate Books is fully cloud native no complex installations, no
+              specialized IT needed. Set <br className="hidden md:block" /> up your accounting in minutes, not weeks.
             </p>
           </FadeUp>
           <div className="flex flex-col md:flex-row justify-center  mx-auto gap-6 items-center lg:gap-16 mb-[32px] md:mb-[56px]">
@@ -135,11 +133,11 @@ export default function Onboarding(): JSX.Element {
 
           {/* Heading */}
 
-          <FadeUp>
-            <h1 className="text-[24px] md:text-[36px] text-[#333333] font-medium tracking-heading text-center mb-2 sm:mb-4">
+       <FadeUp>
+            <h1 className="text-fluid-h2 font-semibold tracking-para text-center mb-6 md:mb-8">
               <span className="text-[#1976D2]">Zero-Friction</span> Setup
             </h1>
-            <p className="text-center px-1 text-[#9D9D9D] tracking-para text-[14px] md:text-[16px] max-w-2xl mx-auto pb-6">
+            <p className="text-center text-fluid-small mb-[24px] md:mb-[32px] tracking-para text-[#737373] leading-tight max-w-4xl mx-auto">
               As your business grows, Accqrate Retail grows with you. Flip the
               switch to add procurement, finance, HR and supply-chain modules no
               data migration, no downtime.
@@ -158,7 +156,7 @@ export default function Onboarding(): JSX.Element {
               icon="/images/business/books/Mask group.png"
               title="Instant Access"
               content={
-                <>Extra details about <b>Instant Access</b> will appear here when expanded 1.</>
+                <>Sign up, configure, and start transacting in less than 2 hours.</>
               }
             />
 
@@ -167,7 +165,7 @@ export default function Onboarding(): JSX.Element {
               icon="/images/business/books/Mask group (1).png"
               title="Automated Data Migration"
               content={
-                <>Extra details about <b>Automated Data Migration</b> will be shown here 2.</>
+                <>Import legacy data and chart of accounts with guided tools.</>
               }
             />
 
@@ -176,44 +174,40 @@ export default function Onboarding(): JSX.Element {
               icon="/images/business/books/Mask group (2).png"
               title="Role-Based User Setup"
               content={
-                <>Extra details about <b>Role-Based User Setup</b> will go here 3.</>
+                <>Assign permissions instantly for team members no IT bottlenecks.</>
               }
             />
           </Accordion>
 
           {/* Testimonial Section */}
-          <div className="mt-6">
-            <FadeUp
+           <FadeUp className="mt-6">
+            <div
               className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:max-w-5xl
               h-auto sm:h-[110px] md:h-[129px]
               flex flex-col items-center justify-center"
             >
               <div className="max-w-[800px] mx-auto w-full">
-                <p className="text-fluid-body font-normal text-[#333333] md:leading-10 text-left md:text-center">
+                <p className="text-[14px] md:text-[20px] font-normal text-[#333333]  text-left md:text-center">
                   “We set up 5 new outlets in under an hour no IT team needed.”
                 </p>
-                <p className="text-[11px] sm:text-sm md:text-base md:leading-10 text-[#333333] mt-2 text-right pr-4">
+                <p className="text-[14px] md:text-[18px] md:leading-10 text-[#333333] mt-2 text-right pr-4">
                   — Retail Owner, Jeddah
                 </p>
               </div>
-            </FadeUp>
-          </div>
+            </div>
+          </FadeUp>
         </div>
 
         {/* -------- ZATCA Compliance Section -------- */}
         <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
-          <FadeUp>
-            <h2 className="lg:hidden text-[24px] tracking-heading md:text-[24px] text-[#333333] font-medium leading-tight mb-2 md:mb-[32px]">
-              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br />
+           <FadeUp>
+            <h2 className="text-fluid-h2 text-[#333333] font-medium mb-4 md:mb-8 tracking-para leading-tight">
+              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br className="lg:hidden" />
               E-Invoicing Compliance
             </h2>
-            <h2 className="hidden lg:block text-[36px] text-[#333333] tracking-heading leading-tight font-medium mb-4">
-              100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 E-Invoicing
-              Compliance
-            </h2>
 
-            <p className="text-center  md:text-[18px] mb-[24px] tracking-para md:mb-[32px] text-[#737373] leading-relaxed">
+            <p className="text-center text-fluid-small mb-[24px] md:mb-[32px] tracking-para text-[#737373] leading-tight">
               Compliance is non-negotiable. With Accqrate Books, you’re always
               audit-ready.
             </p>
