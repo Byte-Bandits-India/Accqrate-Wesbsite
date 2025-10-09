@@ -162,7 +162,7 @@ export default function AutomationSection(): JSX.Element {
 
   return (
     <>
-   <div className="bg-white px-6 md:px-[32px] max-w-[1280px] mx-auto mt-6 md:mt-8">
+      <div className="bg-white px-6 md:px-[32px] max-w-[1280px] mx-auto mt-6 md:mt-8">
         {/* ================= AI-Driven Automation ================= */}
         <FadeUp className="border-[#E3E3E3] border-[22px] font-inter md:h-auto lg:h-auto xl:h-[615px] py-6 px-4 rounded-xl md:rounded-2xl mx-auto mb-6 md:mb-[56px]
   md:flex md:items-center">
@@ -201,7 +201,7 @@ export default function AutomationSection(): JSX.Element {
               muted
               loop
             >
-              <source src="videos/Ai-driven_automation.mp4" type="video/mp4" />
+              <source src="/videos/business/books/Ai-driven_automation.mp4" type="video/mp4" />
             </video>
           </div>
         </FadeUp>
@@ -251,7 +251,7 @@ export default function AutomationSection(): JSX.Element {
                       playsInline
                       className="w-full h-[125px] mt-8 object-cover rounded-t-lg"
                     >
-                      <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+                      <source src="/videos/business/books/on-demand-training.mp4" type="video/mp4" />
                     </video>
                   </div>
 
@@ -263,7 +263,7 @@ export default function AutomationSection(): JSX.Element {
                     playsInline
                     className="hidden md:block w-full h-[170px] object-cover rounded-t-lg"
                   >
-                    <source src="/videos/on-demand-training.mp4" type="video/mp4" />
+                    <source src="/videos/business/books/on-demand-training.mp4" type="video/mp4" />
                   </video>
 
                   {/* Content */}
@@ -320,11 +320,11 @@ export default function AutomationSection(): JSX.Element {
                       playsInline
                       className="w-full h-[125px] mt-6 md:h-[200px] object-cover rounded-t-lg"
                     >
-                      <source src="/videos/local-support.mp4" type="video/mp4" />
+                      <source src="/videos/business/books/local-support.mp4" type="video/mp4" />
                     </video>
                   </div>
                   <video autoPlay loop muted playsInline className="hidden md:block w-full h-[170px] object-cover rounded-t-lg">
-                    <source src="/videos/local-support.mp4" type="video/mp4" />
+                    <source src="/videos/business/books/local-support.mp4" type="video/mp4" />
                   </video>
 
                   <div className="p-4 flex-1">
@@ -378,7 +378,7 @@ export default function AutomationSection(): JSX.Element {
                     playsInline
                     className="w-full h-[200px] md:h-[170px] object-cover rounded-t-lg hidden md:block"
                   >
-                    <source src="/videos/knowledge-center.mp4" type="video/mp4" />
+                    <source src="/videos/business/books/knowledge-center.mp4" type="video/mp4" />
                   </video>
 
                   {/* Mobile Video */}
@@ -390,7 +390,7 @@ export default function AutomationSection(): JSX.Element {
                       playsInline
                       className="w-full h-[125px] mt-8 object-cover rounded-t-lg"
                     >
-                      <source src="/videos/business/books/on-demand-training.mp4" type="video/mp4" />
+                      <source src="/videos/business/books/business/books/on-demand-training.mp4" type="video/mp4" />
                     </video>
                   </div>
 
