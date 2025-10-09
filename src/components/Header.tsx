@@ -114,10 +114,10 @@ const menus = [
             href: "/products/hr",
           },
           {
-            title: "Accqrate Service",
-            description: "Manage customer relationships efficiently.",
-            img: "/images/header/fill/service.svg",
-            href: "/products/crm",
+            title: "Accqrate ONE",
+            description: "End-to-end ERP for large enterprises.",
+            img: "/images/header/fill/one.svg",
+            href: "/business/one",
           },
           {
             title: "Accqrate People",
@@ -153,7 +153,7 @@ const menus = [
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
-            href: "/business/one",
+            href: "/business/",
           },
         ],
       },
