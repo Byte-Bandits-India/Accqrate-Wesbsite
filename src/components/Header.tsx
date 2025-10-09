@@ -105,7 +105,7 @@ const menus = [
             title: "Accqrate CRM",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/crm.svg",
-            href: "/products/crm",
+            href: "/business/crm",
           },
           {
             title: "Accqrate Plan360",
@@ -123,7 +123,7 @@ const menus = [
             title: "Accqrate People",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/people.svg",
-            href: "/products/crm",
+            href: "/business/people",
           },
           {
             title: "Accqrate Retail",
@@ -135,7 +135,7 @@ const menus = [
             title: "Accqrate Factory",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/Factory.svg",
-            href: "/products/crm",
+            href: "/business/crm",
           },
           {
             title: "Accqrate Filehub",
