@@ -1,6 +1,6 @@
 // src/components/ui/FeatureCard.tsx
 "use client";
-import FadeUp from "./FadeUp";
+import FadeUp from "../../../../../components/ui/FadeUp";
 
 import React from "react";
 

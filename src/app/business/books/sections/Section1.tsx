@@ -4,9 +4,10 @@ import React, { JSX, useContext, useRef } from "react";
 import { LoadingContext } from "@/app/business/books/sections/utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import useInView from "@/app/business/books/sections/utils/useInView";
-import FeatureCard from "@/components/ui/FeatureCard";
-import { Accordion, AccordionCard } from "@/components/ui/accordion";
+import FeatureCard from "@/app/business/books/sections/ui/FeatureCard";
 import FadeUp from "@/components/ui/FadeUp";
+import AccordionCard from "./ui/AccordionSilverCard";
+import { Accordion } from "@/components/ui/accordion";
 
 export default function Onboarding(): JSX.Element {
   const { loading } = useContext(LoadingContext);
@@ -96,7 +97,7 @@ export default function Onboarding(): JSX.Element {
       <section id="OnboardSection" className="w-full mt-[32px] md:mt-[56px]">
         <div className="px-[24px] md:px-[32px] max-w-[1280px] mx-auto font-inter">
           {/* Heading */}
-           <FadeUp>
+          <FadeUp>
             <h2 className="text-fluid-h2 tracking-para leading-tight font-inter text-[#000000] text-center mb-6">
               Effortless <span className="text-[#1976D2]">Onboarding</span> &
               Flexible Deployment
@@ -133,7 +134,7 @@ export default function Onboarding(): JSX.Element {
 
           {/* Heading */}
 
-       <FadeUp>
+          <FadeUp>
             <h1 className="text-fluid-h2 font-semibold tracking-para text-center mb-6 md:mb-8">
               <span className="text-[#1976D2]">Zero-Friction</span> Setup
             </h1>
@@ -155,7 +156,7 @@ export default function Onboarding(): JSX.Element {
               value="card-1"
               icon="/images/business/books/Mask group.png"
               title="Instant Access"
-              content={
+              children={
                 <>Sign up, configure, and start transacting in less than 2 hours.</>
               }
             />
@@ -164,7 +165,7 @@ export default function Onboarding(): JSX.Element {
               value="card-2"
               icon="/images/business/books/Mask group (1).png"
               title="Automated Data Migration"
-              content={
+              children={
                 <>Import legacy data and chart of accounts with guided tools.</>
               }
             />
@@ -173,14 +174,14 @@ export default function Onboarding(): JSX.Element {
               value="card-3"
               icon="/images/business/books/Mask group (2).png"
               title="Role-Based User Setup"
-              content={
+              children={
                 <>Assign permissions instantly for team members no IT bottlenecks.</>
               }
             />
           </Accordion>
 
           {/* Testimonial Section */}
-           <FadeUp className="mt-6">
+          <FadeUp className="mt-6">
             <div
               className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:max-w-5xl
@@ -201,7 +202,7 @@ export default function Onboarding(): JSX.Element {
 
         {/* -------- ZATCA Compliance Section -------- */}
         <div className="mt-[48px] md:mt-[56px] max-w-[1280px] mx-auto font-inter text-center px-6 md:px-[32px]">
-           <FadeUp>
+          <FadeUp>
             <h2 className="text-fluid-h2 text-[#333333] font-medium mb-4 md:mb-8 tracking-para leading-tight">
               100% <span className="text-[#1976D2]">ZATCA</span> Phase 2 <br className="lg:hidden" />
               E-Invoicing Compliance

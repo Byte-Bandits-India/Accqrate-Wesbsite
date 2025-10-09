@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Skeleton } from "../../../../components/ui/skeleton";
-import AccordionCard from "./ui/AccordionSilverCard";
+import AccordionCard from "@/components/ui/AccordionSilverCard";
 import { Accordion } from "./ui/accordion";
 import FadeUp from "../../../../components/ui/FadeUp";
 
@@ -161,7 +161,7 @@ const Pos: React.FC = () => {
               icon="/images/business/retail/invoice.png"
               title="Custom Invoices Templates"
             >
-             Tailor layouts, logos and messaging without developer support.
+              Tailor layouts, logos and messaging without developer support.
 
             </AccordionCard>
             <AccordionCard
@@ -169,7 +169,7 @@ const Pos: React.FC = () => {
               icon="/images/business/retail/audit.png"
               title="Audit Trails & Deletion Logs"
             >
-             Track voids and deletions, record reasons always audit-ready.
+              Track voids and deletions, record reasons always audit-ready.
 
             </AccordionCard>
           </Accordion>
@@ -181,7 +181,7 @@ const Pos: React.FC = () => {
         id="erpSection"
         className="px-6 md:px-8 max-w-[1200px] mx-auto text-center mt-[48px] md:mt-[64px] text-[#333333]"
       >
-         <div
+        <div
         >
           <FadeUp>
             <h2 className="text-fluid-h2 font-medium tracking-heading leading-tight"

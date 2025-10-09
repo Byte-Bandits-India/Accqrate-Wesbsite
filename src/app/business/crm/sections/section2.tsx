@@ -4,7 +4,7 @@ import React, { useContext, useState, useEffect, JSX } from "react";
 import Skeleton from "@/components/ui/skeleton";
 import { LoadingContext } from "./utils/LoadingContext";
 import { motion, Variants } from "framer-motion";
-import AccordionCard from "./ui/AccordionSilverCard";
+import AccordionCard from "@/components/ui/AccordionSilverCard";
 import {
     Accordion,
     AccordionItem,

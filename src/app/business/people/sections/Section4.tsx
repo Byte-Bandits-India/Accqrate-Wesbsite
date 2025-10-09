@@ -5,7 +5,7 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "./ui/accordion";
+} from "@/components/ui/accordion";
 import { LoadingContext } from "./utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import useInView from "./utils/useInView";

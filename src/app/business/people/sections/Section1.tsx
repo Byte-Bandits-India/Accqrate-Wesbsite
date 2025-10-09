@@ -5,7 +5,7 @@ import type { JSX } from "react";
 import { LoadingContext } from "./utils/LoadingContext";
 import Skeleton from "@/components/ui/skeleton";
 import useInView from "./utils/useInView";
-import FeatureCard from "./ui/FeatureCard";
+import FeatureCard from "@/components/ui/FeatureCard";
 import Image from "next/image";
 import FadeUp from "@/components/ui/FadeUp";
 

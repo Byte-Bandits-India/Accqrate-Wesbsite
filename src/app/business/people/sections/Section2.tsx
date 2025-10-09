@@ -9,8 +9,8 @@ import {
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-    AccordionCard,
-} from "./ui/accordion";
+} from "@/components/ui/accordion";
+import AccordionCard from "@/components/ui/AccordionSilverCard";
 import FadeUp from "@/components/ui/FadeUp";
 
 // Type for dropdown items
@@ -177,13 +177,13 @@ export default function Cloud() {
                                 value="card-4"
                                 icon="/images/business/retail/instant.png"
                                 title="Cloud Deployment"
-                                content={<>Cloud Deployment Accessible 24/7, anywhere, on any device. No hardware or IT resources needed. </>}
+                                children={<>Cloud Deployment Accessible 24/7, anywhere, on any device. No hardware or IT resources needed. </>}
                             />
                             <AccordionCard
                                 value="card-5"
                                 icon="/images/business/retail/invoice.png"
                                 title="On-Premises"
-                                content={<>Full control of your infrastructure, installed in under 2 hours with minimal downtime. </>}
+                                children={<>Full control of your infrastructure, installed in under 2 hours with minimal downtime. </>}
                             />
                         </Accordion>
                     </FadeUp>
