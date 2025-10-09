@@ -90,23 +90,23 @@ export default function Transform(): JSX.Element {
 
   const cards: Card[] = [
     { title: "No POS hardware needed", desc: "Works instantly on Android, iOS, Windows, and Mac", video: "/videos/business/retail/card1.mp4" },
-    { title: "Zero hassle setup", desc: "Cloud-based and ready to use — no installations or IT assistance needed.", video: "/videos/business/retail/card2.mp4" },
-    { title: "Plug-and-Play Printers", desc: "No drivers, no manual setup—automatic detection and configuration", video: "/videos/business/retail/card3.mp4" },
+    { title: "Zero hassle setup", desc: "Cloud-based and ready to use no installations or IT assistance needed.", video: "/videos/business/retail/card2.mp4" },
+    { title: "Plug-and-Play Printers", desc: "No drivers, no manual setup automatic detection and configuration", video: "/videos/business/retail/card3.mp4" },
     { title: "Auto-Print & Cut", desc: "Receipts print, cut and display for customers instantly.", video: "/videos/business/retail/card4.mp4" },
   ];
 
   return (
     <>
-      <FadeUp className="md:max-w-5xl mx-auto text-[#333333]">
+        <FadeUp className="md:max-w-5xl mx-auto text-[#333333]">
         <h1
-          className="text-center text-[24px] md:text-[32px] lg:text-[42px] tracking-heading leading-tight font-medium mt-48px md:mt-[56px] px-24px md:px-[32px]"
+          className="text-center text-fluid-h2 tracking-heading leading-tight font-medium mt-48px md:mt-[56px] px-24px md:px-[32px]"
         >
           Transform Your Retail Operations with{" "} <br className="hidden md:block" />
-          <span className="text-[#C2185B]"> Zero-Hassle </span> Onboarding
+          <span className="text-[#C2185B]"> Zero Hassle </span> Onboarding
         </h1>
-        <p className="text-center md:text-[16px] lg:text-[20px] px-24px md:px-[32px] font-light tracking-para mt-[24px] md:mt-[32px] w-full max-w-[1280px] mx-auto text-[#000000B2]"
+        <p className="text-center text-fluid-small  px-24px md:px-[32px] font-normal tracking-para mt-[24px] md:mt-[32px] w-full max-w-[1280px] mx-auto text-[#737373]"
         >
-          Get up and running in minutes, not days. Accqrate Retail’s cloud-native <br className="hidden md:block" /> architecture means you can onboard each outlet effortlessly—no dedicated POS <br className="hidden md:block" /> hardware, no complex installations.
+          Get up and running in minutes, not days. Accqrate Retail’s cloud native <br className="hidden md:block" /> architecture means you can onboard each outlet effortlessly no dedicated POS <br className="hidden md:block" /> hardware, no complex installations.
         </p>
       </FadeUp>
 
@@ -125,17 +125,19 @@ export default function Transform(): JSX.Element {
         </div>
       </section>
 
-      <FadeUp className="px-6 md:px-[32px] max-w-[1350px] mx-auto w-full">
+      <FadeUp className="px-6 md:px-[32px] max-w-[1350px] mx-auto">
         <section
           id="ownerSection"
-          className="bg-[#F2F2F2] rounded-lg w-full text-[#333333] h-[102px] sm:h-[110px] md:h-[129px] lg:h-[182px] flex flex-col items-center justify-center mt-6 md:mt-[32px] lg:mt-[40px] px-6 md:p-10"
+          className="bg-[#F2F2F2] rounded-lg mx-auto px-6 sm:px-6 md:p-10 text-[#333333] h-[102px] sm:h-[110px] md:h-[129px] lg:h-[182px] flex flex-col items-center justify-center mt-6 md:mt-[32px] lg:mt-[40px]"
         >
           <div className="w-full">
-            <div className="mx-auto text-left md:max-w-4xl">
-              <p className="font-light leading-snug text-fluid-caption tracking-para md:text-fluid-body lg:text-fluid-h3 mb-5">
+            <div className="mx-auto text-center md:max-w-4xl">
+              <p className="font-normal leading-snug text-fluid-small tracking-para md:text-fluid-body  mb-5"
+              >
                 “We set up 5 new outlets in under an hour no IT team needed.”
               </p>
-              <p className="text-gray-500 text-xs sm:text-base tracking-para md:text-fluid-body flex justify-end">
+              <p className="text-[#737373] text-fluid-small tracking-para flex justify-end"
+              >
                 — Retail Owner, Jeddah
               </p>
             </div>
