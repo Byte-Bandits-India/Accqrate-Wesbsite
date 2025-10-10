@@ -98,22 +98,21 @@ export default function Carousel({
     return () => clearInterval(interval);
   }, [autoplay, autoplayDelay, loop, items.length, pauseOnHover, isHovered]);
 
-  // Pause on hover
+  // Autoplay effect (hover won't stop it)
   useEffect(() => {
-    if (!pauseOnHover || !containerRef.current) return;
+    if (!autoplay) return;
 
-    const container = containerRef.current;
-    const handleMouseEnter = () => setIsHovered(true);
-    const handleMouseLeave = () => setIsHovered(false);
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => {
+        if (prev === items.length - 1) {
+          return loop ? 0 : prev;
+        }
+        return prev + 1;
+      });
+    }, autoplayDelay);
 
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-
-    return () => {
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, [pauseOnHover]);
+    return () => clearInterval(interval);
+  }, [autoplay, autoplayDelay, loop, items.length]);
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center bg-black md:bg-white overflow-hidden select-none px-4 py-8">
