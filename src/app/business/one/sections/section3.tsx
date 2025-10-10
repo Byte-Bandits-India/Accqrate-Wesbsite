@@ -57,8 +57,12 @@ export default function Carousel({
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Properly typed spring transition
-  const springTransition: Transition = { type: "spring", stiffness: 200, damping: 20 };
+  // Fixed: Use const assertion for type property
+  const springTransition = {
+    type: "spring" as const,
+    stiffness: 200,
+    damping: 20
+  };
 
   // Handle drag/swipe
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -147,7 +151,7 @@ export default function Carousel({
                 filter: blur,
                 zIndex,
               }}
-              transition={springTransition} // ✅ properly typed
+              transition={springTransition}
               onClick={() => console.log(`Clicked card ${item.id}`)}
             >
               <p className="text-[#333333] text-fluid-small md:text-[18px] lg:text-[24px] leading-tight mb-6 flex-1">
