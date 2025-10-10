@@ -49,7 +49,7 @@ const DEFAULT_ITEMS: Item[] = [
 export default function Carousel({
   items = DEFAULT_ITEMS,
   autoplay = true,
-  autoplayDelay = 5000, // 5 seconds
+  autoplayDelay = 5000,
   pauseOnHover = true,
   loop = true,
 }: CarouselProps): JSX.Element {
@@ -63,10 +63,8 @@ export default function Carousel({
     const velocity = info.velocity.x;
 
     if (offset < -50 || velocity < -500) {
-      // Swipe left → next
       setCurrentIndex((prev) => (prev === items.length - 1 ? (loop ? 0 : prev) : prev + 1));
     } else if (offset > 50 || velocity > 500) {
-      // Swipe right → previous
       setCurrentIndex((prev) => (prev === 0 ? (loop ? items.length - 1 : prev) : prev - 1));
     }
   };
@@ -84,7 +82,7 @@ export default function Carousel({
     return () => clearInterval(interval);
   }, [autoplay, autoplayDelay, loop, items.length, pauseOnHover, isHovered]);
 
-  // Pause on hover effect
+  // Pause on hover
   useEffect(() => {
     if (!pauseOnHover || !containerRef.current) return;
 
@@ -111,7 +109,7 @@ export default function Carousel({
         onDragEnd={handleDragEnd}
         ref={containerRef}
         whileTap={{ cursor: "grabbing" }}
-        dragTransition={{ bounceStiffness: 200, bounceDamping: 20 }}
+        dragTransition={{ type: "spring", stiffness: 200, damping: 20 }} // ✅ fixed
       >
         {items.map((item, index) => {
           const diff = (index - currentIndex + items.length) % items.length;
