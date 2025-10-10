@@ -153,7 +153,7 @@ const menus = [
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
-            href: "/business/",
+            href: "/business/one",
           },
         ],
       },

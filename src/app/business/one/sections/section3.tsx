@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 interface Item {
   id: number;
@@ -10,7 +10,6 @@ interface Item {
   avatar: string;
 }
 
-// 👇 Define the props that Section3 expects
 interface Section3Props {
   items?: Item[];
 }
@@ -19,10 +18,11 @@ export default function Section3({ items = [] }: Section3Props) {
   const [centerIndex, setCenterIndex] = useState(1);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const baseItems =
-    items && items.length
+    items.length > 0
       ? items
       : [
         {
@@ -51,27 +51,56 @@ export default function Section3({ items = [] }: Section3Props) {
         },
       ];
 
-  // --- Mobile touch swipe ---
-  const handleTouchStart = (e: React.TouchEvent) => setTouchStartX(e.touches[0].clientX);
-  const handleTouchMove = (e: React.TouchEvent) => setTouchEndX(e.touches[0].clientX);
+  // --- Touch swipe for mobile ---
+  const handleTouchStart = (e: React.TouchEvent) =>
+    setTouchStartX(e.touches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent) =>
+    setTouchEndX(e.touches[0].clientX);
   const handleTouchEnd = () => {
     const diff = touchStartX - touchEndX;
-    if (diff > 50) setCenterIndex((prev) => (prev + 1) % 3);
-    else if (diff < -50) setCenterIndex((prev) => (prev - 1 + 3) % 3);
+    if (diff > 50) setCenterIndex((prev) => (prev + 1) % baseItems.length);
+    else if (diff < -50)
+      setCenterIndex((prev) => (prev - 1 + baseItems.length) % baseItems.length);
     setTouchStartX(0);
     setTouchEndX(0);
   };
 
-  // --- Desktop scroll/flick support ---
+  // --- Wheel scroll for desktop ---
   const handleWheel = (e: React.WheelEvent) => {
     if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
-      if (e.deltaX > 20) setCenterIndex((prev) => (prev + 1) % 3);
-      else if (e.deltaX < -20) setCenterIndex((prev) => (prev - 1 + 3) % 3);
+      if (e.deltaX > 20)
+        setCenterIndex((prev) => (prev + 1) % baseItems.length);
+      else if (e.deltaX < -20)
+        setCenterIndex((prev) => (prev - 1 + baseItems.length) % baseItems.length);
     } else if (Math.abs(e.deltaY) > 40) {
-      if (e.deltaY > 0) setCenterIndex((prev) => (prev + 1) % 3);
-      else setCenterIndex((prev) => (prev - 1 + 3) % 3);
+      if (e.deltaY > 0)
+        setCenterIndex((prev) => (prev + 1) % baseItems.length);
+      else setCenterIndex((prev) => (prev - 1 + baseItems.length) % baseItems.length);
     }
   };
+
+  // --- Auto-scroll every 5s only on desktop ---
+  useEffect(() => {
+    const setupAutoScroll = () => {
+      // Clear any existing interval
+      if (intervalRef.current) clearInterval(intervalRef.current);
+
+      const isDesktop = window.innerWidth >= 768;
+      if (!isDesktop) return; // stop on mobile
+
+      intervalRef.current = setInterval(() => {
+        setCenterIndex((prev) => (prev + 1) % baseItems.length);
+      }, 5000);
+    };
+
+    setupAutoScroll(); // run on mount
+    window.addEventListener("resize", setupAutoScroll); // handle resize dynamically
+
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      window.removeEventListener("resize", setupAutoScroll);
+    };
+  }, [baseItems.length]);
 
   const getCardStyle = (index: number): React.CSSProperties => {
     if (index === centerIndex) {
@@ -83,10 +112,22 @@ export default function Section3({ items = [] }: Section3Props) {
         pointerEvents: "auto",
       };
     }
-    const isLeft = (index + 1) % 3 === centerIndex;
-    const isRight = (index + 2) % 3 === centerIndex;
-    if (isLeft) return { transform: `scale(0.9) translateX(-70%)`, filter: "blur(4px)", opacity: 0.6, zIndex: 2, pointerEvents: "auto" };
-    if (isRight) return { transform: `scale(0.9) translateX(70%)`, filter: "blur(4px)", opacity: 0.6, zIndex: 2, pointerEvents: "auto" };
+    const isLeft = (index + 1) % baseItems.length === centerIndex;
+    const isRight = (index + 2) % baseItems.length === centerIndex;
+    if (isLeft)
+      return {
+        transform: `scale(0.9) translateX(-70%)`,
+        filter: "blur(4px)",
+        opacity: 0.6,
+        zIndex: 2,
+      };
+    if (isRight)
+      return {
+        transform: `scale(0.9) translateX(70%)`,
+        filter: "blur(4px)",
+        opacity: 0.6,
+        zIndex: 2,
+      };
     return { opacity: 0, pointerEvents: "none" };
   };
 
@@ -104,8 +145,9 @@ export default function Section3({ items = [] }: Section3Props) {
           <div
             key={item.id}
             className="absolute bg-[#EDEDED] border border-gray-300 rounded-2xl shadow-xl p-8 flex flex-col justify-between transition-all duration-500 ease-in-out
-            w-[340px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[280px]"
+              w-[340px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[280px] cursor-pointer"
             style={getCardStyle(index)}
+            onClick={() => console.log(`Clicked card ${item.id}`)}
           >
             <p className="text-[#333333] text-fluid-small md:text-[18px] lg:text-[24px] leading-tight mb-6 flex-1">
               "{item.quote}"
@@ -117,8 +159,12 @@ export default function Section3({ items = [] }: Section3Props) {
                 className="w-12 h-12 md:w-14 md:h-14 rounded-full mr-4 object-cover"
               />
               <div>
-                <h4 className="text-black font-medium text-[10px] md:text-[14px] lg:text-[16px]">{item.name}</h4>
-                <p className="text-black font-medium  text-[10px] md:text-[14px] lg:text-[16px]">{item.role}</p>
+                <h4 className="text-black font-medium text-[10px] md:text-[14px] lg:text-[16px]">
+                  {item.name}
+                </h4>
+                <p className="text-black font-medium text-[10px] md:text-[14px] lg:text-[16px]">
+                  {item.role}
+                </p>
               </div>
             </div>
           </div>
