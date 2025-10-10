@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
-import { motion, PanInfo } from "motion/react";
+import { motion, PanInfo, Transition } from "motion/react";
 import React, { JSX } from "react";
 
 export interface Item {
@@ -56,6 +56,9 @@ export default function Carousel({
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  // Properly typed spring transition
+  const springTransition: Transition = { type: "spring", stiffness: 200, damping: 20 };
 
   // Handle drag/swipe
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
@@ -144,7 +147,7 @@ export default function Carousel({
                 filter: blur,
                 zIndex,
               }}
-              transition={{ type: "spring", stiffness: 200, damping: 20 }} // smooth slide animation
+              transition={springTransition} // ✅ properly typed
               onClick={() => console.log(`Clicked card ${item.id}`)}
             >
               <p className="text-[#333333] text-fluid-small md:text-[18px] lg:text-[24px] leading-tight mb-6 flex-1">
