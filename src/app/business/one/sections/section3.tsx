@@ -109,7 +109,6 @@ export default function Carousel({
         onDragEnd={handleDragEnd}
         ref={containerRef}
         whileTap={{ cursor: "grabbing" }}
-        dragTransition={{ type: "spring", stiffness: 200, damping: 20 }} // ✅ fixed
       >
         {items.map((item, index) => {
           const diff = (index - currentIndex + items.length) % items.length;
@@ -145,6 +144,7 @@ export default function Carousel({
                 filter: blur,
                 zIndex,
               }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }} // smooth slide animation
               onClick={() => console.log(`Clicked card ${item.id}`)}
             >
               <p className="text-[#333333] text-fluid-small md:text-[18px] lg:text-[24px] leading-tight mb-6 flex-1">
