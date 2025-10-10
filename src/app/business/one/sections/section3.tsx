@@ -48,57 +48,57 @@ const DEFAULT_ITEMS: Item[] = [
 
 export default function Carousel({
   items = DEFAULT_ITEMS,
-  autoplay = false,
-  autoplayDelay = 3000,
-  pauseOnHover = false,
-  loop = false,
+  autoplay = true,
+  autoplayDelay = 5000, // 5 seconds
+  pauseOnHover = true,
+  loop = true,
 }: CarouselProps): JSX.Element {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Handle drag end for swipe
+  // Handle drag/swipe
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const offset = info.offset.x;
     const velocity = info.velocity.x;
 
     if (offset < -50 || velocity < -500) {
-      // Swipe left - next
+      // Swipe left → next
       setCurrentIndex((prev) => (prev === items.length - 1 ? (loop ? 0 : prev) : prev + 1));
     } else if (offset > 50 || velocity > 500) {
-      // Swipe right - previous
+      // Swipe right → previous
       setCurrentIndex((prev) => (prev === 0 ? (loop ? items.length - 1 : prev) : prev - 1));
     }
   };
 
-  // Autoplay functionality
+  // Autoplay effect
   useEffect(() => {
-    if (autoplay && (!pauseOnHover || !isHovered)) {
-      const timer = setInterval(() => {
-        setCurrentIndex((prev) => {
-          if (prev === items.length - 1) {
-            return loop ? 0 : prev;
-          }
-          return prev + 1;
-        });
-      }, autoplayDelay);
-      return () => clearInterval(timer);
-    }
-  }, [autoplay, autoplayDelay, isHovered, loop, items.length, pauseOnHover]);
+    if (!autoplay) return;
 
-  // Hover effect for pause on hover
+    const interval = setInterval(() => {
+      if (!pauseOnHover || !isHovered) {
+        setCurrentIndex((prev) => (prev === items.length - 1 ? (loop ? 0 : prev) : prev + 1));
+      }
+    }, autoplayDelay);
+
+    return () => clearInterval(interval);
+  }, [autoplay, autoplayDelay, loop, items.length, pauseOnHover, isHovered]);
+
+  // Pause on hover effect
   useEffect(() => {
-    if (pauseOnHover && containerRef.current) {
-      const container = containerRef.current;
-      const handleMouseEnter = () => setIsHovered(true);
-      const handleMouseLeave = () => setIsHovered(false);
-      container.addEventListener("mouseenter", handleMouseEnter);
-      container.addEventListener("mouseleave", handleMouseLeave);
-      return () => {
-        container.removeEventListener("mouseenter", handleMouseEnter);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    }
+    if (!pauseOnHover || !containerRef.current) return;
+
+    const container = containerRef.current;
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
+
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+    };
   }, [pauseOnHover]);
 
   return (
@@ -177,10 +177,8 @@ export default function Carousel({
         {items.map((_, index) => (
           <motion.div
             key={index}
-            className={`
-              h-2 w-2 rounded-full mx-2
-              ${index === currentIndex ? "bg-white sm:bg-black" : "bg-gray-400 sm:bg-gray-400"}
-            `}
+            className={`h-2 w-2 rounded-full mx-2 ${index === currentIndex ? "bg-white sm:bg-black" : "bg-gray-400 sm:bg-gray-400"
+              }`}
             animate={{ scale: index === currentIndex ? 1.5 : 1 }}
             onClick={() => setCurrentIndex(index)}
             transition={{ duration: 0.3 }}
