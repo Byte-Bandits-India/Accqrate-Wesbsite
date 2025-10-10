@@ -49,7 +49,7 @@ const DEFAULT_ITEMS: Item[] = [
 export default function Carousel({
   items = DEFAULT_ITEMS,
   autoplay = true,
-  autoplayDelay = 5000,
+  autoplayDelay = 3000,
   pauseOnHover = true,
   loop = true,
 }: CarouselProps): React.JSX.Element {
