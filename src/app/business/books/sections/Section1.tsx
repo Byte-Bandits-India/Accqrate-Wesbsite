@@ -222,7 +222,7 @@ export default function Onboarding(): JSX.Element {
 
                 {/* Front */}
                 <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
-                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] ">
                     Seamless Integration
                   </h4>
                   <img
@@ -233,9 +233,9 @@ export default function Onboarding(): JSX.Element {
                 </section>
 
                 {/* Back */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                  <h4 className="text-xl font-bold">Seamless Integration</h4>
-                  <p className="text-sm text-left font-light px-4 leading-relaxed">
+                <section className="absolute inset-0 flex flex-col items-center j gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium sm:mt-6 leading-tight">Seamless Integration</h4>
+                  <p className="text-fluid-small tracking-para text-left font-light px-6  leading-snug mt-4 sm:mt-6">
                     Phase 2 E-invoicing Integration – Generate, validate and transmit XML e-invoices directly to ZATCA.
                   </p>
                 </section>
@@ -265,9 +265,9 @@ export default function Onboarding(): JSX.Element {
                 </section>
 
                 {/* Back */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                  <h4 className="text-xl font-bold">Digital Archive</h4>
-                  <p className="text-sm text-left font-light px-4 leading-relaxed">
+                <section className="absolute inset-0 flex flex-col items-center  gap-4 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium sm:mt-6">Digital Archive</h4>
+                  <p className="text-fluid-small tracking-para text-left font-light px-6 sm:px-4 leading-snug mt-4 sm:mt-6">
                     Securely store all e-invoices with audit trails and QR code integration.
                   </p>
                 </section>
@@ -297,9 +297,9 @@ export default function Onboarding(): JSX.Element {
                 </section>
 
                 {/* Back */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
-                  <h4 className="text-xl font-bold">Regulation-Ready</h4>
-                  <p className="text-sm text-left font-light px-4 leading-relaxed">
+                <section className="absolute inset-0 flex flex-col items-center  gap-3 bg-[#1976D2] text-white rounded-xl p-6 text-center [transform:rotateX(180deg)] [backface-visibility:hidden]">
+                  <h4 className="text-[24px] lg:text-[28px] font-medium sm:mt-6">Regulation-Ready</h4>
+                  <p className="text-fluid-small tracking-para text-left font-light px-6 sm:px-4 leading-snug mt-4 sm:mt-6">
                     Real-time updates keep you in sync with KSA rules.
                   </p>
                 </section>
