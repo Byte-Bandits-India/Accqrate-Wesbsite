@@ -1,9 +1,9 @@
 "use client";
-
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
+import React, { JSX } from "react";
 
-interface Item {
+export interface Item {
   id: number;
   quote: string;
   name: string;
@@ -11,10 +11,12 @@ interface Item {
   avatar: string;
 }
 
-interface Section3Props {
+export interface CarouselProps {
   items?: Item[];
   autoplay?: boolean;
   autoplayDelay?: number;
+  pauseOnHover?: boolean;
+  loop?: boolean;
 }
 
 const DEFAULT_ITEMS: Item[] = [
@@ -44,40 +46,72 @@ const DEFAULT_ITEMS: Item[] = [
   },
 ];
 
-export default function Section3({
+export default function Carousel({
   items = DEFAULT_ITEMS,
-  autoplay = true,
-  autoplayDelay = 5000,
-}: Section3Props) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  autoplay = false,
+  autoplayDelay = 3000,
+  pauseOnHover = false,
+  loop = false,
+}: CarouselProps): JSX.Element {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  // --- Autoplay ---
-  useEffect(() => {
-    if (!autoplay) return;
-    const id = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % items.length);
-    }, autoplayDelay);
-    return () => clearInterval(id);
-  }, [autoplay, autoplayDelay, items.length]);
-
-  // --- Drag / swipe ---
+  // Handle drag end for swipe
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
-    const { offset, velocity } = info;
-    if (offset.x < -50 || velocity.x < -300) {
-      setCurrentIndex((prev) => (prev + 1) % items.length);
-    } else if (offset.x > 50 || velocity.x > 300) {
-      setCurrentIndex((prev) => (prev - 1 + items.length) % items.length);
+    const offset = info.offset.x;
+    const velocity = info.velocity.x;
+
+    if (offset < -50 || velocity < -500) {
+      // Swipe left - next
+      setCurrentIndex((prev) => (prev === items.length - 1 ? (loop ? 0 : prev) : prev + 1));
+    } else if (offset > 50 || velocity > 500) {
+      // Swipe right - previous
+      setCurrentIndex((prev) => (prev === 0 ? (loop ? items.length - 1 : prev) : prev - 1));
     }
   };
+
+  // Autoplay functionality
+  useEffect(() => {
+    if (autoplay && (!pauseOnHover || !isHovered)) {
+      const timer = setInterval(() => {
+        setCurrentIndex((prev) => {
+          if (prev === items.length - 1) {
+            return loop ? 0 : prev;
+          }
+          return prev + 1;
+        });
+      }, autoplayDelay);
+      return () => clearInterval(timer);
+    }
+  }, [autoplay, autoplayDelay, isHovered, loop, items.length, pauseOnHover]);
+
+  // Hover effect for pause on hover
+  useEffect(() => {
+    if (pauseOnHover && containerRef.current) {
+      const container = containerRef.current;
+      const handleMouseEnter = () => setIsHovered(true);
+      const handleMouseLeave = () => setIsHovered(false);
+      container.addEventListener("mouseenter", handleMouseEnter);
+      container.addEventListener("mouseleave", handleMouseLeave);
+      return () => {
+        container.removeEventListener("mouseenter", handleMouseEnter);
+        container.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+  }, [pauseOnHover]);
 
   return (
     <div className="relative w-full flex flex-col items-center justify-center bg-black md:bg-white overflow-hidden select-none px-4 py-8">
       {/* Carousel Cards */}
       <motion.div
-        className="relative w-full max-w-[900px] h-[320px] sm:h-[400px] flex items-center justify-center"
+        className="relative w-full max-w-[900px] h-[320px] sm:h-[400px] flex items-center justify-center cursor-grab"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onDragEnd={handleDragEnd}
+        ref={containerRef}
+        whileTap={{ cursor: "grabbing" }}
+        dragTransition={{ bounceStiffness: 200, bounceDamping: 20 }}
       >
         {items.map((item, index) => {
           const diff = (index - currentIndex + items.length) % items.length;
@@ -105,7 +139,7 @@ export default function Section3({
           return (
             <motion.div
               key={item.id}
-              className="absolute bg-[#EDEDED] border border-gray-300 rounded-2xl shadow-xl p-8 flex flex-col justify-between cursor-pointer
+              className="absolute bg-[#EDEDED] border border-gray-300 rounded-2xl shadow-xl p-8 flex flex-col justify-between
                         w-[340px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[280px] transition-all duration-500 ease-in-out"
               style={{
                 transform,
@@ -116,7 +150,7 @@ export default function Section3({
               onClick={() => console.log(`Clicked card ${item.id}`)}
             >
               <p className="text-[#333333] text-fluid-small md:text-[18px] lg:text-[24px] leading-tight mb-6 flex-1">
-                “{item.quote}”
+                "{item.quote}"
               </p>
               <div className="flex items-center md:mt-4">
                 <img
@@ -139,14 +173,14 @@ export default function Section3({
       </motion.div>
 
       {/* Dots */}
-      <div className="flex justify-center mt-4 relative z-10">
+      <div className="flex justify-center mt-4 relative z-10 cursor-pointer">
         {items.map((_, index) => (
           <motion.div
             key={index}
             className={`
-        h-2 w-2 rounded-full mx-2 cursor-pointer
-        ${index === currentIndex ? "bg-white sm:bg-black" : "bg-gray-400 sm:bg-gray-400"}
-      `}
+              h-2 w-2 rounded-full mx-2
+              ${index === currentIndex ? "bg-white sm:bg-black" : "bg-gray-400 sm:bg-gray-400"}
+            `}
             animate={{ scale: index === currentIndex ? 1.5 : 1 }}
             onClick={() => setCurrentIndex(index)}
             transition={{ duration: 0.3 }}
