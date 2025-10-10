@@ -57,11 +57,15 @@ export default function Carousel({
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Fixed: Use const assertion for type property
-  const springTransition = {
+  // Fixed transition definitions
+  const springTransition: Transition = {
     type: "spring" as const,
     stiffness: 200,
     damping: 20
+  };
+
+  const dotsTransition = {
+    duration: 0.3
   };
 
   // Handle drag/swipe
@@ -186,7 +190,7 @@ export default function Carousel({
               }`}
             animate={{ scale: index === currentIndex ? 1.5 : 1 }}
             onClick={() => setCurrentIndex(index)}
-            transition={{ duration: 0.3 }}
+            transition={dotsTransition}
           />
         ))}
       </div>
