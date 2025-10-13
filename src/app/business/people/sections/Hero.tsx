@@ -79,7 +79,7 @@ export default function Hero(): JSX.Element {
             <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
                 {/* Headings */}
                 <h1 className="tracking-heading text-fluid-h1 font-medium text-[#333333] mb-[24px]">
-                    Accqrate <span className="text-[#43A047]">People</span>
+                     <img src="/images/head.png" alt="Accqrate Books" className="inline-block mb-2 w-[140px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[250px] lg:h-[60px]" /> <span className="text-[#43A047]">People</span>
                 </h1>
                 <div className=" max-w-[340px] md:max-w-[800px] mx-auto">
                     <h2 className="text-fluid-h3 tracking-heading  font-light text-[#333333] mb-[24px]">
