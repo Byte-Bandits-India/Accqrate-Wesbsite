@@ -115,10 +115,10 @@ export default function Carousel({
   }, [autoplay, autoplayDelay, loop, items.length]);
 
   return (
-    <div className="relative w-full flex flex-col items-center justify-center bg-black md:bg-white overflow-hidden select-none px-4 py-8">
+    <div className="relative w-full flex flex-col items-center justify-center bg-gradient-to-r from-[#29266E] to-[#000000] md:bg-white overflow-hidden select-none px-4 py-8">
       {/* Carousel Cards */}
       <motion.div
-        className="relative w-full max-w-[900px] h-[320px] sm:h-[400px] flex items-center justify-center cursor-grab"
+        className="relative w-full max-w-[900px] h-[220px] sm:h-[400px] flex items-center justify-center cursor-grab"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         onDragEnd={handleDragEnd}
