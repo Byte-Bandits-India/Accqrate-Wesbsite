@@ -211,7 +211,7 @@ const Pos: React.FC = () => {
                   <span className="hidden lg:inline"> {feature.subtext} </span>
                   <span className="lg:hidden"> {/* Alternative content for mobile if needed */}</span>
                 </h1>
-                <p className="text-left text-fluid-body tracking-para mt-[16px] lg:hidden">{feature.subtext}</p>
+                <p className="text-left text-fluid-small tracking-para mt-[16px] lg:hidden">{feature.subtext}</p>
               </div>
 
 

@@ -83,12 +83,12 @@ export default function Accqrate(): JSX.Element {
             <section
                 className={`w-full px-24px md:px-[32px] flex flex-col items-center text-[#333333]`}
             >
-                <h2 className="text-center text-fluid-h1 leading-tight tracking-heading font-medium   mt-82px">
-                     <img src="/images/head.png" alt="Accqrate CRM" className="inline-block mb-2 lg:mb-5 mr-2 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> 
+                <h2 className="text-center text-fluid-h1 leading-tight tracking-heading font-medium mt-82px">
+                    <img src="/images/head.png" alt="Accqrate CRM" className="inline-block mb-2 lg:mb-5 mr-2 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" />
                     <span className="text-[#7B1FA2] ">CRM</span>
                 </h2>
 
-                <p className="text-center max-w-[300px] sm:max-w-[900px] text-fluid-h3  leading-tight tracking-para font-medium mt-32px">
+                <p className="text-center max-w-[300px] sm:max-w-[900px] text-fluid-h3 leading-tight tracking-para font-medium mt-32px md:mt-[54px] ">
                     Turn{" "}
                     <span className="text-[#7B1FA2]">
                         Every Lead
@@ -96,14 +96,14 @@ export default function Accqrate(): JSX.Element {
                     into a <br className="md:hidden" /> Customer Effortlessly
                 </p>
 
-                <p className="text-center text-fluid-small md:text-fluid-body tracking-para leading-tight font-medium mt-32px">
+                <p className="text-center text-fluid-small md:text-fluid-body tracking-para leading-tight font-medium mt-6">
                     Empower Your Sales with Intelligent Lead <br /> Management & Conversion
                 </p>
 
-                <p className=" max-w-[700px] text-center text-fluid-small md:text-fluid-body tracking-para font-normal text-gray-400 mt-16px md:mt-[20px]">
-                    Accqrate CRM is not just a tool; it’s the heart of your <br className="md:hidden" /> sales engine.
-                    Powered by automation and real-time <br className="md:hidden" /> analytics, Accqrate CRM transforms
-                    your sales process <br className="md:hidden" /> making it smarter, faster, and more predictable.
+                <p className=" max-w-[700px] text-center text-fluid-small tracking-para font-normal text-gray-400 mt-16px md:mt-6">
+                    Accqrate CRM is not just a tool; it’s the heart of your sales engine.
+                    Powered by <br className="hidden md:block" /> automation and real-time analytics, Accqrate CRM transforms
+                    your sales process <br className="hidden md:block" /> making it smarter, faster, and more predictable.
                 </p>
 
                 <div className="flex justify-center">
@@ -157,7 +157,7 @@ export default function Accqrate(): JSX.Element {
                                 E-Invoicing Compliance
                             </span>
                         </h2>
-                        <p className=" mx-auto mt-32px text-[16px] md:text-fluid-h3 sm:text-base tracking-para font-normal">
+                        <p className=" mx-auto mt-6 text-[16px] md:text-fluid-h3 sm:text-base tracking-para font-normal">
                             <span className="font-semibold">100% ZATCA</span> phase 2
                             compliance: Issue e-invoice receipts with <br className="hidden md:block" /> every sale, no extra
                             fees

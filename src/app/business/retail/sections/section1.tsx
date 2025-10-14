@@ -97,7 +97,7 @@ export default function Transform(): JSX.Element {
 
   return (
     <>
-        <FadeUp className="md:max-w-5xl mx-auto text-[#333333]">
+      <FadeUp className="md:max-w-5xl mx-auto text-[#333333]">
         <h1
           className="text-center text-fluid-h2 tracking-heading leading-tight font-medium mt-48px md:mt-[56px] px-24px md:px-[32px]"
         >
@@ -131,7 +131,7 @@ export default function Transform(): JSX.Element {
           className="bg-[#F2F2F2] rounded-lg mx-auto px-6 sm:px-6 md:p-10 text-[#333333] h-[102px] sm:h-[110px] md:h-[129px] lg:h-[182px] flex flex-col items-center justify-center mt-6 md:mt-[32px] lg:mt-[40px]"
         >
           <div className="w-full">
-            <div className="mx-auto text-center md:max-w-4xl">
+            <div className="mx-auto text-left md:max-w-4xl">
               <p className="font-normal leading-snug text-fluid-small tracking-para md:text-fluid-body  mb-5"
               >
                 “We set up 5 new outlets in under an hour no IT team needed.”

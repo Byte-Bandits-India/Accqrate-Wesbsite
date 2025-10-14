@@ -122,14 +122,14 @@ export default function Tools(): JSX.Element {
 
   return (
     <>
-        <section
+      <section
         id="toolsSection"
         className="bg-white mt-48px md:mt-[64px] px-24px md:px-[32px] max-w-[1200px] mx-auto text-[#333333]"
       >
         <FadeUp>
           <h2 className="text-center text-fluid-h2 font-medium tracking-heading mb-[24px]"
           >
-            Robust Control & <span className="text-[#C2185B] font-medium">Compliance <br className="md:hidden" /> Tools</span>
+            Robust Control & <span className="text-[#C2185B] font-medium">Compliance Tools</span>
           </h2>
           <p className="text-center text-[#000000B2] tracking-para text-fluid-small max-w-lg mb-[24px] md:mb-[48px] leading-tight mx-auto"
           >

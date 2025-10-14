@@ -79,14 +79,13 @@ const Accqrate: React.FC = (): JSX.Element => {
 
   return (
     <>
-       {/* Accqrate Section */}
+      {/* Accqrate Section */}
       <section
         className={`w-full px-24px md:px-[32px] flex flex-col items-center text-[#333333]`}
       >
-        <h2 className="text-center text-fluid-h1 leading-tight tracking-heading font-semibold mt-82px">
-            <img src="/images/head.png" alt="Accqrate Retail" className="inline-block mb-2 mr-6 lg:mb-5 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> 
-          <span className="text-[#C2185B] ">Retail</span>
-        </h2>
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] tracking-heading mt-[82px]">
+          <img src="/images/head.png" alt="Accqrate Retail" className="inline-block mb-2 lg:mb-5  w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> <span className="font-bold text-[#C2185B]">Retail</span>
+        </h1>
 
         <p className="text-center text-fluid-h3 leading-tight tracking-para font-medium mt-32px md:mt-[40px]">
           Your Modern{" "}
@@ -98,14 +97,14 @@ const Accqrate: React.FC = (): JSX.Element => {
         </p>
 
         <p
-          className="text-center text-[14px] md:text-[18px] lg:text-[20px] font-medium tracking-para leading-tight md:font-semibold mt-32px md:mt-[40px]"
+          className="text-center text-fluid-small md:text-[18px] lg:text-[20px] font-medium tracking-para leading-tight md:font-semibold mt-6"
           style={{ WebkitLineClamp: 2 }}
         >
-          All-in-one retail management, designed for<br className="block lg:hidden" /> speed and flexibility
+          All-in-one retail management, designed for <br className="hidden md:block" /> speed and flexibility
         </p>
 
         <p className="max-w-[700px] text-center text-fluid-small tracking-para font-normal text-[#737373] mt-[16px] md:mt-[24px]">
-          Launch your store in minutes, manage everything in one place  <br className="hidden md:block" /> from
+          Launch your store in minutes, manage everything in one place <br className="hidden md:block" /> from
           sales to stock, from any device
         </p>
 

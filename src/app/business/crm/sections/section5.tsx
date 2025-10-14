@@ -154,10 +154,10 @@ export default function Choose(): JSX.Element {
                         <p className="text-black font-light text-fluid-h3 leading-tight lg:hidden">
                             <span className="font-semibold tracking-para">Compliance by design:</span>
                         </p>
-                        <p className="text-fluid-caption tracking-para mt-6 lg:hidden">
+                        <p className="text-fluid-small tracking-para mt-6 lg:hidden">
                             Stay ready for every regulation no last-minute changes.
                         </p>
-                        <ol className="md:pl-4 md:pr-20 font-light tracking--2 mb-8 space-y-4 text-fluid-caption mt-3">
+                        <ol className="md:pl-4 md:pr-20 font-light tracking-para mb-8 space-y-4 text-fluid-small mt-3">
                             <li>1. Device & vendor freedom: Use any hardware, any printer, no lock-in.</li>
                             <li>2. Future-proof scaling: Grow from single store POS to a full ERP suite, no re-implementation.</li>
                             <li>3. Total control: See your data, operations, and compliance in real time.</li>

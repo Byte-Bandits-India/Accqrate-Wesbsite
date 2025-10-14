@@ -121,9 +121,9 @@ const Tools: FC = () => {
           max-w-lg leading-tight mx-auto mb-[24px] md:mb-[32px] lg:mb-[40px] 
           md:max-w-[600px] lg:max-w-[800px]"
                 >
-                    With Accqrate CRM, you gain real-time insights into <br className="md:hidden" /> your sales
-                    pipeline and lead conversion metrics, <br className="md:hidden" /> allowing you to make informed
-                    decisions and optimize <br className="md:hidden" /> your strategy quickly.
+                    With Accqrate CRM, you gain real-time insights into your sales
+                    pipeline and lead conversion metrics, allowing you to make informed
+                    decisions and optimize your strategy quickly.
                 </p>
             </FadeUp>
 
@@ -133,10 +133,15 @@ const Tools: FC = () => {
                     className="flex flex-col lg:flex-row lg:items-start gap-[24px] mt-[30px] md:mt-[40px] lg:mt-[56px] tracking--5"
                 >
                     <FadeUp className="flex-1">
-                        <h3 className="text-[#7B1FA2] font-light tracking-heading text-fluid-h3">
+                        <p className="hidden md:block text-left leading-snug text-fluid-h3 text-[#7B1FA2] font-light max-w-lg">
+                            {section.title} {section.text}
+                        </p>
+                        <p className="md:hidden text-left tracking-heading leading-snug text-fluid-h3 text-[#7B1FA2] font-light">
+                            {section.title} <br />
+                        </p>
+                        <p className="text-[#333333] lg:hidden text-left mt-[16px] tracking-para text-fluid-small">
                             {section.title}
-                        </h3>
-                        <p className="text-fluid-body leading-tight tracking-para mt-[16px]">{section.text}</p>
+                        </p>
                     </FadeUp>
                     <FadeUp className="flex-1 flex justify-center">
                         <video

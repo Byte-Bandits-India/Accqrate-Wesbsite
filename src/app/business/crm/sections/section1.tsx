@@ -108,7 +108,7 @@ const Smart: FC = () => {
     return (
         <>
             <FadeUp className="w-full max-w-[1280px] mx-auto text-[#333333]">
-                <h2 className="text-center text-fluid-h2 leading-tight tracking-heading mb-6 font-semibold mt-[53px] md:mt-14 px-6 md:px-8"
+                <h2 className="text-center text-fluid-h2 leading-tight tracking-heading mb-6 font-semibold mt-[53px] px-6 md:px-8"
                 >
                     A Smart, Scalable Solution <br className="md:hidden" /> for <span className="text-[#7B1FA2]"> Every Sales Team </span>
                 </h2>
@@ -142,7 +142,7 @@ const Smart: FC = () => {
                     className="flex items-center justify-center"
                 >
                     {/* Testimonial Section */}
-                    <FadeUp className="mt-6">
+                    <FadeUp>
                         <div
                             className="bg-gradient-to-r from-[#E6E6E6] to-[#C8C8C8] rounded-lg mx-auto
               p-6 sm:p-6 md:max-w-[1062px]

@@ -119,7 +119,7 @@ export default function Capture(): JSX.Element {
             {/* Pos Section */}
             <section
                 id="posSection"
-                className=" px-24px md:px-[32px] rounded-xl  mt-48px md:mt-[56px] lg:mt-[80px] text-[#333333]"
+                className=" px-24px md:px-[32px] rounded-xl mt-[53px] lg:mt-[80px] text-[#333333]"
             >
                 <FadeUp>
                     <h1 className="text-center text-fluid-h2 leading-tight max-w-[340px] sm:max-w-[800px] mx-auto tracking-heading font-medium  mt-48px px-24px"
@@ -129,10 +129,7 @@ export default function Capture(): JSX.Element {
 
                     <p className="text-center text-gray-500 text-fluid-small md:max-w-[1062px] mx-auto mt-6 font-light tracking-para"
                     >
-                        Accqrate CRM ensures you never lose a lead again. <br className="md:hidden" /> From the moment they
-                        enter your system to the <br className="md:hidden" /> moment they convert, Accqrate CRM tracks and <br className="md:hidden" />
-                        nurtures leads seamlessly, so your team can focus on <br className="md:hidden" /> closing sales
-                        rather than tracking down prospects.
+                        Accqrate CRM ensures you never lose a lead again. From the moment they enter your system to the moment they convert, Accqrate CRM tracks and nurtures leads seamlessly, so your team can focus on closing sales rather than tracking down prospects.
                     </p>
                 </FadeUp>
 
@@ -195,7 +192,7 @@ export default function Capture(): JSX.Element {
             {/* Erp Section */}
             <section
                 id="erpSection"
-                className="px-24px md:px-[32px] max-w-[1200px] mx-auto text-center mt-48px md:mt-[56px] text-[#333333] lg:mt-[80px]"
+                className="px-24px md:px-[32px] max-w-[1200px] mx-auto text-center mt-[53px] text-[#333333] lg:mt-[80px]"
             >
                 <div
                 >
@@ -239,7 +236,7 @@ export default function Capture(): JSX.Element {
                                 <p className="md:hidden text-left tracking-heading leading-snug text-fluid-h3 text-[#7B1FA2] font-light">
                                     {feature.text} <br />
                                 </p>
-                                <p className="text-gray-700 text-left mt-[16px] tracking-para text-fluid-body">
+                                <p className="text-[#333333] lg:hidden text-left mt-[16px] tracking-para text-fluid-small">
                                     {feature.desc}
                                 </p>
                             </FadeUp>
