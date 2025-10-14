@@ -84,7 +84,7 @@ export default function Accqrate(): JSX.Element {
                 className={`w-full px-24px md:px-[32px] flex flex-col items-center text-[#333333]`}
             >
                 <h2 className="text-center text-fluid-h1 leading-tight tracking-heading font-medium   mt-82px">
-                      <img src="/images/head.png" alt="Accqrate Books" className="inline-block mb-2 mr-2 w-[140px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[250px] lg:h-[60px]" />
+                     <img src="/images/head.png" alt="Accqrate CRM" className="inline-block mb-2 lg:mb-5 mr-2 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> 
                     <span className="text-[#7B1FA2] ">CRM</span>
                 </h2>
 
