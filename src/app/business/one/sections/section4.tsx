@@ -122,14 +122,14 @@ export default function Section4(): JSX.Element {
         <div className="my-12 mx-auto font-inter md:max-w-6xl ">
           {/* Heading */}
           <FadeUp className="text-center mb-6 md:mb-4 md:flex md:justify-center">
-            <h2 className="text-fluid-h2 font-normal text-[#808080] tracking-heading leading-tight">
-              Support, Training, & <br className="md:hidden" />
-              <span className="font-medium text-black"> Onboarding</span>
+            <h2 className="text-fluid-h2 font-semibold bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent tracking-heading leading-tight">
+              Support, Training, & 
+              <span className="font-semibold"> Onboarding</span>
             </h2>
           </FadeUp>
 
           <FadeUp>
-            <p className="text-fluid-small lg:text-[16px] mb-6 md:mb-[32px] text-center leading-relaxed">
+            <p className="text-fluid-small lg:text-[16px] mb-6 md:mb-[32px] text-center leading-snug">
               Expert onboarding for ZATCA compliance software— get your team ready for
               e-invoicing in KSA, fast.
             </p>
@@ -140,7 +140,7 @@ export default function Section4(): JSX.Element {
             {/* Box 1 - On Demand Training */}
             <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
-                className="absolute inset-0 bg-black rounded-xl p-[2.5px]"
+                className="absolute inset-0 bg-[#29266E] rounded-xl p-[2.5px]"
                 style={{
                   clipPath:
                     "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
@@ -190,7 +190,7 @@ export default function Section4(): JSX.Element {
               {/* Arrow Layer */}
               <div className="pointer-events-none absolute inset-0 z-20">
                 <div
-                  className="absolute inset-0 bg-black rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-[#194BED] to-[#29266E] rounded-lg"
                   style={{
                     clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
                   }}
@@ -205,7 +205,7 @@ export default function Section4(): JSX.Element {
             {/* Box 2 - Local Support */}
             <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
-                className="absolute inset-0 bg-black rounded-xl p-[2.5px]"
+                className="absolute inset-0 bg-[#29266E] rounded-xl p-[2.5px]"
                 style={{
                   clipPath:
                     "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
@@ -244,7 +244,7 @@ export default function Section4(): JSX.Element {
 
               <div className="pointer-events-none absolute inset-0 z-20">
                 <div
-                  className="absolute inset-0 bg-black rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-[#194BED] to-[#29266E] rounded-lg"
                   style={{
                     clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
                   }}
@@ -258,7 +258,7 @@ export default function Section4(): JSX.Element {
             {/* Box 3 - Knowledge Center */}
             <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
-                className="absolute inset-0 bg-black rounded-xl p-[2.5px]"
+                className="absolute inset-0 bg-[#29266E] rounded-xl p-[2.5px]"
                 style={{
                   clipPath:
                     "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
@@ -308,7 +308,7 @@ export default function Section4(): JSX.Element {
               {/* Overlay arrow */}
               <div className="pointer-events-none absolute inset-0 z-20">
                 <div
-                  className="absolute inset-0 bg-black rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-[#194BED] to-[#29266E] rounded-lg"
                   style={{
                     clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
                   }}
@@ -321,7 +321,7 @@ export default function Section4(): JSX.Element {
 
             <FadeUp className="relative w-full max-w-[354px] md:max-w-none h-[370px] lg:h-[400px] mx-auto">
               <div
-                className="absolute inset-0 bg-black rounded-xl p-[2.5px]"
+                className="absolute inset-0 bg-[#29266E] rounded-xl p-[2.5px]"
                 style={{
                   clipPath:
                     "polygon(0% 0%, 100% 0%, 100% 90%, 66% 90%, 52% 100%, 100% 100%, 0% 100%)",
@@ -371,7 +371,7 @@ export default function Section4(): JSX.Element {
               {/* Overlay arrow */}
               <div className="pointer-events-none absolute inset-0 z-20">
                 <div
-                  className="absolute inset-0 bg-black rounded-lg"
+                  className="absolute inset-0 bg-gradient-to-r from-[#194BED] to-[#29266E] rounded-lg"
                   style={{
                     clipPath: "polygon(100% 100%, 54% 100%, 67% 91%, 100% 91%)",
                   }}
@@ -391,7 +391,7 @@ export default function Section4(): JSX.Element {
       >
         <FadeUp>
           <h2 className="font-normal text-[#333333] text-fluid-h2  tracking-para leading-tight mb-10">
-            Ready to modernize your <span className="text-black font-semibold">Enterprise?</span>
+            Ready to modernize your <span className="bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent font-semibold">Enterprise?</span>
           </h2>
         </FadeUp>
         <FadeUp
@@ -401,7 +401,7 @@ export default function Section4(): JSX.Element {
           {buttons.map((label: string, idx: number) => (
             <button
               key={idx}
-              className="bg-black text-fluid-small text-white font-medium rounded-[5px] md:rounded-lg px-6 py-4 w-[260px] md:w-[300px] mx-auto text-center "
+              className="bg-gradient-to-r from-[#194BED] to-[#29266E] text-fluid-small text-white font-medium rounded-[5px] md:rounded-lg px-6 py-4 w-[260px] md:w-[300px] mx-auto text-center "
             >
               {label}
             </button>
