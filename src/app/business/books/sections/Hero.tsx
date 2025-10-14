@@ -141,8 +141,8 @@ export default function Hero(): JSX.Element {
     >
        <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
         {/* Headings */}
-        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px] tracking-heading md:mb-[40px] lg:mb-[60px]">
-          <img src="/images/head.png" alt="Accqrate Books" className="inline-block mb-2 w-[140px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[250px] lg:h-[60px]" /> <span className="text-[#1976D2]">Books</span>
+        <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px] tracking-heading md:mb-[40px] ">
+         <img src="/images/head.png" alt="Accqrate Books" className="inline-block mb-2 lg:mb-5  w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> <span className="font-bold text-[#1976D2]">Books</span>
         </h1>
         <div className="max-w-[354px] sm:max-w-[1000px] mx-auto">
           <h2 className="text-fluid-h3 font-medium text-[#333333] tracking-para mb-[24px]">
