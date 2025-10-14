@@ -17,6 +17,7 @@ import {
 } from "./ui/navigation-menu";
 import { IoChevronDown } from "react-icons/io5";
 import { useRouter, usePathname } from "next/navigation";
+import { FaArrowRight } from "react-icons/fa6";
 
 
 // ===================== Type Definitions =====================
@@ -662,16 +663,16 @@ const Header: React.FC = () => {
                 />
                 <Link
                   href="/request-demo"
-                  className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#F05A28]"
+                  className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
                 >
                   Contact Sales
                 </Link>
                 <Link
                   href="/request-demo"
-                  className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-[#F05A28]"
+                  className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
                 >
                   Book a Demo
-                  <Arrow45 />
+                  <span className="inline-block  mt-0.5"><FaArrowRight/></span>
                 </Link>
               </div>
 
@@ -754,14 +755,14 @@ const Header: React.FC = () => {
               <div className="mt-10 flex gap-4">
                 <Link
                   href="/contact-sales"
-                  className="block w-full text-center text-[#F05A28] border border-[#F05A28] py-3 rounded-full text-sm font-bold"
+                  className="block w-full text-center text-[#F05A28] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent py-3 rounded-full text-sm font-bold"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact Sales
                 </Link>
                 <Link
                   href="/book-demo"
-                  className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-[#F05A28]"
+                  className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book a Demo
