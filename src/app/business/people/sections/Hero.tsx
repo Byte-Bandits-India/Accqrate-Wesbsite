@@ -78,28 +78,28 @@ export default function Hero(): JSX.Element {
         >
             <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]">
                 {/* Headings */}
-                <h1 className="tracking-heading text-fluid-h1 font-medium text-[#333333] mb-[24px]">
+                <h1 className="tracking-heading text-fluid-h1 font-medium text-[#333333] mb-[24px] lg:mb-[40px]">
                     <img src="/images/head.png" alt="Accqrate People" className="inline-block mb-2 lg:mb-5 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" />  <span className="text-[#43A047]">People</span>
                 </h1>
-                <div className=" max-w-[340px] md:max-w-[800px] mx-auto">
-                    <h2 className="text-fluid-h3 tracking-heading  font-light text-[#333333] mb-[24px]">
+                <div className=" max-w-[353px] md:max-w-[1280px] mx-auto">
+                    <h2 className="text-fluid-h3 tracking-heading  font-normal text-[#333333] mb-[24px] lg:mb-[40px]">
                         The Only{" "}
                         <span className="text-[#43A047] font-medium md:font-medium ">
                             HR & Payroll Solution
                         </span>{" "}
                         You'll Ever Need
                     </h2>
-                    <p className="text-fluid-small md:text-[18px] lg:text-[20px] mx-auto sm:max-w-[900px] tracking-tight font-medium mb-[16px] md:mb-[24px] text-[#333333]">
+                    <p className="text-fluid-small md:text-fluid-h3 mx-auto sm:max-w-[900px] tracking-tight font-medium mb-[16px] md:mb-[24px] text-[#333333] max-w-[259px]">
                         Effortlessly Manage Your Workforce,
-                        <br className="block" />
-                        Payroll, and Compliance
+                        <br className="block md:hidden" />
+                        Payroll,<br className="hidden md:block" />  and Compliance
                     </p>
 
                     {/* Supporting text */}
                     <p className="text-[#737373] text-fluid-small">
                         Whether you're scaling, managing a growing team, or optimizing HR
-                        operations, Accqrate People is built to simplify every aspect of HR
-                        from recruitment to retirement on a single, secure platform.
+                        operations, <br className="hidden md:block" /> Accqrate People is built to simplify every aspect of HR
+                        from recruitment to <br className="hidden md:block" /> retirement on a single, secure platform.
                     </p>
                 </div>
 

@@ -81,13 +81,13 @@ const Accqrate: React.FC = (): JSX.Element => {
     <>
       {/* Accqrate Section */}
       <section
-        className={`w-full px-24px md:px-[32px] flex flex-col items-center text-[#333333]`}
+        className={`px-24px md:px-[32px] flex flex-col items-center text-[#333333] w-full mx-auto`}
       >
         <h1 className="text-fluid-h1 font-semibold text-[#333333] tracking-heading mt-[82px]">
           <img src="/images/head.png" alt="Accqrate Retail" className="inline-block mb-2 lg:mb-5  w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> <span className="font-bold text-[#C2185B]">Retail</span>
         </h1>
 
-        <p className="text-center text-fluid-h3 leading-tight tracking-para font-medium mt-32px md:mt-[40px]">
+        <p className="text-center text-fluid-h3 leading-tight tracking-para font-medium mt-32px md:mt-[40px] w-full max-w-[353px] mx-auto  md:max-w-[1280px]">
           Your Modern{" "}
           <span className="text-[#C2185C] font-medium">
             ZATCA Compliant
@@ -97,13 +97,13 @@ const Accqrate: React.FC = (): JSX.Element => {
         </p>
 
         <p
-          className="text-center text-fluid-small md:text-[18px] lg:text-[20px] font-medium tracking-para leading-tight md:font-semibold mt-6"
+          className="text-center text-fluid-small md:text-[18px] lg:text-[20px] font-medium tracking-para leading-tight md:font-semibold mt-6 md:mt-[40px] max-w-[291px] mx-auto md:max-w-[1280px]"
           style={{ WebkitLineClamp: 2 }}
         >
           All-in-one retail management, designed for <br className="hidden md:block" /> speed and flexibility
         </p>
 
-        <p className="max-w-[700px] text-center text-fluid-small tracking-para font-normal text-[#737373] mt-[16px] md:mt-[24px]">
+        <p className="text-center text-fluid-small tracking-para font-normal text-[#737373] mt-[16px] md:mt-[24px] max-w-[354px] mx-auto md:max-w-[1280px] ">
           Launch your store in minutes, manage everything in one place <br className="hidden md:block" /> from
           sales to stock, from any device
         </p>

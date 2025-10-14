@@ -141,11 +141,11 @@ export default function Hero(): JSX.Element {
         >
             <div className="w-full max-w-[1280px] mx-auto mt-[82px] md:mt-[90px] mb-[40px]  px-6 md:px-[32px]">
                 {/* Headings */}
-                <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px] tracking-heading ">
+                <h1 className="text-fluid-h1 font-semibold text-[#333333] mb-[24px] md:mb-[40px] tracking-heading ">
                     <img src="/images/head.png" alt="Accqrate Factory" className="inline-block mb-2 lg:mb-5 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" />  <span className="text-[#F57C00]">Factory</span>
                 </h1>
-                <div className="max-w-[1000px] mx-auto">
-                    <h2 className="text-fluid-body font-medium text-[#333333] mb-[24px] tracking-para">
+                <div className="max-w-[353px] md:max-w-[1280px] mx-auto">
+                    <h2 className="text-fluid-h3 tracking-heading font-normal text-[#333333] mb-[24px] lg:mb-[40px]">
                         The All-in-One Manufacturing ERP, <br className="md:hidden" />
                         <span className="font-semibold md:font-medium text-[#F57C00]">ZATCA-Ready</span>{" "}
                     </h2>
