@@ -84,7 +84,7 @@ const Accqrate: React.FC = (): JSX.Element => {
         className={`w-full px-24px md:px-[32px] flex flex-col items-center text-[#333333]`}
       >
         <h2 className="text-center text-fluid-h1 leading-tight tracking-heading font-semibold mt-82px">
-           <img src="/images/head.png" alt="Accqrate Books" className="inline-block mb-2 w-[140px] h-[35px] md:w-[180px] md:h-[45px] mr-2 lg:w-[250px] lg:h-[60px]" />
+            <img src="/images/head.png" alt="Accqrate Retail" className="inline-block mb-2 mr-6 lg:mb-5 w-[160px] h-[35px] md:w-[180px] md:h-[45px] lg:w-[370px] lg:h-[80px]" /> 
           <span className="text-[#C2185B] ">Retail</span>
         </h2>
 
