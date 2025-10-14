@@ -96,11 +96,11 @@ export default function Accqrate(): JSX.Element {
                     into a <br className="md:hidden" /> Customer Effortlessly
                 </p>
 
-                <p className="text-center text-fluid-small md:text-fluid-body tracking-para leading-tight font-medium mt-6 lg:mt-[40px] max-w-[353px] mx-auto md:max-w-[1280px] ">
+                <p className="text-center text-fluid-small md:text-fluid-body tracking-para leading-tight font-medium mt-6 lg:mt-[40px] max-w-[343px] mx-auto md:max-w-[1280px] ">
                     Empower Your Sales with Intelligent Lead  Management & Conversion
                 </p>
 
-                <p className="text-center text-fluid-small tracking-para font-normal text-gray-400 mt-16px md:mt-6 max-w-[353px] mx-auto md:max-w-[1280px]">
+                <p className="text-center text-fluid-small tracking-para font-normal leading-tight text-[#333333] mt-16px md:mt-6 max-w-[353px] mx-auto md:max-w-[1280px]">
                     Accqrate CRM is not just a tool; it’s the heart of your sales engine.
                     Powered by <br className="hidden md:block" /> automation and real-time analytics, Accqrate CRM transforms
                     your sales process <br className="hidden md:block" /> making it smarter, faster, and more predictable.
