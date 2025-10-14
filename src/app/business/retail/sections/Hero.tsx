@@ -100,7 +100,7 @@ const Accqrate: React.FC = (): JSX.Element => {
           className="text-center text-fluid-small md:text-[18px] lg:text-[20px] font-medium tracking-para leading-tight md:font-semibold mt-6 md:mt-[40px] max-w-[291px] mx-auto md:max-w-[1280px]"
           style={{ WebkitLineClamp: 2 }}
         >
-          All-in-one retail management, designed for <br className="hidden md:block" /> speed and flexibility
+          All-in-one retail management, designed for speed and flexibility
         </p>
 
         <p className="text-center text-fluid-small tracking-para font-normal text-[#737373] mt-[16px] md:mt-[24px] max-w-[354px] mx-auto md:max-w-[1280px] ">
@@ -184,3 +184,4 @@ const Accqrate: React.FC = (): JSX.Element => {
 };
 
 export default Accqrate;
+
