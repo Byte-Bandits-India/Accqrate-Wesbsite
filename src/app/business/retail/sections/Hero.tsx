@@ -103,7 +103,7 @@ const Accqrate: React.FC = (): JSX.Element => {
           All-in-one retail management, designed for speed and flexibility
         </p>
 
-        <p className="text-center text-fluid-small tracking-para font-normal text-[#737373] mt-[16px] md:mt-[24px] max-w-[354px] mx-auto md:max-w-[1280px] ">
+        <p className="text-center text-fluid-small tracking-para font-normal leading-tight text-[#737373] mt-[16px] md:mt-[24px] max-w-[354px] mx-auto md:max-w-[1280px] ">
           Launch your store in minutes, manage everything in one place <br className="hidden md:block" /> from
           sales to stock, from any device
         </p>
@@ -184,4 +184,5 @@ const Accqrate: React.FC = (): JSX.Element => {
 };
 
 export default Accqrate;
+
 
