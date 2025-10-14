@@ -126,7 +126,7 @@ export default function Section2(): JSX.Element {
                     {/* Heading */}
                     <FadeUp>
                         <h2 className="text-fluid-h2 font-inter text-[#808080] leading-tight tracking-heading text-center mb-6">
-                            <span className="text-black font-semibold">Intuitive Design</span> for Seamless Adoption
+                            <span className="bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent font-semibold">Intuitive Design</span> for Seamless Adoption
                         </h2>
 
                         {/* Shared description */}
@@ -141,7 +141,7 @@ export default function Section2(): JSX.Element {
 
                     </div>
                     <FadeUp className="flex justify-center mb-10 max-w-[300px] md:max-w-[800px] mx-auto">
-                        <button className="bg-black text-white w-full md:w-[400px] py-3 rounded-full text-fluid-body font-medium ">
+                        <button className="bg-gradient-to-r from-[#194BED] to-[#29266E] text-white w-full md:w-[400px] py-3 rounded-full text-fluid-body font-medium ">
                             Start Free Trial
                         </button>
                     </FadeUp>
@@ -149,7 +149,7 @@ export default function Section2(): JSX.Element {
 
                     <FadeUp>
                         <h2 className="text-fluid-h2 font-inter leading-tight tracking-heading text-[#808080] text-center mb-6">
-                            Your <span className="text-black font-semibold">Data,</span> Our <span className="text-black font-semibold">Priority</span>
+                            Your <span className="bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent font-semibold">Data,</span> Our <span className="bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent font-semibold">Priority</span>
 
                         </h2>
 
@@ -187,7 +187,7 @@ export default function Section2(): JSX.Element {
                     </div>
 
                     <FadeUp className="flex justify-center mb-10  md:max-w-[800px] mx-auto">
-                        <button className="bg-black text-white w-full md:px-40 py-3 rounded-full text-fluid-body tracking-para font-medium ">
+                        <button className="bg-gradient-to-r from-[#194BED] to-[#29266E] text-white w-full md:px-40 py-3 rounded-full text-fluid-body tracking-para font-medium ">
                             Learn About Our Security Features
                         </button>
                     </FadeUp>
