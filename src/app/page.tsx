@@ -73,7 +73,7 @@ export default function Page() {
                 </h2>
               </div>
 
-              <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-3 md:gap-4 mt-6 lg:mt-10">
+              <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-3 md:gap-4 my-6 md:my-8 lg:mt-10">
                 {["Book a Demo", "Get a 30 Day Trial", "Talk to Us"].map((text, i) => (
                   <button
                     key={i}
