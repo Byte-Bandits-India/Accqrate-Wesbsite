@@ -672,7 +672,7 @@ const Header: React.FC = () => {
                   className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
                 >
                   Book a Demo
-                  <span className="inline-block  mt-0.5"><FaArrowRight/></span>
+                  <span className="inline-block  mt-0.5"><FaArrowRight /></span>
                 </Link>
               </div>
 
@@ -702,7 +702,7 @@ const Header: React.FC = () => {
           </div>
 
           {isMobileMenuOpen && (
-            <div className="xl:hidden fixed top-[70px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
+            <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
               <Accordion type="single" collapsible className="w-full">
                 {menus.map(({ id, title, sections }) => (
                   <AccordionItem key={id} value={id}>
