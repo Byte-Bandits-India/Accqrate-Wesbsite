@@ -48,7 +48,7 @@ export default function Page() {
 
   return (
     <main className="overflow-x-hidden font-inter">
-      <div className="min-h-screen md:min-h-[700px] bg-[url('/images/sunset.png')] bg-center bg-cover bg-no-repeat">
+      <div className="min-h-screen xl:min-h-fit bg-[url('/images/sunset.png')] bg-cover bg-no-repeat bg-fixed bg-center md:bg-fixed lg:bg-local">
         <div className="max-w-[1440px] mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
 
@@ -113,34 +113,35 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Mobile Featured Solutions */}
-      <div className="lg:hidden bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-8 py-8 flex flex-col gap-4">
-          {cards.map((card) => (
-            <InfoCard key={card.title} {...card} />
-          ))}
+          {/* Mobile Featured Solutions */}
+          <div className="lg:hidden">
+            <div className="max-w-[1440px] mx-auto py-8 flex flex-col gap-4">
+              <h1 className="text-fluid-body font-medium">Featured Solutions:</h1>
+              {cards.map((card) => (
+                <InfoCard key={card.title} {...card} />
+              ))}
 
-          <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
-            <h3 className="text-[14px]">Explore All Products</h3>
-            <div className="flex-shrink-0 transform transition-transform duration-200 ml-6">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                className="text-[#333333]"
-              >
-                <path
-                  d="m9 6 6 6-6 6"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
+                <h3 className="text-[14px]">Explore All Products</h3>
+                <div className="flex-shrink-0 transform transition-transform duration-200 ml-6">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    className="text-[#333333]"
+                  >
+                    <path
+                      d="m9 6 6 6-6 6"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>

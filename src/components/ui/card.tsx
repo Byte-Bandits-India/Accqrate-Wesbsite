@@ -22,15 +22,15 @@ export default function InfoCard({ icon, title, description, color, link }: Info
                         <img
                             src={icon}
                             alt={title}
-                            className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
+                            className="w-8 h-8 md:w-[40px] md:h-[40px] object-contain"
                         />
                     </div>
 
                     <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
-                        <h3 className="text-lg sm:text-xl font-semibold text-gray-900 leading-tight break-words line-clamp-1">
+                        <h3 className="text-fluid-h3 lg:text-[24px] font-medium text-gray-900 leading-tight tracking-heading break-words line-clamp-1">
                             {title}
                         </h3>
-                        <p className="text-gray-700 text-sm sm:text-base leading-snug mt-1 break-words line-clamp-2">
+                        <p className="text-gray-700 text-fluid-body lg:text-[18px] leading-tight mt-1 break-words tracking-para line-clamp-2">
                             {description}
                         </p>
                     </div>
