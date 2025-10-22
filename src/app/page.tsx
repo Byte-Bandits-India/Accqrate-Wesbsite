@@ -77,7 +77,7 @@ export default function Page() {
                 {["Book a Demo", "Get a 30 Day Trial", "Talk to Us"].map((text, i) => (
                   <button
                     key={i}
-                    className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] to-[#C5E1FF] text-[#000000] text-fluid-body tracking-para font-medium rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
+                    className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] to-[#C5E1FF] text-[#000000] text-fluid-body lg:text-[18px] xl:text-[20px] tracking-para font-medium rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
                   >
                     {text}
                   </button>
