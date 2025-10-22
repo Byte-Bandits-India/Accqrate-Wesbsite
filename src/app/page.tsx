@@ -77,7 +77,7 @@ export default function Page() {
                 {["Book a Demo", "Get a 30 Day Trial", "Talk to Us"].map((text, i) => (
                   <button
                     key={i}
-                    className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] to-[#C5E1FF] text-[#004AAD] font-semibold rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
+                    className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] to-[#C5E1FF] text-[#000000] text-fluid-body tracking-para font-medium rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
                   >
                     {text}
                   </button>
@@ -91,9 +91,9 @@ export default function Page() {
               {cards.map((card) => (
                 <InfoCard key={card.title} {...card} />
               ))}
-              <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-between px-4 md:px-6 cursor-pointer">
+              <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
                 <h3 className="text-[14px]">Explore All Products</h3>
-                <div className="flex-shrink-0 ml-2">
+                <div className="flex-shrink-0 ml-6">
                   <svg
                     width="20"
                     height="20"
@@ -123,9 +123,9 @@ export default function Page() {
             <InfoCard key={card.title} {...card} />
           ))}
 
-          <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-between px-4 md:px-6 cursor-pointer">
+          <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
             <h3 className="text-[14px]">Explore All Products</h3>
-            <div className="flex-shrink-0 ml-2 transform transition-transform duration-200 rotate-90">
+            <div className="flex-shrink-0 transform transition-transform duration-200 ml-6">
               <svg
                 width="20"
                 height="20"

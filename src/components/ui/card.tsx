@@ -14,7 +14,7 @@ export default function InfoCard({ icon, title, description, color, link }: Info
     return (
         <Link href={link} className="w-full">
             <div
-                className="cursor-pointer flex items-center justify-between w-full h-[103px] mx-auto overflow-hidden rounded-2xl shadow-sm transition-all hover:shadow-md p-4 sm:p-5"
+                className="cursor-pointer flex items-center justify-between w-full h-[103px] mx-auto overflow-hidden rounded-2xl shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5"
                 style={{ background: color }}
             >
                 <div className="flex items-center gap-3 sm:gap-4 text-left w-full overflow-hidden">
