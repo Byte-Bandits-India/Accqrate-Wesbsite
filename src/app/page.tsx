@@ -48,7 +48,7 @@ export default function Page() {
 
   return (
     <main className="overflow-x-hidden font-inter">
-      <div className="min-h-screen xl:min-h-fit bg-[url('/images/sunset.png')] bg-cover bg-no-repeat bg-fixed bg-center md:bg-fixed lg:bg-local">
+      <div className="min-h-dvh xl:min-h-fit bg-[url('/images/sunset.png')] bg-cover bg-no-repeat bg-fixed bg-center md:bg-fixed lg:bg-local">
         <div className="max-w-[1440px] mx-auto px-6 md:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
 
