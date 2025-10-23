@@ -42,10 +42,10 @@ const Switch = React.forwardRef<
 
 
       {/* Labels */}
-      <div className="flex w-full px-4 z-10 relative">
+      <div className="flex w-full z-10 relative">
         <span
           className={cn(
-            "flex-1 text-center text-[14px] md:text-[16px] font-medium transition-colors duration-200",
+            "flex-1 text-center text-[14px] md:text-[16px] tracking-para leading-tight font-medium transition-colors duration-200",
             checked ? "text-white" : "text-black"
           )}
         >
@@ -53,7 +53,7 @@ const Switch = React.forwardRef<
         </span>
         <span
           className={cn(
-            "flex-1 text-center text-[14px] md:text-[16px] font-medium transition-colors duration-200",
+            "flex-1 text-center text-[14px] md:text-[16px] tracking-para leading-tight font-medium transition-colors duration-200",
             checked ? "text-black" : "text-white"
           )}
         >

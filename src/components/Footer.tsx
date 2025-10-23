@@ -150,10 +150,10 @@ export default function Footer(): JSX.Element {
           ))}
         </FadeUp>
 
-        <FadeUp className="border-t border-black/25 w-full mx-auto py-[14px] md:py-[24px] text-center text-xs text-gray-600 px-6">
+        <div className="border-t border-black/25 w-full mx-auto py-[14px] md:py-[24px] text-center text-xs text-gray-600 px-6">
           © Copyright 2021 - 2025{" "}
           <span className="text-[#194BED] text-sm leading-6 font-medium">Accqrate</span>, All rights reserved.
-        </FadeUp>
+        </div>
       </div>
     </footer>
   );
