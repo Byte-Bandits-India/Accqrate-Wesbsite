@@ -638,8 +638,8 @@ export default function Page() {
                   className="flex flex-col items-center lg:items-start text-center max-w-[242px] mx-auto md:max-w-[207px]"
                 >
                   <img className="mb-4" src={feature.img} alt={feature.title} />
-                  <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left">{feature.title}</h2>
-                  <p className="text-fluid-small md:text-left">{feature.description}</p>
+                  <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left tracking-heading leading-tight">{feature.title}</h2>
+                  <p className="text-fluid-small md:text-left tracking-para leading-tight">{feature.description}</p>
                 </div>
               ))}
             </div>
