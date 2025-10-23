@@ -55,10 +55,11 @@ const countries = [
     },
 ];
 
+// Option 1: Use the correct Next.js types
 interface CountryPageProps {
-    params: {
+    params: Promise<{
         countryCode: string;
-    };
+    }>;
 }
 
 export function generateStaticParams() {
@@ -67,8 +68,9 @@ export function generateStaticParams() {
     }));
 }
 
-export default function CountryHomePage({ params }: CountryPageProps) {
-    const { countryCode } = params;
+// Update the component to await params
+export default async function CountryHomePage({ params }: CountryPageProps) {
+    const { countryCode } = await params;
 
     // Validate country code
     const isValidCountry = countries.some(
@@ -82,8 +84,9 @@ export default function CountryHomePage({ params }: CountryPageProps) {
     return <CountryPage countryCode={countryCode.toUpperCase()} />;
 }
 
+// Update generateMetadata to also await params
 export async function generateMetadata({ params }: CountryPageProps) {
-    const { countryCode } = params;
+    const { countryCode } = await params;
     const country = countries.find(c => c.code.toLowerCase() === countryCode.toLowerCase());
 
     return {
