@@ -152,13 +152,11 @@ const Carousel: React.FC<CarouselProps> = ({
     if (!autoplay || items.length === 0) return;
 
     const interval = setInterval(() => {
-      if (!pauseOnHover || !isHovered) {
-        nextSlide();
-      }
+      nextSlide(); // always move to next slide regardless of hover
     }, autoplayDelay);
 
     return () => clearInterval(interval);
-  }, [autoplay, autoplayDelay, isHovered, pauseOnHover, items.length, loop]);
+  }, [autoplay, autoplayDelay, items.length, loop]);
 
   // Handle dot clicks
   const handleDotClick = (index: number) => {
@@ -293,8 +291,9 @@ export default function Page() {
   const features = [
     {
       img: "/images/landingpage/one.png",
-      title: "One platform. Zero silos.",
-      description: "All modules run on a single, integrated data model."
+      title: "One platform.",
+      description: "All modules run on a single, integrated data model.",
+      sub: " Zero silos. "
     },
     {
       img: "/images/landingpage/grade.png",
@@ -513,9 +512,7 @@ export default function Page() {
 
                 <div className="bg-white/50 rounded-[20px] p-6 md:p-8 flex flex-col justify-center text-center mt-6 lg:mt-10 max-w-full md:max-w-[700px] mx-auto md:mx-0">
                   <p className="text-black text-fluid-small tracking-para leading-tight text-left font-normal">
-                    Experience the future of ERP & E-Invoicing — integrated, intelligent, and incredibly scalable.
-                    From Sales to Accounting, Payroll to Procurement, manage your entire business seamlessly on one secure,
-                    cloud-based or on-premise platform.
+                    Experience the future of  ERP & E-Invoicing integrated, intelligent, and incredibly scalable. From Sales to Accounting, Payroll to Procurement, manage your entire business seamlessly on one secure, cloud-based or on-premise platform.
                   </p>
                   <h2 className="mt-6 md:mt-8 text-fluid-body lg:text-[24px] font-medium text-black hidden tracking-heading lg:block">
                     Simple · Powerful · Designed for Tomorrow.
@@ -635,10 +632,11 @@ export default function Page() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center lg:items-start text-center max-w-[242px] mx-auto md:max-w-[207px]"
+                  className="flex flex-col items-center lg:items-start text-center max-w-[242px] mx-auto "
                 >
                   <img className="mb-4" src={feature.img} alt={feature.title} />
-                  <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left tracking-heading leading-tight">{feature.title}</h2>
+                  <h2 className="text-fluid-h3 xl:text-[23px] font-medium md:text-left tracking-heading leading-tight">{feature.title}</h2>
+                  <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left tracking-heading leading-tight">{feature.sub}</h2>
                   <p className="text-fluid-small md:text-left tracking-para leading-tight">{feature.description}</p>
                 </div>
               ))}
@@ -716,12 +714,12 @@ export default function Page() {
               <div>
                 <div className="flex items-center space-x-4">
                   <img src="/images/landingpage/one-erp.png" alt="one" className="h-[40px] md:h-[50px] lg:h-[60px] xl:h-[100px]" />
-                  <span className="text-[#000000] tracking-heading text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap">
+                  <span className="text-[#000000] tracking-heading leading-tight text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] whitespace-nowrap">
                     Accqrate ONE <br />
                     The Full‑Suite ERP
                   </span>
                 </div>
-                <p className="pb-6 md:pb-[32px] tracking-para text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-tight mt-[30px]">
+                <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] mt-[30px]">
                   Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
                 </p>
                 <div className="w-full mt-6 md:mt-0">
@@ -756,7 +754,7 @@ export default function Page() {
 
               <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[505px] rounded-xl md:rounded-2xl p-6 md:p-8">
                 <h2 className="text-fluid-h3 lg:text-[24px] font-medium tracking-heading">What you’ll achieve:</h2>
-                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small tracking-para">
+                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small leading-tight tracking-para">
                   <li>Unified operations: Finance to factory on a single source of truth.</li>
                   <li>Quicker close, cleaner audits: Built‑in controls and automated reconciliations.</li>
                   <li>Smarter planning: AI‑assisted forecasting and scenario modeling.</li>
@@ -764,7 +762,7 @@ export default function Page() {
                 </ul>
 
                 <h2 className="mt-8 text-fluid-h3 lg:text-[24px] font-medium tracking-heading">Migration advantages:</h2>
-                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small tracking-para">
+                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small leading-tight tracking-para">
                   <li>Rapid implementation with minimal downtime.</li>
                   <li>Proven playbooks for moving from ERPs & Applications</li>
                   <li>Coexistence options while you phase out legacy.</li>
@@ -808,7 +806,7 @@ export default function Page() {
               <p className="pb-4 md:pb-6 tracking-para text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-tight mt-[30px] lg:mt-[60px]">
                 Work faster and decide smarter with AI embedded across the suite.
               </p>
-              <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] lg:mt-[60px] text-fluid-small tracking-heading">
+              <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] lg:mt-[60px] text-fluid-small tracking-heading leading-tight">
                 <li><b>Natural‑language actions:</b> Ask, “Show last month’s receivables by region” and get the answer, fast.</li>
                 <li><b>Automations:</b> Generate e‑invoices, match POs, trigger approvals and alerts.</li>
                 <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
@@ -845,7 +843,7 @@ export default function Page() {
               <h2 className="text-black lg:hidden tracking-para text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap mb-6">
                 Compliance & Connectivity
               </h2>
-              <ul className="list-disc space-y-1 mt-[15px] text-fluid-small text-left pl-5">
+              <ul className="list-disc space-y-1 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
                 <li>ZATCA Phase II: Generate compliant e‑invoices at scale; integrate with KSA tax authority.</li>
                 <li>PEPPOL: Cross‑border e‑invoicing via standardized network.</li>
                 <li>Open integrations: Connect any ERP, POS or homegrown system through APIs and adapters.</li>
@@ -882,8 +880,8 @@ export default function Page() {
                 className="flex flex-col items-center text-center max-w-[174px] mx-auto md:max-w-[207px]"
               >
                 <img className="mb-4" src={icon.img} alt={icon.title} />
-                <h2 className="text-fluid-h2 xl:text-[23px] text-[#194BED] font-medium mb-2">{icon.title}</h2>
-                <p className="text-fluid-body">{icon.description}</p>
+                <h2 className="text-fluid-h2 xl:text-[23px] text-[#194BED] font-medium mb-2 tracking-heading leading-tight">{icon.title}</h2>
+                <p className="text-fluid-body tracking-para leading-tight">{icon.description}</p>
               </div>
             ))}
           </div>
@@ -928,7 +926,7 @@ export default function Page() {
         <div className="px-6 md:px-8 xl:flex items-end xl:gap-20 max-w-[1440px] mx-auto">
           <div>
             <h1 className="text-[20px] md:text-[32px] lg:text-[50px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
-            <p className="text-fluid-body max-w-[662px]">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
+            <p className="text-fluid-body max-w-[662px] tracking-para leading-tight">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
           </div>
           <div>
             <button
@@ -960,7 +958,7 @@ export default function Page() {
                     <h3 className="font-medium leading-tight tracking-heading text-[18px] md:text-[20px] text-black">
                       {item.title}
                     </h3>
-                    <p className="text-fluid-small mt-2 md:mt-3 tracking-para text-black">
+                    <p className="text-fluid-small mt-2 md:mt-3 tracking-para leading-tight text-black">
                       {item.desc}
                     </p>
                   </div>
@@ -996,7 +994,7 @@ export default function Page() {
         <div className="max-w-[1440px] mx-auto pb-6 md:pb-8 px-6">
           <div className="flex flex-col items-center">
             <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
-            <p className="md:text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center">Run compliant, AI‑powered operations with Accqrate.</p>
+            <p className="md:text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
           </div>
           <div className="flex flex-col items-center md:flex md:flex-row md:justify-center md:gap-[10px] lg:gap-[30px]">
             <button
