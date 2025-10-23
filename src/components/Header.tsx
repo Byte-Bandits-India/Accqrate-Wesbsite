@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import Link from "next/link";
 import {
   Accordion,
@@ -7,18 +7,10 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "./ui/accordion";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "./ui/navigation-menu";
 import { IoChevronDown } from "react-icons/io5";
 import { useRouter, usePathname } from "next/navigation";
 import { FaArrowRight } from "react-icons/fa6";
-
+import { useCountry } from "@/contexts/CountryContext";
 
 // ===================== Type Definitions =====================
 interface SubItem {
@@ -50,17 +42,7 @@ interface Language {
   display: string;
 }
 
-interface Country {
-  name: string;
-  code: string;
-  flag: string;
-}
-
 interface LangCountryDropdownProps {
-  selectedLanguage: string;
-  setSelectedLanguage: (language: string) => void;
-  selectedCountry: string;
-  setSelectedCountry: (country: string) => void;
   show: boolean;
   setShow: (show: boolean) => void;
   align?: "left" | "right";
@@ -260,31 +242,14 @@ const menus = [
   },
 ];
 
-const languages: Language[] = [
-  { code: "ar", name: "Arabic", display: "العربية" },
-  { code: "ml", name: "Malayalam", display: "Malayalam" },
-  { code: "en", name: "English", display: "English" },
-];
-
-const countries: Country[] = [
-  { name: "Saudi Arabia", code: "SA", flag: "/images/header/language/flag-saudi-arabia.svg" },
-  { name: "UAE", code: "AE", flag: "/images/header/language/flag-uae.svg" },
-  { name: "Oman", code: "OM", flag: "/images/header/language/flag-oman.svg" },
-];
-
-// ===================== Components =====================
-
-// Language & Country Dropdown
+// ===================== Country & Language Dropdown =====================
 const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: string }> = ({
-  selectedLanguage,
-  setSelectedLanguage,
-  selectedCountry,
-  setSelectedCountry,
   show,
   setShow,
   align = "left",
-  className = "", // accept className
+  className = "",
 }) => {
+  const { selectedCountry, setSelectedCountry, countries, selectedLanguage, setSelectedLanguage, languages, isInitialized } = useCountry();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -299,22 +264,27 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
 
   return (
     <div className={`relative ${className}`} ref={dropdownRef}>
+      {/* Dropdown Trigger */}
       <button
-        className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md"
+        className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md transition-colors"
         onClick={() => setShow(!show)}
+        disabled={!isInitialized} // Disable until initialized
       >
-        <img
-          src={countries.find((c) => c.name === selectedCountry)?.flag}
-          alt={selectedCountry}
-          className="w-[30px] h-[30px]"
-        />
-        <span className="text-black truncate text-sm lg:text-base">
-          {languages.find((l) => l.name === selectedLanguage)?.display} /{" "}
-          {countries.find((c) => c.name === selectedCountry)?.code}
-        </span>
-        <i className="fa-solid fa-angle-down ml-1"></i>
+        {isInitialized ? (
+          <>
+            <img src={selectedCountry.flag} alt={selectedCountry.name} className="w-[30px] h-[30px] rounded" />
+            <span className="text-black truncate text-sm lg:text-base">
+              {selectedLanguage.display} / {selectedCountry.code}
+            </span>
+            <i className="fa-solid fa-angle-down ml-1 text-gray-600"></i>
+          </>
+        ) : (
+          // Show loading state
+          <span className="text-gray-500">Loading...</span>
+        )}
       </button>
 
+      {/* Dropdown Panel */}
       {show && (
         <div
           className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
@@ -325,11 +295,9 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
             {languages.map((lang) => (
               <button
                 key={lang.code}
-                className={`px-3 py-1 rounded-full transition ${selectedLanguage === lang.name ? "bg-gray-100 text-black font-semibold" : "text-black"}`}
-                onClick={() => {
-                  setSelectedLanguage(lang.name);
-                  setShow(false);
-                }}
+                className={`px-3 py-1 rounded-full transition ${selectedLanguage.name === lang.name ? "bg-gray-100 text-black font-semibold" : "text-black"
+                  }`}
+                onClick={() => setSelectedLanguage(lang)}
                 style={{ border: "1px solid black", borderRadius: "20px" }}
               >
                 {lang.display}
@@ -342,12 +310,9 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
           <div className="space-y-2 max-h-40 overflow-y-auto">
             {countries.map((country) => (
               <div
-                key={country.name}
+                key={country.code}
                 className="flex items-center cursor-pointer p-2 rounded-md hover:bg-gray-50"
-                onClick={() => {
-                  setSelectedCountry(country.name);
-                  setShow(false);
-                }}
+                onClick={() => setSelectedCountry(country)}
               >
                 <img src={country.flag} alt={country.name} className="w-5 h-5 mr-2" />
                 <span className="text-black">{country.name}</span>
@@ -374,15 +339,14 @@ const Arrow45: React.FC = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
   </svg>
 );
-
+// ===================== Header =====================
 const Header: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const { selectedCountry } = useCountry();
   const [activeMenu, setActiveMenu] = useState<string>("");
   const [activeSection, setActiveSection] = useState<string>("Business Solution");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("Arabic");
-  const [selectedCountry, setSelectedCountry] = useState<string>("Saudi Arabia");
   const [showLangCountryDropdown, setShowLangCountryDropdown] = useState<boolean>(false);
   const [headerHeight, setHeaderHeight] = useState<number>(0);
 
@@ -390,9 +354,26 @@ const Header: React.FC = () => {
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
+  // Update contact info only when country changes
+  const contactInfo = useMemo(() => {
+    switch (selectedCountry.code) {
+      case "SA":
+        return { phone: "+966 123 456 789", salesText: "Contact Sales" };
+      case "AE":
+        return { phone: "+971 123 456 789", salesText: "Contact Sales" };
+      case "OM":
+        return { phone: "+968 123 456 789", salesText: "Contact Sales" };
+      default:
+        return { phone: "+966 123 456 789", salesText: "Contact Sales" };
+    }
+  }, [selectedCountry.code]);
+
+  // Log only for debug
   useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+    console.log("Header: Current country is:", selectedCountry);
+  }, [selectedCountry]);
+
+  useEffect(() => setIsMobileMenuOpen(false), [pathname]);
 
   useEffect(() => {
     const computeHeaderHeight = () => {
@@ -408,63 +389,29 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  // Close menu only when clicking outside the navigation
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-
-      // Check if click is outside the entire navigation menu
-      if (navRef.current && !navRef.current.contains(target)) {
-        setActiveMenu("");
-      }
+      if (navRef.current && !navRef.current.contains(event.target as Node)) setActiveMenu("");
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const activeMenuData = menus.find((menu) => menu.id === activeMenu);
 
-  // Handle menu click - toggle behavior
   const handleMenuClick = (menuId: string) => {
-    if (activeMenu === menuId) {
-      // If clicking the same menu, close it
-      setActiveMenu("");
-    } else {
-      // If clicking a different menu, switch to it and keep open
-      setActiveMenu(menuId);
-      if (menuId === "products") setActiveSection("Business Solution");
-    }
+    setActiveMenu((prev) => (prev === menuId ? "" : menuId));
+    if (menuId === "products") setActiveSection("Business Solution");
   };
 
-  // Close menu when clicking on menu items
-  const handleMenuItemClick = () => {
-    setActiveMenu("");
-  };
-
-  // Handle section change within the same menu
-  const handleSectionChange = (sectionHeading: string) => {
-    setActiveSection(sectionHeading);
-  };
+  const handleMenuItemClick = () => setActiveMenu("");
+  const handleSectionChange = (sectionHeading: string) => setActiveSection(sectionHeading);
 
   return (
     <>
-      {/* Background overlay when menu is open */}
+      {/* Overlay when menu is open */}
       {activeMenu && (
-        <div
-          className="nav-overlay fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
-          onClick={() => setActiveMenu("")}
-        />
-      )}
-
-      {/* Background overlay when menu is open */}
-      {activeMenu && (
-        <div
-          className="nav-overlay fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
-          onClick={() => setActiveMenu("")}
-        />
+        <div className="nav-overlay fixed inset-0 bg-black/20 backdrop-blur-sm z-40" onClick={() => setActiveMenu("")} />
       )}
 
       <header
@@ -474,8 +421,8 @@ const Header: React.FC = () => {
         <div className="max-w-[1440px] mx-auto">
           <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px]">
             <div className="flex items-center justify-between gap-4">
-              {/* Logo */}
-              <div className="logo-container flex items-center justify-around gap-6">
+              {/* Logo - Moved to left */}
+              <div className="flex-shrink-0">
                 <Link href="/" className="shrink-0">
                   <img
                     src="/images/business/books/logo.svg"
@@ -483,298 +430,286 @@ const Header: React.FC = () => {
                     className="h-[1.620rem] w-auto cursor-pointer max-w-[115px] sm:max-w-[100px] md:max-w-[140px]"
                   />
                 </Link>
+              </div>
 
-                {/* Desktop Nav */}
-                <nav ref={navRef} className="hidden xl:flex items-center justify-around xl:gap-5 2xl:gap-10 text-[14px] text-gray-600 flex-1">
-                  <div className="w-full">
-                    <ul className="flex items-center py-4">
-                      {menus.map((menu) => (
-                        <li key={menu.id} className="relative">
-                          <button
-                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id ? "text-[#534ED3]" : "text-gray-700  hover:text-[#534ED3]"} `}
-                            onClick={() => handleMenuClick(menu.id)}
+              {/* Center: Desktop Nav */}
+              <div className="logo-container flex items-center justify-start flex-1">
+                <nav
+                  ref={navRef}
+                  className="hidden xl:flex items-start justify-center gap-5 text-[14px] text-gray-600"
+                >
+                  <ul className="flex items-center py-4 gap-4">
+                    {menus.map((menu) => (
+                      <li key={menu.id} className="relative">
+                        <button
+                          className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
+                            ? "text-[#534ED3]"
+                            : "text-gray-700 hover:text-[#534ED3]"
+                            }`}
+                          onClick={() => handleMenuClick(menu.id)}
+                        >
+                          <span>{menu.title}</span>
+                          <IoChevronDown
+                            className={`transition-transform duration-200 ${activeMenu === menu.id ? "rotate-180" : "rotate-0"
+                              }`}
+                          />
+                        </button>
+
+                        {activeMenu === menu.id && activeMenuData && (
+                          <div
+                            ref={menuRef}
+                            className="fixed left-0 right-0 top-0 w-[1044px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
+                            style={{ top: headerHeight }}
                           >
-                            <span>{menu.title}</span>
-                            <IoChevronDown
-                              className={`transition-transform duration-200 ${activeMenu === menu.id ? "rotate-180" : "rotate-0"}`}
-                              aria-hidden="true"
-                            />
-                          </button>
+                            <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
+                              {activeMenuData.type === "mega" ? (
+                                <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
+                                  {/* Categories */}
+                                  <div className="col-span-1 border-r pr-6 mb-2">
+                                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500">
+                                      Products
+                                    </h6>
+                                    <ul className="mt-3 space-y-6">
+                                      {activeMenuData.sections.map((section) => (
+                                        <li
+                                          key={section.heading}
+                                          className={`cursor-pointer px-2 py-2 rounded-md transition-colors duration-200 ${activeSection === section.heading
+                                            ? "text-[#534ED3] bg-[#f0f3ff]"
+                                            : "text-gray-700 hover:bg-[#f0f3ff] hover:text-[#534ED3]"
+                                            }`}
+                                          onClick={() => handleSectionChange(section.heading)}
+                                        >
+                                          <div className="flex items-center gap-2">
+                                            {"images" in section && section.images && (
+                                              <img src={section.images} alt={section.heading} className="w-4 h-4" />
+                                            )}
+                                            <span>{section.heading}</span>
+                                          </div>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  </div>
 
-                          {activeMenu === menu.id && activeMenuData && (
-                            <div
-                              ref={menuRef}
-                              className="fixed left-0 right-0 top-0 w-[1044px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
-                              style={{ top: headerHeight }}
-                            >
-                              <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
-                                {activeMenuData.type === "mega" ? (
-                                  <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
-                                    {/* Categories */}
-                                    <div className="col-span-1 border-r pr-6 mb-2">
-                                      <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500">
-                                        Products
-                                      </h6>
-                                      <ul className="mt-3 space-y-6">
-                                        {activeMenuData.sections.map((section) => (
-                                          <li
-                                            key={section.heading}
-                                            className={`cursor-pointer px-2 py-2 rounded-md transition-colors duration-200 ${activeSection === section.heading
-                                              ? "text-[#534ED3] bg-[#f0f3ff]"
-                                              : "text-gray-700 hover:bg-[#f0f3ff] hover:text-[#534ED3]"
-                                              }`}
-                                            onClick={() => handleSectionChange(section.heading)}
+                                  {/* Subitems */}
+                                  <div className="col-span-2 mb-2">
+                                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-3">
+                                      {activeSection}
+                                    </h6>
+                                    <ul className="grid grid-cols-2 gap-3 mb-2">
+                                      {activeMenuData.sections
+                                        .find((sec) => sec.heading === activeSection)
+                                        ?.subItems.map((item) => (
+                                          <ListItem
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
+                                            img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
+                                            onClick={handleMenuItemClick}
                                           >
-                                            <div className="flex items-center gap-2">
-                                              {"images" in section && section.images && (
-                                                <img src={section.images} alt={section.heading} className="w-4 h-4" />
-                                              )}
-                                              <span>{section.heading}</span>
-                                            </div>
-                                          </li>
+                                            {item.description}
+                                          </ListItem>
                                         ))}
-                                      </ul>
-                                    </div>
-
-                                    {/* Subitems */}
-                                    <div className="col-span-2 mb-2">
-                                      <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-3">
-                                        {activeSection}
-                                      </h6>
-                                      <ul className="grid grid-cols-2 gap-3 mb-2">
-                                        {activeMenuData.sections
-                                          .find((sec) => sec.heading === activeSection)
-                                          ?.subItems.map((item) => (
-                                            <ListItem
-                                              key={item.title}
+                                    </ul>
+                                  </div>
+                                </div>
+                              ) : activeMenuData.type === "simple" ? (
+                                <div className="w-full max-w-7xl mx-auto mb-2">
+                                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
+                                    Resources
+                                  </h6>
+                                  <div className="grid grid-cols-3 gap-8">
+                                    {activeMenuData.sections.map((section, index) => (
+                                      <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
+                                        <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
+                                        <ul className="space-y-4">
+                                          {section.subItems.map((item, i) => (
+                                            <ResourcesListItem
+                                              key={i}
                                               title={item.title}
                                               href={item.href}
                                               img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
                                               onClick={handleMenuItemClick}
                                             >
-                                              {item.description}
-                                            </ListItem>
+                                            </ResourcesListItem>
                                           ))}
-                                      </ul>
-                                    </div>
+                                        </ul>
+                                      </div>
+                                    ))}
                                   </div>
-                                ) : activeMenuData.type === "simple" ? (
-                                  <div className="w-full max-w-7xl mx-auto mb-2">
-                                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
-                                      Resources
-                                    </h6>
-                                    <div className="grid grid-cols-3 gap-8">
-                                      {activeMenuData.sections.map((section, index) => (
-                                        <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
-                                          <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                          <ul className="space-y-4">
-                                            {section.subItems.map((item, i) => (
-                                              <ResourcesListItem
-                                                key={i}
-                                                title={item.title}
-                                                href={item.href}
-                                                img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
-                                                onClick={handleMenuItemClick}
-                                              >
-                                              </ResourcesListItem>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ) : activeMenuData.type === "stories" ? (
-                                  <div className="w-full max-w-7xl mx-auto mb-4">
-                                    <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
-                                      Success Stories
-                                    </h6>
-                                    <div className="grid grid-cols-3 gap-8">
-                                      {activeMenuData.sections.map((section, index) => (
-                                        <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
-                                          <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
-                                          <ul className="space-y-4">
-                                            {section.subItems.map((item, i) => (
-                                              <SuccessStoriesListItem
-                                                key={i}
-                                                title={item.title}
-                                                href={item.href}
-                                                onClick={handleMenuItemClick}
-                                              >
-                                                {item.description}
-                                              </SuccessStoriesListItem>
-                                            ))}
-                                          </ul>
-                                        </div>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ) : null}
-
-                                {/* CTA */}
-                                <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
-                                  <Link
-                                    href="/book-demo"
-                                    className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
-                                    onClick={handleMenuItemClick}
-                                  >
-                                    Book a Demo
-                                    <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
-                                      →
-                                    </span>
-                                  </Link>
-
-                                  <span
-                                    role="separator"
-                                    aria-orientation="vertical"
-                                    className="self-center h-8 w-px bg-gray-300"
-                                  ></span>
-
-                                  <Link
-                                    href="/contact-sales"
-                                    className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
-                                    onClick={handleMenuItemClick}
-                                  >
-                                    Contact Sales
-                                    <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
-                                      →
-                                    </span>
-                                  </Link>
                                 </div>
+                              ) : activeMenuData.type === "stories" ? (
+                                <div className="w-full max-w-7xl mx-auto mb-4">
+                                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
+                                    Success Stories
+                                  </h6>
+                                  <div className="grid grid-cols-3 gap-8">
+                                    {activeMenuData.sections.map((section, index) => (
+                                      <div key={index} className="border-r last:border-r-0 pr-6 last:pr-0">
+                                        <h3 className="font-semibold text-lg mb-2">{section.heading}</h3>
+                                        <ul className="space-y-4">
+                                          {section.subItems.map((item, i) => (
+                                            <SuccessStoriesListItem
+                                              key={i}
+                                              title={item.title}
+                                              href={item.href}
+                                              onClick={handleMenuItemClick}
+                                            >
+                                              {item.description}
+                                            </SuccessStoriesListItem>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : null}
+
+                              {/* CTA */}
+                              <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
+                                <Link
+                                  href="/book-demo"
+                                  className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+                                  onClick={handleMenuItemClick}
+                                >
+                                  Book a Demo
+                                  <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
+                                    →
+                                  </span>
+                                </Link>
+
+                                <span
+                                  role="separator"
+                                  aria-orientation="vertical"
+                                  className="self-center h-8 w-px bg-gray-300"
+                                ></span>
+
+                                <Link
+                                  href="/contact-sales"
+                                  className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+                                  onClick={handleMenuItemClick}
+                                >
+                                  {contactInfo.salesText}
+                                  <span className="inline-block transform transition-transform duration-300 ease-out group-hover:translate-x-1">
+                                    →
+                                  </span>
+                                </Link>
                               </div>
                             </div>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                          </div>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </nav>
               </div>
 
               {/* Right section */}
-              <div className="hidden xl:flex items-center gap-2 shrink-0">
+              <div className="hidden md:flex items-center gap-2 shrink-0">
                 <LangCountryDropdown
-                  selectedLanguage={selectedLanguage}
-                  setSelectedLanguage={setSelectedLanguage}
-                  selectedCountry={selectedCountry}
-                  setSelectedCountry={setSelectedCountry}
                   show={showLangCountryDropdown}
                   setShow={setShowLangCountryDropdown}
                   align="right"
                 />
                 <Link
-                  href="/request-demo"
+                  href="/contact-sales"
                   className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
                 >
-                  Contact Sales
+                  {contactInfo.salesText}
                 </Link>
                 <Link
-                  href="/request-demo"
+                  href="/book-demo"
                   className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
                 >
                   Book a Demo
                   <span className="inline-block  mt-0.5"><FaArrowRight /></span>
                 </Link>
               </div>
-
-              <div className="flex xl:hidden items-center gap-3">
-                <LangCountryDropdown
-                  selectedLanguage={selectedLanguage}
-                  setSelectedLanguage={setSelectedLanguage}
-                  selectedCountry={selectedCountry}
-                  setSelectedCountry={setSelectedCountry}
-                  show={showLangCountryDropdown}
-                  setShow={setShowLangCountryDropdown}
-                  align="right"
-                  className="hidden md:flex" // ✅ now works
-                />
-
-                <button
-                  className="block bg-transparent border-none text-gray-700 text-2xl cursor-pointer shrink-0"
-                  aria-label="Toggle mobile menu"
-                  onClick={() => setIsMobileMenuOpen((p) => !p)}
-                >
-                  <div className="w-[36px] h-[20px] flex items-center justify-center">
-                    <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"} text-[28px]`}></i>
-                  </div>
-                </button>
-              </div>
+              <button
+                className="block bg-transparent border-none text-gray-700 text-2xl cursor-pointer shrink-0 xl:hidden"
+                aria-label="Toggle mobile menu"
+                onClick={() => setIsMobileMenuOpen((p) => !p)}
+              >
+                <div className="w-[36px] h-[20px] flex items-center justify-center">
+                  <i className={`fa-solid ${isMobileMenuOpen ? "fa-xmark" : "fa-bars"} text-[28px]`}></i>
+                </div>
+              </button>
             </div>
-          </div>
 
-          {isMobileMenuOpen && (
-            <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
-              <Accordion type="single" collapsible className="w-full">
-                {menus.map(({ id, title, sections }) => (
-                  <AccordionItem key={id} value={id}>
-                    <AccordionTrigger className="text-gray-800 font-semibold hover:text-[#534ED3]">
-                      {title}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <Accordion type="single" collapsible className="pl-4">
-                        {sections.map((section, sectionIndex) => (
-                          <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
-                            <AccordionTrigger className="flex items-center justify-start gap-2 text-gray-700 font-medium">
-                              {/* Safe check for images property */}
-                              {'images' in section && section.images && (
-                                <img src={section.images} alt={section.heading} className="w-4 h-4" />
-                              )}
-                              <span>{section.heading}</span>
-                            </AccordionTrigger>
-                            <AccordionContent>
-                              <ul className="pl-4 mt-2 space-y-2">
-                                {section.subItems.map((item, i) => (
-                                  <li
-                                    key={i}
-                                    className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
-                                  >
-                                    {/* Safe check for img property */}
-                                    {'img' in item && item.img && (
-                                      <img src={item.img} alt={item.title} className="w-5 h-5" />
-                                    )}
-                                    <Link
-                                      href={item.href}
-                                      className="flex-1"
-                                      onClick={() => setIsMobileMenuOpen(false)}
+            {isMobileMenuOpen && (
+              <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
+                <Accordion type="single" collapsible className="w-full">
+                  {menus.map(({ id, title, sections }) => (
+                    <AccordionItem key={id} value={id}>
+                      <AccordionTrigger className="text-gray-800 font-semibold hover:text-[#534ED3]">
+                        {title}
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <Accordion type="single" collapsible className="pl-4">
+                          {sections.map((section, sectionIndex) => (
+                            <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
+                              <AccordionTrigger className="flex items-center justify-start gap-2 text-gray-700 font-medium">
+                                {/* Safe check for images property */}
+                                {'images' in section && section.images && (
+                                  <img src={section.images} alt={section.heading} className="w-4 h-4" />
+                                )}
+                                <span>{section.heading}</span>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <ul className="pl-4 mt-2 space-y-2">
+                                  {section.subItems.map((item, i) => (
+                                    <li
+                                      key={i}
+                                      className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
                                     >
-                                      {item.title}
-                                    </Link>
-                                    <Arrow45 />
-                                  </li>
-                                ))}
-                              </ul>
-                            </AccordionContent>
-                          </AccordionItem>
-                        ))}
-                      </Accordion>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
+                                      {/* Safe check for img property */}
+                                      {'img' in item && item.img && (
+                                        <img src={item.img} alt={item.title} className="w-5 h-5" />
+                                      )}
+                                      <Link
+                                        href={item.href}
+                                        className="flex-1"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                      >
+                                        {item.title}
+                                      </Link>
+                                      <Arrow45 />
+                                    </li>
+                                  ))}
+                                </ul>
+                              </AccordionContent>
+                            </AccordionItem>
+                          ))}
+                        </Accordion>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
 
-              {/* CTA Buttons */}
-              <div className="mt-10 flex gap-4">
-                <Link
-                  href="/contact-sales"
-                  className="block w-full text-center text-[#F05A28] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent py-3 rounded-full text-sm font-bold"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact Sales
-                </Link>
-                <Link
-                  href="/book-demo"
-                  className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Book a Demo
-                </Link>
+                {/* CTA Buttons */}
+                <div className="mt-10 flex gap-4">
+                  <Link
+                    href="/contact-sales"
+                    className="block w-full text-center text-[#F05A28] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent py-3 rounded-full text-sm font-bold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {contactInfo.salesText}
+                  </Link>
+                  <Link
+                    href="/book-demo"
+                    className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Book a Demo
+                  </Link>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </header>
     </>
   );
-};
+}
 
 const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
   ({ className, title, children, img, onClick, ...props }, ref) => {
@@ -800,7 +735,6 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
     );
   }
 );
-
 
 ListItem.displayName = "ListItem";
 

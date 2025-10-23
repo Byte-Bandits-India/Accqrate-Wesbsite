@@ -1,9 +1,11 @@
+// app/layout.tsx
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { LoadingProvider } from "./business/books/sections/utils/LoadingContext";
+import { CountryProvider } from "../contexts/CountryContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,11 +25,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <LoadingProvider>
-          <Header />
-          {children}
-          <Footer />
-        </LoadingProvider>
+        <CountryProvider>
+          <LoadingProvider>
+            <Header />
+            {children}
+            <Footer />
+          </LoadingProvider>
+        </CountryProvider>
       </body>
     </html>
   );
