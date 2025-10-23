@@ -33,7 +33,7 @@ const CarouselCard: React.FC<CarouselCardProps> = ({
   return (
     <div
       className="absolute rounded-2xl shadow-xl flex
-             w-[340px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[200px]
+             w-[320px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[200px]
              transition-all duration-500 ease-in-out overflow-hidden bg-[#E6F2FF] cursor-pointer"
       style={style}
       onClick={onClick}
@@ -886,7 +886,7 @@ export default function Page() {
             ))}
           </div>
           <div className="border-t-2 text-[#D9D9D9] mt-[40px] max-w-[354px] mx-auto md:max-w-[676px] lg:max-w-[1051px] ">
-            <h2 className="text-[#000000] text-fluid-body text-center max-w-[273px] md:max-w-[677px] mx-auto mt-[28px] tracking-heading">
+            <h2 className="text-[#000000] text-fluid-body text-center max-w-[273px] md:max-w-[677px] mx-auto mt-[28px] leading-tight tracking-heading">
               Operating across MENA & ASEAN, backed by Iteron AG (Switzerland).
             </h2>
           </div>
