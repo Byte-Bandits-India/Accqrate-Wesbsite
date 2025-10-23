@@ -14,7 +14,7 @@ export default function InfoCard({ icon, title, description, color, link }: Info
     return (
         <Link href={link} className="w-full">
             <div
-                className="cursor-pointer flex items-center justify-between w-full h-[103px] mx-auto overflow-hidden rounded-2xl shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5"
+                className="cursor-pointer flex items-center justify-between w-full h-[135px] lg:h-[103px] mx-auto overflow-hidden rounded-2xl shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5"
                 style={{ background: color }}
             >
                 <div className="flex items-center gap-3 sm:gap-4 text-left w-full overflow-hidden">
@@ -30,7 +30,7 @@ export default function InfoCard({ icon, title, description, color, link }: Info
                         <h3 className="text-fluid-h3 lg:text-[24px] font-medium text-gray-900 leading-tight tracking-heading break-words line-clamp-1">
                             {title}
                         </h3>
-                        <p className="text-gray-700 text-fluid-body lg:text-[18px] leading-tight mt-1 break-words tracking-para line-clamp-2">
+                        <p className="text-gray-700 text-fluid-body md:text-[16px] lg:text-[18px] leading-tight mt-1 tracking-para lg:line-clamp-2">
                             {description}
                         </p>
                     </div>
