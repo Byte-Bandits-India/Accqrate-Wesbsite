@@ -58,7 +58,7 @@ export const countries: Country[] = [
     {
         name: "Mauritius",
         code: "MU",
-        flag: "/images/header/language/flag-mauritius.svg",
+        flag: "/images/header/language/flag-Mauritius.svg",
         language: "English",
         currency: "MUR",
     },
