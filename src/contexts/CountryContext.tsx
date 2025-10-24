@@ -1,10 +1,9 @@
-// contexts/CountryContext.tsx
-"use client";
-import React, { createContext, useContext, useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+'use client';
 
-// ===================== Type Definitions =====================
-export interface Country {
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { setLanguage, currentLang } from "@/lib/translations";
+
+interface Country {
     name: string;
     code: string;
     flag: string;
@@ -12,11 +11,23 @@ export interface Country {
     currency: string;
 }
 
-export interface Language {
+interface Language {
     code: string;
     name: string;
     display: string;
 }
+
+interface CountryContextType {
+    selectedCountry: Country;
+    setSelectedCountry: (country: Country) => void;
+    selectedLanguage: Language;
+    setSelectedLanguage: (language: Language) => void;
+    countries: Country[];
+    languages: Language[];
+    isInitialized: boolean;
+}
+
+const CountryContext = createContext<CountryContextType | undefined>(undefined);
 
 // ===================== Data =====================
 export const countries: Country[] = [
@@ -74,111 +85,68 @@ export const countries: Country[] = [
 export const languages: Language[] = [
     { code: "ar", name: "Arabic", display: "العربية" },
     { code: "ml", name: "Malay", display: "Malay" },
-    { code: "en", name: "English", display: "English" },
+    { code: "en", name: "English", display: "Eng" },
 ];
 
 // ===================== Context Type =====================
-interface CountryContextType {
-    selectedCountry: Country;
-    setSelectedCountry: (country: Country) => void;
-    selectedLanguage: Language;
-    setSelectedLanguage: (lang: Language) => void;
-    countries: Country[];
-    languages: Language[];
-    isInitialized: boolean;
-}
-
-// ===================== Create Context =====================
-const CountryContext = createContext<CountryContextType | undefined>(undefined);
-
-// ===================== Helper Functions =====================
-const getDefaultCountry = (): Country => {
-    return countries.find(country => country.code === "SA")!;
-};
-
-// ===================== Provider =====================
-export const CountryProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const router = useRouter();
-    const pathname = usePathname();
+export function CountryProvider({ children }: { children: ReactNode }) {
+    const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
+    const [selectedLanguage, setSelectedLanguage] = useState<Language>(languages[0]);
     const [isInitialized, setIsInitialized] = useState(false);
 
-    // Get country code from pathname
-    const getCountryFromPath = (): Country => {
-        const pathSegments = pathname.split('/').filter(Boolean);
-        const countryCode = pathSegments[0]?.toUpperCase();
-        const countryFromPath = countries.find(country => country.code === countryCode);
-        return countryFromPath || getDefaultCountry();
-    };
-
-    const [selectedCountry, setSelectedCountryState] = useState<Country>(() => {
-        return getDefaultCountry(); // Always start with SA as default
-    });
-
-    const [selectedLanguage, setSelectedLanguage] = useState<Language>(() => {
-        return languages.find(lang => lang.code === "ar") || languages[0];
-    });
-
-    // Sync context with route changes
+    // Initialize from URL - this runs only on client side
     useEffect(() => {
-        const countryFromPath = getCountryFromPath();
-        if (countryFromPath.code !== selectedCountry.code) {
-            setSelectedCountryState(countryFromPath);
-        }
-    }, [pathname]);
+        // Only run on client side
+        if (typeof window === 'undefined') return;
 
-    // Initialize from localStorage only on client after mount
-    useEffect(() => {
-        const initializeFromStorage = () => {
-            if (typeof window !== "undefined") {
-                const savedCountry = localStorage.getItem("selectedCountry");
-                const savedLanguage = localStorage.getItem("selectedLanguage");
+        const initializeFromURL = () => {
+            const pathSegments = window.location.pathname.split('/').filter(segment => segment);
 
-                const countryFromPath = getCountryFromPath();
-
-                if (savedCountry) {
-                    const parsedCountry = JSON.parse(savedCountry);
-                    // Only use saved country if it matches current route
-                    if (parsedCountry.code === countryFromPath.code) {
-                        setSelectedCountryState(parsedCountry);
-                    }
-                }
-
-                if (savedLanguage) {
-                    const parsedLanguage = JSON.parse(savedLanguage);
-                    setSelectedLanguage(parsedLanguage);
+            // Set language from URL
+            if (pathSegments.length >= 1) {
+                const urlLang = pathSegments[0];
+                const foundLang = languages.find(l => l.code === urlLang);
+                if (foundLang) {
+                    setSelectedLanguage(foundLang);
+                    // Update translation system immediately
+                    setLanguage(foundLang.code as 'en' | 'ar');
+                    console.log('🌍 CountryContext: Initialized language to', foundLang.code);
                 }
             }
-            setIsInitialized(true);
+
+            // Set country from URL
+            if (pathSegments.length >= 2) {
+                const urlCountry = pathSegments[1].toUpperCase();
+                const foundCountry = countries.find(c => c.code === urlCountry);
+                if (foundCountry) {
+                    setSelectedCountry(foundCountry);
+                }
+            }
         };
 
-        initializeFromStorage();
+        initializeFromURL();
+        setIsInitialized(true);
     }, []);
 
-    // Navigate to country-specific route
-    const navigateToCountry = (country: Country) => {
-        const newPath = `/${country.code.toLowerCase()}`;
-        router.push(newPath);
-        setSelectedCountryState(country);
-    };
-
-    // Persist to localStorage
+    // Update translation system whenever selectedLanguage changes
     useEffect(() => {
-        if (isInitialized && typeof window !== "undefined") {
-            localStorage.setItem("selectedCountry", JSON.stringify(selectedCountry));
-        }
-    }, [selectedCountry, isInitialized]);
+        if (isInitialized && (selectedLanguage.code === 'en' || selectedLanguage.code === 'ar')) {
+            console.log('🔄 CountryContext: Updating language to', selectedLanguage.code);
+            setLanguage(selectedLanguage.code as 'en' | 'ar');
 
-    useEffect(() => {
-        if (isInitialized && typeof window !== "undefined") {
-            localStorage.setItem("selectedLanguage", JSON.stringify(selectedLanguage));
+            // Force a re-render of translation components
+            // This ensures T components update with new translations
+            window.dispatchEvent(new CustomEvent('languageChanged', {
+                detail: { language: selectedLanguage.code }
+            }));
         }
-    }, [selectedLanguage, isInitialized]);
+    }, [selectedLanguage.code, isInitialized]);
 
     return (
         <CountryContext.Provider
             value={{
                 selectedCountry,
-                setSelectedCountry: navigateToCountry,
+                setSelectedCountry,
                 selectedLanguage,
                 setSelectedLanguage,
                 countries,
@@ -189,13 +157,11 @@ export const CountryProvider: React.FC<{ children: React.ReactNode }> = ({ child
             {children}
         </CountryContext.Provider>
     );
-};
-
-// ===================== Custom Hook =====================
-export const useCountry = () => {
+}
+export function useCountry() {
     const context = useContext(CountryContext);
-    if (!context) {
-        throw new Error("useCountry must be used within a CountryProvider");
+    if (context === undefined) {
+        throw new Error('useCountry must be used within a CountryProvider');
     }
     return context;
-};
+}

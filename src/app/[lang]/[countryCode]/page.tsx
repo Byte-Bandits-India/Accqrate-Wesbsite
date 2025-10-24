@@ -1,8 +1,7 @@
-// app/[countryCode]/page.tsx
+// app/[lang]/[countryCode]/page.tsx
 import CountryPage from "@/components/CountryPage";
 import { notFound } from "next/navigation";
 
-// Define countries directly in the page to avoid import issues
 const countries = [
     {
         name: "Saudi Arabia",
@@ -55,38 +54,54 @@ const countries = [
     },
 ];
 
-// Option 1: Use the correct Next.js types
+// Define supported languages as a type
+type SupportedLanguage = 'en' | 'ar';
+
 interface CountryPageProps {
     params: Promise<{
+        lang: string;
         countryCode: string;
     }>;
 }
 
-export function generateStaticParams() {
-    return countries.map((country) => ({
-        countryCode: country.code.toLowerCase(),
-    }));
+export async function generateStaticParams() {
+    const supportedLanguages: SupportedLanguage[] = ['en', 'ar'];
+    const params = [];
+
+    for (const lang of supportedLanguages) {
+        for (const country of countries) {
+            params.push({
+                lang,
+                countryCode: country.code.toLowerCase(),
+            });
+        }
+    }
+
+    return params;
 }
 
-// Update the component to await params
 export default async function CountryHomePage({ params }: CountryPageProps) {
-    const { countryCode } = await params;
+    const { lang, countryCode } = await params;
 
-    // Validate country code
+    // Validate language and country code with proper typing
+    const isValidLanguage = (lang: string): lang is SupportedLanguage => {
+        return ['en', 'ar'].includes(lang);
+    };
+
     const isValidCountry = countries.some(
         country => country.code.toLowerCase() === countryCode.toLowerCase()
     );
 
-    if (!isValidCountry) {
+    if (!isValidLanguage(lang) || !isValidCountry) {
         notFound();
     }
 
+    // Only pass countryCode to CountryPage since that's what it expects
     return <CountryPage countryCode={countryCode.toUpperCase()} />;
 }
 
-// Update generateMetadata to also await params
 export async function generateMetadata({ params }: CountryPageProps) {
-    const { countryCode } = await params;
+    const { lang, countryCode } = await params;
     const country = countries.find(c => c.code.toLowerCase() === countryCode.toLowerCase());
 
     return {

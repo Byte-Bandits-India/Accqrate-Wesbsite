@@ -1,6 +1,7 @@
 // app/page.tsx
 import { redirect } from "next/navigation";
 
-export default function HomePage() {
-  redirect('/sa');
+export default function RootPage() {
+  // Redirect to default language and country
+  redirect('/en/sa');
 }

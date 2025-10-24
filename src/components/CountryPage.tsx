@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import React, { useEffect, useState, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
 import { useCountryContent } from "@/hooks/useCountryContent";
-
+import T from "@/components/T"
 // ---------------- CarouselCard ----------------
 interface CarouselCardProps {
     quote: string;
@@ -16,6 +16,11 @@ interface CarouselCardProps {
     bg: string;
     style?: React.CSSProperties;
     onClick?: () => void;
+}
+
+interface CountryPageProps {
+    countryCode: string;
+    lang?: string; // Make lang optional if it's not used in the component
 }
 
 interface ServiceCard {
@@ -263,32 +268,37 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             img: "/images/landingpage/one.png",
             title: "One platform.",
             description: "All modules run on a single, integrated data model.",
-            sub: " Zero silos. "
+            sub: " Zero silos."
         },
         {
             img: "/images/landingpage/grade.png",
             title: "Enterprise‑grade.",
-            description: "Security, scalability and performance proven across 30+ industries."
+            description: "Security, scalability and performance proven across 30+ industries.",
+            sub: ""
         },
         {
             img: "/images/landingpage/ai.png",
             title: "AI, everywhere.",
-            description: "Accelera, our AI copilot ,accelerates routine work, insights and decisions."
+            description: "Accelera, our AI copilot ,accelerates routine work, insights and decisions.",
+            sub: ""
         },
         {
             img: "/images/landingpage/time.png",
             title: "Fast time‑to‑value.",
-            description: "Lightning‑fast UI, one‑click installs, and low‑disruption migrations from SAP/Microsoft/Oracle or disjointed tools."
+            description: "Lightning‑fast UI, one‑click installs, and low‑disruption migrations from SAP/Microsoft/Oracle or disjointed tools.",
+            sub: ""
         },
         {
             img: "/images/landingpage/built.png",
             title: "Built‑in Global compliance:",
-            description: "Connect ERP/POS to tax authorities; from ZATCA Phase II to PEPPOL standards."
+            description: "Connect ERP/POS to tax authorities; from ZATCA Phase II to PEPPOL standards.",
+            sub: ""
         },
         {
             img: "/images/landingpage/deploy.png",
             title: "Deploy your way.",
-            description: "Cloud (managed, subscription) or On‑Prem (full control over infra & data)."
+            description: "Cloud (managed, subscription) or On‑Prem (full control over infra & data).",
+            sub: ""
         }
     ];
 
@@ -468,23 +478,22 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 >
                     <div className="max-w-[1440px] mx-auto px-6 md:px-8">
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
-
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
                                 <h1 className="text-[30px] md:text-[38px] lg:text-[50px] max-w-full lg:max-w-[685px] font-normal tracking-heading leading-tight">
-                                    {countryContent.heroTitle}
+                                    <T>{countryContent.heroTitle}</T>
                                 </h1>
                                 <p className="font-medium text-fluid-body mt-6 lg:mt-10 tracking-para">
-                                    {countryContent.heroSubtitle}
+                                    <T>{countryContent.heroSubtitle}</T>
                                 </p>
                                 <p className="border-t-2 border-[#29266E] w-[60px] mt-6 lg:mt-10"></p>
 
                                 <div className="bg-white/50 rounded-[20px] p-6 md:p-8 flex flex-col justify-center text-center mt-6 lg:mt-10 max-w-full md:max-w-[700px] mx-auto md:mx-0">
                                     <p className="text-black text-fluid-small tracking-para leading-tight text-left font-normal">
-                                        {countryContent.heroDescription}
+                                        <T>{countryContent.heroDescription}</T>
                                     </p>
                                     <h2 className="mt-6 md:mt-8 text-fluid-body lg:text-[24px] font-medium text-black hidden tracking-heading lg:block">
-                                        {countryContent.heroTagline}
+                                        <T>{countryContent.heroTagline}</T>
                                     </h2>
                                 </div>
 
@@ -494,7 +503,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                             key={i}
                                             className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] tracking-para to-[#C5E1FF] text-[#000000] text-fluid-body lg:text-[18px] xl:text-[20px] font-medium rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
                                         >
-                                            {text}
+                                            <T>{text}</T>
                                         </button>
                                     ))}
                                 </div>
@@ -502,12 +511,12 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                             {/* RIGHT COLUMN */}
                             <div className="hidden lg:flex flex-col justify-center mb-8 lg:mt-0 gap-4">
-                                <h1 className="text-fluid-body font-medium">Featured Solutions:</h1>
+                                <h1 className="text-fluid-body font-medium"><T>Featured Solutions:</T></h1>
                                 {cards.map((card) => (
                                     <InfoCard key={card.title} {...card} />
                                 ))}
                                 <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
-                                    <h3 className="text-[14px] tracking-heading leading-tight">Explore All Products</h3>
+                                    <h3 className="text-[14px] tracking-heading leading-tight"><T>Explore All Products</T></h3>
                                     <div className="flex-shrink-0 ml-6">
                                         <svg
                                             width="20"
@@ -534,7 +543,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 {/* Mobile & Tablet Featured Solutions */}
                 <div className="lg:hidden px-6 md:px-8">
                     <div className="max-w-[1440px] mx-auto py-8">
-                        <h1 className="text-fluid-body font-medium mb-4">Featured Solutions:</h1>
+                        <h1 className="text-fluid-body font-medium mb-4"><T>Featured Solutions:</T></h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {cards.map((card) => (
@@ -545,7 +554,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             <div
                                 className="cursor-pointer flex items-center justify-between w-full h-[50px] mx-auto overflow-hidden shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5 bg-[#D6E0FF]"
                             >
-                                <h3 className="text-[14px] font-medium">Explore All Products</h3>
+                                <h3 className="text-[14px] font-medium"><T>Explore All Products</T></h3>
                                 <div className="flex-shrink-0 ml-2">
                                     <svg
                                         width="20"
@@ -575,23 +584,23 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             {/* Left Column */}
                             <div>
                                 <h2 className="font-medium text-fluid-small lg:text-[20px] tracking-heading uppercase">
-                                    /Why Accqrate?
+                                    <T>/Why Accqrate?</T>
                                 </h2>
                                 <h3 className="text-fluid-h3 md:text-[32px] lg:text-[50px] font-medium mt-6 md:mt-8 lg:mt-[60px] tracking-heading leading-tight">
-                                    We specialize in providing reliable and efficient Solutions
+                                    <T>We specialize in providing reliable and efficient Solutions</T>
                                 </h3>
                             </div>
 
                             {/* Right Column */}
                             <div className="flex flex-col justify-start lg:justify-center">
                                 <p className="text-fluid-small font-normal mt-[20px] md:mt-[38px] tracking-para leading-tight lg:mt-0">
-                                    Unlock a world of efficiency with our extensive suite of business modules. Simplify and enhance any task with seamless, one-click installations. Experience unparalleled speed, integration, and smart AI technology, enabling operations faster than a blink. Empower your team with the right tools for every job, all within a lightning-fast UI
+                                    <T>Unlock a world of efficiency with our extensive suite of business modules. Simplify and enhance any task with seamless, one-click installations. Experience unparalleled speed, integration, and smart AI technology, enabling operations faster than a blink. Empower your team with the right tools for every job, all within a lightning-fast UI</T>
                                 </p>
                                 <button
                                     className="h-[40px] w-[144px] md:w-[199px] text-white text-fluid-small tracking-para leading-tight md:text-[18px] mt-[20px] md:mt-[30px]"
                                     style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                                 >
-                                    See It in Action
+                                    <T>See It in Action</T>
                                 </button>
                             </div>
                         </div>
@@ -603,9 +612,9 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     className="flex flex-col items-center lg:items-start text-center max-w-[242px] mx-auto "
                                 >
                                     <img className="mb-4" src={feature.img} alt={feature.title} />
-                                    <h2 className="text-fluid-h3 xl:text-[23px] font-medium md:text-left tracking-heading leading-tight">{feature.title}</h2>
+                                    <h2 className="text-fluid-h3 xl:text-[23px] font-medium md:text-left tracking-heading leading-tight"><T>{feature.title}</T></h2>
                                     <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left tracking-heading leading-tight">{feature.sub}</h2>
-                                    <p className="text-fluid-small md:text-left tracking-para leading-tight">{feature.description}</p>
+                                    <p className="text-fluid-small md:text-left tracking-para leading-tight"><T>{feature.description}</T></p>
                                 </div>
                             ))}
                         </div>
@@ -617,15 +626,15 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                     <FadeUp className="mb-8 md:mb-[40px]">
                         <h3 className="text-fluid-h3 max-w-[354px]  tracking-heading leading-tight font-medium text-[#333333] text-center mx-auto">
-                            Trusted by  <br className="md:hidden" /><span className="text-[#194BED]">5,000+ Global companies</span>
+                            <T>Trusted by  </T><br className="md:hidden" /><span className="text-[#194BED]"><T>5,000+ Global companies</T></span>
                         </h3>
                     </FadeUp>
 
                     {/* Logo Marquee */}
                     <div className="relative ">
                         <div className="max-w-5xl overflow-hidden py-6 mx-auto">
-                            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-r from-[#FEFEFE] to-transparent" />
-                            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20 bg-gradient-to-l from-[#FEFEFE] to-transparent" />
+                            <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20" />
+                            <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20" />
 
                             <div className="flex flex-col gap-6">
                                 <div className="flex animate-scrollLeft w-max flex-shrink-0">
