@@ -956,14 +956,15 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 {/* Frequently Answered Questions */}
                 <div>
                     <div className="px-0 md:px-8 max-w-[1440px] mx-auto py-6">
-                        <div className="bg-white lg:flex items-start rounded-[20px] p-6 md:p-8">
+                        <div className="bg-white lg:flex lg:items-start lg:justify-between rounded-[20px] p-6 md:p-8 gap-12">
+
                             {/* Heading */}
-                            <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 pt-[30px] md:py-[37px] tracking-heading leading-tight max-w-[505px]">
+                            <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 lg:mb-0 pt-[30px] md:pt-[37px] lg:pt-[22px] tracking-heading leading-tight max-w-[505px] flex-shrink-0">
                                 Frequently Answered <br className="md:hidden" /> Questions
                             </h2>
 
                             {/* Accordion FAQ Section */}
-                            <div className="mt-[56px] flex flex-col gap-8 w-full max-w-[800px]">
+                            <div className="mt-[20px] lg:mt-0 flex flex-col gap-8 w-full max-w-[800px]">
                                 <FadeUp>
                                     <Accordion type="single" collapsible className="w-full text-left">
                                         {faqs.map((item, index) => (
@@ -972,7 +973,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                                 value={`faq-${index}`}
                                                 className="border-b border-[#BDBDBD] py-4"
                                             >
-                                                <AccordionTrigger className="text-[18px] md:text-[20px] lg:text-[30px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight">
+                                                <AccordionTrigger className="text-[18px] md:text-[20px] lg:text-[30px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight text-left">
                                                     {item.question}
                                                 </AccordionTrigger>
 
@@ -986,6 +987,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             </div>
                         </div>
                     </div>
+
 
                 </div>
 
