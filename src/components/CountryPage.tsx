@@ -8,6 +8,13 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
 import { useCountryContent } from "@/hooks/useCountryContent";
 import T from "@/components/T"
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion";
+
 // ---------------- CarouselCard ----------------
 interface CarouselCardProps {
     quote: string;
@@ -945,24 +952,41 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                     </div>
                 </div>
 
+
                 {/* Frequently Answered Questions */}
                 <div>
                     <div className="px-0 md:px-8 max-w-[1440px] mx-auto py-6">
                         <div className="bg-white lg:flex items-start rounded-[20px] p-6 md:p-8">
-                            <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 pt-[30px] md:py-[37px] tracking-heading leading-tight">Frequently Answered <br className="md:hidden" /> Questions</h2>
-                            <div className="mt-[56px] flex flex-col gap-8">
-                                {faqs.map((faq, index) => (
-                                    <div key={index} className="faq-item">
-                                        <h3 className="text-[18px] md:text-[20px] tracking-heading leading-tight lg:text-[30px] font-medium">
-                                            {faq.question}
-                                        </h3>
-                                        <p className="mt-[14px] md:text-fluid-body tracking-para leading-tight">{faq.answer}</p>
-                                        <p className="border-t-2 border-[#BDBDBD] mt-[14px]"></p>
-                                    </div>
-                                ))}
+                            {/* Heading */}
+                            <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 pt-[30px] md:py-[37px] tracking-heading leading-tight max-w-[505px]">
+                                Frequently Answered <br className="md:hidden" /> Questions
+                            </h2>
+
+                            {/* Accordion FAQ Section */}
+                            <div className="mt-[56px] flex flex-col gap-8 w-full max-w-[800px]">
+                                <FadeUp>
+                                    <Accordion type="single" collapsible className="w-full text-left">
+                                        {faqs.map((item, index) => (
+                                            <AccordionItem
+                                                key={index}
+                                                value={`faq-${index}`}
+                                                className="border-b border-[#BDBDBD] py-4"
+                                            >
+                                                <AccordionTrigger className="text-[18px] md:text-[20px] lg:text-[30px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight">
+                                                    {item.question}
+                                                </AccordionTrigger>
+
+                                                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[20px] font-light text-gray-600 tracking-para leading-relaxed mt-2">
+                                                    {item.answer}
+                                                </AccordionContent>
+                                            </AccordionItem>
+                                        ))}
+                                    </Accordion>
+                                </FadeUp>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
                 {/* Final Conversion Band */}
