@@ -14,11 +14,12 @@ import { useCountry } from "@/contexts/CountryContext";
 import { setLanguage } from "@/lib/translations";
 import T from "@/components/T"
 import { t } from "@/lib/translations";
+
 // ===================== Type Definitions =====================
 interface SubItem {
   title: string;
   description: string;
-  href: string;
+  href: string; // This will be relative path like "/business/books"
   img?: string;
   icon?: string;
   stats?: string;
@@ -54,6 +55,7 @@ interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
   className?: string;
   title: string;
   img?: string;
+  href: string; // Relative path
 }
 
 interface ResourcesListItemProps extends React.ComponentPropsWithoutRef<"a"> {
@@ -61,12 +63,14 @@ interface ResourcesListItemProps extends React.ComponentPropsWithoutRef<"a"> {
   title: string;
   icon?: string;
   img?: string;
+  href: string; // Relative path
 }
 
 interface SuccessStoriesListItemProps extends React.ComponentPropsWithoutRef<"a"> {
   className?: string;
   title: string;
   stats?: string;
+  href: string; // Relative path
 }
 
 // ===================== Data =====================
@@ -84,49 +88,49 @@ const menus = [
             title: "Accqrate Books",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/Books.svg",
-            href: "/business/books",
+            href: "/business/books", // Relative path
           },
           {
             title: "Accqrate CRM",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/crm.svg",
-            href: "/business/crm",
+            href: "/business/crm", // Relative path
           },
           {
             title: "Accqrate Plan360",
             description: "Automate HR workflows and employee management.",
             img: "/images/header/fill/plan.svg",
-            href: "/products/hr",
+            href: "/products/hr", // Relative path
           },
           {
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
-            href: "/business/one",
+            href: "/business/one", // Relative path
           },
           {
             title: "Accqrate People",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/people.svg",
-            href: "/business/people",
+            href: "/business/people", // Relative path
           },
           {
             title: "Accqrate Retail",
             description: "Automate HR workflows and employee management.",
             img: "/images/header/fill/retail.svg",
-            href: "/business/retail",
+            href: "/business/retail", // Relative path
           },
           {
             title: "Accqrate Factory",
             description: "Manage customer relationships efficiently.",
             img: "/images/header/fill/Factory.svg",
-            href: "/business/factory",
+            href: "/business/factory", // Relative path
           },
           {
             title: "Accqrate Filehub",
             description: "Automate HR workflows and employee management.",
             img: "/images/header/fill/Filehub.svg",
-            href: "/products/hr",
+            href: "/products/hr", // Relative path
           },
         ],
       },
@@ -138,7 +142,7 @@ const menus = [
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
-            href: "/business/one",
+            href: "/business/one", // Relative path
           },
         ],
       },
@@ -149,13 +153,13 @@ const menus = [
           {
             title: "Standalone E-invoicing Solution",
             description: "Sample content will be replaced",
-            href: "images/business/books/",
+            href: "/e-invoicing/standalone", // Relative path
             img: "/images/header/fill/standalone.svg",
           },
           {
             title: "E-invoicing Integration Solution",
             description: "Sample content will be replaced",
-            href: "images/business/books/NavBar/fill/e-invoice.svg",
+            href: "/e-invoicing/integration", // Relative path
             img: "/images/header/fill/e-invoice.svg",
           },
         ],
@@ -174,13 +178,13 @@ const menus = [
           {
             title: "About us",
             description: "Insights, tips and industry news",
-            href: "/resources/blog",
+            href: "/about-us", // Relative path
             icon: "/images/header/line/about.svg",
           },
           {
             title: "Blogs",
             description: "Live and recorded sessions from experts",
-            href: "/resources/webinars",
+            href: "/resources/blogs", // Relative path
             icon: "/images/header/line/blog.svg",
           },
         ],
@@ -192,13 +196,13 @@ const menus = [
           {
             title: "Announcements",
             description: "Find answers to common questions",
-            href: "/resources/help",
+            href: "/resources/announcements", // Relative path
             icon: "/images/header/line/anounce.svg",
           },
           {
             title: "FAQs",
             description: "Connect with other users",
-            href: "/resources/forum",
+            href: "/resources/faqs", // Relative path
             icon: "/images/header/line/faq.svg",
           },
         ],
@@ -210,13 +214,13 @@ const menus = [
           {
             title: "Webinars",
             description: "In-depth analysis and research",
-            href: "/resources/whitepapers",
+            href: "/resources/webinars", // Relative path
             icon: "/images/header/line/webinars.svg",
           },
           {
             title: "VAT Calculator",
             description: "Real-world success stories",
-            href: "/resources/case-studies",
+            href: "/resources/vat", // Relative path
             icon: "/images/header/line/cal.svg",
           },
         ],
@@ -224,6 +228,22 @@ const menus = [
     ],
   },
 ];
+
+// ===================== Custom Hook for Dynamic Routing =====================
+const useDynamicRouting = () => {
+  const pathname = usePathname();
+
+  const createHref = (path: string): string => {
+    const segments = pathname.split('/').filter(segment => segment);
+    const lang = segments[0] || 'en';
+    const countryCode = segments[1] || 'sa';
+    // Ensure path starts with slash and remove any duplicate slashes
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    return `/${lang}/${countryCode}${cleanPath}`;
+  };
+
+  return { createHref };
+};
 
 // ===================== Country & Language Dropdown =====================
 const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: string }> = ({
@@ -236,6 +256,7 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
   const dropdownRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
   const pathname = usePathname();
+
   const handleLanguageChange = (lang: any) => {
     console.log('🔄 Header: Changing language to:', lang.code);
 
@@ -381,7 +402,6 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
   );
 };
 
-
 // Arrow
 const Arrow45: React.FC = () => (
   <svg
@@ -395,6 +415,7 @@ const Arrow45: React.FC = () => (
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
   </svg>
 );
+
 // ===================== Header =====================
 const Header: React.FC = () => {
   const router = useRouter();
@@ -410,6 +431,9 @@ const Header: React.FC = () => {
   const navRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+
+  // Use dynamic routing hook
+  const { createHref } = useDynamicRouting();
 
   // Update contact info only when country changes
   const contactInfo = useMemo(() => {
@@ -480,7 +504,7 @@ const Header: React.FC = () => {
             <div className="flex items-center justify-between gap-4">
               {/* Logo - Moved to left */}
               <div className="flex-shrink-0">
-                <Link href="/" className="shrink-0">
+                <Link href={createHref("/")} className="shrink-0">
                   <img
                     src="/images/business/books/logo.svg"
                     alt="Accqrate Logo"
@@ -572,7 +596,7 @@ const Header: React.FC = () => {
                                             <ListItem
                                               key={item.title}
                                               title={isInitialized ? t(item.title) : item.title}
-                                              href={item.href}
+                                              href={item.href} // Pass relative path
                                               img={
                                                 "img" in item
                                                   ? item.img
@@ -593,7 +617,7 @@ const Header: React.FC = () => {
                                 {/* CTA Footer */}
                                 <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
                                   <Link
-                                    href="/book-demo"
+                                    href={createHref("/book-demo")}
                                     className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
@@ -610,7 +634,7 @@ const Header: React.FC = () => {
                                   ></span>
 
                                   <Link
-                                    href="/contact-sales"
+                                    href={createHref("/contact-sales")}
                                     className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
@@ -629,7 +653,7 @@ const Header: React.FC = () => {
                     {/* ABOUT US — simple link */}
                     <li>
                       <Link
-                        href="/about-us"
+                        href={createHref("/about-us")}
                         className="flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors text-gray-700 hover:text-[#534ED3] hover:bg-[#f0f3ff]"
                       >
                         <T>About Us</T>
@@ -685,7 +709,7 @@ const Header: React.FC = () => {
                                                 title={
                                                   isInitialized ? t(item.title) : item.title
                                                 }
-                                                href={item.href}
+                                                href={item.href} // Pass relative path
                                                 img={
                                                   "img" in item
                                                     ? item.img
@@ -706,7 +730,7 @@ const Header: React.FC = () => {
                                 {/* CTA Footer */}
                                 <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
                                   <Link
-                                    href="/book-demo"
+                                    href={createHref("/book-demo")}
                                     className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
@@ -723,7 +747,7 @@ const Header: React.FC = () => {
                                   ></span>
 
                                   <Link
-                                    href="/contact-sales"
+                                    href={createHref("/contact-sales")}
                                     className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
@@ -742,7 +766,7 @@ const Header: React.FC = () => {
                     {/* SUCCESS STORIES — simple link */}
                     <li>
                       <Link
-                        href="/success-stories"
+                        href={createHref("/success-stories")}
                         className="flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors text-gray-700 hover:text-[#534ED3] hover:bg-[#f0f3ff]"
                       >
                         <T>Success Stories</T>
@@ -760,13 +784,13 @@ const Header: React.FC = () => {
                   align="right"
                 />
                 <Link
-                  href="/contact-sales"
+                  href={createHref("/contact-sales")}
                   className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
                 >
                   <T>{contactInfo.salesText}</T>
                 </Link>
                 <Link
-                  href="/book-demo"
+                  href={createHref("/book-demo")}
                   className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
                 >
                   <T>Book a Demo</T>
@@ -815,7 +839,7 @@ const Header: React.FC = () => {
                                         <img src={item.img} alt={item.title} className="w-5 h-5" />
                                       )}
                                       <Link
-                                        href={item.href}
+                                        href={createHref(item.href)} // Use dynamic href
                                         className="flex-1"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                       >
@@ -836,7 +860,7 @@ const Header: React.FC = () => {
                 </Accordion>
                 <div className="py-3">
                   <Link
-                    href="/about-us"
+                    href={createHref("/about-us")}
                     className="block text-sm text-gray-800 font-semibold hover:text-[#534ED3] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -845,7 +869,7 @@ const Header: React.FC = () => {
                 </div>
                 <div className="border-t border-gray-200 py-3">
                   <Link
-                    href="/success-stories"
+                    href={createHref("/success-stories")}
                     className="block text-sm text-gray-800 font-semibold hover:text-[#534ED3] transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -856,14 +880,14 @@ const Header: React.FC = () => {
                 {/* CTA Buttons */}
                 <div className="mt-10 flex gap-4">
                   <Link
-                    href="/contact-sales"
+                    href={createHref("/contact-sales")}
                     className="block w-full text-center text-[#F05A28] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent py-3 rounded-full text-sm font-bold"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     <T>{contactInfo.salesText}</T>
                   </Link>
                   <Link
-                    href="/book-demo"
+                    href={createHref("/book-demo")}
                     className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -879,12 +903,17 @@ const Header: React.FC = () => {
   );
 }
 
+// ===================== List Item Components =====================
+
 const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
-  ({ className, title, children, img, onClick, ...props }, ref) => {
+  ({ className, title, children, img, href, onClick, ...props }, ref) => {
+    const { createHref } = useDynamicRouting();
+    const dynamicHref = createHref(href);
+
     return (
       <li>
-        <a
-          ref={ref}
+        <Link
+          href={dynamicHref}
           className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground cursor-pointer"
           onClick={onClick}
           {...props}
@@ -898,7 +927,7 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
               {children}
             </p>
           </div>
-        </a>
+        </Link>
       </li>
     );
   }
@@ -907,11 +936,14 @@ const ListItem = React.forwardRef<HTMLAnchorElement, ListItemProps>(
 ListItem.displayName = "ListItem";
 
 const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemProps>(
-  ({ className, title, children, icon, img, onClick, ...props }, ref) => {
+  ({ className, title, children, icon, img, href, onClick, ...props }, ref) => {
+    const { createHref } = useDynamicRouting();
+    const dynamicHref = createHref(href);
+
     return (
       <li>
-        <a
-          ref={ref}
+        <Link
+          href={dynamicHref}
           className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#f0f3ff] hover:text-[#534ED3] focus:bg-[#f0f3ff] cursor-pointer"
           onClick={onClick}
           {...props}
@@ -949,7 +981,7 @@ const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemP
               {children}
             </p>
           </div>
-        </a>
+        </Link>
       </li>
     );
   }
@@ -957,11 +989,14 @@ const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemP
 ResourcesListItem.displayName = "ResourcesListItem";
 
 const SuccessStoriesListItem = React.forwardRef<HTMLAnchorElement, SuccessStoriesListItemProps>(
-  ({ className, title, children, stats, onClick, ...props }, ref) => {
+  ({ className, title, children, stats, href, onClick, ...props }, ref) => {
+    const { createHref } = useDynamicRouting();
+    const dynamicHref = createHref(href);
+
     return (
       <li>
-        <a
-          ref={ref}
+        <Link
+          href={dynamicHref}
           className="block rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 focus:bg-gray-50 cursor-pointer border border-gray-200"
           onClick={onClick}
           {...props}
@@ -975,7 +1010,7 @@ const SuccessStoriesListItem = React.forwardRef<HTMLAnchorElement, SuccessStorie
               {stats}
             </div>
           )}
-        </a>
+        </Link>
       </li>
     );
   }

@@ -1,6 +1,6 @@
 // components/CountryPage.tsx
 "use client";
-import InfoCard from "@/components/ui/card";
+import InfoCard from "@/components/ui/Infocard";
 import FadeUp from "@/components/ui/FadeUp";
 import Image from "next/image";
 import { Switch } from "@/components/ui/switch";

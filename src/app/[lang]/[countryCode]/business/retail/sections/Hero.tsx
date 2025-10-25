@@ -1,11 +1,11 @@
 "use client";
 
-import { CustomImage } from "../../../../components/CommonComponents";
+import { CustomImage } from "@/components/CommonComponents";
 import React, { useContext, useRef, JSX } from "react";
 import { LoadingContext } from "./utils/LoadingContext";
-import { Skeleton } from "../../../../components/ui/skeleton"
-import ButtonGroup from "../../../../components/ui/ButtonGroup";
-import FadeUp from "../../../../components/ui/FadeUp";
+import { Skeleton } from "@/components/ui/skeleton"
+import ButtonGroup from "@/components/ui/ButtonGroup";
+import FadeUp from "@/components/ui/FadeUp";
 
 interface ButtonProps {
   text: string;

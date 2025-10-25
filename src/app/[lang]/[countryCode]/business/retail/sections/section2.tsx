@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Skeleton } from "../../../../components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import AccordionCard from "@/components/ui/AccordionSilverCard";
 import { Accordion } from "./ui/accordion";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 
 interface ErpFeature {
   text: string;

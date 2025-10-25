@@ -2,12 +2,12 @@
 
 import { useState, useContext, useRef, JSX } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { LoadingContext } from "@/app/business/books/sections/utils/LoadingContext";
+import { LoadingContext } from "./utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import useInView from "@/app/business/books/sections/utils/useInView";
+import useInView from "./utils/useInView";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import React from "react";
-import FadeUp from "../../../../components/ui/FadeUp"
+import FadeUp from "@/components/ui/FadeUp"
 
 
 

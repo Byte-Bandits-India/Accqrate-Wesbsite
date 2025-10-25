@@ -1,10 +1,10 @@
 "use client";
 
-import { LoadingContext } from "@/app/business/books/sections/utils/LoadingContext";
+import { LoadingContext } from "./utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import useInView from "@/app/business/books/sections/utils/useInView";
+import useInView from "./utils/useInView";
 import { useContext, useRef } from "react";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 import {
   Accordion,
   AccordionContent,
@@ -155,7 +155,7 @@ export default function Section3(): React.JSX.Element {
               loop
               aria-label="Seamless Integration demo video"
             >
-              <source src="videos/business/books/Seamless_integration.mp4" type="video/mp4" />
+              <source src="/videos/business/books/Seamless_integration.mp4" type="video/mp4" />
             </video>
           </div>
         </FadeUp>
@@ -197,7 +197,7 @@ export default function Section3(): React.JSX.Element {
               loop
               aria-label="Robust Control demo video"
             >
-              <source src="videos/business/books/robust-control.mp4" type="video/mp4" />
+              <source src="/videos/business/books/robust-control.mp4" type="video/mp4" />
             </video>
           </div>
         </FadeUp>

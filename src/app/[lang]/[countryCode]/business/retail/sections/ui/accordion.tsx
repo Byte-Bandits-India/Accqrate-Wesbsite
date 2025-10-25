@@ -5,7 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { cn } from "../../../../../lib/utils";
+import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
 

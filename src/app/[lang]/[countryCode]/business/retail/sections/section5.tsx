@@ -1,12 +1,12 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
-import { Skeleton } from "../../../../components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { LoadingContext } from "./utils/LoadingContext";
 import Image from "next/image";
 // import scrollreveal for text animations
 import React from "react";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 
 const Choose: React.FC = () => {
   const { loading } = useContext(LoadingContext);

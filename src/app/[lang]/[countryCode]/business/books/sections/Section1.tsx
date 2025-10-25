@@ -1,10 +1,10 @@
 "use client";
 
 import React, { JSX, useContext, useRef } from "react";
-import { LoadingContext } from "@/app/business/books/sections/utils/LoadingContext";
+import { LoadingContext } from "./utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import useInView from "@/app/business/books/sections/utils/useInView";
-import FeatureCard from "@/app/business/books/sections/ui/FeatureCard";
+import useInView from "./utils/useInView";
+import FeatureCard from "./ui/FeatureCard";
 import FadeUp from "@/components/ui/FadeUp";
 import AccordionCard from "./ui/AccordionSilverCard";
 import { Accordion } from "@/components/ui/accordion";

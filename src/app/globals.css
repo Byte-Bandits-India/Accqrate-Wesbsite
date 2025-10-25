@@ -1,16 +1,21 @@
+/* globals.css */
+
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html, body {
+/* -------------------------------
+   Base HTML / Body
+--------------------------------*/
+html,
+body {
   height: auto;
   min-height: 100%;
   margin: 0;
   padding: 0;
-  
 }
-
 
 /* Chrome, Safari, Edge */
 ::-webkit-scrollbar {
@@ -27,6 +32,9 @@ body {
   -ms-overflow-style: none;
 }
 
+/* -------------------------------
+   Root Colors & Dark Mode
+--------------------------------*/
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -55,6 +63,7 @@ body {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -81,20 +90,11 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-
-@layer utilities {
-  .border-border {
-    border-color: #E5E5E5;
+  /* Base element styles */
+  html,
   body {
-    @apply bg-background text-foreground;
-  }
-}
-}
-@layer base {
-  html, body {
-    @apply  bg-white text-black m-0 p-0 box-border ;
+    @apply bg-background text-foreground m-0 p-0 box-border;
     font-family: 'Inter', sans-serif;
   }
 
@@ -110,7 +110,12 @@ body {
     @apply max-w-full h-auto;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-lg;
   }
 
@@ -124,6 +129,9 @@ body {
   }
 }
 
+/* -------------------------------
+   Components Utilities
+--------------------------------*/
 @layer components {
   .skeleton-container {
     @apply flex flex-col gap-5 p-5;
@@ -134,53 +142,30 @@ body {
   }
 }
 
-
-
+/* -------------------------------
+   Utilities
+--------------------------------*/
 @layer utilities {
-   [data-next-badge] {
+  .border-border {
+    border-color: #E5E5E5;
+  }
+
+  [data-next-badge] {
     @apply hidden;
   }
-  .m-24px {
-    margin: 24px;
-  }
-  .p-24px {
-    padding: 24px;
-  }
 
-  .mx-24px {
-    margin-left: 24px;
-    margin-right: 24px;
-  }
-  .px-24px {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .mt-32px {
-    margin-top: 32px;
-  }
-  .mt-48px {
-    margin-top: 48px;
-  }
-  .mt-82px {
-    margin-top: 82px;
-  }
-  .mt-16px {
-    margin-top: 16px;
-  }
-  .mt-12px {
-    margin-top: 12px;
-  }
-  .mt-24px {
-    margin-top: 24px;
-  }
+  .m-24px { margin: 24px; }
+  .p-24px { padding: 24px; }
+  .mx-24px { margin-left: 24px; margin-right: 24px; }
+  .px-24px { padding-left: 24px; padding-right: 24px; }
+  .mt-32px { margin-top: 32px; }
+  .mt-48px { margin-top: 48px; }
+  .mt-82px { margin-top: 82px; }
+  .mt-16px { margin-top: 16px; }
+  .mt-12px { margin-top: 12px; }
+  .mt-24px { margin-top: 24px; }
+
   /* Letter spacing */
-  .tracking--5 {
-    letter-spacing: -0.05em; /* for headings */
-  }
-  .tracking--2 {
-    letter-spacing: -0.02em; /* for paragraphs */
-  }
-
+  .tracking--5 { letter-spacing: -0.05em; }
+  .tracking--2 { letter-spacing: -0.02em; }
 }
-
-

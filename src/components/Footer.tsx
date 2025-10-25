@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, useState, useEffect, JSX } from "react";
-import { LoadingContext } from "../app/business/books/sections/utils/LoadingContext";
+import { LoadingContext } from "@/app/[lang]/[countryCode]/business/books/sections/utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import FadeUp from "./ui/FadeUp";
 

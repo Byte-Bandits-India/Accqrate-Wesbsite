@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { FC } from "react";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 
 interface ImageItem {
   src: string;
@@ -34,8 +34,8 @@ const Sales: FC = () => {
   ];
 
   return (
-     <section className="bg-white text-center px-24px md:px-[32px] mt-48px md:mt-[64px] text-[#333333]">
-       <FadeUp>
+    <section className="bg-white text-center px-24px md:px-[32px] mt-48px md:mt-[64px] text-[#333333]">
+      <FadeUp>
         <h2 className="text-fluid-h2 font-medium tracking-heading leading-tight mb-[20px]"
         >
           Supercharge Sales with <span className="text-[#C2185B]">Powerful</span>

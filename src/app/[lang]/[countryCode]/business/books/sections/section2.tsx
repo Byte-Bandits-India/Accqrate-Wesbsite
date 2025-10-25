@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useContext, useRef, useMemo } from "react";
-import { LoadingContext } from "@/app/business/books/sections/utils/LoadingContext";
+import { LoadingContext } from "./utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
-import useInView from "@/app/business/books/sections/utils/useInView";
+import useInView from "./utils/useInView";
 import {
   Accordion,
   AccordionContent,

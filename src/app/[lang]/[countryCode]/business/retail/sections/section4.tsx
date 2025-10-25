@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useContext, useState, useEffect, ReactNode, JSX } from "react";
-import { Skeleton } from "../../../../components/ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 import { LoadingContext } from "./utils/LoadingContext";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 
 interface Section {
   title?: string;

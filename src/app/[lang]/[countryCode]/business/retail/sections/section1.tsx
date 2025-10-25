@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useContext, useState, useEffect, JSX } from "react";
-import { Skeleton } from "../../../../components/ui/skeleton"
+import { Skeleton } from "@/components/ui/skeleton"
 import { LoadingContext } from "./utils/LoadingContext";
 import { AccordionCard } from "./ui/accordion";
-import FadeUp from "../../../../components/ui/FadeUp";
+import FadeUp from "@/components/ui/FadeUp";
 
 interface Card {
   title: string;

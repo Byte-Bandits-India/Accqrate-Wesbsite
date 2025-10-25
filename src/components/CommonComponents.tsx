@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useContext, ButtonHTMLAttributes, HTMLAttributes, VideoHTMLAttributes } from "react";
-import { LoadingContext, LoadingContextType } from "@/app/business/retail/sections/utils/LoadingContext";
+import { LoadingContext, LoadingContextType } from "@/app/[lang]/[countryCode]/business/retail/sections/utils/LoadingContext";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image, { ImageProps } from "next/image";
 
