@@ -196,13 +196,13 @@ const menus = [
           {
             title: "Announcements",
             description: "Find answers to common questions",
-            href: "/resources/announcements", // Relative path
+            href: "/resources/Announcement", // Relative path
             icon: "/images/header/line/anounce.svg",
           },
           {
             title: "FAQs",
             description: "Connect with other users",
-            href: "/resources/faqs", // Relative path
+            href: "/resources/FAQ", // Relative path
             icon: "/images/header/line/faq.svg",
           },
         ],
