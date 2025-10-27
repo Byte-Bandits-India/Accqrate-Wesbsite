@@ -88,10 +88,11 @@ export const CountryFAQ = () => {
               {/* Message Box (opens modal) */}
               <div
                 onClick={() => setModalOpen(true)}
-                className="group flex items-center gap-4 bg-[#2A45C2] text-white rounded-md px-6 py-4 cursor-pointer hover:bg-[#2336A6] transition-all shadow-md w-fit"
+                className="group flex items-center gap-4 text-white rounded-md px-6 py-2 cursor-pointer hover:bg-[#2336A6] transition-all shadow-md w-fit"
+                style={{ background: 'linear-gradient(90deg, #29266E 0% , #194BED 100%)' }}
               >
-                <div className="bg-white/20 p-3 rounded-md flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-white" />
+                <div className="p-3 rounded-md flex items-center justify-center">
+                  <img className="w-[40px] h-[40px] " src="/images/mail.png" alt="mail" />
                 </div>
                 <div className="flex flex-col leading-tight">
                   <span className="font-semibold text-base">Leave a Message</span>
@@ -137,9 +138,7 @@ export const CountryFAQ = () => {
       </div>
 
       {/* Contact Modal - Only render when mounted */}
-      {isMounted && (
-        <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
-      )}
+      <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
     </div>
   );
 };
