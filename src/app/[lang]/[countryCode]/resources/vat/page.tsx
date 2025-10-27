@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ZatcaSection from "./ZatcaSection";
+import ZatcaSection from "../../../../../components/ZatcaSection";
 
 export default function VATCalculator() {
   const [hydrated, setHydrated] = useState(false);
