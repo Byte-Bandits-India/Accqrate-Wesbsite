@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import FadeUp from "@/components/ui/FadeUp";
 
 const blogPosts = [
   {
     id: 1,
-    title: "Ensuring Compliance and Efficiency: A Guide to ZATCA’s FATOORA ...",
+    title: "Ensuring Compliance and Efficiency: A Guide to ZATCA's FATOORA ...",
     image: "/images/resources/blog-1.png",
     desc: "In the rapidly evolving landscape of e-invoicing in Saudi Arabia, ensuring accuracy of regulatory requirements is crucial for businesses...",
   },
@@ -23,7 +24,7 @@ const blogPosts = [
   },
   {
     id: 4,
-    title: "Ensuring Compliance and Efficiency: A Guide to ZATCA’s FATOORA ...",
+    title: "Ensuring Compliance and Efficiency: A Guide to ZATCA's FATOORA ...",
     image: "/images/resources/blog-1.png",
     desc: "In the rapidly evolving landscape of e-invoicing in Saudi Arabia, ensuring accuracy of regulatory requirements is crucial for businesses...",
   },
@@ -43,32 +44,34 @@ const blogPosts = [
 
 export default function RecentBlogPosts() {
   return (
-    <section className="bg-white py-12">
-      <div className="container mx-auto px-6 md:px-16">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-gray-900">
+    <section className="py-10 md:py-12 lg:py-[90px]">
+      <div className="container mx-auto px-6 md:px-8">
+        <FadeUp className="text-2xl md:text-3xl font-semibold mb-8 md:mb-12 lg:mb-[70px] text-gray-900">
           Recent Blog Posts from Accqrate
-        </h2>
+        </FadeUp>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className=" overflow-hidden  "
+              className="rounded-lg overflow-hidden duration-300 border mb-[50px] md:mb-0 border-gray-100"
             >
-              <Image
-                src={post.image}
-                alt={post.title}
-                width={300}
-                height={250}
-                className="w-full h-[100px] md:h-[250px] "
-              />
+              <FadeUp className="relative w-full rounded-md h-[177px] lg:h-[250px]">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover w-full h-full"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              </FadeUp>
               <div className="p-4">
-                <h3 className="font-semibold text-lg text-gray-900 line-clamp-2">
+                <FadeUp className="font-semibold text-fluid-body lg:text-[26px] text-gray-900 line-clamp-2 leading-tight mb-[20px] md:mb-[30px]">
                   {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm mt-2 line-clamp-3">
+                </FadeUp>
+                <FadeUp className="text-gray-600 text-fluid-small line-clamp-3 leading-relaxed">
                   {post.desc}
-                </p>
+                </FadeUp>
               </div>
             </div>
           ))}

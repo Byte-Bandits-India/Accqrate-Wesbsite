@@ -3,10 +3,10 @@ import RecentBlogPosts from "./RecentBlogs";
 import ZatcaSection from "@/components/ZatcaSection";
 export default function ResourcesPage() {
   return (
-    <main>
+    <main className="bg-[#F8F6FF] overflow-hidden">
       <HeroResourceSection />
       <RecentBlogPosts />
-      <ZatcaSection/>
+      <ZatcaSection />
     </main>
   );
 }

@@ -49,7 +49,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "People",
         description: "HR & Payroll from hire to retire with local labor‑law compliance.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "/business/people",
+        link: "SA/business/people",
       },
       {
         icon: "/images/cards/retail.png",
