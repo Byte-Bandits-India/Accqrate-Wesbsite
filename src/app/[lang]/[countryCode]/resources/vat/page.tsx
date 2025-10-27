@@ -220,7 +220,7 @@ export default function VATCalculator() {
           </ul>
         </div>
 
-        <div className="max-w-[1094px] mx-auto mt-[30px]" data-aos="fade-up">
+        <div className="max-w-[1094px] mx-auto mt-[30px] lg:mb-[60px]" data-aos="fade-up">
           <h2 className="text-fluid-body font-semibold">VAT Calculation Made Simple</h2>
           <p className="text-fluid-small mt-[25px]">With our KSA VAT Calculator, enjoy:</p>
           <ul className="list-disc pl-6 space-y-1 text-fluid-small text-[#555555] mt-2">
@@ -233,9 +233,9 @@ export default function VATCalculator() {
             Leverage our VAT calculator for hassle-free tax calculations, ensuring your business stays compliant and efficient.
           </p>
         </div>
-       
+
       </div>
-       <ZatcaSection />
+      <ZatcaSection />
     </div>
   );
 }

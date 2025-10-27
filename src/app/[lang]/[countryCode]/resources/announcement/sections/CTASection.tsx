@@ -8,7 +8,7 @@ const CTASection = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="w-full max-h-fit bg-gradient-to-l from-[#242087] to-[#1A0C48] p-8 md:p-12 lg:pb-0 relative shadow-xl">
+    <div className="w-full max-h-fit xl:max-h-[325px] bg-gradient-to-l from-[#242087] to-[#1A0C48] p-8 md:p-12 lg:pb-0 relative shadow-xl">
       <div className="md:flex gap-8  relative z-10 max-w-[1440px] mx-auto">
         {/* LEFT CONTENT */}
         <div className="text-white md:max-w-[300px] lg:max-w-[500px] xl:max-w-full ">
@@ -62,7 +62,7 @@ const CTASection = () => {
           <img
             src="/images/chart-view.webp"
             alt="Dashboard Preview"
-            className="xl:max-w-[499px] w-full transform hover:scale-105 transition-transform duration-300"
+            className="xl:max-w-[499px] w-full md:h-[300px] lg:h-[350px] transform hover:scale-105 transition-transform duration-300"
           />
         </div>
 

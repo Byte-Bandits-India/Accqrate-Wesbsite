@@ -2,72 +2,69 @@
 
 import Image from "next/image";
 import ZatcaSection from "@/components/ZatcaSection";
+
 export default function WebinarSection() {
+  const webinars = [
+    {
+      id: 1,
+      image: "/images/resources/web1.jpg",
+      alt: "Integrating Multiple ERP/POS Systems with ZATCA",
+      title: "Integrating Multiple ERP/POS Systems with ZATCA",
+      description:
+        "A comprehensive discussion on how Accqrate, a leader in e-invoicing Solution in KSA, manages the integration of multiple ERP and POS systems within a single organization.",
+    },
+    {
+      id: 2,
+      image: "/images/resources/web2.jpg",
+      alt: "Understanding ZATCA Rejections and Accqrate's Error Management",
+      title: "Understanding ZATCA Rejections and Accqrate's Error Management",
+      description:
+        "A detailed understanding of the common errors that lead to invoice rejections by ZATCA (Zakat, Tax and Customs Authority) and how Accqrate resolves them efficiently.",
+    },
+  ];
+
   return (
-    <div className="bg-[#F8F6FF]">
-        <section className="bg-[#F8F6FF] py-16 md:py-24">
-      {/* container with larger left padding on md+ to match reference left alignment */}
-      <div className="container mx-auto px-6 md:px-24 lg:px-32">
-        {/* Heading / left aligned */}
-        <div className="max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 text-left">
-            Unlocking Insights Of Webinar
-          </h2>
+    <div className="bg-[#F8F6FF] overflow-hidden">
+      <section className="bg-[#F8F6FF] py-16 md:py-24">
+        <div className="mx-auto px-6 md:px-8 max-w-[1440px]">
+          {/* Heading */}
+          <div>
+            <h2 className="text-fluid-h1 font-semibold text-gray-900 text-left mb-6 md:mb-8 lg:mb-[54px]">
+              Unlocking Insights Of Webinar
+            </h2>
 
-          {/* small underline left */}
-          <div className="w-16 h-[2px] bg-[#2A1D8D] mt-4 mb-6" />
+            <div className="w-16 h-[2px] bg-[#194BED] mb-6 md:mb-8" />
 
-          {/* Subheading - left aligned and limited width */}
-          <p className="text-gray-700 max-w-3xl mb-14 text-left">
-            This Webinar Is Essential For Professionals Who Handle Invoicing And Compliance In Their Organizations
-          </p>
-        </div>
-
-        {/* Webinar Cards - left aligned grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 justify-start">
-          {/* Card 1 */}
-          <div className="max-w-md text-left">
-            <Image
-              src="/images/resources/web1.jpg"
-              alt="Integrating Multiple ERP/POS Systems with ZATCA"
-              width={480}
-              height={340}
-              className="rounded-lg shadow-md"
-              priority
-            />
-            <h3 className="mt-4 text-lg md:text-xl font-semibold text-gray-900">
-              Integrating Multiple ERP/POS Systems with ZATCA
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              A comprehensive discussion on how Accqrate, a leader in e-invoicing Solution in KSA, manages the integration of multiple ERP and POS systems within a single organization.
+            <p className="text-gray-700 text-fluid-body lg:text-[24px] mb-14 text-left max-w-[800px]">
+              This Webinar Is Essential For Professionals Who Handle Invoicing And Compliance In Their Organizations
             </p>
           </div>
 
-          {/* Card 2 */}
-          <div className="max-w-md text-left">
-            <Image
-              src="/images/resources/web2.jpg"
-              alt="Understanding ZATCA Rejections and Accqrate's Error Management"
-              width={480}
-              height={340}
-              className="rounded-lg shadow-md"
-              priority
-            />
-            <h3 className="mt-4 text-lg md:text-xl font-semibold text-gray-900">
-              Understanding ZATCA Rejections and Accqrate&apos;s Error Management
-            </h3>
-            <p className="mt-2 text-sm text-gray-600">
-              A detailed understanding of the common errors that lead to invoice rejections by ZATCA (Zakat, Tax and Customs Authority) and how Accqrate resolves them efficiently.
-            </p>
+          {/* Webinar Cards */}
+          <div className="flex flex-col items-start lg:flex-row md:justify-start md:gap-[80px] lg:gap-[100px] py-8 md:py-10 lg:py-[50px]">
+            {webinars.map((webinar) => (
+              <div key={webinar.id} className="max-w-md md:max-w-[600px] lg:max-w-md text-left">
+                <Image
+                  src={webinar.image}
+                  alt={webinar.alt}
+                  width={480}
+                  height={340}
+                  className="rounded-lg shadow-md"
+                  priority
+                />
+                <h3 className="mt-4 text-fluid-h3 font-semibold text-gray-900 lg:mt-[77px]">
+                  {webinar.title}
+                </h3>
+                <p className="mt-4 text-fluid-small text-gray-600 mb-6 lg:mt-[30px]">{webinar.description}</p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    
-    </section>
-    <div className="mt-20 ">
-    <ZatcaSection  />
-    </div>
-    </div>
 
+        <div className="mt-20">
+          <ZatcaSection />
+        </div>
+      </section>
+    </div>
   );
 }
