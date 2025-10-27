@@ -1,12 +1,12 @@
 import IndustriesSection from "./Hero";
-import SuccessStories  from "./SuccessStories";
+import SuccessStories from "./SuccessStories";
 import EndorsedTestimonials from "./Endorse";
 export default function Success() {
-    return(
-        <main>
-     <IndustriesSection/>
-    <SuccessStories />
-    <EndorsedTestimonials/>
-     </main>
+    return (
+        <main className="bg-[#F8F6FF]">
+            <IndustriesSection />
+            <SuccessStories />
+            <EndorsedTestimonials />
+        </main>
     )
 }

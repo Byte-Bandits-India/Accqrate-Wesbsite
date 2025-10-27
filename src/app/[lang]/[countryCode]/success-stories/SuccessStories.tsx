@@ -1,6 +1,7 @@
 "use client";
 
 import SuccessStoryCard from "./SuccessStoryCard";
+import FadeUp from "@/components/ui/FadeUp";
 
 const stories = [
   {
@@ -10,7 +11,7 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
   {
     id: 3,
@@ -28,7 +29,7 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
   {
     id: 4,
@@ -37,7 +38,7 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
   {
     id: 5,
@@ -46,7 +47,7 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
   {
     id: 6,
@@ -55,17 +56,17 @@ const stories = [
     description:
       "University is the first private health institution in the Kingdom of Saudi Arabia and accredited by the Ministry of Higher Education and The CEA.",
     imageUrl:
-      "/images/saudi-university.webp",
+      "/images/ss.png",
   },
 ];
 
 export default function SuccessStories() {
   return (
-    <section className="py-16 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-left text-black mb-12">
+    <section className="pt-8 md:pt-12 lg:pt-[90px] px-4">
+      <div className="max-w-[1188px] mx-auto">
+        <FadeUp className="text-fluid-h1 lg:text-[60px] text-center mx-auto font-medium max-w-[952px] text-black mb-12 md:mb-14 lg:mb-[140px] ">
           Success Stories from Brands Who Choose Accqrate
-        </h2>
+        </FadeUp>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {stories.map((story) => (
