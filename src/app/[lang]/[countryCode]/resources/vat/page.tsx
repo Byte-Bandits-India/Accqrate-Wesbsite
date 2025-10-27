@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ZatcaSection from "./ZatcaSection";
 
 export default function VATCalculator() {
   const [hydrated, setHydrated] = useState(false);
@@ -232,7 +233,9 @@ export default function VATCalculator() {
             Leverage our VAT calculator for hassle-free tax calculations, ensuring your business stays compliant and efficient.
           </p>
         </div>
+       
       </div>
+       <ZatcaSection />
     </div>
   );
 }
