@@ -9,56 +9,51 @@ export default function ZatcaSection() {
 
   return (
     <section
-      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white py-16 md:py-20"
+      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white relative py-6 md:py-8"
       data-aos="fade-up"
     >
-      <div className="max-w-[1440px] mx-auto flex flex-col-reverse md:flex-row items-center gap-4 px-6 md:px-8">
-        {/* Left Content */}
-        <div className="text-left">
+      <div
+        className="
+          max-w-[1440px]
+          mx-auto
+          grid
+          grid-cols-1
+          md:grid-cols-[auto_auto_auto]
+          items-center
+          justify-between
+          gap-y-10
+          px-6 md:px-8
+        "
+      >
+        {/* COLUMN 1 — LEFT CONTENT */}
+        <div className="z-20 text-left order-2 md:order-1">
           <h2 className="text-fluid-h2 xl:text-[40px] font-medium mb-6 leading-snug">
             Get 100% ZATCA Phase <br className="hidden md:block xl:hidden" /> II
             compliant <br className="hidden xl:block" /> with Accqrate
           </h2>
 
           <ul className="space-y-4 md:space-y-5 mb-8 md:mb-10">
-            <li className="flex items-start gap-3 justify-start md:justify-start">
-              <Image
-                src="/images/resources/tick.png"
-                alt="Tick"
-                width={20}
-                height={20}
-                className="mt-1 flex-shrink-0"
-              />
-              <span className="text-lg md:text-xl lg:text-2xl xl:text-[26px]">
-                Seamless integration with any ERP/POS
-              </span>
-            </li>
-
-            <li className="flex items-start gap-3 justify-start md:justify-start">
-              <Image
-                src="/images/resources/tick.png"
-                alt="Tick"
-                width={20}
-                height={20}
-                className="mt-1 flex-shrink-0"
-              />
-              <span className="text-lg md:text-xl lg:text-2xl xl:text-[26px]">
-                Direct Integration &amp; People integration
-              </span>
-            </li>
-
-            <li className="flex items-start gap-3 justify-start md:justify-start">
-              <Image
-                src="/images/resources/tick.png"
-                alt="Tick"
-                width={20}
-                height={20}
-                className="mt-1 flex-shrink-0"
-              />
-              <span className="text-lg md:text-xl lg:text-2xl xl:text-[26px]">
-                E-invoice generation in a fraction of a second
-              </span>
-            </li>
+            {[
+              "Seamless integration with any ERP/POS",
+              "Direct Integration & People integration",
+              "E-invoice generation in a fraction of a second",
+            ].map((text, index) => (
+              <li
+                key={index}
+                className="flex items-start gap-3 justify-start md:justify-start"
+              >
+                <Image
+                  src="/images/resources/tick.png"
+                  alt="Tick"
+                  width={20}
+                  height={20}
+                  className="mt-1 flex-shrink-0"
+                />
+                <span className="text-lg md:text-xl lg:text-2xl xl:text-[26px]">
+                  {text}
+                </span>
+              </li>
+            ))}
           </ul>
 
           <button
@@ -69,37 +64,40 @@ export default function ZatcaSection() {
           </button>
         </div>
 
-        {/* Right Side Images */}
-        <div className="flex-1 flex relative">
-          {/* Keep ZATCA Illustration (Lock) in original position */}
-          <Image
-            src="/images/resources/lock.png"
-            alt="ZATCA Illustration"
-            width={220}
-            height={150}
-            className="z-30 lg:h-[120px] w-fit md:h-[150px] xl:h-[150px] lg:left-[100px] lg:px-8"
-          />
-
-          {/* Keep ZATCA Box same */}
-          <Image
-            src="/images/resources/zatcabox.png"
-            alt="ZATCA Logo"
-            width={420}
-            height={200}
-            className="absolute lg:-right-[1px] xl:left-[250px] md:top-52 xl:top-60 hidden md:block lg:px-8"
-          />
-
+        {/* COLUMN 2 — ZATCA BOX + INVOICE */}
+        <div className="relative flex flex-col items-center justify-center gap-6 xl:gap-10 md:order-3 -top-20 ">
+          {/* Invoice Image */}
           <Image
             src="/images/resources/tax.png"
             alt="Invoice"
             width={350}
             height={300}
-            className="absolute right-0 lg:right-12 lg:-top-72 rounded-xl w-fit lg:h-[260px] xl:h-[300px] hidden lg:block"
+            className="rounded-xl hidden md:block lg:h-[350px] xl:h-[350px]"
+          />
+
+          {/* ZATCA Box */}
+          <Image
+            src="/images/resources/zatcabox.png"
+            alt="ZATCA Box"
+            width={420}
+            height={200}
+            className="rounded-xl hidden md:block"
+          />
+        </div>
+
+        {/* COLUMN 3 — LOCK ICON */}
+        <div className="flex items-center justify-center order-1 md:order-2">
+          <Image
+            src="/images/resources/lock.png"
+            alt="ZATCA Lock Illustration"
+            width={240}
+            height={160}
+            className="lg:h-[100px] lg:w-fit md:h-[150px] xl:h-[160px] md:hidden lg:block"
           />
         </div>
       </div>
 
-      {/* Contact Modal */}
+      {/* CONTACT MODAL */}
       <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
