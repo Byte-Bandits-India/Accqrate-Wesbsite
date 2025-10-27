@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
       secondary: { value: "95%", label: "Error Reduction Rate" },
     },
   },
-   {
+  {
     id: "construction",
     company: "Global Health",
     title: "Complete Compliance Solution",
@@ -84,22 +84,21 @@ export default function EndorsedTestimonials() {
 
         {/* Filter & Arrows */}
         <div className="flex items-center justify-between flex-wrap gap-4 max-w-5xl mx-auto mb-10">
-          <div className="flex flex-wrap gap-3">
-            {testimonials.map((t, i) => (
-              <button
-                key={t.id}
-                onClick={() => setActiveIndex(i)}
-                className={cn(
-                  "px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200",
-                  activeIndex === i
-                    ? "bg-[#1f1a9e] text-white border-transparent"
-                    : "bg-white text-gray-800 border-gray-200 hover:border-[#1f1a9e]"
-                )}
-              >
-                {t.company}
-              </button>
-            ))}
-          </div>
+          {testimonials.map((t, i) => (
+            <button
+              key={`${t.id}-${i}`}
+              onClick={() => setActiveIndex(i)}
+              className={cn(
+                "px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200",
+                activeIndex === i
+                  ? "bg-[#1f1a9e] text-white border-transparent"
+                  : "bg-white text-gray-800 border-gray-200 hover:border-[#1f1a9e]"
+              )}
+            >
+              {t.company}
+            </button>
+          ))}
+
 
           <div className="flex gap-3">
             <button
@@ -127,15 +126,15 @@ export default function EndorsedTestimonials() {
           <div className="lg:col-span-2 bg-white rounded-3xl p-10 shadow-md border border-gray-100">
             {/* Stars */}
             <div className="flex gap-1 mb-6">
-              
-                <Image
-                  src="/images/5stars.png" // 👈 your star icon
-                  alt="star"
-                  width={54}
-                  height={24}
-                  className="w-24 h-6"
-                />
-            
+
+              <Image
+                src="/images/5stars.png" // 👈 your star icon
+                alt="star"
+                width={54}
+                height={24}
+                className="w-24 h-6"
+              />
+
             </div>
 
             <h3 className="text-3xl font-bold text-gray-900 mb-4">
