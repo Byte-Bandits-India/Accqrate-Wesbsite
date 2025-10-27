@@ -28,7 +28,7 @@ const Index = () => {
 
           {/* ✅ Dynamic route link */}
           <Link
-            href={`/${lang}/${countryCode}/resources/Announcement/Form`}
+            href={`/${lang}/${countryCode}/contact-us`}
             className="inline-flex items-center   text-white border font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-[#29266E] to-[#194BED]  "
           >
             Subscribe Now <ArrowRight className="ml-2 h-5 w-5" />

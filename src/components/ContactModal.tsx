@@ -32,28 +32,39 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
     onSubmit: async (values, { resetForm }) => {
       try {
         await apiClient.post("contact-us/add", values);
-        alert("Your message was sent successfully!");
+        console.log("Form submitted successfully");
         resetForm();
         onClose();
       } catch (err) {
-        alert("Error submitting form. Please try again.");
+        console.error("Error submitting contact form:", err);
       }
     },
   });
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+      aria-modal="true"
+      role="dialog"
+    >
       <div className="bg-white rounded-lg shadow-xl w-[95%] max-w-[600px] p-6 relative">
+        {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-black"
+          aria-label="Close contact form"
+          className="absolute top-4 right-4 text-gray-500 hover:text-black transition"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <h2 className="text-xl font-semibold mb-6">Contact</h2>
+        {/* Title */}
+        <h2 className="text-lg font-medium mb-2">Contact</h2>
 
-        <form onSubmit={formik.handleSubmit} className="space-y-4">
+        {/* Divider Line */}
+        <div className="h-[1px] bg-gray-300 w-full mb-6"></div>
+
+        {/* Form */}
+        <form onSubmit={formik.handleSubmit} className="space-y-5">
           {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -61,7 +72,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
               <input
                 type="text"
                 {...formik.getFieldProps("name")}
-                className="w-full border rounded-md p-2"
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
                 placeholder="Enter your name"
               />
             </div>
@@ -70,7 +81,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
               <input
                 type="email"
                 {...formik.getFieldProps("email")}
-                className="w-full border rounded-md p-2"
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
                 placeholder="Enter your email"
               />
             </div>
@@ -83,7 +94,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
               <input
                 type="text"
                 {...formik.getFieldProps("phone")}
-                className="w-full border rounded-md p-2"
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
                 placeholder="Enter your phone number"
               />
             </div>
@@ -92,30 +103,32 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
               <input
                 type="text"
                 {...formik.getFieldProps("companyName")}
-                className="w-full border rounded-md p-2"
+                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
                 placeholder="Enter your company name"
               />
             </div>
           </div>
 
           {/* Message */}
-          <div>
+          <div className="pt-4">
             <label className="block text-sm font-medium mb-1">Message</label>
             <textarea
               {...formik.getFieldProps("message")}
-              className="w-full border rounded-md p-2 resize-none"
+              className="w-full border border-gray-300 rounded-md p-2 resize-y focus:ring-2 focus:ring-[#2A45C2] outline-none"
               rows={4}
-              placeholder="Type your message here.."
+              placeholder="Type your message here..."
             />
           </div>
 
           {/* Submit */}
-          <button
-            type="submit"
-            className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-all"
-          >
-            Submit
-          </button>
+          <div className="pt-2">
+            <button
+              type="submit"
+              className="bg-[#1A4BED] text-white px-6 py-3 rounded-full hover:bg-[#2336A6] transition-all w-full md:w-auto"
+            >
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>
