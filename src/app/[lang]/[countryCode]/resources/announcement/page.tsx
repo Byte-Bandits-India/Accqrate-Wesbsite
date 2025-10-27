@@ -3,7 +3,7 @@ import Announcement from "./sections/Announcement";
 
 const AnnouncementPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden bg-[#F8F6FF]">
       <Announcement />
     </div>
   );
