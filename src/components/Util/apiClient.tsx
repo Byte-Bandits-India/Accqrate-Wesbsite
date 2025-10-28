@@ -1,6 +1,7 @@
 "use client";
-import axios, { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import axios from "axios";
 
+// ✅ API base URL
 const API_URL =
     process.env.NEXT_PUBLIC_API_URL ||
     (process.env.NODE_ENV === "production"
@@ -11,21 +12,19 @@ const apiClient = axios.create({
     baseURL: `${API_URL}/`,
 });
 
-// 👇 FIXED interceptor typing
-apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
-    const token = localStorage.getItem("ACCOUNTING_USER");
+apiClient.interceptors.request.use((config) => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem("ACCOUNTING_USER") : null;
 
     if (token) {
-        // ✅ ensure headers object exists
-        config.headers = config.headers ?? {};
-        config.headers["Authorization"] = `Bearer ${token}`;
+        config.headers = config.headers || {};
+        config.headers.Authorization = `Bearer ${token}`;
     }
 
     return config;
 });
 
 apiClient.interceptors.response.use(
-    (response: AxiosResponse) => response,
+    (response) => response,
     (error) => Promise.reject(error)
 );
 

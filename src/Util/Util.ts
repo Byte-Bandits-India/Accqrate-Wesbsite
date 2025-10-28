@@ -44,8 +44,6 @@ export const SET_DATA = (key: string, value: any): void => {
 
 export const GET_DATA = (key: string): any => get(APP_CACHE.data, key)
 
-export const CLEAR_DATA = (): void => set(APP_CACHE, 'data', {})
-
 let accessData: string[] = []
 
 export const updateAccessData = (data: string[]): void => {

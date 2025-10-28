@@ -56,36 +56,43 @@ function PagedSelect({
 
   const getOptionData = (obj = {}) => {
     if (endPoint) {
-      const queryParams = { ...obj, ...params }
-      apiClient.get(endPoint, { params: queryParams }).then(({ data }) => {
-        if (data && data.result) {
-          setOptions([
-            ...defaultOptions,
-            ...convertSelectOptions(data.result || [], optionLabel, optionValue),
-          ])
-          setPageData(data.pageData)
-        }
+      const queryParams = { ...obj, ...params };
 
-        setLoading(false)
-      })
+      apiClient
+        .get<{ result: any[]; pageData?: any }>(endPoint, { params: queryParams })
+        .then(({ data }) => {
+          if (data && data.result) {
+            setOptions([
+              ...defaultOptions,
+              ...convertSelectOptions(data.result || [], optionLabel, optionValue),
+            ]);
+            setPageData(data.pageData);
+          }
+
+          setLoading(false);
+        })
+        .catch(() => setLoading(false));
     }
-  }
+  };
 
   const getSelectedOption = (v: unknown, oldData: OptionData[]) => {
     if (endPoint) {
       apiClient
-        .get(endPoint, { params: { [optionValue === 'id' ? '_id' : optionValue]: v } })
+        .get<{ result: any[] }>(endPoint, {
+          params: { [optionValue === "id" ? "_id" : optionValue]: v },
+        })
         .then(({ data }) => {
           if (data && data.result) {
             const optionData = _.uniqBy<OptionData>(
               convertSelectOptions([...oldData, ...data.result], optionLabel, optionValue),
               (v) => v[optionValue]
-            )
-            setOptions(optionData)
+            );
+            setOptions(optionData);
           }
-        })
+        });
     }
-  }
+  };
+
 
   const onChangePage = (pageData: Record<string, unknown>) => {
     getOptionData(pageData)

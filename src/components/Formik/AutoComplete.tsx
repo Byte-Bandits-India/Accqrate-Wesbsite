@@ -74,7 +74,7 @@ const AutoComplete: React.FC<FixedAutoCompleteProps> = ({
       const updatedParams = removeEmptyKeys(params || {});
       const queryParams = { ...updatedParams, [queryName || props.name]: v };
       apiClient
-        .get(endPoint || "", { params: queryParams })
+        .get<{ result: any[] }>(endPoint || "", { params: queryParams })
         .then(({ data }) => {
           if (data && data.result) {
             setInternalOptions(
@@ -82,7 +82,7 @@ const AutoComplete: React.FC<FixedAutoCompleteProps> = ({
             );
           }
         })
-        .catch(() => setInternalOptions([]));
+        .catch(() => setInternalOptions([]))
     } else {
       setInternalOptions([]);
     }

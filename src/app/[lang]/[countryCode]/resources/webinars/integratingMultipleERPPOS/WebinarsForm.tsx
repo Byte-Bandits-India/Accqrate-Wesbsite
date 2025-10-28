@@ -41,9 +41,11 @@ const WebinarsFormInner = withFormik<WebinarsFormProps, any>({
   }),
   validationSchema: Schema,
   handleSubmit: (data, { setSubmitting }) => {
-    apiClient.post('/webinars/add', data)
+    Promise.resolve(
+      apiClient.post<{ result: boolean }>('/webinars/add', data)
+    )
       .then(({ data: res }) => {
-        if (res && res.result) {
+        if (res.result) {
           window.location.href = '/webinar-booking-confirmation'
         }
       })
