@@ -100,7 +100,7 @@ const menus = [
             title: "Accqrate Plan360",
             description: "Automate HR workflows and employee management.",
             img: "/images/header/fill/plan.svg",
-            href: "/products/hr", // Relative path
+            href: "/business/plan360", // Relative path
           },
           {
             title: "Accqrate ONE",
@@ -130,7 +130,7 @@ const menus = [
             title: "Accqrate Filehub",
             description: "Automate HR workflows and employee management.",
             img: "/images/header/fill/Filehub.svg",
-            href: "/products/hr", // Relative path
+            href: "/business/fileHub", // Relative path
           },
         ],
       },
@@ -153,13 +153,13 @@ const menus = [
           {
             title: "Standalone E-invoicing Solution",
             description: "Sample content will be replaced",
-            href: "/e-invoicing/standalone", // Relative path
+            href: "/business/e-invoicing-standalone", // Relative path
             img: "/images/header/fill/standalone.svg",
           },
           {
             title: "E-invoicing Integration Solution",
             description: "Sample content will be replaced",
-            href: "/e-invoicing/integration", // Relative path
+            href: "/business/e-invoicing-integration", // Relative path
             img: "/images/header/fill/e-invoice.svg",
           },
         ],

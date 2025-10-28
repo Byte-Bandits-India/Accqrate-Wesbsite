@@ -70,7 +70,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "SA/e-invoicing",
+        link: "SA/business/e-invoicing-standalone",
       }
     ]
   },
@@ -122,7 +122,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "AE/e-invoicing",
+        link: "AE/business/e-invoicing-standalone",
       }
     ]
   },
@@ -174,7 +174,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "OM/e-invoicing",
+        link: "OM/business/e-invoicing-standalone",
       }
     ]
   },
@@ -226,7 +226,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "BH/e-invoicing",
+        link: "BH/business/e-invoicing-standalone",
       }
     ]
   },
@@ -278,7 +278,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "MA/e-invoicing",
+        link: "MA/business/e-invoicing-standalone",
       }
     ]
   },
@@ -330,7 +330,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "MU/e-invoicing",
+        link: "MU/business/e-invoicing-standalone",
       }
     ]
   },
@@ -382,7 +382,7 @@ export const countryContentMap: Record<string, CountryContent> = {
         title: "E‑Invoicing",
         description: "Seamless, compliant connections to tax authorities.",
         color: "linear-gradient(to right, #FFFFFF, #E7FFE8)",
-        link: "JD/e-invoicing",
+        link: "JD/business/e-invoicing-standalone",
       }
     ]
   }
