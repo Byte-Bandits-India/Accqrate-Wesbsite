@@ -4,7 +4,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import FadeUp from "@/components/ui/FadeUp";
 
 interface Testimonial {
   id: string;
@@ -24,12 +23,26 @@ const testimonials: Testimonial[] = [
   {
     id: "jonex",
     company: "Jonex",
+    title: "Client-Centric Innovation",
+    description:
+    "An ERP team must excel in understanding requirements, delivering on time, and most importantly, addressing business needs without compromising functionality.With Accqrate, we’ve discovered a solution that embodies these qualities seamlessly.Accqrate Solutions stands out as a robust product, offering exceptional flexibility, scalability, and performance.Its intuitive interface significantly reduces the need for extensive training, saving both time and effort. Moreover, the team’s strong communication skills and unwavering dedication have transformed how we manage our business processes. Their exceptional teamwork and support are truly commendable.",  
+    personName: "Wail",
+    personCompany: "Jonex",
+    personAvatar: "/images/jonex.png", 
+    stats: {
+      primary: { value: "87%", label: "Increase in Customer Satisfaction" },
+      secondary: { value: "38%", label: "Increase in Operational efficiency" },
+    },
+  },
+   {
+    id: "global",
+    company: "Global Health",
     title: "E-Invoice Revolution",
     description:
       "Accqrate's e-invoice solution has truly revolutionized our business operations. With their expertise and deep understanding of ZATCA requirements, they seamlessly integrated our invoicing system with the tax authority, ensuring compliance and accuracy at every step. This integration has not only saved us valuable time but also significantly reduced the risk of errors and non-compliance.",
-    personName: "Al Laith, UAE",
+       personName: "Al Laith UAE",
     personCompany: "Global Health and Beauty Co.",
-    personAvatar: "/images/jonex.png", // 👈 replace with your logo image
+    personAvatar: "/images/global.png",
     stats: {
       primary: { value: "92%", label: "Increase in Customer Satisfaction" },
       secondary: { value: "24%", label: "Increase in Operational efficiency" },
@@ -38,31 +51,18 @@ const testimonials: Testimonial[] = [
   {
     id: "construction",
     company: "Ali Construction ..",
-    title: "Complete Compliance Solution",
+    title: "Outstanding IT Solutions",
     description:
-      "As a construction company dealing with multiple invoicing scenarios, we needed a robust solution. Accqrate delivered beyond our expectations, providing a comprehensive system that handles all our e-invoicing needs while ensuring full ZATCA compliance.",
-    personName: "Mohammed Al-Rashid",
-    personCompany: "Ali Construction Group",
+      "Your ability to tailor IT solutions that address the unique challenges of our region has greatly improved our operational efficiency. Your proactive approach and commitment to client satisfaction have been truly impressive.",
+       personName: "Ali",
+    personCompany: "Construction Company",
     personAvatar: "/images/site.png",
     stats: {
-      primary: { value: "76%", label: "Faster Invoice Processing" },
-      secondary: { value: "95%", label: "Error Reduction Rate" },
+      primary: { value: "89%", label: "Increase in Customer Satisfaction" },
+      secondary: { value: "16%", label: "Increase in Operational efficiency" },
     },
   },
-  {
-    id: "construction",
-    company: "Global Health",
-    title: "Complete Compliance Solution",
-    description:
-      "As a construction company dealing with multiple invoicing scenarios, we needed a robust solution. Accqrate delivered beyond our expectations, providing a comprehensive system that handles all our e-invoicing needs while ensuring full ZATCA compliance.",
-    personName: "Mohammed Al-Rashid",
-    personCompany: "Ali Construction Group",
-    personAvatar: "/images/global.png",
-    stats: {
-      primary: { value: "76%", label: "Faster Invoice Processing" },
-      secondary: { value: "95%", label: "Error Reduction Rate" },
-    },
-  },
+  
 ];
 
 export default function EndorsedTestimonials() {
@@ -70,29 +70,28 @@ export default function EndorsedTestimonials() {
   const active = testimonials[activeIndex];
 
   return (
-    <section className="bg-[#f6f5ff]">
-      <div className="mx-auto px-6 md:px-8 max-w-[1440px] pt-8 md:pt-12 lg:pt-[90px]">
+    <section className="py-20 bg-[#f6f5ff]">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <FadeUp className="text-left">
-          <h2 className="text-fluid-h1 lg:text-[60px] text-left font-medium text-black">
+        <div className="text-left max-w-3xl mx-auto mb-10">
+          <h2 className="text-4xl font-bold text-gray-900 mb-3">
             Endorsed by industry Leaders
           </h2>
-          <p className="text-gray-600 mt-6 md:mt-8 text-fluid-body max-w-[777px]">
+          <p className="text-gray-600">
             Industry leaders trust our commitment to excellence validating our
             innovative solutions and fostering partnerships.
           </p>
-        </FadeUp>
+        </div>
 
         {/* Filter & Arrows */}
-        <div className="flex items-center justify-between flex-col sm:flex-row gap-4 max-w-[1440px] mx-auto mt-8 md:mt-12 lg:mt-[80px] mb-10">
-          {/* Filter Buttons */}
-          <FadeUp className="flex items-center justify-around flex-wrap gap-2 sm:gap-4 w-full sm:w-auto order-1 sm:order-1">
+        <div className="flex items-center justify-between flex-wrap gap-4 max-w-5xl mx-auto mb-10">
+          <div className="flex flex-wrap gap-3">
             {testimonials.map((t, i) => (
               <button
-                key={`${t.id}-${i}`}
+                key={t.id}
                 onClick={() => setActiveIndex(i)}
                 className={cn(
-                  "px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200 flex-shrink-0",
+                  "px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200",
                   activeIndex === i
                     ? "bg-[#1f1a9e] text-white border-transparent"
                     : "bg-white text-gray-800 border-gray-200 hover:border-[#1f1a9e]"
@@ -101,10 +100,9 @@ export default function EndorsedTestimonials() {
                 {t.company}
               </button>
             ))}
-          </FadeUp>
+          </div>
 
-          {/* Arrow Buttons */}
-          <FadeUp className="flex items-end justify-end gap-3 shrink-0 order-2 sm:order-2 w-full md:justify-start md:pr-8 lg:pr-6 xl:pr-[126px] sm:justify-start sm:w-auto max-w-[1000px]">
+          <div className="flex gap-3">
             <button
               onClick={() =>
                 setActiveIndex((p) => (p === 0 ? testimonials.length - 1 : p - 1))
@@ -121,51 +119,51 @@ export default function EndorsedTestimonials() {
             >
               <ChevronRight className="w-5 h-5 text-gray-700" />
             </button>
-          </FadeUp>
+          </div>
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch pb-8 md:pb-12 lg:pb-[80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {/* Left: Testimonial Card */}
-          <div className="lg:col-span-2 bg-white rounded-3xl p-10 shadow-md border border-gray-100 flex flex-col justify-between h-full">
+          <div className="lg:col-span-2 bg-white rounded-3xl p-10 shadow-md border border-gray-100">
             {/* Stars */}
-            <FadeUp>
-              <div className="flex gap-1 mb-6">
+            <div className="flex gap-1 mb-6">
+              
                 <Image
-                  src="/images/5stars.png"
+                  src="/images/5stars.png" // 👈 your star icon
                   alt="star"
-                  width={94}
-                  height={26}
-                  className="md:w-[161px] md:h-[27px]"
+                  width={54}
+                  height={24}
+                  className="w-24 h-6"
                 />
-              </div>
+            
+            </div>
 
-              <h3 className="text-fluid-h3 font-medium text-gray-900 mb-4">
-                {active.title}
-              </h3>
-              <p className="text-[#000000] text-fluid-small leading-relaxed mb-10">
-                {active.description}
-              </p>
-            </FadeUp>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              {active.title}
+            </h3>
+            <p className="text-gray-600 leading-relaxed mb-10">
+              {active.description}
+            </p>
 
-            <div className="flex items-center justify-between mt-auto">
-              <FadeUp className="flex items-center gap-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
                 <Image
                   src={active.personAvatar}
                   alt={active.personName}
                   width={48}
                   height={48}
-                  className="rounded-full md:h-[60px] md:w-[60px] lg:w-[80px] lg:h-[80px] "
+                  className="rounded-full"
                 />
                 <div>
-                  <p className="font-medium text-fluid-body lg:text-[26px] text-gray-900">{active.personName}</p>
-                  <p className="text-fluid-body text-[#000000]">{active.personCompany}</p>
+                  <p className="font-semibold text-gray-900">{active.personName}</p>
+                  <p className="text-sm text-gray-500">{active.personCompany}</p>
                 </div>
-              </FadeUp>
+              </div>
 
               {/* Quote Bars */}
               <Image
-                src="/images/bars.png"
+                src="/images/bars.png" // 👈 your blue quote marks
                 alt="quote"
                 width={32}
                 height={32}
@@ -174,26 +172,26 @@ export default function EndorsedTestimonials() {
           </div>
 
           {/* Right: Stats */}
-          <div className="flex flex-col justify-between h-full">
-            <FadeUp className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center flex-1 flex flex-col justify-center">
+          <div className="space-y-6">
+            <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center">
               <div className="flex justify-center items-center gap-2 mb-3">
                 <span className="text-5xl font-bold text-[#1f1a9e]">
                   {active.stats.primary.value}
                 </span>
                 <Image
-                  src="/images/triangle.png"
+                  src="/images/triangle.png" // 👈 your triangle arrow icon
                   alt="up"
                   width={20}
                   height={20}
                   className="mt-2"
                 />
               </div>
-              <p className="text-[#000000] font-medium text-fluid-body">
+              <p className="text-gray-600 font-medium text-sm">
                 {active.stats.primary.label}
               </p>
-            </FadeUp>
+            </div>
 
-            <FadeUp className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center flex-1 flex flex-col justify-center mt-6">
+            <div className="bg-white rounded-3xl p-8 shadow-md border border-gray-100 text-center">
               <div className="flex justify-center items-center gap-2 mb-3">
                 <span className="text-5xl font-bold text-[#1f1a9e]">
                   {active.stats.secondary.value}
@@ -206,10 +204,10 @@ export default function EndorsedTestimonials() {
                   className="mt-2"
                 />
               </div>
-              <p className="text-[#000000] font-medium text-fluid-body">
+              <p className="text-gray-600 font-medium text-sm">
                 {active.stats.secondary.label}
               </p>
-            </FadeUp>
+            </div>
           </div>
         </div>
       </div>
