@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import ZatcaSection from "@/components/ZatcaSection";
 
 export default function WebinarSection() {
@@ -12,6 +13,7 @@ export default function WebinarSection() {
       title: "Integrating Multiple ERP/POS Systems with ZATCA",
       description:
         "A comprehensive discussion on how Accqrate, a leader in e-invoicing Solution in KSA, manages the integration of multiple ERP and POS systems within a single organization.",
+      link: "/en/sa/resources/webinars/integratingMultipleERPPOS",
     },
     {
       id: 2,
@@ -20,6 +22,7 @@ export default function WebinarSection() {
       title: "Understanding ZATCA Rejections and Accqrate's Error Management",
       description:
         "A detailed understanding of the common errors that lead to invoice rejections by ZATCA (Zakat, Tax and Customs Authority) and how Accqrate resolves them efficiently.",
+      link: "/en/sa/resources/webinars/understandingZATCARejections",
     },
   ];
 
@@ -43,20 +46,30 @@ export default function WebinarSection() {
           {/* Webinar Cards */}
           <div className="flex flex-col items-start lg:flex-row md:justify-start md:gap-[80px] lg:gap-[100px] py-8 md:py-10 lg:py-[50px]">
             {webinars.map((webinar) => (
-              <div key={webinar.id} className="max-w-md md:max-w-[600px] lg:max-w-md text-left">
-                <Image
-                  src={webinar.image}
-                  alt={webinar.alt}
-                  width={480}
-                  height={340}
-                  className="rounded-lg shadow-md"
-                  priority
-                />
-                <h3 className="mt-4 text-fluid-h3 font-semibold text-gray-900 lg:mt-[77px]">
-                  {webinar.title}
-                </h3>
-                <p className="mt-4 text-fluid-small text-gray-600 mb-6 lg:mt-[30px]">{webinar.description}</p>
-              </div>
+              <Link
+                key={webinar.id}
+                href={webinar.link}
+                className="max-w-md md:max-w-[600px] lg:max-w-md text-left group"
+              >
+                <div className="rounded-lg overflow-hidden cursor-pointer">
+                  <Image
+                    src={webinar.image}
+                    alt={webinar.alt}
+                    width={480}
+                    height={340}
+                    className="rounded-t-lg"
+                    priority
+                  />
+                  <div className="p-4 md:p-6">
+                    <h3 className="mt-2 text-fluid-h3 font-semibold text-gray-900">
+                      {webinar.title}
+                    </h3>
+                    <p className="mt-3 text-fluid-small text-gray-600 mb-2">
+                      {webinar.description}
+                    </p>
+                  </div>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
