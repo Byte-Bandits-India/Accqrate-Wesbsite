@@ -38,7 +38,7 @@
   {
     id: 7,
     title: "SAP E-Invoicing and Its Integration with ZATCA: Paving the Way for Digital Excellence",
-    image: "/images/blogs/sap-e-invocing-integration-with-Zatca.webp",
+    image: "/images/blogs/sap-e-invocing-integration-with-zatca.webp",
     desc: "Saudi Arabia's ZATCA pioneered electronic invoicing, launching its first phase on 4th December 2021 and progressing to Phase 2...",
   },
   {
@@ -68,7 +68,7 @@
   {
     id: 12,
     title: "Adapting Business Processes for ZATCA e-Invoicing Phase 2 Compliance",
-    image: "/images/blogs/adapting-business-Processes-for-ZATCA.webp",
+    image: "/images/blogs/adapting-business-processes-for-ZATCA.webp",
     desc: "In December 2021, the Zakat, Tax, and Customs Authority launched the ZATCA e-Invoicing Phase 2 Compliance initiative...",
   },
   {
