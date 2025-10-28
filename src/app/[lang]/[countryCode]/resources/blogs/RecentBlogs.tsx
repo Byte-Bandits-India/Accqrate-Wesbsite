@@ -45,7 +45,7 @@ const blogPosts = [
 export default function RecentBlogPosts() {
   return (
     <section className="py-10 md:py-12 lg:py-[90px]">
-      <div className="container mx-auto px-6 md:px-8">
+      <div className="container mx-auto px-4 md:px-8">
         <FadeUp className="text-2xl md:text-3xl font-semibold mb-8 md:mb-12 lg:mb-[70px] text-gray-900">
           Recent Blog Posts from Accqrate
         </FadeUp>
@@ -56,12 +56,12 @@ export default function RecentBlogPosts() {
               key={post.id}
               className="rounded-lg overflow-hidden duration-300 border mb-[50px] md:mb-0 border-gray-100"
             >
-              <FadeUp className="relative w-full rounded-md h-[177px] lg:h-[250px]">
+              <FadeUp className="relative w-full rounded-md h-[180px] lg:h-[250px]">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full rounded-lg sm:rounded-none h-full"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </FadeUp>
