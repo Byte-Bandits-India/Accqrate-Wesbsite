@@ -10,7 +10,7 @@ export default function HeroResourceSection() {
       <div className="container mx-auto px-6 md:px-8">
         {/* Heading */}
         <FadeUp className="text-left mb-10">
-          <h1 className="text-fluid-h1 font-semibold text-gray-900">
+          <h1 className="text-fluid-h1 lg:text-[58px] leading-tight font-semibold text-gray-900">
             Browse Our Resources
           </h1>
 
@@ -18,7 +18,7 @@ export default function HeroResourceSection() {
           <div className="w-[156px] h-[2px] bg-[#194BED] mt-3 lg:mt-[54px] mb-4 rounded-full" />
 
           {/* Subtitle */}
-          <p className="text-gray-600 text-fluid-body font-medium lg:text-[24px] mt-[35px] ">
+          <p className="text-gray-600 text-fluid-body font-medium mt-[35px] ">
             We Provide Tips And Resources From Industry Leaders. For Real
           </p>
         </FadeUp>

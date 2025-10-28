@@ -64,7 +64,7 @@ export default function SuccessStories() {
   return (
     <section className="pt-8 md:pt-12 lg:pt-[90px] px-4">
       <div className="max-w-[1188px] mx-auto">
-        <FadeUp className="text-fluid-h1 lg:text-[60px] text-center mx-auto font-medium max-w-[952px] text-black mb-12 md:mb-14 lg:mb-[140px] ">
+        <FadeUp className="text-fluid-h1 lg:text-[58px] leading-tight text-center mx-auto font-medium max-w-[952px] text-black mb-12 md:mb-14 lg:mb-[140px] ">
           Success Stories from Brands Who Choose Accqrate
         </FadeUp>
 
