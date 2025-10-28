@@ -23,7 +23,7 @@ export default function RecentBlogPosts() {
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover w-full rounded-xl sm:rounded-none h-full"
+                  className="object-cover w-full rounded-xl sm:rounded-2xl h-full"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </FadeUp>
@@ -43,3 +43,4 @@ export default function RecentBlogPosts() {
     </section>
   );
 }
+
