@@ -54,14 +54,14 @@ export default function RecentBlogPosts() {
           {blogPosts.map((post) => (
             <div
               key={post.id}
-              className="rounded-lg overflow-hidden duration-300 border mb-[50px] md:mb-0 border-gray-100"
+              className="rounded-xl overflow-hidden duration-300 border mb-[50px] md:mb-0 border-gray-100"
             >
-              <FadeUp className="relative w-full rounded-md h-[180px] lg:h-[250px]">
+              <FadeUp className="relative w-full rounded-xl h-[188px] lg:h-[250px]">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover w-full rounded-lg sm:rounded-none h-full"
+                  className="object-cover w-full rounded-xl sm:rounded-none h-full"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </FadeUp>

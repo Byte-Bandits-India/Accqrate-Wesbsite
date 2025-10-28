@@ -4,34 +4,35 @@ import { useState } from "react"
 import dynamic from "next/dynamic"
 import { Pie, PieChart, Sector, Cell } from "recharts"
 import { PieSectorDataItem } from "recharts/types/polar/Pie"
+import { ResponsiveContainer } from "recharts"
 import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card"
 import { LucideIcon } from "lucide-react"
 import {
-    ChartConfig,
-    ChartContainer,
-    ChartTooltip,
-    ChartTooltipContent,
+  ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
 } from "@/components/ui/chart"
 
 export interface DonutChartData {
-    label: string
-    value: number
+  label: string
+  value: number
 }
 
 interface DonutChartProps {
-    data: DonutChartData[]
-    title?: string
-    description?: string
-    footerText?: string
-    footerIcon?: LucideIcon
-    footerDescription?: string
+  data: DonutChartData[]
+  title?: string
+  description?: string
+  footerText?: string
+  footerIcon?: LucideIcon
+  footerDescription?: string
 }
 
 // Blue color palette for segments
@@ -39,9 +40,9 @@ const BLUE_COLORS = ["#60A5FA", "#3B82F6", "#1D4ED8", "#2563EB", "#3B82F6"]
 
 // Chart configuration for the tooltip
 const chartConfig = {
-    value: {
-        label: "Value",
-    },
+  value: {
+    label: "Value",
+  },
 } satisfies ChartConfig
 
 export const DonutChart = dynamic(
@@ -58,14 +59,14 @@ export const DonutChart = dynamic(
 
       // Assign colors explicitly for Sale Value and VAT Amount
       const COLORS = {
-        "Sale Value": "#3E6CFF", 
-        "VAT Amount": "#29266E", 
+        "Sale Value": "#3E6CFF",
+        "VAT Amount": "#29266E",
       };
 
-     const chartData = data.map((item, index) => ({
-  ...item,
-  fill: item.label === "Sale Value" ? "#3E6CFF" : "#29266E", // Set colors here
-}))
+      const chartData = data.map((item, index) => ({
+        ...item,
+        fill: item.label === "Sale Value" ? "#3E6CFF" : "#29266E", // Set colors here
+      }))
 
 
       return (
@@ -76,29 +77,31 @@ export const DonutChart = dynamic(
               config={chartConfig}
               className="w-full aspect-square md:h-[400px] lg:h-full mx-auto"
             >
-              <PieChart>
-                <ChartTooltip
-                  cursor={false}
-                  content={<ChartTooltipContent hideLabel />}
-                />
-                <Pie
-                  data={chartData}
-                  dataKey="value"
-                  nameKey="label"
-                  innerRadius={86}
-                  outerRadius={130}
-                  strokeWidth={20}
-                  activeIndex={activeIndex}
-                  onMouseEnter={(_, index) => setActiveIndex(index)}
-                  activeShape={({ outerRadius = 0, ...props }: PieSectorDataItem) => (
-                    <Sector {...props} outerRadius={outerRadius + 10} />
-                  )}
-                >
-                  {chartData.map((entry, index) => (
-                    <Cell key={index} fill={entry.fill} />
-                  ))}
-                </Pie>
-              </PieChart>
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <ChartTooltip
+                    cursor={false}
+                    content={<ChartTooltipContent hideLabel />}
+                  />
+                  <Pie
+                    data={chartData}
+                    dataKey="value"
+                    nameKey="label"
+                    innerRadius="60%"
+                    outerRadius="85%"
+                    strokeWidth={20}
+                    activeIndex={activeIndex}
+                    onMouseEnter={(_, index) => setActiveIndex(index)}
+                    activeShape={({ outerRadius = 0, ...props }: PieSectorDataItem) => (
+                      <Sector {...props} outerRadius={outerRadius + 10} />
+                    )}
+                  >
+                    {chartData.map((entry, index) => (
+                      <Cell key={index} fill={entry.fill} />
+                    ))}
+                  </Pie>
+                </PieChart>
+              </ResponsiveContainer>
             </ChartContainer>
           </CardContent>
 
