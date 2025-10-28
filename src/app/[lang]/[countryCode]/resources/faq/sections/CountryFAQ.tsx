@@ -116,7 +116,7 @@ export const CountryFAQ = () => {
                       <AccordionTrigger className="text-[20px] md:text-[24px] lg:text-[30px] font-medium hover:no-underline leading-tight text-left">
                         {faq.question}
                       </AccordionTrigger>
-                      <AccordionContent className="text-fluid-body font-normal text-[#000000] leading-relaxed mt-2">
+                      <AccordionContent className="text-[14px] md:text-[18px] lg:text-[24px] font-normal text-[#000000] leading-tight mt-2">
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
