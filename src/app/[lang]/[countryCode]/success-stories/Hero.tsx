@@ -5,12 +5,14 @@ import Marquee from "react-fast-marquee";
 import IndustriesData from "./IndustriesData";
 import { ArrowRight } from "lucide-react";
 import FadeUp from "@/components/ui/FadeUp";
+import React,{useState} from "react";
+import { ContactModal } from "@/components/ContactModal";
 
 export default function IndustriesSection() {
   const half = Math.ceil(IndustriesData.length / 2);
   const firstHalfIndustries = IndustriesData.slice(0, half);
   const secondHalfIndustries = IndustriesData.slice(half);
-
+ const [isModalOpen, setModalOpen] = useState(false);
   return (
     <section className="bg-[#F8F6FF] py-20">
       <div className="container mx-auto px-6 md:px-16">
@@ -86,12 +88,16 @@ export default function IndustriesSection() {
 
         {/* CTA Button */}
         <FadeUp className="flex justify-center mt-6 md:mt-8">
-          <button className="flex items-center gap-2 bg-gradient-to-r from-[#29266E] to-[#194BED] text-white px-6 py-3 rounded-full text-sm md:text-base font-medium shadow-md hover:shadow-lg transition-all">
+          <button className="flex items-center gap-2 bg-gradient-to-r from-[#29266E] to-[#194BED] text-white px-6 py-3 rounded-full text-sm md:text-base font-medium shadow-md hover:shadow-lg transition-all"
+             onClick={() => setModalOpen(true)}>
             Book a Demo
             <ArrowRight className="w-4 h-4" />
           </button>
         </FadeUp>
       </div>
+      {/* Contact Modal */}
+                  <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
+
 }
