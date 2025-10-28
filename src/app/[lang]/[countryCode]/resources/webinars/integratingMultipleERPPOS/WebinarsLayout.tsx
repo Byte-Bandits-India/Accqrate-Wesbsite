@@ -3,10 +3,11 @@
 import { Breadcrumb, Col, Row, Modal } from 'antd'
 import Button from '@/components/Button'
 import { Calendar, Clock } from 'iconsax-react'
-import { useState, ReactNode } from 'react'
+import { useState, ReactNode, useMemo } from 'react'
 import T from '@/components/T'
 import WebinarsForm from './WebinarsForm'
 import ZatcaSection from '@/components/ZatcaSection'
+import { useCountry } from '@/contexts/CountryContext'
 
 interface WebinarsLayoutProps {
   children: ReactNode
@@ -27,17 +28,24 @@ export default function WebinarsLayout({
   imageSource,
   buttonText,
   speakerName,
-  speakerPosition
+  speakerPosition,
 }: WebinarsLayoutProps) {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { selectedCountry, selectedLanguage, isInitialized } = useCountry() // <-- use context
 
   const showModal = () => setIsModalOpen(true)
   const handleCancel = () => setIsModalOpen(false)
 
-  const BreadcrumbItems = [
-    { title: 'Home', href: '/' },
-    { title: 'Webinars', href: '/webinars' }
-  ]
+  // Build breadcrumb URLs dynamically using language and country
+  const BreadcrumbItems = useMemo(
+    () => [
+      { title: <T>Home</T>, href: `/${selectedLanguage.code}/${selectedCountry.code.toLowerCase()}` },
+      { title: <T>Webinars</T>, href: `/${selectedLanguage.code}/${selectedCountry.code.toLowerCase()}/resources/webinars` },
+    ],
+    [selectedLanguage.code, selectedCountry.code]
+  )
+
+  if (!isInitialized) return null
 
   return (
     <>
