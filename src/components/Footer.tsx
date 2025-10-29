@@ -124,10 +124,10 @@ export default function Footer() {
                 alt="Accqrate logo"
                 width={160}
                 height={50}
-                className="mb-6 cursor-pointer"
+                className="mb-4 cursor-pointer"
               />
             </Link>
-            <div className="flex flex-col space-y-[45px] lg:text-[16px] xl:text-[18px] underline mt-[50px]">
+            <div className="flex flex-col space-y-[34px] lg:text-[16px] xl:text-[18px] underline mt-[32px]">
               {leftColumnLinks.map((link, idx) => (
                 <Link
                   key={idx}
@@ -136,7 +136,7 @@ export default function Footer() {
                       ? createHref('/coming-soon')
                       : createHref(link.href)
                   }
-                  className="hover:text-[#194BED] transition-colors"
+                  className="hover:text-[#194BED] tracking-para transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -150,10 +150,10 @@ export default function Footer() {
             <div className="flex justify-between gap-4 xl:gap-8">
               {footerSections.map((section, idx) => (
                 <div key={idx} className="flex flex-col min-w-[180px]">
-                  <h3 className="font-medium mb-6 lg:text-[16px] xl:text-[18px]">
+                  <h3 className="font-medium mb-6 lg:text-[16px] tracking-heading xl:text-[18px]">
                     {section.title}
                   </h3>
-                  <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                  <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171]">
                     {section.items.map((item, i) => (
                       <li key={i}>
                         <Link
@@ -163,7 +163,7 @@ export default function Footer() {
                               ? createHref('/coming-soon')
                               : createHref(item.href)
                           }
-                          className={`hover:text-[#194BED] transition-colors ${comingSoonRoutes.includes(item.href.replace(/^\//, ''))
+                          className={`hover:text-[#194BED] tracking-para transition-colors ${comingSoonRoutes.includes(item.href.replace(/^\//, ''))
                             }`}
                         >
                           {item.name}
@@ -176,12 +176,12 @@ export default function Footer() {
             </div>
 
             {/* Enterprise section BELOW main columns */}
-            <div className="border-t border-gray-300 mt-12 pt-8 flex justify-between gap-8 text-sm text-gray-700">
+            <div className="border-t border-gray-300 mt-12 pt-8 flex justify-between gap-6 text-sm text-gray-700">
               <div>
-                <h4 className="font-medium mb-6 text-fluid-small">
+                <h4 className="font-medium mb-4 text-fluid-small tracking-heading">
                   Enterprise Solution
                 </h4>
-                <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171]">
                   {enterpriseLinks.map((link, index) => (
                     <li key={index}>
                       <Link
@@ -190,7 +190,7 @@ export default function Footer() {
                             ? createHref('/coming-soon')
                             : createHref(link.href)
                         }
-                        className="hover:text-[#194BED] transition-colors"
+                        className="hover:text-[#194BED] tracking-para transition-colors"
                       >
                         {link.name}
                       </Link>
@@ -200,8 +200,8 @@ export default function Footer() {
               </div>
 
               <div>
-                <h4 className="font-medium mb-6 lg:text-[16px] xl:text-[18px]">Contact Sales</h4>
-                <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                <h4 className="font-medium mb-4 lg:text-[16px] xl:text-[18px] tracking-heading">Contact Sales</h4>
+                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171] tracking-para">
                   <li><span className="text-[#000000]">Call:</span> +966 54 199 9357</li>
                   <li><span className="text-[#000000]">Email:</span> contact@accqrate-erp.com</li>
                   <li><span className="text-[#000000]">WhatsApp:</span> +966 50 763 5216</li>
@@ -221,7 +221,7 @@ export default function Footer() {
               </div>
 
               <div className="max-w-[500px] leading-6 flex items-center justify-start">
-                <p className="lg:text-[14px] xl:text-[16px] text-[#717171]">
+                <p className="lg:text-[14px] xl:text-[16px] text-[#717171] tracking-para">
                   One unified platform with zero silos—integrated modules on a single data model, global compliance built-in, AI-powered automation, flexible cloud or on-prem deployment, fast implementation, and enterprise-grade security and scalability.
                 </p>
               </div>
