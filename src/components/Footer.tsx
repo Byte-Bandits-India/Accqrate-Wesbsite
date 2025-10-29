@@ -1,159 +1,364 @@
 "use client";
 
-import React, { useContext, useState, useEffect, JSX } from "react";
-import { LoadingContext } from "@/app/[lang]/[countryCode]/business/books/sections/utils/LoadingContext";
-import { Skeleton } from "@/components/ui/skeleton";
-import FadeUp from "./ui/FadeUp";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-interface Section {
-  title: string;
-  items: string[];
-}
+// ===================== Custom Hook for Dynamic Routing =====================
+const useDynamicRouting = () => {
+  const pathname = usePathname();
 
-interface SocialLink {
-  href: string;
-  src: string;
-}
+  const createHref = (path: string): string => {
+    const segments = pathname.split('/').filter(segment => segment);
+    const lang = segments[0] || 'en';
+    const countryCode = segments[1] || 'sa';
+    const cleanPath = path.startsWith('/') ? path : `/${path}`;
+    return `/${lang}/${countryCode}${cleanPath}`;
+  };
 
-export default function Footer(): JSX.Element {
-  const { loading } = useContext(LoadingContext);
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [showSections, setShowSections] = useState<boolean>(true);
+  return { createHref };
+};
 
-  useEffect(() => {
-    const handleResize = () => {
-      setShowSections(window.innerWidth >= 1024); // show only on desktop
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+export default function Footer() {
+  const { createHref } = useDynamicRouting();
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.5 }
-    );
-
-    const element = document.getElementById("footerSection");
-    if (element) observer.observe(element);
-
-    return () => {
-      if (element) observer.unobserve(element);
-    };
-  }, []);
-
-  const sections: Section[] = [
+  const footerSections = [
     {
-      title: "Accqrate-erp.com",
-      items: ["Home", "Success Stories", "E-Invoicing solution", "Business solution", "ERP solution", "Testimonials"],
+      title: "E-invoicing Solution",
+      items: [
+        { name: "Accqrate E-invoicing", href: "/e-invoicing/accqrate" },
+        { name: "Integration Solution", href: "/e-invoicing/integration" },
+        { name: "Integration with SAP Suite", href: "/e-invoicing/sap" },
+        { name: "Integration with Microsoft Suite", href: "/e-invoicing/microsoft" },
+        { name: "Integration with Oracle Suite", href: "/e-invoicing/oracle" },
+        { name: "Integration with Homegrown Solution", href: "/e-invoicing/custom" },
+        { name: "Integration with Legacy Solutions", href: "/e-invoicing/legacy" },
+        { name: "Multi Country Integration", href: "/e-invoicing/multi-country" },
+      ],
     },
     {
-      title: "About",
-      items: ["Company", "Demo Videos", "Careers", "Blogs", "Announcements", "Webinars", "Partner with Us", "FAQs"],
+      title: "Business Solution",
+      items: [
+        { name: "Accqrate Books", href: "/business/books" },
+        { name: "Accqrate Retail", href: "/business/retail" },
+        { name: "Accqrate People", href: "/business/people" },
+        { name: "Accqrate CRM", href: "/business/crm" },
+        { name: "Accqrate Factory", href: "/business/factory" },
+        { name: "Accqrate Plan 360", href: "/business/plan360" },
+        { name: "Accqrate Services", href: "/business/services" },
+        { name: "Accqrate FileHub", href: "/business/fileHub" },
+      ],
     },
     {
-      title: "Featured Modules",
-      items: ["E-Invoicing Software", "E-Invoicing Middleware", "Accounting Solutions", "Sales Management", "Purchase Management", "Inventory Management", "Fixed Asset Management"],
+      title: "Resources",
+      items: [
+        { name: "FAQ", href: "/resources/faq" },
+        { name: "Blogs", href: "/resources/blogs" },
+        { name: "Events", href: "/resources/events" },
+        { name: "Case Studies", href: "/resources/case-studies" },
+        { name: "Announcements", href: "/resources/announcement" },
+        { name: "Product Updates", href: "/resources/product-updates" },
+        { name: "Alternate Product", href: "/resources/alternate-product" },
+        { name: "Knowledge Center", href: "/resources/knowledge-center" },
+      ],
     },
     {
-      title: "More Modules",
-      items: ["Production Management", "Document Management", "HR & Payroll", "Services", "POS", "CRM"],
+      title: "Community",
+      items: [
+        { name: "Affiliates", href: "/community/affiliates" },
+        { name: "Non Profits", href: "/community/non-profit" },
+        { name: "Accqrate Sprouts", href: "/community/sprouts" },
+        { name: "Become a Partner", href: "/community/become-partner" },
+        { name: "Community Forum", href: "/community/forum" },
+        { name: "Work with a Partner", href: "/community/work-with-partner" },
+        { name: "Find an Accountant", href: "/community/find-accountant" },
+        { name: "Partner Marketplace", href: "/community/marketplace" },
+      ],
     },
     {
-      title: "Data & Safety Management",
-      items: ["Data Security", "Disaster Recovery", "Enhancements and Upgrades", "Application Support and Maintenance", "Terms and Conditions", "Privacy Policy", "Contact Support"],
-    },
-    {
-      title: "Integrations",
-      items: ["SAP suits", "Oracle suits", "Microsoft suits", "VAT Calculator"],
+      title: "Data & Safety management",
+      items: [
+        { name: "Security", href: "/security" },
+        { name: "Contact us", href: "/contact" },
+        { name: "Compliance", href: "/compliance" },
+        { name: "Cookie Policy", href: "/cookie-policy" },
+        { name: "Privacy Policy", href: "/privacy-policy" },
+        { name: "GDPR Policies", href: "/gdpr" },
+        { name: "Terms of Service", href: "/terms" },
+        { name: "IPR Complaints", href: "/ipr-complaints" },
+      ],
     },
   ];
 
-  const socialLinks: SocialLink[] = [
-    { href: "https://www.facebook.com/people/Accqrate/100077291530631/", src: "/images/facebook.svg" },
-    { href: "https://www.linkedin.com/showcase/accqrate", src: "/images/linkedin.svg" },
-    { href: "https://twitter.com/accqrate_erp", src: "/images/twitter.svg" },
-    { href: "https://www.instagram.com/accqrateerp/", src: "/images/instagram.svg" },
-    { href: "https://www.youtube.com/channel/UCAzO34h3KxRrObyRor70D9A", src: "/images/youtube.svg" },
-    { href: "https://www.reddit.com/user/Accqrate_ERP", src: "/images/reddit.svg" },
-    { href: "https://www.snapchat.com/add/accqrate", src: "/images/snapchat.svg" },
-    { href: "https://api.whatsapp.com/send/?phone=966541999357&type=phone_number&app_absent=0", src: "/images/whatsapp.svg" },
+  const leftColumnLinks = [
+    { name: "Home", href: "/" },
+    { name: "Company", href: "/about-us" },
+    { name: "Accelera", href: "/accelera" },
+    { name: "Testimonials", href: "/testimonials" },
+    { name: "Join our Team", href: "/careers" },
+    { name: "Press", href: "/press" },
+    { name: "Newsletter", href: "/resources/newsletter" },
+    { name: "Branding Assets", href: "/resources/branding-assets" },
   ];
 
-  if (loading || !isVisible) {
-    return (
-      <footer id="footerSection" className="bg-white border-t border-gray-200 font-inter min-h-full mt-[5%]">
-        {/* Sections Skeleton */}
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
-          {sections.map((section, idx) => (
-            <div key={idx} className="flex flex-col min-w-[150px]">
-              {/* Section Title Skeleton */}
-              <Skeleton className="h-6 w-3/4 mb-4" />
-
-              {/* Section Items Skeleton */}
-              <div className="space-y-2">
-                {section.items.map((_, i) => (
-                  <Skeleton
-                    key={i}
-                    className={`h-4 ${i % 2 === 0 ? 'w-full' : 'w-5/6'}`}
-                  />
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Social Links Skeleton */}
-        <div className="flex flex-wrap justify-center gap-4 my-4 mt-5 mx-auto">
-          {socialLinks.map((_, idx) => (
-            <Skeleton
-              key={idx}
-              className="w-6 h-6 rounded-full"
-            />
-          ))}
-        </div>
-
-        {/* Copyright Skeleton */}
-        <div className="border-t border-gray-200 w-full my-2 mx-auto py-8">
-          <div className="text-center">
-            <Skeleton className="h-4 w-64 mx-auto" />
-          </div>
-        </div>
-      </footer>
-    );
-  }
+  const enterpriseLinks = [
+    { name: "Assessments", href: "/assessments" },
+    { name: "Accqrate ONE", href: "/business/one" },
+    { name: "Custom Developments", href: "/custom-development" },
+    { name: "Business Process Automations", href: "/bpa" },
+  ];
 
   return (
-    <footer id="footerSection" className="bg-white font-inter min-h-full mt-[5%]">
-      {showSections && (
-        <div className="flex justify-between flex-nowrap max-w-[1400px] mx-auto px-4 py-10 text-black gap-8 overflow-x-auto">
-          {sections.map((section, idx) => (
-            <FadeUp key={idx} className="flex flex-col">
-              <h3 className="font-bold mb-4 text-[16px] leading-6 whitespace-normal break-words">{section.title}</h3>
-              {section.items.map((item, i) => (
-                <p key={i} className="mb-4 text-sm leading-5 text-gray-600 whitespace-normal break-words">{item}</p>
+    <footer className="bg-white xl:border-t lg:border-gray-200 font-inter text-black">
+      {/* ---------- Main Footer Section ---------- */}
+      <div className="max-w-[1600px] mx-auto px-8 py-12 hidden xl:block">
+        <div className="flex justify-between items-start gap-12">
+          {/* ---------- Left Column (Logo + Links) ---------- */}
+          <div className="flex flex-col border-r border-gray-300 xl:pr-12 min-w-[220px]">
+            <Link href={createHref("/")}>
+              <Image
+                src="/images/logo.png"
+                alt="Accqrate logo"
+                width={160}
+                height={50}
+                className="mb-6 cursor-pointer"
+              />
+            </Link>
+            <div className="flex flex-col space-y-[45px] lg:text-[16px] xl:text-[18px] underline mt-[50px]">
+              {leftColumnLinks.map((link, idx) => (
+                <Link
+                  key={idx}
+                  href={createHref(link.href)}
+                  className="hover:text-[#194BED] transition-colors"
+                >
+                  {link.name}
+                </Link>
               ))}
-            </FadeUp>
-          ))}
-        </div>
-      )}
+            </div>
+          </div>
 
-      <div>
-        <FadeUp className="flex flex-wrap justify-center gap-3 md:gap-[20px] my-5 md:mb-6 mt-5 md:mt-[89px] mx-auto">
-          {socialLinks.map(({ href, src }, idx) => (
-            <a key={idx} href={href} target="_blank" rel="noopener noreferrer" className="transition-transform duration-300 hover:scale-110">
-              <img src={src} alt="social icon" className="w-[18px] h-[18px] md:w-[25px] md:h-[25px] " />
+          {/* ---------- Right Column (Main + Enterprise) ---------- */}
+          <div className="flex flex-col flex-grow">
+            {/* Main footer columns */}
+            <div className="flex justify-between gap-4 xl:gap-8">
+              {footerSections.map((section, idx) => (
+                <div key={idx} className="flex flex-col min-w-[180px]">
+                  <h3 className="font-medium mb-6 lg:text-[16px] xl:text-[18px]">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                    {section.items.map((item, i) => (
+                      <li key={i}>
+                        <Link
+                          href={createHref(item.href)}
+                          className="hover:text-[#194BED] cursor-pointer transition-colors"
+                        >
+                          {item.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            {/* Enterprise section BELOW main columns */}
+            <div className="border-t border-gray-300 mt-12 pt-8 flex justify-between gap-8 text-sm text-gray-700">
+              <div>
+                <h4 className="font-medium mb-6 text-fluid-small">
+                  Enterprise Solution
+                </h4>
+                <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                  {enterpriseLinks.map((link, index) => (
+                    <li key={index}>
+                      <Link
+                        href={createHref(link.href)}
+                        className="hover:text-[#194BED] transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-6 lg:text-[16px] xl:text-[18px]">Contact Sales</h4>
+                <ul className="space-y-4 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                  <li><span className="text-[#000000]">Call:</span> +966 54 199 9357</li>
+                  <li><span className="text-[#000000]">Email:</span> contact@accqrate-erp.com</li>
+                  <li><span className="text-[#000000]">WhatsApp:</span> +966 50 763 5216</li>
+                  <li>
+                    <Link
+                      href={createHref("/connect-with-concierge")}
+                      className="text-[#000000] hover:underline transition-colors"
+                    >
+                      Connect with Accqrate Concierge
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="max-w-[500px] leading-6 flex items-center justify-start">
+                <p className="lg:text-[14px] xl:text-[16px] text-[#717171]">
+                  One unified platform with zero silos—integrated modules on a single data model, global compliance built-in, AI-powered automation, flexible cloud or on-prem deployment, fast implementation, and enterprise-grade security and scalability.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex justify-end space-x-5 mt-4">
+              {[
+                "facebook",
+                "linkedin",
+                "twitter",
+                "instagram",
+                "youtube",
+                "reddit",
+                "snapchat",
+                "whatsapp",
+              ].map((icon, idx) => (
+                <a
+                  key={idx}
+                  href="#"
+                  className="hover:scale-110 transition-transform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={`/images/${icon}.svg`}
+                    alt={icon}
+                    width={22}
+                    height={22}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ---------- Mobile Footer Section ---------- */}
+      <div className="xl:hidden max-w-[1600px] mx-auto px-8 py-8">
+        <div className="flex flex-col items-center mb-8">
+          <Link href={createHref("/")}>
+            <Image
+              src="/images/logo.png"
+              alt="Accqrate logo"
+              width={160}
+              height={50}
+              className="mb-6 cursor-pointer"
+            />
+          </Link>
+
+          {/* Left column links for mobile */}
+          <div className="grid grid-cols-2 gap-4 w-full mb-8">
+            {leftColumnLinks.map((link, idx) => (
+              <Link
+                key={idx}
+                href={createHref(link.href)}
+                className="text-center hover:text-[#194BED] transition-colors lg:text-[16px] underline"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Footer sections for mobile */}
+          <div className="w-full">
+            {footerSections.map((section, idx) => (
+              <div key={idx} className="mb-6">
+                <h3 className="font-medium mb-4 lg:text-[16px] border-b pb-2">
+                  {section.title}
+                </h3>
+                <ul className="space-y-2 lg:text-[14px] text-[#717171]">
+                  {section.items.map((item, i) => (
+                    <li key={i}>
+                      <Link
+                        href={createHref(item.href)}
+                        className="hover:text-[#194BED] cursor-pointer transition-colors block py-1"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* Enterprise section for mobile */}
+            <div className="mb-6">
+              <h4 className="font-medium mb-4 lg:text-[16px] border-b pb-2">
+                Enterprise Solution
+              </h4>
+              <ul className="space-y-2 lg:text-[14px] text-[#717171]">
+                {enterpriseLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      href={createHref(link.href)}
+                      className="hover:text-[#194BED] transition-colors block py-1"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center space-x-5 mb-6">
+          {[
+            "facebook",
+            "linkedin",
+            "twitter",
+            "instagram",
+            "youtube",
+            "reddit",
+            "snapchat",
+            "whatsapp",
+          ].map((icon, idx) => (
+            <a
+              key={idx}
+              href="#"
+              className="hover:scale-110 transition-transform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={`/images/${icon}.svg`}
+                alt={icon}
+                width={22}
+                height={22}
+              />
             </a>
           ))}
-        </FadeUp>
-
-        <div className="border-t border-black/25 w-full mx-auto py-[14px] md:py-[24px] text-center text-xs text-gray-600 px-6">
-          © Copyright 2021 - 2025{" "}
-          <span className="text-[#194BED] text-sm leading-6 font-medium">Accqrate</span>, All rights reserved.
         </div>
+      </div>
+
+      {/* ---------- Bottom Section ---------- */}
+      <div className="max-w-[1600px] mx-auto pt-8 pb-8 flex flex-col items-center">
+        {/* Line with logo in center */}
+        <div className="w-full flex items-center justify-center mb-6">
+          <div className="flex-grow h-[1px] bg-gray-300"></div>
+          <Link href={createHref("/")}>
+            <Image
+              src="/images/logo.png"
+              alt="Accqrate"
+              width={160}
+              height={50}
+              className="mx-6 cursor-pointer"
+            />
+          </Link>
+          <div className="flex-grow h-[1px] bg-gray-300"></div>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-fluid-small lg:text-[16px] text-gray-600 text-center">
+          © Copyright 2021 - 2025{" "}
+          <span className="text-[#194BED] font-medium">Accqrate</span>, All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );
