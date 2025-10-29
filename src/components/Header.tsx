@@ -1120,26 +1120,6 @@ const Header: React.FC = () => {
                   ))}
                 </Accordion>
 
-                <div className="py-3">
-                  <Link
-                    href={createHref("/about-us")}
-                    className="block text-sm text-gray-800 font-semibold hover:text-[#534ED3] transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <T>About Us</T>
-                  </Link>
-                </div>
-
-                <div className="border-t border-gray-200 py-3">
-                  <Link
-                    href={createHref("/success-stories")}
-                    className="block text-sm text-gray-800 font-semibold hover:text-[#534ED3] transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <T>Success Stories</T>
-                  </Link>
-                </div>
-
                 {/* CTA Buttons */}
                 <div className="mt-10 flex gap-4">
                   <Link

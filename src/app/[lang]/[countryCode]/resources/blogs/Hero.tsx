@@ -26,11 +26,21 @@ export default function HeroResourceSection() {
         {/* Featured Image Section */}
         <div className="relative rounded-2xl overflow-hidden">
           <Image
+            src="/images/resources/young-deliver.png"
+            alt="Goods Receipts Accounting"
+            width={600}
+            height={400}
+            className="w-full h-[420px] object-cover sm:hidden"
+            priority
+          />
+
+          {/* Desktop / Tablet image (visible on sm and above) */}
+          <Image
             src="/images/resources/blog-bg.png"
             alt="Goods Receipts Accounting"
             width={1200}
             height={600}
-            className="w-full h-[420px] md:h-[600px] object-cover"
+            className="hidden sm:block w-full h-[420px] md:h-[600px] lg:h-[728px] object-cover"
             priority
           />
 
@@ -42,15 +52,25 @@ export default function HeroResourceSection() {
                 <h3 className="text-fluid-h3 font-semibold">
                   Goods Receipts Accounting
                 </h3>
-                <p className="text-fluid-small text-gray-200 mb-2 lg:mt-[30px] leading-snug">
+
+                <p className="text-fluid-small text-gray-200 mb-4 lg:mt-6 leading-snug">
                   Goods Receipts Accounting: The more inventory a company has,
                   the less likely they will have what they need. TechGiant,
                   Toyota...
                 </p>
-                <p className="text-gray-300 text-fluid-body indent-8 lg:mt-[30px]">
-                  Feb 08th, 2024 | 23 min read
-                </p>
+
+                <div className="flex items-center gap-2 mt-3 lg:mt-6 text-gray-300">
+                  <img
+                    src="/images/resources/cal.png"
+                    alt="Calendar icon"
+                    className="h-5 w-5 object-contain"
+                  />
+                  <p className="text-fluid-body">
+                    Feb 08th, 2024&nbsp;|&nbsp;23 min read
+                  </p>
+                </div>
               </FadeUp>
+
 
               {/* Arrow Icon */}
               <div className="flex-shrink-0 ml-4">

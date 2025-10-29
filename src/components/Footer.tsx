@@ -4,6 +4,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { comingSoonRoutes } from '@/lib/comingSoonRoutes'
+
 
 // ===================== Custom Hook for Dynamic Routing =====================
 const useDynamicRouting = () => {
@@ -80,7 +82,7 @@ export default function Footer() {
       title: "Data & Safety management",
       items: [
         { name: "Security", href: "/security" },
-        { name: "Contact us", href: "/contact" },
+        { name: "Contact us", href: "/contact-us" },
         { name: "Compliance", href: "/compliance" },
         { name: "Cookie Policy", href: "/cookie-policy" },
         { name: "Privacy Policy", href: "/privacy-policy" },
@@ -129,7 +131,11 @@ export default function Footer() {
               {leftColumnLinks.map((link, idx) => (
                 <Link
                   key={idx}
-                  href={createHref(link.href)}
+                  href={
+                    comingSoonRoutes.includes(link.href.replace(/^\//, ''))
+                      ? createHref('/coming-soon')
+                      : createHref(link.href)
+                  }
                   className="hover:text-[#194BED] transition-colors"
                 >
                   {link.name}
@@ -151,8 +157,14 @@ export default function Footer() {
                     {section.items.map((item, i) => (
                       <li key={i}>
                         <Link
-                          href={createHref(item.href)}
-                          className="hover:text-[#194BED] cursor-pointer transition-colors"
+                          key={i}
+                          href={
+                            comingSoonRoutes.includes(item.href.replace(/^\//, ''))
+                              ? createHref('/coming-soon')
+                              : createHref(item.href)
+                          }
+                          className={`hover:text-[#194BED] transition-colors ${comingSoonRoutes.includes(item.href.replace(/^\//, ''))
+                            }`}
                         >
                           {item.name}
                         </Link>
@@ -173,7 +185,11 @@ export default function Footer() {
                   {enterpriseLinks.map((link, index) => (
                     <li key={index}>
                       <Link
-                        href={createHref(link.href)}
+                        href={
+                          comingSoonRoutes.includes(link.href.replace(/^\//, ''))
+                            ? createHref('/coming-soon')
+                            : createHref(link.href)
+                        }
                         className="hover:text-[#194BED] transition-colors"
                       >
                         {link.name}
@@ -191,7 +207,11 @@ export default function Footer() {
                   <li><span className="text-[#000000]">WhatsApp:</span> +966 50 763 5216</li>
                   <li>
                     <Link
-                      href={createHref("/connect-with-concierge")}
+                      href={
+                        comingSoonRoutes.includes('connect-with-concierge')
+                          ? createHref('/coming-soon')
+                          : createHref('/connect-with-concierge')
+                      }
                       className="text-[#000000] hover:underline transition-colors"
                     >
                       Connect with Accqrate Concierge
