@@ -123,7 +123,7 @@ export default function Section4(): JSX.Element {
           {/* Heading */}
           <FadeUp className="text-center mb-6 md:mb-4 md:flex md:justify-center">
             <h2 className="text-fluid-h2 font-semibold bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent tracking-heading leading-tight">
-              Support, Training, & 
+              Support, Training, &
               <span className="font-semibold"> Onboarding</span>
             </h2>
           </FadeUp>
@@ -386,7 +386,7 @@ export default function Section4(): JSX.Element {
       </div >
       <section
 
-        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] text-[#333333]"
+        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] text-[#333333] lg:mb-10"
 
       >
         <FadeUp>

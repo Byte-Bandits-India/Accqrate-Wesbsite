@@ -123,10 +123,10 @@ const menus = [
             href: "/business/plan360",
           },
           {
-            title: "Accqrate ONE",
-            description: "End-to-end ERP for large enterprises.",
-            img: "/images/header/fill/one.svg",
-            href: "/business/one",
+            title: "E-invoicing Integration Solution",
+            description: "Service operations streamlined: assign, track, resolve, delight.",
+            img: "/images/header/fill/e-invoice.svg",
+            href: "/business/e-invoicing/accqrate",
           },
           {
             title: "Accqrate Filehub",

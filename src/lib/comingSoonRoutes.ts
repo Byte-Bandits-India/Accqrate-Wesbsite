@@ -36,6 +36,7 @@ export const comingSoonRoutes = [
   'ipr-complaints',
 
   'business/services',
+  'business/e-invoicing/accqrate',
 
   // Left column links
   'accelera',

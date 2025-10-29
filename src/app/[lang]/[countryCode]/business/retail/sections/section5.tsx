@@ -130,7 +130,7 @@ const Choose: React.FC = () => {
 
       <section
         id="readySection"
-        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] text-[#333333]"
+        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] lg:mb-10 text-[#333333]"
 
       >
         <FadeUp>
