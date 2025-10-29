@@ -53,7 +53,7 @@ export default function ProductUpdates() {
             <section className="py-10 md:py-16 text-center bg-gradient-to-r from-[#e6fbfe] to-[#edddfb]">
                 <Row justify="center">
                     <Col xs={22} sm={20} md={18} lg={16}>
-                        <h1 className="text-h3 font-bold text-gray-900 mb-6 px-4">
+                        <h1 className="text-fluid-h3 font-bold text-gray-900 mb-6 px-4">
                             <T>{getCountryText()}</T>
                         </h1>
                         <div className="flex justify-center">

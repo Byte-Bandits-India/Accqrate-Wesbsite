@@ -107,7 +107,7 @@ function ZatcaUpdates() {
                       transition-all duration-300
                       hover:border-[#91abff] hover:shadow-sm
                       ${isActive
-                                                ? 'border-[#194bed] bg-[#f5fcff] shadow-md'
+                                                ? 'border-[#194bed] shadow-md'
                                                 : 'bg-white'
                                             }
                     `
