@@ -114,7 +114,7 @@ export default function Footer() {
   return (
     <footer className="bg-white xl:border-t lg:border-gray-200 font-inter text-black">
       {/* ---------- Main Footer Section ---------- */}
-      <div className="max-w-[1600px] mx-auto px-8 py-12 hidden xl:block">
+      <div className="hidden xl:block max-w-[1600px] mx-auto px-8 py-12">
         <div className="flex justify-between items-start gap-12">
           {/* ---------- Left Column (Logo + Links) ---------- */}
           <div className="flex flex-col border-r border-gray-300 xl:pr-12 min-w-[220px]">
@@ -259,74 +259,7 @@ export default function Footer() {
       </div>
 
       {/* ---------- Mobile Footer Section ---------- */}
-      <div className="xl:hidden max-w-[1600px] mx-auto px-8 py-8">
-        <div className="flex flex-col items-center mb-8">
-          <Link href={createHref("/")}>
-            <Image
-              src="/images/logo.png"
-              alt="Accqrate logo"
-              width={160}
-              height={50}
-              className="mb-6 cursor-pointer"
-            />
-          </Link>
-
-          {/* Left column links for mobile */}
-          <div className="grid grid-cols-2 gap-4 w-full mb-8">
-            {leftColumnLinks.map((link, idx) => (
-              <Link
-                key={idx}
-                href={createHref(link.href)}
-                className="text-center hover:text-[#194BED] transition-colors lg:text-[16px] underline"
-              >
-                {link.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Footer sections for mobile */}
-          <div className="w-full">
-            {footerSections.map((section, idx) => (
-              <div key={idx} className="mb-6">
-                <h3 className="font-medium mb-4 lg:text-[16px] border-b pb-2">
-                  {section.title}
-                </h3>
-                <ul className="space-y-2 lg:text-[14px] text-[#717171]">
-                  {section.items.map((item, i) => (
-                    <li key={i}>
-                      <Link
-                        href={createHref(item.href)}
-                        className="hover:text-[#194BED] cursor-pointer transition-colors block py-1"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-
-            {/* Enterprise section for mobile */}
-            <div className="mb-6">
-              <h4 className="font-medium mb-4 lg:text-[16px] border-b pb-2">
-                Enterprise Solution
-              </h4>
-              <ul className="space-y-2 lg:text-[14px] text-[#717171]">
-                {enterpriseLinks.map((link, index) => (
-                  <li key={index}>
-                    <Link
-                      href={createHref(link.href)}
-                      className="hover:text-[#194BED] transition-colors block py-1"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div className="xl:hidden max-w-[1600px] mx-auto px-8">
         <div className="flex justify-center space-x-5 mb-6">
           {[
             "facebook",
