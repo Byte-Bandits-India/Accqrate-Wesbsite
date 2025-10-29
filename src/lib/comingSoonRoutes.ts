@@ -12,7 +12,6 @@ export const comingSoonRoutes = [
   // Resources
   'resources/events',
   'resources/case-studies',
-  'resources/announcement',
   'resources/product-updates',
   'resources/alternate-product',
   'resources/knowledge-center',

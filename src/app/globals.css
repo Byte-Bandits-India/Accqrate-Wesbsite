@@ -169,3 +169,31 @@ body {
   .tracking--5 { letter-spacing: -0.05em; }
   .tracking--2 { letter-spacing: -0.02em; }
 }
+
+@layer utilities {
+  .text-fill-bg {
+    @apply font-bold text-transparent bg-clip-text bg-no-repeat text-center;
+    background-image: url('/images/h1.png');
+    background-position: 50%;
+    background-size: 720px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  @screen sm {
+    .text-fill-bg {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+
+  @screen md {
+    .text-fill-bg {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+}
