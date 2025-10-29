@@ -259,8 +259,8 @@ export default function Footer() {
       </div>
 
       {/* ---------- Mobile Footer Section ---------- */}
-      <div className="xl:hidden max-w-[1600px] mx-auto px-8">
-        <div className="flex justify-center space-x-5 mb-6">
+      <div className="xl:hidden max-w-[1600px] mx-auto py-8 px-8">
+        <div className="flex justify-center space-x-5">
           {[
             "facebook",
             "linkedin",
@@ -290,7 +290,7 @@ export default function Footer() {
       </div>
 
       {/* ---------- Bottom Section ---------- */}
-      <div className="max-w-[1600px] mx-auto pt-8 pb-8 flex flex-col items-center">
+      <div className="max-w-[1600px] mx-auto pb-8 flex flex-col items-center">
         {/* Line with logo in center */}
         <div className="w-full flex items-center justify-center mb-6">
           <div className="flex-grow h-[1px] bg-gray-300"></div>

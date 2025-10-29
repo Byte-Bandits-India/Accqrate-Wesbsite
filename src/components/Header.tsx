@@ -305,7 +305,7 @@ const menus = [
           {
             title: "Tax Calculator",
             description: "Calculate your tax obligations",
-            href: "/resources/tax-calculator",
+            href: "/resources/vat",
             icon: "/images/header/fill/res/11.png",
           },
           {
