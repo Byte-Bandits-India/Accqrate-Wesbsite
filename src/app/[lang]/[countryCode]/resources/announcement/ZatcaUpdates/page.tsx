@@ -61,7 +61,7 @@ function ZatcaUpdates() {
                 <div className="container mx-auto px-4">
                     <Row align="middle" justify="center">
                         <Col xs={24} sm={24} md={20} lg={18} xl={16}>
-                            <h1 className="text-fill-bg">
+                            <h1 className="text-fill-bg mb-8">
                                 <T>ZATCA Updates</T>
                             </h1>
 
