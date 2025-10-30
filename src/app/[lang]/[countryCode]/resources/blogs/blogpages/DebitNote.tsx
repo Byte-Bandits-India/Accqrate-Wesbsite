@@ -9,36 +9,46 @@ import CtaNumber from "./CtaNumber";
 import { useParams } from "next/navigation";
 
 function DebitNote() {
-     const params = useParams();
-      const lang = params?.lang as string;
-      const countryCode = params?.countryCode as string;
+  const params = useParams();
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
+
   return (
     <BlogLayout
       pageTitle={<T>Integration of Debit Memos with ZATCA: An In-Depth Overview</T>}
       updatedOn="Feb 08th, 2024"
       minRead="23"
     >
+      {/* Cover Image */}
       <img
         src="/images/blogs/debit-notes.webp"
-        className="w-full mb-3 rounded-lg"
+        className="w-full mb-6 rounded-lg"
         alt="Integration of Debit Memos with ZATCA: An In-Depth Overview"
       />
 
-      <div>
-        <T>Navigating the financial landscape of today, especially with the introduction of </T>
-        <a href={`/${lang}/${countryCode}/resources/blogs/adapting-business`} className="text-blue-600 hover:underline">
+      {/* Intro Paragraph */}
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+        <T>
+          Navigating the financial landscape of today, especially with the introduction of{" "}
+        </T>
+        <a
+          href={`/${lang}/${countryCode}/resources/blogs/adapting-business`}
+          className="text-blue-600 hover:underline"
+        >
           <T>ZATCAs Phase 2 integration, </T>
         </a>
         <T>
           can be intricate. This article simplifies the concept of debit memos, shedding light on their
           significance from both the seller and buyer perspectives.
         </T>
-      </div>
+      </p>
 
-      <h3 className="mt-6 font-semibold text-lg">
-        <T>Understanding Debit Notes from the Seller`s Perspective</T>
+      {/* Section: Seller Perspective */}
+      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
+        <T>Understanding Debit Notes from the Seller's Perspective</T>
       </h3>
-      <div>
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
         <T>
           A debit note, commonly referred to as a debit memo, serves as a financial document from the seller
           to the buyer. Its main purpose is to inform the buyer about their current debts. Before issuing an
@@ -63,7 +73,7 @@ function DebitNote() {
         <br />
         <br />
         <T>
-          Another vital point is that debit notes don`t necessarily involve the actual transfer of assets.
+          Another vital point is that debit notes don't necessarily involve the actual transfer of assets.
           They are primarily ledger entries to keep track of shipped inventories on credit and payments due.
           Payments aren’t demanded immediately upon issuing a debit note. Instead, a formal invoice is
           presented later, with the debit note adjusted against a credit note.
@@ -84,15 +94,18 @@ function DebitNote() {
         <br />
         <br />
         <T>ZATCA has introduced classifications for debit notes:</T>
-        <ul className="list-disc pl-6 mt-2">
-          <li>
-            <T>B2C Debit notes are termed "Simplified Debit notes".</T>
-          </li>
-          <li>
-            <T>B2B Debit notes are labeled "Tax Debit notes".</T>
-          </li>
-        </ul>
-        <br />
+      </p>
+
+      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-4">
+        <li>
+          <T>B2C Debit notes are termed "Simplified Debit notes".</T>
+        </li>
+        <li>
+          <T>B2B Debit notes are labeled "Tax Debit notes".</T>
+        </li>
+      </ul>
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
         <T>
           It's crucial for sellers to report these debit notes to ZATCA, regardless of whether they're in
           Phase 1 or Phase 2. Taxes from these notes are logged into ZATCA, with the seller responsible for
@@ -111,48 +124,57 @@ function DebitNote() {
           deliveries are confirmed, the seller creates an invoice for 11,500 SAR and creates a credit note for
           11,500 SAR referring to the cancellation of the debit note.
         </T>
-      </div>
+      </p>
 
-      <h3 className="mt-6 font-semibold text-lg">
+      {/* Section: Buyer Perspective */}
+      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
         <T>Debit Notes from the Buyer's Angle</T>
       </h3>
-      <div>
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
         <T>
           From the buyer's standpoint, a debit note is typically issued when there's a need to return a
           portion of a delivery or shipment to the seller. This action from the buyer corresponds with a
           credit note on the seller's end.
         </T>
-        <ul className="list-disc pl-6 mt-2">
-          <T>Below is an explanation of the scenario:</T>
-          <li>
-            <T>The buyer creates a Purchase Order for the seller.</T>
-          </li>
-          <li>
-            <T>The seller delivers the material, and the buyer processes a goods inward.</T>
-          </li>
-          <li>
-            <T>The seller issues a tax invoice.</T>
-          </li>
-          <li>
-            <T>The buyer pays the invoice according to the payment terms.</T>
-          </li>
-          <li>
-            <T>After this, the buyer observes defects in the delivered goods.</T>
-          </li>
-          <li>
-            <T>
-              At this stage, the buyer issues a debit note to the seller for the value of the damaged goods to
-              recover the money.
-            </T>
-          </li>
-          <li>
-            <T>
-              On the other hand, the seller creates a credit note to adjust the books and the taxes that need
-              to be paid. The seller must declare this credit note to ZATCA. However, from ZATCA's viewpoint,
-              there is no action needed from the buyer.
-            </T>
-          </li>
-        </ul>
+      </p>
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+        <T>Below is an explanation of the scenario:</T>
+      </p>
+
+      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-4">
+        <li>
+          <T>The buyer creates a Purchase Order for the seller.</T>
+        </li>
+        <li>
+          <T>The seller delivers the material, and the buyer processes a goods inward.</T>
+        </li>
+        <li>
+          <T>The seller issues a tax invoice.</T>
+        </li>
+        <li>
+          <T>The buyer pays the invoice according to the payment terms.</T>
+        </li>
+        <li>
+          <T>After this, the buyer observes defects in the delivered goods.</T>
+        </li>
+        <li>
+          <T>
+            At this stage, the buyer issues a debit note to the seller for the value of the damaged goods to
+            recover the money.
+          </T>
+        </li>
+        <li>
+          <T>
+            On the other hand, the seller creates a credit note to adjust the books and the taxes that need
+            to be paid. The seller must declare this credit note to ZATCA. However, from ZATCA's viewpoint,
+            there is no action needed from the buyer.
+          </T>
+        </li>
+      </ul>
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
         <T>Example:</T>
         <br />
         <T>
@@ -168,22 +190,29 @@ function DebitNote() {
           this amount.
         </T>
         <br />
+        <br />
         <T>Following the transaction:</T>
-        <ul className="list-disc pl-6 mt-2">
-          <li>
-            <T>The seller will debit its accounts receivable by 2,000 SAR.</T>
-          </li>
-          <li>
-            <T>The buyer will credit its accounts payable by 2,000 SAR.</T>
-          </li>
-        </ul>
-      </div>
+      </p>
 
-      <h3 className="mt-6 font-semibold text-lg">
+      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-6">
+        <li>
+          <T>The seller will debit its accounts receivable by 2,000 SAR.</T>
+        </li>
+        <li>
+          <T>The buyer will credit its accounts payable by 2,000 SAR.</T>
+        </li>
+      </ul>
+
+      {/* Section: Accqrate Edge */}
+      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
         <T>The Accqrate Edge</T>
       </h3>
-      <p>
-        <a href="https://accqrate-erp.com/en/e-invoicing-plugin" className="text-blue-600 hover:underline">
+
+      <p className="text-gray-700 text-[16px] leading-relaxed mb-6">
+        <a
+          href="https://accqrate-erp.com/en/e-invoicing-plugin"
+          className="text-blue-600 underline"
+        >
           Accqrate{" "}
         </a>
         <T>
