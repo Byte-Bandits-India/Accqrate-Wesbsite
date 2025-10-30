@@ -112,7 +112,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white xl:border-t lg:border-gray-200 font-inter text-black">
+    <footer className="bg-[#212121] xl:border-t lg:border-gray-200 font-inter text-black">
       {/* ---------- Main Footer Section ---------- */}
       <div className="hidden xl:block max-w-[1600px] mx-auto px-8 py-12">
         <div className="flex justify-between items-start gap-12">
@@ -120,7 +120,7 @@ export default function Footer() {
           <div className="flex flex-col border-r border-gray-300 xl:pr-12 min-w-[220px]">
             <Link href={createHref("/")}>
               <Image
-                src="/images/logo.png"
+                src="/images/white.png"
                 alt="Accqrate logo"
                 width={160}
                 height={50}
@@ -136,7 +136,7 @@ export default function Footer() {
                       ? createHref('/coming-soon')
                       : createHref(link.href)
                   }
-                  className="hover:text-[#194BED] tracking-para transition-colors"
+                  className="hover:text-[#194BED] text-[#FFFFFF] tracking-para transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -150,10 +150,10 @@ export default function Footer() {
             <div className="flex justify-between gap-4 xl:gap-8">
               {footerSections.map((section, idx) => (
                 <div key={idx} className="flex flex-col min-w-[180px]">
-                  <h3 className="font-medium mb-6 lg:text-[16px] tracking-heading xl:text-[18px]">
+                  <h3 className="font-medium mb-6 text-[#FFFFFF] lg:text-[16px] tracking-heading xl:text-[18px]">
                     {section.title}
                   </h3>
-                  <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                  <ul className="space-y-2 lg:text-[14px] font-normal xl:text-[16px]">
                     {section.items.map((item, i) => (
                       <li key={i}>
                         <Link
@@ -163,7 +163,7 @@ export default function Footer() {
                               ? createHref('/coming-soon')
                               : createHref(item.href)
                           }
-                          className={`hover:text-[#194BED] tracking-para transition-colors ${comingSoonRoutes.includes(item.href.replace(/^\//, ''))
+                          className={`hover:text-[#194BED] text-[#F0F0F0] tracking-para transition-colors ${comingSoonRoutes.includes(item.href.replace(/^\//, ''))
                             }`}
                         >
                           {item.name}
@@ -178,10 +178,10 @@ export default function Footer() {
             {/* Enterprise section BELOW main columns */}
             <div className="border-t border-gray-300 mt-12 pt-8 flex justify-between gap-6 text-sm text-gray-700">
               <div>
-                <h4 className="font-medium mb-4 text-fluid-small tracking-heading">
+                <h4 className="font-medium mb-4 text-[#FFFFFF] text-fluid-small tracking-heading">
                   Enterprise Solution
                 </h4>
-                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171]">
+                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#F0F0F0]">
                   {enterpriseLinks.map((link, index) => (
                     <li key={index}>
                       <Link
@@ -200,11 +200,11 @@ export default function Footer() {
               </div>
 
               <div>
-                <h4 className="font-medium mb-4 lg:text-[16px] xl:text-[18px] tracking-heading">Contact Sales</h4>
-                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#717171] tracking-para">
-                  <li><span className="text-[#000000]">Call:</span> +966 54 199 9357</li>
-                  <li><span className="text-[#000000]">Email:</span> contact@accqrate-erp.com</li>
-                  <li><span className="text-[#000000]">WhatsApp:</span> +966 50 763 5216</li>
+                <h4 className="font-medium mb-4 lg:text-[16px] xl:text-[18px] text-[#FFFFFF] tracking-heading">Contact Sales</h4>
+                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#F0F0F0] tracking-para">
+                  <li><span className="text-[#FFFFFF]">Call:</span> +966 54 199 9357</li>
+                  <li><span className="text-[#FFFFFF]">Email:</span> contact@accqrate-erp.com</li>
+                  <li><span className="text-[#FFFFFF]">WhatsApp:</span> +966 50 763 5216</li>
                   <li>
                     <Link
                       href={
@@ -212,7 +212,7 @@ export default function Footer() {
                           ? createHref('/coming-soon')
                           : createHref('/connect-with-concierge')
                       }
-                      className="text-[#000000] hover:underline transition-colors"
+                      className="text-[#FFFFFF] hover:underline transition-colors"
                     >
                       Connect with Accqrate Concierge
                     </Link>
@@ -221,45 +221,47 @@ export default function Footer() {
               </div>
 
               <div className="max-w-[500px] leading-6 flex items-center justify-start">
-                <p className="lg:text-[14px] xl:text-[16px] text-[#717171] tracking-para">
+                <p className="lg:text-[14px] xl:text-[16px] text-[#F0F0F0] tracking-para">
                   One unified platform with zero silos—integrated modules on a single data model, global compliance built-in, AI-powered automation, flexible cloud or on-prem deployment, fast implementation, and enterprise-grade security and scalability.
                 </p>
               </div>
             </div>
 
-            <div className="flex justify-end space-x-5 mt-4">
-              {[
-                "facebook",
-                "linkedin",
-                "twitter",
-                "instagram",
-                "youtube",
-                "reddit",
-                "snapchat",
-                "whatsapp",
-              ].map((icon, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="hover:scale-110 transition-transform"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={`/images/${icon}.svg`}
-                    alt={icon}
-                    width={22}
-                    height={22}
-                  />
-                </a>
-              ))}
+            <div className="hidden">
+              <div className="flex justify-end space-x-5 mt-4">
+                {[
+                  "facebook",
+                  "linkedin",
+                  "twitter",
+                  "instagram",
+                  "youtube",
+                  "reddit",
+                  "snapchat",
+                  "whatsapp",
+                ].map((icon, idx) => (
+                  <a
+                    key={idx}
+                    href="#"
+                    className="hover:scale-110 transition-transform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={`/images/${icon}.svg`}
+                      alt={icon}
+                      width={22}
+                      height={22}
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* ---------- Mobile Footer Section ---------- */}
-      <div className="xl:hidden max-w-[1600px] mx-auto py-8 px-8">
+      <div className="hidden xl:hidden max-w-[1600px] mx-auto py-8 px-8">
         <div className="flex justify-center space-x-5">
           {[
             "facebook",
@@ -290,13 +292,13 @@ export default function Footer() {
       </div>
 
       {/* ---------- Bottom Section ---------- */}
-      <div className="max-w-[1600px] mx-auto pb-8 flex flex-col items-center">
+      <div className="max-w-[1600px] mx-auto pb-8 py-8 flex flex-col items-center">
         {/* Line with logo in center */}
         <div className="w-full flex items-center justify-center mb-6">
           <div className="flex-grow h-[1px] bg-gray-300"></div>
           <Link href={createHref("/")}>
             <Image
-              src="/images/logo.png"
+              src="/images/footerlogo.png"
               alt="Accqrate"
               width={160}
               height={50}
