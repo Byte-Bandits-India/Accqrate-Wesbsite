@@ -11,10 +11,10 @@ function TransformComplaint() {
       updatedOn="Jan 13th, 2025"
       minRead="23"
     >
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-3">
         <T>ENABLING MARKET PLACES WITH E-INVOICING</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Marketplaces have seen year-on-year growth both in the Kingdom and globally. By nature, a
           marketplace involves bi-directional transactions between buyers and sellers, making e-invoicing a
@@ -26,15 +26,15 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Why Do Marketplaces Need Faster E-Invoicing Scalability?</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           <b>ZATCA Mandate</b>
         </T>
       </p>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Since December 2019, ZATCA has made e-invoicing a legal obligation in Saudi Arabia. This regulation
           compels marketplaces to have efficient invoice processing systems and real-time integrations to
@@ -44,16 +44,16 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           <b>Operational Efficiency and Compliance</b>
         </T>
       </p>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>Digital e-invoicing:</T>
       </p>
-      <ol className="story">
-        <li className="mt-3">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
+        <li className="mt-2">
           <T>
             Streamlines workflows between different stakeholders (marketplace provider, buyers, and sellers).
           </T>
@@ -69,15 +69,15 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>E-Invoicing: A Competitive Advantage</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           <b>Adoption Landscape</b>
         </T>
       </p>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Although many companies in the Kingdom are transitioning to e-invoicing, some remain reluctant to
           move from legacy systems. Marketplaces often assume that buyers and sellers will manage their
@@ -86,16 +86,14 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <p className="story">
-        <b>
-          <T>Security and Accuracy</T>
-        </b>
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800 font-semibold">
+        <T>Security and Accuracy</T>
       </p>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>By switching to e-invoicing, marketplaces can:</T>
       </p>
-      <ol className="story">
-        <li className="mt-3">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
+        <li className="mt-2">
           <T>Safeguard invoice data through encryption, authentication, and other security measures.</T>
         </li>
         <li>
@@ -106,10 +104,10 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Challenges in the Marketplace Ecosystem</T>
       </h3>
-      <ol className="story">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <T>
             <b>Data Security Concerns:</b> Ensuring sensitive transactional data remains secure and compliant
@@ -136,7 +134,7 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           These challenges often deter marketplaces from making the shift, but most can be resolved with the
           right technology partner. An e-invoicing solution like Accqrate can enable businesses to quickly
@@ -144,16 +142,16 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Role of Accqrate in Simplifying E-Invoicing</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Accqrate’s e-invoicing software addresses the complexities of marketplace compliance. With minimal
           setup time—often just a few hours—you can:
         </T>
       </p>
-      <ol className="story">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <T>
             <b>Integrate seamlessly</b> through APIs in milliseconds, generating ZATCA-compliant invoices.
@@ -173,10 +171,10 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Marketplace E-Invoicing Flows: The Three Key Players</T>
       </h3>
-      <ol className="story">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <T>
             <b>Sellers</b> – Individuals or companies showcasing products or services.
@@ -195,26 +193,27 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Below is a simplified overview of the e-invoicing process when integrating with ZATCA through
           Accqrate:
         </T>
       </p>
+
       <img
         src="/images/blogs/e-invoicing-process-overview.png"
         className="w-full mb-3"
         alt="Offline POS Billing Software"
       />
-      <i style={{ fontSize: "12px", justifyContent: "center", display: "flex" }}>
+      <i className="text-sm text-gray-600 flex justify-center mb-6">
         Fig. 1. E-invoicing process flow between marketplace and ZATCA through Accqrate E-invoicing
         solutions
       </i>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Seller Side Compliance</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           When a buyer procures a seller’s product or service, the marketplace application should
           automatically generate a compliant e-invoice through a ZATCA-approved solution. This integration
@@ -223,10 +222,10 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Buyer Side Compliance</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Buyers need compliant invoices to claim VAT. A non-compliant invoice prevents the buyer from
           accounting for VAT, which can deter them from using a non-compliant platform. Ensuring compliant
@@ -234,16 +233,16 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Provider’s Compliance</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Marketplace providers often charge transaction or subscription fees. For these charges, they must
           also issue fully compliant tax invoices, ensuring:
         </T>
       </p>
-      <ol className="story">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <T>The VAT collected from buyers or sellers is accurately recorded and reported.</T>
         </li>
@@ -252,7 +251,7 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In this interconnected network, each player is affected if e-invoicing is not handled properly,
           potentially leading to steep penalties. Accqrate helps mitigate these risks by offering a
@@ -260,14 +259,14 @@ function TransformComplaint() {
         </T>
       </p>
 
-      <h3 style={{ fontSize: "19px" }}>
+      <h3 className="text-[19px] font-semibold text-gray-900 mb-2 mt-6">
         <T>Conclusion</T>
       </h3>
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>Marketplaces stand to gain a significant competitive advantage by adopting e-invoicing:</T>
       </p>
-      <ol className="story">
-        <li className="mt-3">
+      <ol className="story list-decimal pl-6 text-base md:text-lg leading-relaxed text-gray-800">
+        <li className="mt-2">
           <T>
             <b>Faster and more accurate invoicing </b> for buyers and sellers.
           </T>
@@ -289,7 +288,7 @@ function TransformComplaint() {
         </li>
       </ol>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Don’t let the complexities of e-invoicing hold your marketplace back. With Accqrate, you can become
           compliant in a matter of hours. To learn more or schedule a free integration proof of concept,
