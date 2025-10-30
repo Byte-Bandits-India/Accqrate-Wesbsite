@@ -309,7 +309,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <p className="text-fluid-small lg:text-[16px] text-gray-600 text-center">
+        <p className="text-fluid-small lg:text-[16px] text-[#B7B7B7] text-center">
           © Copyright 2021 - 2025{" "}
           <span className="text-[#194BED] font-medium">Accqrate</span>, All rights
           reserved.
