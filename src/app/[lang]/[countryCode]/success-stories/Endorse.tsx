@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FadeUp from "@/components/ui/FadeUp";
 
@@ -71,14 +71,14 @@ export default function EndorsedTestimonials() {
   const active = testimonials[activeIndex];
 
   return (
-    <section className="bg-[#f6f5ff]">
+    <section className="bg-gradient-to-b from-[#EFF3FF00] to-[#EFF3FF]">
       <div className="mx-auto px-6 md:px-8 max-w-[1440px] pt-8 md:pt-12 lg:pt-[90px]">
         {/* Header */}
         <FadeUp className="text-left">
-          <h2 className="text-fluid-h1 lg:text-[58px] leading-tight text-left font-medium text-black">
+          <h2 className="text-fluid-h1 lg:text-[50px] leading-tight text-left font-medium text-[#000000]">
             Endorsed by industry Leaders
           </h2>
-          <p className="text-gray-600 mt-6 md:mt-8 text-fluid-body max-w-[777px]">
+          <p className="text-[#000000] font-medium mt-6 md:mt-8 text-fluid-body max-w-[777px]">
             Industry leaders trust our commitment to excellence validating our
             innovative solutions and fostering partnerships.
           </p>
@@ -95,12 +95,18 @@ export default function EndorsedTestimonials() {
                 className={cn(
                   "px-4 sm:px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-200 flex-shrink-0",
                   activeIndex === i
-                    ? "bg-[#1f1a9e] text-white border-transparent"
+                    ? "text-white border-transparent"
                     : "bg-white text-gray-800 border-gray-200 hover:border-[#1f1a9e]"
                 )}
+                style={
+                  activeIndex === i
+                    ? { background: "linear-gradient(90deg, #194BED 0%, #29266E 100%)" }
+                    : {}
+                }
               >
                 {t.company}
               </button>
+
             ))}
           </FadeUp>
 
@@ -110,17 +116,17 @@ export default function EndorsedTestimonials() {
               onClick={() =>
                 setActiveIndex((p) => (p === 0 ? testimonials.length - 1 : p - 1))
               }
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
             >
-              <ChevronLeft className="w-5 h-5 text-gray-700" />
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
             </button>
             <button
               onClick={() =>
                 setActiveIndex((p) => (p === testimonials.length - 1 ? 0 : p + 1))
               }
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
+              className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition"
             >
-              <ChevronRight className="w-5 h-5 text-gray-700" />
+              <ArrowRight className="w-5 h-5 text-gray-700" />
             </button>
           </FadeUp>
         </div>
@@ -141,7 +147,7 @@ export default function EndorsedTestimonials() {
                 />
               </div>
 
-              <h3 className="text-fluid-h3 font-medium text-gray-900 mb-4">
+              <h3 className="text-fluid-h3 lg:text-[50px] font-medium text-[#000000] mb-4">
                 {active.title}
               </h3>
               <p className="text-[#000000] text-fluid-small leading-relaxed mb-10">

@@ -72,40 +72,6 @@ const Index = () => {
       <section>
         <CTASection />
       </section>
-
-      {/* Bottom Buttons */}
-      <div className="flex flex-col items-center md:flex md:flex-row md:justify-center md:gap-[10px] lg:gap-[30px] py-8 md:py-10 lg:py-[50px]">
-        {[
-          "Get a Free Proof of Concept",
-          "Start 30-Day Free Trial",
-          "Talk to Sales",
-        ].map((text, i) => (
-          <button
-            key={i}
-            className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
-            style={{
-              background: "linear-gradient(90deg, #194BED 0%, #29266E 100%)",
-            }}
-          >
-            {text}
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              className="text-white"
-            >
-              <path
-                d="M9 6l6 6-6 6"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        ))}
-      </div>
     </div>
   );
 };

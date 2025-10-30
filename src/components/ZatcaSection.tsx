@@ -58,7 +58,7 @@ export default function ZatcaSection() {
 
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#4F79FF] to-[#B5C6FF] text-black font-medium px-6 py-3 rounded-full"
+            className="inline-flex items-center justify-center gap-2 bg-[#F05A28] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
           >
             Book a Demo <ArrowRight className="w-4 h-4" />
           </button>

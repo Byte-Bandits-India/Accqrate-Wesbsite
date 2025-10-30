@@ -18,7 +18,7 @@ export default function SuccessStoryCard({
   imageUrl,
 }: SuccessStoryCardProps) {
   return (
-    <div className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all duration-300">
+    <div className="border border-gray-200 rounded-[20px] overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300">
       <FadeUp className="relative w-full h-48">
         <Image
           src={imageUrl}
@@ -29,7 +29,7 @@ export default function SuccessStoryCard({
       </FadeUp>
 
       <FadeUp className="p-6">
-        <p className="text-blue-600 text-fluid-small font-semibold mb-2">
+        <p className="text-[#F05A28] text-fluid-small font-medium mb-2">
           {sourceSystem}
         </p>
         <h3 className="text-gray-900 text-fluid-body font-semibold mb-2">{title}</h3>
