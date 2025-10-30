@@ -692,28 +692,28 @@ const MegaMenu: React.FC<{
               {menu.sections
                 .find((sec) => sec.heading === activeSection)
                 ?.subItems.map((item) => (
-                  <li
-                    key={item.title}
-                    className="flex items-start gap-3 py-2"
-                    onClick={onItemClick}
-                  >
-                    {/* Optional icon or image */}
-                    {"img" in item && item.img && (
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-[50px] h-[50px] object-contain mt-1"
-                      />
-                    )}
+                  <li key={item.title} onClick={onItemClick}>
+                    <Link
+                      href={createHref(item.href)}
+                      className="flex items-start gap-3 p-2 rounded-md hover:bg-[#f0f3ff] transition-colors cursor-pointer"
+                    >
+                      {"img" in item && item.img && (
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-[50px] h-[50px] object-contain mt-1"
+                        />
+                      )}
 
-                    <div>
-                      <h4 className="text-[16px] font-medium text-[#333333] leading-tight">
-                        {isInitialized ? t(item.title) : item.title}
-                      </h4>
-                      <p className="text-[12px] text-gray-500 leading-snug mt-[6px]">
-                        <T>{item.description}</T>
-                      </p>
-                    </div>
+                      <div>
+                        <h4 className="text-[16px] font-medium text-[#333333] leading-tight hover:text-[#534ED3]">
+                          {isInitialized ? t(item.title) : item.title}
+                        </h4>
+                        <p className="text-[12px] text-gray-500 leading-snug mt-[6px]">
+                          <T>{item.description}</T>
+                        </p>
+                      </div>
+                    </Link>
                   </li>
                 ))}
             </ul>
