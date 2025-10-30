@@ -84,54 +84,54 @@ const menus = [
       {
         heading: "Business Solution",
         images: "/images/header/line/pro1.svg",
-        xl: "/images/header/fill/Buisness solution.png",
+        xl: "/images/header/navbar/image/Buisness solution.webp",
         subItems: [
           {
             title: "Accqrate Books",
             description: "Manage customer relationships efficiently.",
-            img: "/images/header/fill/Books.svg",
+            img: "/images/header/navbar/fill/books.webp",
             href: "/business/books",
           },
           {
             title: "Accqrate Retail",
             description: "Automate HR workflows and employee management.",
-            img: "/images/header/fill/retail.svg",
+            img: "/images/header/navbar/fill/retail.webp",
             href: "/business/retail",
           },
           {
             title: "Accqrate Factory",
             description: "Manage customer relationships efficiently.",
-            img: "/images/header/fill/Factory.svg",
+            img: "/images/header/navbar/fill/factory.webp",
             href: "/business/factory",
           },
           {
             title: "Accqrate People",
             description: "Manage customer relationships efficiently.",
-            img: "/images/header/fill/people.svg",
+            img: "/images/header/navbar/fill/people.webp",
             href: "/business/people",
           },
           {
             title: "Accqrate CRM",
             description: "Manage customer relationships efficiently.",
-            img: "/images/header/fill/crm.svg",
+            img: "/images/header/navbar/fill/crm.webp",
             href: "/business/crm",
           },
           {
             title: "Accqrate Plan360",
             description: "Automate HR workflows and employee management.",
-            img: "/images/header/fill/plan.svg",
+            img: "/images/header/navbar/fill/360.webp",
             href: "/business/plan360",
           },
           {
             title: "E-invoicing Integration Solution",
             description: "Service operations streamlined: assign, track, resolve, delight.",
-            img: "/images/header/fill/e-invoice.svg",
+            img: "/images/header/navbar/fill/einvoice-integration.webp",
             href: "/business/e-invoicing/accqrate",
           },
           {
             title: "Accqrate Filehub",
             description: "Automate HR workflows and employee management.",
-            img: "/images/header/fill/Filehub.svg",
+            img: "/images/header/navbar/fill/filehub.webp",
             href: "/business/fileHub",
           },
         ],
@@ -146,54 +146,54 @@ const menus = [
       {
         heading: "E-invoicing",
         images: "/images/header/line/pro2.svg",
-        xl: "/images/header/fill/e-invoicing/e-invoicing.png",
+        xl: "/images/header/navbar/image/E-invoicing Solutions.webp",
         subItems: [
           {
             title: "Accqrate E-Invoicing",
             description: "Effortless invoicing and compliance, ZATCA Phase 2 approved and enterprise-ready.",
-            img: "/images/header/fill/e-invoicing/1.png",
+            img: "/images/header/navbar/fill/einvoicing.webp",
             href: "/e-invoicing/accqrate",
           },
           {
             title: "E-Invoicing Integration",
             description: "Seamless ZATCA integration for any ERP, POS, or custom application.",
-            img: "/images/header/fill/e-invoicing/2.png",
+            img: "/images/header/navbar/fill/einvoice-integration.webp",
             href: "/e-invoicing/integration",
           },
           {
             title: "E-invoicing with SAP Suite",
             description: "Connect your SAP suite with ZATCA, Ready Packages.",
-            img: "/images/header/fill/e-invoicing/3.png",
+            img: "/images/header/navbar/fill/sap.webp",
             href: "/e-invoicing/sap",
           },
           {
             title: "E-invoicing with Oracle Suite",
             description: "Enterprise-grade ZATCA compliance for Oracle ecosystems.",
-            img: "/images/header/fill/e-invoicing/4.png",
+            img: "/images/header/navbar/fill/oracle.webp",
             href: "/e-invoicing/oracle",
           },
           {
             title: "E-invoicing with Microsoft Suite",
             description: "ZATCA integration built for Microsoft Dynamics, Business Central, Navision and More",
-            img: "/images/header/fill/e-invoicing/5.png",
+            img: "/images/header/navbar/fill/microsoft.webp",
             href: "/e-invoicing/microsoft",
           },
           {
             title: "E-invoicing with Legacy System",
             description: "Modern compliance without replacing your legacy infrastructure.",
-            img: "/images/header/fill/e-invoicing/6.png",
+            img: "/images/header/navbar/fill/legacy.webp",
             href: "/e-invoicing/legacy",
           },
           {
             title: "E-invoicing with Custom & Homegrown Systems",
             description: "Future-proof ZATCA integration for bespoke, popular and in-house applications.",
-            img: "/images/header/fill/e-invoicing/7.png",
+            img: "/images/header/navbar/fill/homegrown.webp",
             href: "/e-invoicing/custom",
           },
           {
             title: "Multi-Country Integration with One Single Framework",
             description: "One global framework. Multiple countries. Unified e-invoicing compliance.",
-            img: "/images/header/fill/e-invoicing/8.png",
+            img: "/images/header/navbar/fill/framework.webp",
             href: "/e-invoicing/multi-country",
           },
         ],
@@ -209,12 +209,30 @@ const menus = [
         heading: "Enterprise Solution",
         description: "End-to-end ERP for large enterprises.",
         images: "/images/header/line/pro3.svg",
-        xl: "/images/header/fill/Enterprise-Solution.png",
+        xl: "/images/header/navbar/image/Enterprice solution.webp",
         subItems: [
           {
             title: "Accqrate ONE",
             description: "End-to-end ERP for large enterprises.",
             img: "/images/header/fill/one.svg",
+            href: "/images/header/navbar/fill/one.webp",
+          },
+          {
+            title: "Custom Developments",
+            description: "Tailored solutions engineered around your unique workflows and scale.",
+            img: "/images/header/navbar/fill/developments.webp",
+            href: "/business/one",
+          },
+          {
+            title: "Assessments",
+            description: "Deep business evaluations to unlock efficiency, compliance, and growth.",
+            img: "/images/header/navbar/fill/assessments.webp",
+            href: "/business/one",
+          },
+          {
+            title: "Business Process Automations",
+            description: "Automate the routine. Accelerate performance. Empower your teams.",
+            img: "/images/header/navbar/fill/automations.webp",
             href: "/business/one",
           },
         ],
@@ -234,25 +252,25 @@ const menus = [
             title: "Blogs",
             description: "Insights, tips and industry news",
             href: "/resources/blogs",
-            icon: "/images/header/fill/res/1.png",
+            icon: "/images/header/navbar/outline/blog.png",
           },
           {
             title: "Case Studies",
             description: "Live and recorded sessions from experts",
             href: "/resources/case-studies",
-            icon: "/images/header/fill/res/2.png",
+            icon: "/images/header/navbar/outline/case.png",
           },
           {
             title: "Newsletter",
             description: "Stay updated with the latest news and updates",
             href: "/resources/newsletter",
-            icon: "/images/header/fill/res/3.png",
+            icon: "/images/header/navbar/outline/news.png",
           },
           {
             title: "Developer Center",
             description: "Resources for developers and integrators",
             href: "/resources/developer-center",
-            icon: "/images/header/fill/res/4.png",
+            icon: "/images/header/navbar/outline/dev.png",
           },
         ],
       },
@@ -264,25 +282,25 @@ const menus = [
             title: "Announcements",
             description: "Find answers to common questions",
             href: "/resources/announcement",
-            icon: "/images/header/fill/res/5.png",
+            icon: "/images/header/navbar/outline/announce.png",
           },
           {
             title: "FAQs",
             description: "Connect with other users",
             href: "/resources/faq",
-            icon: "/images/header/fill/res/6.png",
+            icon: "/images/header/navbar/outline/faq.png",
           },
           {
             title: "Knowledge Center",
             description: "Comprehensive knowledge base",
             href: "/resources/knowledge-center",
-            icon: "/images/header/fill/res/7.png",
+            icon: "/images/header/navbar/outline/knowledge.png",
           },
           {
             title: "Product Updates",
             description: "Latest product features and updates",
             href: "/resources/product-updates",
-            icon: "/images/header/fill/res/8.png",
+            icon: "/images/header/navbar/outline/product.png",
           },
         ],
       },
@@ -294,25 +312,25 @@ const menus = [
             title: "Events",
             description: "Upcoming events and webinars",
             href: "/resources/events",
-            icon: "/images/header/fill/res/9.png",
+            icon: "/images/header/navbar/outline/event.png",
           },
           {
             title: "Alternate Product",
             description: "Explore alternative solutions",
             href: "/resources/alternate-product",
-            icon: "/images/header/fill/res/10.png",
+            icon: "/images/header/navbar/outline/alternate.png",
           },
           {
             title: "Tax Calculator",
             description: "Calculate your tax obligations",
             href: "/resources/vat",
-            icon: "/images/header/fill/res/11.png",
+            icon: "/images/header/navbar/outline/tax.png",
           },
           {
             title: "Branding Assets",
             description: "Download brand resources",
             href: "/resources/branding-assets",
-            icon: "/images/header/fill/res/12.png",
+            icon: "/images/header/navbar/outline/brand.png",
           },
         ],
       },
@@ -327,55 +345,55 @@ const menus = [
         heading: "Community",
         description: "Join our growing community of users and partners",
         images: "/images/header/line/pro3.svg",
-        xl: "/images/header/fill/community/community.png",
+        xl: "/images/header/navbar/image/Community solution.webp",
         subItems: [
           {
             title: "Find an Accountant",
             description: "Connect with Accqrate certified experts to manage accounting — stress-free and accurate.",
-            img: "/images/header/fill/community/1.png",
+            img: "/images/header/navbar/fill/accountant.webp",
             href: "/community/find-accountant",
           },
           {
             title: "Accqrate Sprouts",
             description: "Empowering young professionals & Students with tools to scale smart and grow faster.",
-            img: "/images/header/fill/community/5.png",
+            img: "/images/header/navbar/fill/sprouts.webp",
             href: "/community/sprouts",
           },
           {
             title: "Become a Partner",
             description: "Grow with us, deliver digital transformation powered by Accqrate.",
-            img: "/images/header/fill/community/2.png",
+            img: "/images/header/navbar/fill/become-partner.webp",
             href: "/community/become-partner",
           },
           {
             title: "Work with a Partner",
             description: "Team up with trusted professionals to accelerate successful implementations.",
-            img: "/images/header/fill/community/6.png",
+            img: "/images/header/navbar/fill/partner.webp",
             href: "/community/work-with-partner",
           },
           {
             title: "Community Forum",
             description: "Where Accqrate users learn, share, and solve together.",
-            img: "/images/header/fill/community/3.png",
+            img: "/images/header/navbar/fill/forum.webp",
             href: "/community/forum",
           },
           {
             title: "Partner Marketplace",
             description: "Discover certified partners and services tailored to your business needs.",
-            img: "/images/header/fill/community/6.png",
+            img: "/images/header/navbar/fill/marketplace.webp",
             href: "/community/marketplace",
           },
           {
             title: "Non-Profit Solutions",
             description: "Advanced solutions for organizations creating impact",
-            img: "/images/header/fill/community/7.png",
+            img: "/images/header/navbar/fill/ngo.webp",
             href: "/community/non-profit",
           },
           {
             title: "Affiliates",
             description: "Earn by enabling businesses to transform with Accqrate.",
             img: "/images/header/fill/community/8.png",
-            href: "/community/affiliates",
+            href: "/images/header/navbar/fill/affiliates.webp",
           },
         ],
       },
@@ -492,7 +510,8 @@ const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: str
 
       {show && (
         <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-50 p-4 text-sm text-gray-700`}
+          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-[9999] p-4 text-sm text-gray-700`}
+          style={{ position: "absolute" }}
         >
           <div className="mb-2 font-semibold text-black">Select Language</div>
           <div className="flex flex-wrap gap-2 mb-4">
@@ -564,16 +583,13 @@ const MegaMenu: React.FC<{
   return (
     <div
       ref={menuRef}
-      className="fixed left-0 right-0 top-0 w-[1044px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
+      className="fixed left-0 right-0 top-0 w-[1100px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
       style={{ top: headerHeight }}
     >
-      <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
+      <div className="w-[900px] xl:w-[1100px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
         <div className="grid grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
           {/* Left: category list */}
           <div className="col-span-1 border-r pr-6 mb-2">
-            <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500">
-              <T>{menu.title}</T>
-            </h6>
             <ul className="mt-3 space-y-6">
               {menu.sections.map((section) => (
                 <li
@@ -609,7 +625,6 @@ const MegaMenu: React.FC<{
                         }}
                       />
                     )}
-
                     <span className="xl:hidden">
                       <T>{section.heading}</T>
                     </span>
@@ -621,22 +636,36 @@ const MegaMenu: React.FC<{
 
           {/* Right: subitems */}
           <div className="col-span-2 mb-2">
-            <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-3">
+            <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-4">
               {activeSection}
             </h6>
-            <ul className="grid grid-cols-2 gap-3 mb-2">
+            <ul className="grid grid-cols-2 gap-4">
               {menu.sections
                 .find((sec) => sec.heading === activeSection)
                 ?.subItems.map((item) => (
-                  <ListItem
+                  <li
                     key={item.title}
-                    title={isInitialized ? t(item.title) : item.title}
-                    href={item.href}
-                    img={"img" in item ? item.img : "icon" in item ? item.icon : undefined}
+                    className="flex items-start gap-3 py-2"
                     onClick={onItemClick}
                   >
-                    <T>{item.description}</T>
-                  </ListItem>
+                    {/* Optional icon or image */}
+                    {"img" in item && item.img && (
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-[50px] h-[50px] object-contain mt-1"
+                      />
+                    )}
+
+                    <div>
+                      <h4 className="text-[16px] font-medium text-[#333333] leading-tight">
+                        {isInitialized ? t(item.title) : item.title}
+                      </h4>
+                      <p className="text-[12px] text-gray-500 leading-snug mt-[6px]">
+                        <T>{item.description}</T>
+                      </p>
+                    </div>
+                  </li>
                 ))}
             </ul>
           </div>
@@ -774,8 +803,8 @@ const Header: React.FC = () => {
         ref={headerRef}
         className="xl:sticky xl:top-0 z-50 m-0 p-0 w-full bg-white xl:border-b border-gray-200 pb-4 xl:pb-0"
       >
-        <div className="max-w-[1440px] mx-auto">
-          <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px]">
+        <div className="max-w-[1355px] mx-auto">
+          <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px] xl:px-0">
             <div className="flex items-center justify-between gap-2">
               {/* Logo */}
               <div className="flex-shrink-0">
@@ -789,7 +818,7 @@ const Header: React.FC = () => {
               </div>
 
               {/* Center: Desktop Nav */}
-              <div className="logo-container flex items-center justify-start flex-1">
+              <div className="logo-container flex items-center justify-start flex-1 overflow-hidden">
                 <nav
                   ref={navRef}
                   className="hidden xl:flex items-start justify-center gap-5 text-[14px] text-gray-600"
@@ -807,7 +836,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span>
+                            <span className="whitespace-nowrap">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -840,7 +869,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span>
+                            <span className="whitespace-nowrap">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -873,7 +902,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span>
+                            <span className="whitespace-nowrap">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -906,7 +935,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span>
+                            <span className="whitespace-nowrap">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -920,21 +949,18 @@ const Header: React.FC = () => {
                               className="fixed left-0 right-0 top-0 w-[1044px] mx-auto border-t border-gray-200 bg-white rounded-b-xl z-50"
                               style={{ top: headerHeight }}
                             >
-                              <div className="w-[900px] xl:w-[1044px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
+                              <div className="w-[900px] xl:w-[1100px] mx-auto px-8 py-10 bg-white rounded-b-xl flex flex-col">
                                 <div className="w-full max-w-7xl mx-auto mb-2">
-                                  <h6 className="pl-2.5 font-semibold uppercase text-sm text-gray-500 mb-6">
-                                    <T>Resources</T>
-                                  </h6>
                                   <div className="grid grid-cols-3 gap-8">
                                     {menu.sections.map((section, index) => (
                                       <div
                                         key={index}
                                         className="border-r last:border-r-0 pr-6 last:pr-0"
                                       >
-                                        <h3 className="font-semibold text-lg mb-2">
+                                        <h3 className="font-medium text-[#333333] text-lg mb-6">
                                           <T>{section.heading}</T>
                                         </h3>
-                                        <ul className="space-y-4">
+                                        <ul className="space-y-2 text-[#717171]">
                                           {section.subItems.map((item, i) => (
                                             <ResourcesListItem
                                               key={i}
@@ -1013,7 +1039,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span>
+                            <span className="whitespace-nowrap">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -1070,78 +1096,97 @@ const Header: React.FC = () => {
                 </div>
               </button>
             </div>
-
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-              <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 w-full h-screen overflow-y-auto bg-white px-6 md:px-[32px] py-4 z-[999]">
-                <Accordion type="single" collapsible className="w-full">
-                  {menus.map(({ id, title, sections }) => (
-                    <AccordionItem key={id} value={id}>
-                      <AccordionTrigger className="text-gray-800 font-semibold hover:text-[#534ED3]">
-                        <T>{title}</T>
-                      </AccordionTrigger>
-                      <AccordionContent>
-                        <Accordion type="single" collapsible className="pl-4">
-                          {sections.map((section, sectionIndex) => (
-                            <AccordionItem key={sectionIndex} value={`${id}-${section.heading}`}>
-                              <AccordionTrigger className="flex items-center justify-start gap-2 text-gray-700 font-medium">
-                                {'images' in section && section.images && (
-                                  <img src={section.images} alt={section.heading} className="w-4 h-4" />
-                                )}
-                                <span><T>{section.heading}</T></span>
-                              </AccordionTrigger>
-                              <AccordionContent>
-                                <ul className="pl-4 mt-2 space-y-2">
-                                  {section.subItems.map((item, i) => (
-                                    <li
-                                      key={i}
-                                      className="flex items-center gap-2 text-[#737373] text-[14px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
-                                    >
-                                      {'img' in item && item.img && (
-                                        <img src={item.img} alt={item.title} className="w-5 h-5" />
-                                      )}
-                                      <Link
-                                        href={createHref(item.href)}
-                                        className="flex-1"
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                      >
-                                        <T>{item.title}</T>
-                                      </Link>
-                                      <Arrow45 />
-                                    </li>
-                                  ))}
-                                </ul>
-                              </AccordionContent>
-                            </AccordionItem>
-                          ))}
-                        </Accordion>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-
-                {/* CTA Buttons */}
-                <div className="mt-10 flex gap-4">
-                  <Link
-                    href={createHref("/contact-sales")}
-                    className="block w-full text-center text-[#F05A28] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent py-3 rounded-full text-sm font-bold"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <T>{contactInfo.salesText}</T>
-                  </Link>
-                  <Link
-                    href={createHref("/book-demo")}
-                    className="block w-full text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    <T>Book a Demo</T>
-                  </Link>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="xl:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 top-[60px] md:top-[80px]"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {isMobileMenuOpen && (
+        <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 right-0 bottom-0 bg-white z-50 overflow-y-auto">
+          <div className="p-6 md:px-[32px] pb-32">
+            <Accordion type="single" collapsible className="w-full">
+              {menus.map(({ id, title, sections }) => (
+                <AccordionItem key={id} value={id}>
+                  <AccordionTrigger className="text-[#333333] font-normal py-4 text-[17px] hover:text-[#534ED3]">
+                    <T>{title}</T>
+                  </AccordionTrigger>
+
+                  {/* Directly show section items (no nested accordion) */}
+                  <AccordionContent>
+                    {sections.map((section, sectionIndex) => (
+                      <div key={sectionIndex} className="mt-2">
+                        <ul className="pl-2 space-y-6">
+                          {section.subItems.map((item, i) => (
+                            <li
+                              key={i}
+                              className="flex items-center gap-4 text-[#717171] text-[15px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
+                            >
+                              {"img" in item && item.img && (
+                                <img src={item.img} alt={item.title} className="w-5 h-5" />
+                              )}
+                              <Link
+                                href={createHref(item.href)}
+                                className="flex-1"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                <T>{item.title}</T>
+                              </Link>
+                              <Arrow45 />
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+
+              {/* Contact Sales link */}
+              <Link
+                href={createHref("/contact-sales")}
+                className="block w-full text-[17px] font-normal mt-4 bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <T>{contactInfo.salesText}</T>
+              </Link>
+            </Accordion>
+          </div>
+        </div>
+      )}
+
+
+      {/* Fixed Bottom Section - Only for Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="xl:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-[9999]">
+          <div className="flex gap-4 items-center">
+            {/* LangCountryDropdown */}
+            <div className="flex-1 relative">
+              <LangCountryDropdown
+                show={showLangCountryDropdown}
+                setShow={setShowLangCountryDropdown}
+                align="left"
+                className="w-full"
+              />
+            </div>
+
+            {/* Book a Demo Button */}
+            <Link
+              href={createHref("/book-demo")}
+              className="flex-1 text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <T>Book a Demo</T>
+            </Link>
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -1187,40 +1232,55 @@ const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemP
       <li>
         <Link
           href={dynamicHref}
-          className="flex items-start space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#f0f3ff] hover:text-[#534ED3] focus:bg-[#f0f3ff] cursor-pointer"
+          ref={ref}
+          className={`
+            flex items-center gap-3 rounded-md py-3 px-2
+            leading-none no-underline outline-none transition-colors
+            hover:bg-[#f0f3ff] hover:text-[#534ED3] focus:bg-[#f0f3ff] cursor-pointer
+            ${className || ""}
+          `}
           onClick={onClick}
           {...props}
         >
-          <div className="w-8 h-8 flex items-center justify-center rounded-full mr-3">
+          {/* Icon */}
+          <div className="flex items-center justify-center w-6 h-6 shrink-0">
             {(() => {
               const source = img || icon;
               if (!source) return null;
               const isImagePath =
                 /^\.|^\//.test(source) ||
                 /\.(png|jpe?g|svg|webp|gif)$/i.test(source);
+
               if (isImagePath) {
                 const normalized = source.replace(/^\.\//, "/");
                 return (
                   <img
                     src={normalized}
                     alt={title}
-                    className="w-6 h-6 object-contain"
+                    className="w-[20px] h-[20px] object-contain"
                   />
                 );
               }
+
               return (
                 <i
-                  className={`fa-solid ${source} text-gray-600`}
+                  className={`fa-solid ${source} text-gray-600 text-[16px]`}
                   aria-hidden="true"
                 ></i>
               );
             })()}
           </div>
-          <div>
-            <div className="text-sm font-medium leading-none">{title}</div>
-            <p className="text-sm leading-snug text-muted-foreground">
-              {children}
-            </p>
+
+          {/* Text */}
+          <div className="flex flex-col justify-center">
+            <div className="text-[15px] font-medium leading-snug text-gray-800">
+              {title}
+            </div>
+            {children && (
+              <div className="text-sm text-gray-500 leading-snug">
+                {children}
+              </div>
+            )}
           </div>
         </Link>
       </li>
@@ -1228,6 +1288,7 @@ const ResourcesListItem = React.forwardRef<HTMLAnchorElement, ResourcesListItemP
   }
 );
 ResourcesListItem.displayName = "ResourcesListItem";
+
 
 const SuccessStoriesListItem = React.forwardRef<HTMLAnchorElement, SuccessStoriesListItemProps>(
   ({ className, title, children, stats, href, onClick, ...props }, ref) => {
