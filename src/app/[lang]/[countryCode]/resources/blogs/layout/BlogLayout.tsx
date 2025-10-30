@@ -2,20 +2,19 @@
 
 import React, { useEffect, useState } from "react";
 import { Row, Col, Affix, Breadcrumb, Divider } from "antd";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import SocialShare from "@/components/SocialShare";
 import T from "@/components/T";
 import CTASection from "@/components/CTASection";
 import blogPosts from "../data/blogspost";
-import { useParams } from "next/navigation";
-import '@/components/Blogs.scss'
+import "@/components/Blogs.scss";
 
 interface BlogLayoutProps {
   children: React.ReactNode;
   pageTitle: string | React.ReactNode;
   updatedOn?: string;
-  minRead?: string | number; // Allow both string and number
+  minRead?: string | React.ReactNode;
 }
 
 const BlogLayout: React.FC<BlogLayoutProps> = ({
@@ -26,17 +25,17 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
 }) => {
   const router = useRouter();
   const params = useParams();
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
 
-  const hideSocialShare = useMediaQuery("(max-width: 900px)");
+  // Responsive checks
+  const isMobile = useMediaQuery("(max-width: 900px)");
   const hideRecentBlogs = useMediaQuery("(max-width: 767px)");
-  const horizontalSocialShare = useMediaQuery("(max-width: 900px)");
 
+  // Random blog posts
   const [randomBlogs, setRandomBlogs] = useState<
     { url: string; image: string; heading: string; value: string }[]
   >([]);
-
-  const lang = params?.lang as string || 'en';
-  const countryCode = params?.countryCode as string || 'sa';
 
   useEffect(() => {
     const mappedBlogs = blogPosts.map((post) => ({
@@ -45,92 +44,84 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
       heading: post.title,
       value: post.desc,
     }));
-
     const shuffled = [...mappedBlogs].sort(() => 0.5 - Math.random());
     setRandomBlogs(shuffled.slice(0, 4));
   }, []);
 
   const breadcrumbItems = [
-    { title: "Home", href: `/${lang}/${countryCode}` },
+    { title: "Home", href: "/" },
     { title: "Blogs", href: `/${lang}/${countryCode}/resources/blogs` },
     { title: pageTitle },
   ];
 
-  const handleBlogClick = (url: string) => {
-    router.push(`/${lang}/${countryCode}/resources/blogs/${url}`);
-  };
-
-  const handleAdClick = () => {
-    router.push(`/${lang}/${countryCode}/contact-us`);
-  };
-
   return (
     <>
-      {/* CTA banner */}
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4">
+      {/* CTA Banner */}
+      <section className="bg-[#eff3ff] py-10 overflow-x-hidden">
+        <div className="container mx-auto px-4 max-w-[1400px]">
           <Row justify="center">
             <Col xs={24} md={18}>
               <img
                 src="/images/blogs/accqrate-ad.webp"
                 alt="Accqrate - ZATCA-compliant e-invoicing software"
-                className="w-full cursor-pointer rounded-xl shadow"
-                onClick={handleAdClick}
+                className="w-full cursor-pointer"
+                onClick={() => router.push(`/${lang}/${countryCode}/contact-us`)}
               />
             </Col>
           </Row>
         </div>
       </section>
 
-      {/* Breadcrumb & Social Share */}
-      <section className="bg-white pt-3">
-        <div className="container mx-auto px-4">
+      {/* Breadcrumb Section */}
+      <section className="bg-white py-4">
+        <div className="container mx-auto px-4 md:px-40">
+          {/* Breadcrumb Row */}
           <div className="flex flex-col md:flex-row items-center justify-between">
             <Breadcrumb
               items={breadcrumbItems.map((item) => ({
-                title: <>{item.title}</>,
-                ...(item.href && { href: item.href }),
+                title: <T>{item.title}</T>,
+                href: item.href,
               }))}
             />
-
-            {horizontalSocialShare && (
-              <div className="mt-3 md:mt-0">
-                <SocialShare className="flex space-x-3" />
-              </div>
-            )}
           </div>
+
+          {/* Social Share under breadcrumb (visible only below 900px) */}
+          {isMobile && (
+            <div className="flex justify-center mt-3">
+              <SocialShare className="flex flex-row space-x-4 bg-transparent shadow-none" />
+            </div>
+          )}
+
           <Divider />
         </div>
       </section>
 
-      {/* Blog Content Area */}
+      {/* Blog Content Section */}
       <section className="bg-white pb-16">
         <div className="container mx-auto px-4">
           <Row justify="center" gutter={[20, 0]}>
-            {/* Left Social Share */}
-            {!hideSocialShare && (
-              <Col xs={24} md={4}>
+            {/* Left fixed vertical SocialShare on desktop only */}
+            {!isMobile && (
+              <Col xs={0} md={2}>
                 <Affix offsetTop={120}>
-                  <div className="bg-gray-100 rounded-full py-3 px-2 text-center shadow-md">
-                    <SocialShare />
-                  </div>
+                  <SocialShare />
                 </Affix>
               </Col>
             )}
 
             {/* Blog main content */}
-            <Col xs={24} md={16}>
-              <h1 className="text-2xl md:text-3xl font-semibold mb-3 text-gray-900">
+            <Col xs={24} md={12}>
+              <h1 className="text-2xl md:text-[30px] leading-tight font-semibold mb-3 text-[#1c2041] max-w-[700px]">
                 {pageTitle}
               </h1>
               {updatedOn && (
-                <p className="text-gray-500 text-sm mb-6">
-                  <>
-                    Updated On : {updatedOn} | {minRead || '0'} min read
-                  </>
+                <p className="text-gray-500 text-[14px] mb-6">
+                  <T>
+                    Updated On : {updatedOn} | {minRead} min read
+                  </T>
                 </p>
               )}
-              <div className="prose max-w-none">{children}</div>
+              <div className="prose max-w-[800px]">{children}</div>
             </Col>
 
             {/* Right Sidebar: Recent Blogs */}
@@ -140,7 +131,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
                   {randomBlogs.map((data, i) => (
                     <div
                       key={i}
-                      onClick={() => handleBlogClick(data.url)}
+                      onClick={() => router.push(data.url)}
                       className="cursor-pointer mb-5 group"
                     >
                       <img
@@ -148,7 +139,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
                         alt={data.heading}
                         className="w-full mb-2 object-cover transition-transform duration-300 group-hover:scale-105"
                       />
-                      <h3 className="text-sm font-medium text-gray-800 line-clamp-2 group-hover:text-blue-600">
+                      <h3 className="text-sm font-semibold text-[#1c2041] line-clamp-2 group-hover:text-blue-600">
                         {data.heading}
                       </h3>
                     </div>
@@ -160,45 +151,48 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
         </div>
       </section>
 
-      {/* Call To Action */}
+      {/* CTA Section */}
       <CTASection />
 
       {/* Footer Recent Blogs */}
-      <section className="bg-gray-100 py-10">
-        <div className="container mx-auto px-4">
-          <h3 className="text-xl font-semibold mb-6">
-            <T>Recent Blog Posts from Accqrate</T>
-          </h3>
-          <Row
-            justify="center"
-            gutter={[
-              { xs: 0, sm: 15, md: 20, lg: 20 },
-              { xs: 10, sm: 15, md: 20, lg: 20 },
-            ]}
+     <section className="bg-[#eff3ff] py-10">
+  <div className="container mx-auto px-4 max-w-[1250px]">
+    <h3 className="text-xl md:text-[28px] text-[#1c2041] font-semibold mb-6 md:mb-10">
+      <T>Recent Blog Posts from Accqrate</T>
+    </h3>
+    <Row
+      justify="center"
+      gutter={[
+        { xs: 0, sm: 15, md: 20, lg: 20 },
+        { xs: 10, sm: 15, md: 20, lg: 20 },
+      ]}
+    >
+      {randomBlogs.map((data, i) => (
+        <Col xs={24} sm={12} md={6} lg={6} key={i}>
+          <div
+            className="bg-white rounded-xl cursor-pointer hover:shadow-lg transition flex flex-col h-full"
+            onClick={() => router.push(data.url)}
           >
-            {randomBlogs.map((data, i) => (
-              <Col xs={24} sm={12} md={6} lg={6} key={i}>
-                <div
-                  className="bg-white rounded-xl cursor-pointer hover:shadow-lg transition"
-                  onClick={() => handleBlogClick(data.url)}
-                >
-                  <img
-                    src={data.image}
-                    alt={data.heading}
-                    className="rounded-lg mb-3 w-full object-cover"
-                  />
-                  <h3 className="text-base font-semibold p-4 text-gray-900 line-clamp-2 md:h-[60px]">
-                    <T>{data.heading}</T>
-                  </h3>
-                  <p className="text-gray-500 text-sm p-4 line-clamp-3">
-                    <T>{data.value}</T>
-                  </p>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </div>
-      </section>
+            <img
+              src={data.image}
+              alt={data.heading}
+              className="rounded-lg mb-3 w-full h-[180px] object-cover"
+            />
+            <div className="flex flex-col flex-grow px-4 pb-4">
+              <h3 className="text-base leading-snug font-semibold text-gray-900 line-clamp-2 mb-2">
+                <T>{data.heading}</T>
+              </h3>
+              <p className="text-gray-500 text-sm line-clamp-2 leading-tight">
+                <T>{data.value}</T>
+              </p>
+            </div>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  </div>
+</section>
+
     </>
   );
 };
