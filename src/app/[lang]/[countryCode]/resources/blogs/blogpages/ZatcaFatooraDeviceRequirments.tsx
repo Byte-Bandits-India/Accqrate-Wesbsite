@@ -26,7 +26,7 @@ export default function ZatcaFatooraDeviceRequirments() {
         alt="Ensuring Compliance and Efficiency: A Guide to ZATCA’s FATOORA Device Onboarding Requirements"
       />
 
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In the rapidly evolving landscape of e-invoicing in Saudi Arabia,
           staying abreast of regulatory requirements is crucial for businesses
@@ -53,10 +53,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </T>
       </p>
 
-      <h2>
+      <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-900">
         <T>Understanding the ZATCA Notification</T>
       </h2>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           The essence of the ZATCA’s notification, titled "FATOORA - Device
           Onboarding Outreach," is to remind taxpayers of the criticality of
@@ -66,10 +66,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </T>
       </p>
 
-      <h2>
+      <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-900">
         <T>Key Scenarios Requiring Multiple Device Registrations</T>
       </h2>
-      <ul className="list-disc pl-5">
+      <ul className="list-disc pl-5 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <T>Multiple Commercial Registrations (CRs) under one VAT</T>
         </li>
@@ -84,10 +84,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </li>
       </ul>
 
-      <h2>
+      <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-900">
         <T>Essential Fields for Device Onboarding</T>
       </h2>
-      <ol className="list-decimal pl-5 space-y-1">
+      <ol className="list-decimal pl-5 space-y-1 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <b>Common Name (CN):</b>{" "}
           <T>Name or Asset Tracking Number of the Solution Unit</T>
@@ -133,10 +133,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </li>
       </ol>
 
-      <h2>
+      <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-900">
         <T>Serial Number Significance and Standardization</T>
       </h2>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           ZATCA utilizes serial numbers to meticulously track multiple devices
           operated by a single company. These serial numbers must be unique to
@@ -144,10 +144,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </T>
       </p>
 
-      <h4>
+      <h4 className="text-lg md:text-xl font-semibold mt-5 mb-2 text-gray-900">
         <T>Common Issues and Standardization</T>
       </h4>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Historically, serial number discrepancies have arisen due to varying
           formats. ZATCA urges all parties to adopt a standardized format,
@@ -155,10 +155,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </T>
       </p>
 
-      <h4>
+      <h4 className="text-lg md:text-xl font-semibold mt-5 mb-2 text-gray-900">
         <T>What to do if you have a wrong serial number?</T>
       </h4>
-      <ol className="list-decimal pl-5 space-y-1">
+      <ol className="list-decimal pl-5 space-y-1 text-base md:text-lg leading-relaxed text-gray-800">
         <li>
           <b>Create a New Device:</b> <T>Duplicate the existing device.</T>
         </li>
@@ -184,30 +184,30 @@ export default function ZatcaFatooraDeviceRequirments() {
         </li>
       </ol>
 
-      <h4>
+      <h4 className="text-lg md:text-xl font-semibold mt-5 mb-2 text-gray-900">
         <T>Coordinating Multiple Devices</T>
       </h4>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           For organizations using multiple devices, ensure teams coordinate
           effectively to prevent invoicing errors or mismatches.
         </T>
       </p>
 
-      <h4>
+      <h4 className="text-lg md:text-xl font-semibold mt-5 mb-2 text-gray-900">
         <T>Act Proactively</T>
       </h4>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Don’t wait for reminders from ZATCA. Fix issues early to maintain
           compliance and efficiency.
         </T>
       </p>
 
-      <h2>
+      <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3 text-gray-900">
         <T>Accqrate’s E-Invoicing Solutions: Tailored for Compliance</T>
       </h2>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Accqrate’s e-invoicing solutions are ZATCA-approved, fully compliant
           with Phase 2, and integrate with ERPs, POS systems, and custom
@@ -215,10 +215,10 @@ export default function ZatcaFatooraDeviceRequirments() {
         </T>
       </p>
 
-      <h4>
+      <h4 className="text-lg md:text-xl font-semibold mt-5 mb-2 text-gray-900">
         <T>Why Choose Accqrate?</T>
       </h4>
-      <p>
+      <p className="text-base md:text-lg leading-relaxed text-gray-800">
         <a
           href="https://accqrate-erp.com/en/e-invoicing-plugin"
           className="text-blue-600 hover:underline"
