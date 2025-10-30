@@ -3,10 +3,10 @@
 
 import { useCountry } from "@/contexts/CountryContext";
 import { t, currentLang } from "@/lib/translations";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 
 interface TProps {
-    children: string;
+    children: ReactNode; // Changed from string to ReactNode
 }
 
 export default function T({ children }: TProps) {
@@ -33,7 +33,14 @@ export default function T({ children }: TProps) {
         return <>{children}</>;
     }
 
-    const translatedText = t(children);
+    // If children is a string, translate it
+    if (typeof children === 'string') {
+        const translatedText = t(children);
+        return <>{translatedText}</>;
+    }
 
-    return <>{translatedText}</>;
+    // If children contains JSX elements, we need to handle translation differently
+    // This is a simplified approach - you might need a more sophisticated solution
+    // for nested translations
+    return <>{children}</>;
 }

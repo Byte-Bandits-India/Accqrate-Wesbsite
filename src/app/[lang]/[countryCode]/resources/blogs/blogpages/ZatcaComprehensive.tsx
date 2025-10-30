@@ -100,7 +100,7 @@ function ZatcaComprehensive() {
       <h3><T>Practical Business Scenario:</T></h3>
 
       <div className="center-table">
-        <table width="100%" border="1" cellPadding="30">
+        <table width="100%" border={1} cellPadding="30">
           <tbody>
             <tr><td><T>Issued on</T></td><td><T>01.Mar.2023 10:00:00</T></td></tr>
             <tr><td><T>Advance/Prepayment</T></td><td><T>IN23090001</T></td></tr>
@@ -115,9 +115,9 @@ function ZatcaComprehensive() {
 
       <p className="story d-block m-auto w-50"><T>Sent to ZATCA and approved</T></p>
 
-      
+
       <div className="center-table">
-        <table width="100%" border="1" cellPadding="30">
+        <table width="100%" border={1} cellPadding="30">
           <tr>
             <td>
               <T>Issued on</T>
@@ -180,7 +180,7 @@ function ZatcaComprehensive() {
         <T>Sent to ZATCA and approved</T>
       </p>
       <div className="center-table">
-        <table width="100%" border="1" cellPadding="30">
+        <table width="100%" border={1} cellPadding="30">
           <tr>
             <td>
               <T>Issued on</T>

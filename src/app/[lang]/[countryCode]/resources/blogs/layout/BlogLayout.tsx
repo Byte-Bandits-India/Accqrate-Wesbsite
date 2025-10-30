@@ -10,11 +10,12 @@ import CTASection from "@/components/CTASection";
 import blogPosts from "../data/blogspost";
 import { useParams } from "next/navigation";
 import '@/components/Blogs.scss'
+
 interface BlogLayoutProps {
   children: React.ReactNode;
   pageTitle: string | React.ReactNode;
   updatedOn?: string;
-  minRead?: string | React.ReactNode;
+  minRead?: string | number; // Allow both string and number
 }
 
 const BlogLayout: React.FC<BlogLayoutProps> = ({
@@ -24,38 +25,44 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
   minRead,
 }) => {
   const router = useRouter();
+  const params = useParams();
 
   const hideSocialShare = useMediaQuery("(max-width: 900px)");
   const hideRecentBlogs = useMediaQuery("(max-width: 767px)");
   const horizontalSocialShare = useMediaQuery("(max-width: 900px)");
 
- const [randomBlogs, setRandomBlogs] = useState<
+  const [randomBlogs, setRandomBlogs] = useState<
     { url: string; image: string; heading: string; value: string }[]
   >([]);
 
+  const lang = params?.lang as string || 'en';
+  const countryCode = params?.countryCode as string || 'sa';
+
   useEffect(() => {
-  
     const mappedBlogs = blogPosts.map((post) => ({
-      url: post.url, 
+      url: post.url,
       image: post.image,
       heading: post.title,
       value: post.desc,
     }));
 
-  
     const shuffled = [...mappedBlogs].sort(() => 0.5 - Math.random());
     setRandomBlogs(shuffled.slice(0, 4));
   }, []);
 
- const params = useParams();
-  const lang = params?.lang as string;
-  const countryCode = params?.countryCode as string;
-
   const breadcrumbItems = [
-    { title: "Home", href: "/" },
+    { title: "Home", href: `/${lang}/${countryCode}` },
     { title: "Blogs", href: `/${lang}/${countryCode}/resources/blogs` },
     { title: pageTitle },
   ];
+
+  const handleBlogClick = (url: string) => {
+    router.push(`/${lang}/${countryCode}/resources/blogs/${url}`);
+  };
+
+  const handleAdClick = () => {
+    router.push(`/${lang}/${countryCode}/contact-us`);
+  };
 
   return (
     <>
@@ -68,7 +75,7 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
                 src="/images/blogs/accqrate-ad.webp"
                 alt="Accqrate - ZATCA-compliant e-invoicing software"
                 className="w-full cursor-pointer rounded-xl shadow"
-                onClick={() => router.push(`/${lang}/${countryCode}/contact-us`)}
+                onClick={handleAdClick}
               />
             </Col>
           </Row>
@@ -80,11 +87,11 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <Breadcrumb
-  items={breadcrumbItems.map((item) => ({
-    title: <T>{item.title}</T>,
-    href: item.href,
-  }))}
-/>
+              items={breadcrumbItems.map((item) => ({
+                title: <>{item.title}</>,
+                ...(item.href && { href: item.href }),
+              }))}
+            />
 
             {horizontalSocialShare && (
               <div className="mt-3 md:mt-0">
@@ -118,9 +125,9 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
               </h1>
               {updatedOn && (
                 <p className="text-gray-500 text-sm mb-6">
-                  <T>
-                    Updated On : {updatedOn} | {minRead} min read
-                  </T>
+                  <>
+                    Updated On : {updatedOn} | {minRead || '0'} min read
+                  </>
                 </p>
               )}
               <div className="prose max-w-none">{children}</div>
@@ -133,13 +140,13 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
                   {randomBlogs.map((data, i) => (
                     <div
                       key={i}
-                      onClick={() => router.push(data.url)}
+                      onClick={() => handleBlogClick(data.url)}
                       className="cursor-pointer mb-5 group"
                     >
                       <img
                         src={data.image}
                         alt={data.heading}
-                        className=" w-full mb-2 object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full mb-2 object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                       <h3 className="text-sm font-medium text-gray-800 line-clamp-2 group-hover:text-blue-600">
                         {data.heading}
@@ -172,8 +179,8 @@ const BlogLayout: React.FC<BlogLayoutProps> = ({
             {randomBlogs.map((data, i) => (
               <Col xs={24} sm={12} md={6} lg={6} key={i}>
                 <div
-                  className="bg-white rounded-xl  cursor-pointer hover:shadow-lg transition "
-                  onClick={() => router.push(data.url)}
+                  className="bg-white rounded-xl cursor-pointer hover:shadow-lg transition"
+                  onClick={() => handleBlogClick(data.url)}
                 >
                   <img
                     src={data.image}

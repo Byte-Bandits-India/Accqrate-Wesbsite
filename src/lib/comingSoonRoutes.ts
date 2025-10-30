@@ -50,4 +50,8 @@ export const comingSoonRoutes = [
   'assessments',
   'custom-development',
   'bpa',
+
+  "Enterprise-Solution/Assessments",
+  'Enterprise-Solution/Custom-Developments',
+  'Enterprise-Solution/Business-Process-Automations'
 ]
