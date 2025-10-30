@@ -803,6 +803,21 @@ const Header: React.FC = () => {
   }, [selectedCountry.code]);
 
   useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Lock background scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scroll when closed
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      // Cleanup when component unmounts
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
     console.log("Header: Current country is:", selectedCountry);
   }, [selectedCountry]);
 
@@ -885,7 +900,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap">
+                            <span className="whitespace-nowrap text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -918,7 +933,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap">
+                            <span className="whitespace-nowrap text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -951,7 +966,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap">
+                            <span className="whitespace-nowrap text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -984,7 +999,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap">
+                            <span className="whitespace-nowrap text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -1088,7 +1103,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap">
+                            <span className="whitespace-nowrap text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -1162,53 +1177,55 @@ const Header: React.FC = () => {
 
       {isMobileMenuOpen && (
         <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 right-0 bottom-0 bg-white z-50 overflow-y-auto">
-          <div className="p-6 md:px-[32px] pb-32">
-            <Accordion type="single" collapsible className="w-full">
-              {menus.map(({ id, title, sections }) => (
-                <AccordionItem key={id} value={id}>
-                  <AccordionTrigger className="text-[#333333] font-normal py-4 text-[17px] hover:text-[#534ED3]">
-                    <T>{title}</T>
-                  </AccordionTrigger>
+          <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 right-0 bottom-0 bg-white z-50 overflow-y-auto">
+            <div className="p-6 md:px-[32px] pb-32">
+              <Accordion type="single" collapsible className="w-full">
+                {menus.map(({ id, title, sections }) => (
+                  <AccordionItem key={id} value={id}>
+                    <AccordionTrigger className="text-[#333333] font-normal py-4 text-[17px] hover:text-[#534ED3]">
+                      <T>{title}</T>
+                    </AccordionTrigger>
 
-                  {/* Directly show section items (no nested accordion) */}
-                  <AccordionContent>
-                    {sections.map((section, sectionIndex) => (
-                      <div key={sectionIndex} className="mt-2">
-                        <ul className="pl-2 space-y-6">
-                          {section.subItems.map((item, i) => (
-                            <li
-                              key={i}
-                              className="flex items-center gap-4 text-[#717171] text-[15px] py-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3]"
-                            >
-                              {"img" in item && item.img && (
-                                <img src={item.img} alt={item.title} className="w-5 h-5" />
-                              )}
-                              <Link
-                                href={createHref(item.href)}
-                                className="flex-1"
-                                onClick={() => setIsMobileMenuOpen(false)}
+                    {/* Directly show section items (no nested accordion) */}
+                    <AccordionContent className="pb-2">
+                      {sections.map((section, sectionIndex) => (
+                        <div key={sectionIndex} className="mb-4 last:mb-0">
+                          <ul className="space-y-2">
+                            {section.subItems.map((item, i) => (
+                              <li
+                                key={i}
+                                className="flex items-center gap-4 text-[#717171] text-[15px] py-3 px-2 cursor-pointer border-b border-gray-200 hover:text-[#534ED3] hover:bg-gray-50 transition-colors"
                               >
-                                <T>{item.title}</T>
-                              </Link>
-                              <Arrow45 />
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    ))}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
+                                {"img" in item && item.img && (
+                                  <img src={item.img} alt={item.title} className="w-5 h-5" />
+                                )}
+                                <Link
+                                  href={createHref(item.href)}
+                                  className="flex-1"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  <T>{item.title}</T>
+                                </Link>
+                                <Arrow45 />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
 
-              {/* Contact Sales link */}
-              <Link
-                href={createHref("/contact-sales")}
-                className="block w-full text-[17px] font-normal mt-4 bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <T>{contactInfo.salesText}</T>
-              </Link>
-            </Accordion>
+                {/* Contact Sales link */}
+                <Link
+                  href={createHref("/contact-sales")}
+                  className="block w-full text-[17px] font-normal mt-4 bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <T>{contactInfo.salesText}</T>
+                </Link>
+              </Accordion>
+            </div>
           </div>
         </div>
       )}
