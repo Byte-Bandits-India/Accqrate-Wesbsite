@@ -17,7 +17,7 @@ function RiyadhExpoBlog() {
         alt="Navigating New Horizons: Riyadh World Expo 2030 and the Future of Business Innovation"
       />
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In a landmark decision, Riyadh has been chosen to host the prestigious World Expo 2030, marking a
           pivotal moment in Saudi Arabia`s journey towards economic diversification and global integration.
@@ -31,7 +31,7 @@ function RiyadhExpoBlog() {
         <T>The Significance of the Theme:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>The theme</T> &nbsp;
         <a
           href="https://riyadhexpo2030.sa/#:~:text=With%20an%20inspiring%20main%20theme,a%20prosperous%20and%20sustainable%20tomorrow"
@@ -57,7 +57,7 @@ function RiyadhExpoBlog() {
         <T>Economic and Cultural Impact:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>Hosting the World Expo 2030, Riyadh is expected to welcome around</T>&nbsp;
         <a
           href="https://riyadhexpo2030.sa/#:~:text=Global%20efforts%20are%20centered%20around,for%20the%20next%2020%20years"
@@ -79,7 +79,7 @@ function RiyadhExpoBlog() {
         <T>Comparative Analysis with Qatar`s Expo:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>Drawing from</T>&nbsp;
         <a
           href="https://ebs.qa/2023/09/26/expo-2023-qatar-opportunities/"
@@ -101,7 +101,7 @@ function RiyadhExpoBlog() {
         <T>Vision 2030: A Blueprint for Progress:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Saudi Arabia`s Vision 2030 is a strategic framework aimed at reducing the Kingdom`s oil dependency
           and diversifying its economy. The World Expo 2030 aligns with these goals, serving as a showcase of
@@ -114,7 +114,7 @@ function RiyadhExpoBlog() {
         <T>Digital Transformation in Business:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In this era of transformation, digital solutions like e-invoicing become critical for businesses. The
         </T>
@@ -138,7 +138,7 @@ function RiyadhExpoBlog() {
         <T>Digital Transformation in Business:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In this context, Accqrate stands out as a solution that harmonizes with your business needs. Our
           ZATCA-approved e-invoicing solution ensures that your business is not just compliant but also at the
@@ -150,7 +150,7 @@ function RiyadhExpoBlog() {
         <T>Embracing Tomorrow`s Opportunities:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           As the curtain rises on the Riyadh World Expo 2030, we witness a historic moment in global economics
           and innovation. Saudi Arabia is demonstrating its commitment to this grand event and the broader
@@ -177,7 +177,7 @@ function RiyadhExpoBlog() {
         <T>Your Gateway to the Future with Accqrate:</T>
       </div>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           In this dynamic landscape, positioning your business for success becomes crucial. Accqrate, with its
           cutting-edge, ZATCA-approved
