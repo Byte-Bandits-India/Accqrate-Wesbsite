@@ -417,142 +417,191 @@ const useDynamicRouting = () => {
 };
 
 // ===================== Country & Language Dropdown =====================
-const LangCountryDropdown: React.FC<LangCountryDropdownProps & { className?: string }> = ({
+const LangCountryDropdown: React.FC<
+  LangCountryDropdownProps & { className?: string; direction?: "up" | "down" }
+> = ({
   show,
   setShow,
   align = "left",
   className = "",
+  direction = "down",
 }) => {
-  const { selectedCountry, setSelectedCountry, countries, selectedLanguage, setSelectedLanguage, languages, isInitialized } = useCountry();
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
-  const pathname = usePathname();
+    const {
+      selectedCountry,
+      setSelectedCountry,
+      countries,
+      selectedLanguage,
+      setSelectedLanguage,
+      languages,
+      isInitialized,
+    } = useCountry();
+    const dropdownRef = useRef<HTMLDivElement>(null);
+    const router = useRouter();
+    const pathname = usePathname();
 
-  const handleLanguageChange = (lang: any) => {
-    console.log('🔄 Header: Changing language to:', lang.code);
-    setSelectedLanguage(lang);
+    // ---------------- Handle Language ----------------
+    const handleLanguageChange = (lang: any) => {
+      setSelectedLanguage(lang);
+      if (lang.code === "ar" || lang.code === "en") setLanguage(lang.code);
+      const pathSegments = pathname.split("/");
+      pathSegments[1] = lang.code;
+      router.replace(pathSegments.join("/"));
+      setShow(false);
+    };
 
-    if (lang.code === 'ar' || lang.code === 'en') {
-      setLanguage(lang.code as 'en' | 'ar');
-      console.log('✅ Translation system updated to:', lang.code);
-    }
+    // ---------------- Handle Country ----------------
+    const handleCountryChange = (country: any) => {
+      setSelectedCountry(country);
 
-    const pathSegments = pathname.split('/');
-    pathSegments[1] = lang.code;
-    router.replace(pathSegments.join('/'));
-    setShow(false);
+      const pathSegments = pathname.split("/");
+      if (pathSegments.length >= 3) {
+        pathSegments[2] = country.code.toLowerCase();
+      } else {
+        pathSegments.push(country.code.toLowerCase());
+      }
 
-    setTimeout(() => {
-      window.dispatchEvent(new Event('storage'));
-    }, 100);
-  };
+      // ✅ Close dropdown first
+      setShow(false);
 
-  const handleCountryChange = (country: any) => {
-    console.log('🔄 Header: Changing country to:', country.code);
-    setSelectedCountry(country);
+      // ✅ Delay navigation slightly to prevent flicker
+      setTimeout(() => {
+        router.push(pathSegments.join("/"));
+      }, 150);
+    };
 
-    const pathSegments = pathname.split('/');
-    if (pathSegments.length >= 3) {
-      pathSegments[2] = country.code.toLowerCase();
-    } else {
-      pathSegments.push(country.code.toLowerCase());
-    }
+    // ---------------- Handle Dropdown Toggle ----------------
+    const handleToggle = (e: React.MouseEvent) => {
+      e.stopPropagation();
+      e.preventDefault();
+      setShow(!show);
+    };
 
-    router.push(pathSegments.join('/'));
-    setShow(false);
-  };
-
-  useEffect(() => {
-    if (pathname && isInitialized) {
-      const segments = pathname.split('/').filter(segment => segment);
-
-      if (segments.length >= 1) {
+    // ---------------- Sync with URL ----------------
+    useEffect(() => {
+      if (pathname && isInitialized) {
+        const segments = pathname.split("/").filter(Boolean);
         const urlLang = segments[0];
-        const foundLang = languages.find(l => l.code === urlLang);
-        if (foundLang && foundLang.code !== selectedLanguage.code) {
+        const urlCountry = segments[1]?.toUpperCase();
+
+        const foundLang = languages.find((l) => l.code === urlLang);
+        if (foundLang && foundLang.code !== selectedLanguage.code)
           setSelectedLanguage(foundLang);
-        }
-      }
 
-      if (segments.length >= 2) {
-        const urlCountry = segments[1].toUpperCase();
-        const foundCountry = countries.find(c => c.code === urlCountry);
-        if (foundCountry && foundCountry.code !== selectedCountry.code) {
+        const foundCountry = countries.find((c) => c.code === urlCountry);
+        if (foundCountry && foundCountry.code !== selectedCountry.code)
           setSelectedCountry(foundCountry);
-        }
       }
-    }
-  }, [pathname, isInitialized, languages, countries, selectedLanguage.code, selectedCountry.code, setSelectedLanguage, setSelectedCountry]);
+    }, [pathname, isInitialized]);
 
-  return (
-    <div className={`relative ${className}`} ref={dropdownRef}>
-      <button
-        className="flex items-center justify-between gap-2 w-36 lg:w-44 px-3 py-2 rounded-md transition-colors"
-        onClick={() => setShow(!show)}
-        disabled={!isInitialized}
+    // ---------------- Close on outside click ----------------
+    useEffect(() => {
+      const handleClickOutside = (e: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+          setShow(false);
+        }
+      };
+
+      if (show) {
+        document.addEventListener("click", handleClickOutside);
+      }
+
+      return () => {
+        document.removeEventListener("click", handleClickOutside);
+      };
+    }, [show, setShow]);
+
+    // ---------------- Dynamic dropdown position ----------------
+    const dropdownPosition =
+      direction === "up"
+        ? "bottom-full mb-2"
+        : "top-full mt-2";
+
+    return (
+      <div
+        className={`relative ${className}`}
+        ref={dropdownRef}
+        onClick={(e) => e.stopPropagation()} // Add this to prevent propagation
       >
-        {isInitialized ? (
-          <>
-            <img
-              src={selectedCountry.flag}
-              alt={selectedCountry.name}
-              className="w-[30px] h-[30px] rounded"
-            />
-            <span className="text-black truncate text-sm lg:text-base">
-              {selectedLanguage.display} / {selectedCountry.code}
-            </span>
-            <i className="fa-solid fa-angle-down ml-1 text-gray-600"></i>
-          </>
-        ) : (
-          <span className="text-gray-500">Loading...</span>
-        )}
-      </button>
-
-      {show && (
-        <div
-          className={`absolute ${align === "right" ? "right-0" : "left-0"} top-full mt-2 max-w-xs w-60 bg-white rounded-md shadow-lg z-[9999] p-4 text-sm text-gray-700`}
-          style={{ position: "absolute" }}
+        {/* Button */}
+        <button
+          className="flex items-center justify-between gap-2 w-full px-3 py-2 rounded-md transition-colors bg-white"
+          onClick={handleToggle}
+          disabled={!isInitialized}
         >
-          <div className="mb-2 font-semibold text-black">Select Language</div>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {languages.map((lang) => (
-              <button
-                key={lang.code}
-                className={`px-3 py-1 rounded-full transition ${selectedLanguage.code === lang.code
-                  ? "bg-gray-100 text-black font-semibold"
-                  : "text-black"
+          {isInitialized ? (
+            <>
+              <img
+                src={selectedCountry.flag}
+                alt={selectedCountry.name}
+                className="w-[26px] h-[26px] rounded"
+              />
+              <span className="text-black truncate text-sm lg:text-base flex-1 text-left">
+                {selectedLanguage.display} / {selectedCountry.code}
+              </span>
+              <i
+                className={`fa-solid ml-1 text-gray-600 transition-transform duration-300 ${show
+                  ? direction === "up"
+                    ? "fa-angle-up rotate-180"
+                    : "fa-angle-down rotate-180"
+                  : direction === "up"
+                    ? "fa-angle-down"
+                    : "fa-angle-up"
                   }`}
-                onClick={() => handleLanguageChange(lang)}
-                style={{ border: "1px solid black", borderRadius: "20px" }}
-              >
-                {lang.display}
-              </button>
-            ))}
-          </div>
+              ></i>
+            </>
+          ) : (
+            <span className="text-gray-500">Loading...</span>
+          )}
+        </button>
 
-          <div className="mb-2 font-semibold text-black">Select Country</div>
-          <div className="space-y-2 max-h-40 overflow-y-auto">
-            {countries.map((country) => (
-              <div
-                key={country.code}
-                className={`flex items-center cursor-pointer p-2 rounded-md hover:bg-gray-50 ${selectedCountry.code === country.code ? 'bg-gray-100' : ''
-                  }`}
-                onClick={() => handleCountryChange(country)}
-              >
-                <img
-                  src={country.flag}
-                  alt={country.name}
-                  className="w-5 h-5 mr-2 rounded"
-                />
-                <span className="text-black">{country.name}</span>
-              </div>
-            ))}
+        {/* Dropdown Menu */}
+        {show && (
+          <div
+            className={`absolute ${align === "right" ? "right-0" : "left-0"} ${dropdownPosition} 
+          w-full sm:w-60 max-w-xs bg-white rounded-md shadow-lg z-[9999] p-4 text-sm text-gray-700 overflow-hidden`}
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+          >
+            <div className="mb-2 font-semibold text-black">Select Language</div>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  className={`px-3 py-1 rounded-full transition ${selectedLanguage.code === lang.code
+                    ? "bg-gray-100 text-black font-semibold"
+                    : "text-black"
+                    }`}
+                  onClick={() => handleLanguageChange(lang)}
+                  style={{ border: "1px solid black", borderRadius: "20px" }}
+                >
+                  {lang.display}
+                </button>
+              ))}
+            </div>
+
+            <div className="mb-2 font-semibold text-black">Select Country</div>
+            <div className="space-y-2 max-h-40 overflow-y-auto">
+              {countries.map((country) => (
+                <div
+                  key={country.code}
+                  className={`flex items-center cursor-pointer p-2 rounded-md hover:bg-gray-50 ${selectedCountry.code === country.code ? "bg-gray-100" : ""
+                    }`}
+                  onClick={() => handleCountryChange(country)}
+                >
+                  <img
+                    src={country.flag}
+                    alt={country.name}
+                    className="w-5 h-5 mr-2 rounded"
+                  />
+                  <span className="text-black">{country.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
-};
+        )}
+      </div>
+    );
+  };
+
 
 // Arrow
 const Arrow45: React.FC = () => (
@@ -1104,7 +1153,10 @@ const Header: React.FC = () => {
       {isMobileMenuOpen && (
         <div
           className="xl:hidden fixed inset-0 bg-black/20 backdrop-blur-sm z-40 top-[60px] md:top-[80px]"
-          onClick={() => setIsMobileMenuOpen(false)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsMobileMenuOpen(false);
+          }}
         />
       )}
 
@@ -1164,7 +1216,10 @@ const Header: React.FC = () => {
 
       {/* Fixed Bottom Section - Only for Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="xl:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-[9999]">
+        <div
+          className="xl:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 z-[9999]"
+          onClick={(e) => e.stopPropagation()} // Add this
+        >
           <div className="flex gap-4 items-center">
             {/* LangCountryDropdown */}
             <div className="flex-1 relative">
@@ -1172,6 +1227,7 @@ const Header: React.FC = () => {
                 show={showLangCountryDropdown}
                 setShow={setShowLangCountryDropdown}
                 align="left"
+                direction="up"
                 className="w-full"
               />
             </div>
@@ -1180,7 +1236,10 @@ const Header: React.FC = () => {
             <Link
               href={createHref("/book-demo")}
               className="flex-1 text-center text-white py-3 rounded-full text-sm font-bold bg-gradient-to-r from-[#194BED] to-[#29266E]"
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMobileMenuOpen(false);
+              }}
             >
               <T>Book a Demo</T>
             </Link>
