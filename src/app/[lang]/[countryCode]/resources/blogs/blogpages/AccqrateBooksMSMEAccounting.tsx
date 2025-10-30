@@ -19,11 +19,11 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         alt="Integrating Credit Notes with ZATCA: A Comprehensive Guide"
       />
 
-      <h2 className="text-xl font-semibold mb-3">
+      <h2 className="text-fluid-h3 font-semibold mb-3">
         <T>Introduction: Accounting Software for the Modern MSME</T>
       </h2>
 
-      <p className="mb-4">
+      <p className="mb-4 text-fluid-small">
         <T>
           As small and medium enterprises (MSMEs) in the Kingdom of Saudi Arabia and across the globe rapidly
           digitize, choosing the right <b>accounting software</b> is more critical than ever. The modern
@@ -33,7 +33,7 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         </T>
       </p>
 
-      <p className="mb-4">
+      <p className="mb-4 text-fluid-small">
         <T>
           With a crowded marketplace of accounting software—ranging from legacy systems to newer cloud-based
           apps—businesses need a <b>robust, AI-powered accounting solution</b> that’s built for today’s
@@ -42,22 +42,22 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         </T>
       </p>
 
-      <p className="mb-4">
+      <p className="mb-4 text-fluid-small">
         <T>
           Whether you’re looking to move beyond spreadsheets, upgrade from legacy tools, or need a platform
           that offers <b>ZATCA Phase 2 compliant invoicing, real-time collaboration, automated reconciliation,
-          and business insights,</b> Accqrate Books delivers—helping you focus on business growth, not
+            and business insights,</b> Accqrate Books delivers—helping you focus on business growth, not
           accounting headaches.
         </T>
       </p>
 
       <hr className="my-6 border-gray-300" />
 
-      <h2 className="text-xl font-semibold mb-3">
+      <h2 className="text-fluid-h3 font-semibold mb-3">
         <T>20 Reasons Why Accqrate Books Stands Out as the Top MSME Accounting Software</T>
       </h2>
 
-      <ul className="list-disc list-inside space-y-2 mb-6">
+      <ul className="list-disc list-inside space-y-2 mb-6 text-fluid-small">
         <li>
           <T>
             <b>Business Partner Collaboration:</b> Invite customers, auditors, suppliers, and internal teams
@@ -185,11 +185,11 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         </li>
       </ul>
 
-      <h2 className="text-xl font-semibold mb-3">
+      <h2 className="text-fluid-h3 font-semibold mb-3">
         <T>Accqrate Books: The Accounting Solution Built for MSMEs</T>
       </h2>
 
-      <p className="mb-4">
+      <p className="mb-4 text-fluid-small">
         <T>
           With <b>Accqrate Books</b>, MSMEs get more than just accounting—they get a fully digital,
           collaborative, and secure business platform. Whether you’re aiming for ZATCA Phase 2 E-invoicing
@@ -198,11 +198,11 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         </T>
       </p>
 
-      <p className="mb-4 font-semibold">
+      <p className="mb-4 font-semibold text-fluid-small">
         <T>Ready to transform your accounting and business processes?</T>
       </p>
 
-      <p>
+      <p className="text-fluid-small">
         <T>
           Experience Accqrate Books—your all-in-one, AI-powered, and future-ready accounting solution for
           MSMEs.
