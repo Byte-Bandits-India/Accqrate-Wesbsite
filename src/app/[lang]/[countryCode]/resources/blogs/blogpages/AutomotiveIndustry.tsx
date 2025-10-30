@@ -25,7 +25,7 @@ function AutomotiveIndustry() {
         alt="Accelerating Digital Transformation: Tackling ZATCA E-invoicing Challenges in Saudi Arabia’s Automotive Industry"
       />
 
-      <p>
+      <p className="text-fluid-small tracking-para">
         <T>
           The automotive industry in Saudi Arabia is rapidly evolving. Manufacturers, auto-parts retailers,
           and custom vehicle workshops are increasingly adopting digital transformation initiatives, enabling
@@ -35,7 +35,7 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <p>
+      <p className="text-fluid-small mt-6 tracking-para">
         <T>
           In this article, we explore how the automotive sector can efficiently address ZATCA’s e-invoicing
           requirements, overcome compliance hurdles, and achieve comprehensive digital transformation with the
@@ -45,11 +45,11 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>Navigating the Road to Mandatory E-invoicing</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           Since its inception in 2021, ZATCA’s e-invoicing (Fatoorah) initiative has been significantly
           reshaping invoicing practices across Saudi Arabia. Automotive businesses, from manufacturers and
@@ -58,11 +58,11 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>Why is ZATCA Compliance Crucial for the Automotive Sector?</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           The automotive industry operates in a uniquely complex environment. Businesses must manage large
           inventories, intricate production workflows, sales networks, after-sales services, and extensive
@@ -71,7 +71,7 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <ul className="list-disc pl-6 space-y-2">
+      <ul className="list-disc pl-6 space-y-2 text-fluid-small mb-6 tracking-para">
         <li>
           <T>
             <b>Complex Inventory Management:</b> Automotive and auto-parts retailers handle extensive SKUs,
@@ -103,11 +103,11 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>How Accqrate Simplifies E-invoicing for Automotive Businesses</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           At Accqrate, we recognize that the automotive industry requires specialized attention when
           addressing digital transformation and ZATCA compliance. That's why we've developed <b>Accqrate</b>,
@@ -116,11 +116,11 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>Already Using an ERP or POS? Accqrate Middleware Has You Covered</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           If your automotive business already leverages existing ERP, POS, or other business systems, Accqrate
           seamlessly integrates your applications with ZATCA’s e-invoicing portal. The middleware solution
@@ -129,11 +129,11 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>Key benefits of Accqrate’s Middleware include:</T>
       </p>
 
-      <ul className="list-disc pl-6 space-y-2">
+      <ul className="list-disc pl-6 space-y-2 text-fluid-small mb-6 tracking-para">
         <li>
           <T>
             <b>Flexible Integration:</b> Easy compatibility with legacy systems and modern ERPs, minimizing
@@ -156,11 +156,11 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>No ERP Yet? Accqrate ERP Solutions Offer Comprehensive Digitalization</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           For automotive businesses yet to embark on their digital transformation journey, Accqrate offers a
           comprehensive ERP suite covering Sales, CRM, Purchase, Accounting, Inventory, Production, and HR &
@@ -169,11 +169,11 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>With Accqrate ERP, automotive businesses benefit from:</T>
       </p>
 
-      <ul className="list-disc pl-6 space-y-2">
+      <ul className="list-disc pl-6 space-y-2 text-fluid-small mb-6 tracking-para">
         <li>
           <T>
             <b>Unified Business Insights:</b> Centralized management and real-time analytics across sales,
@@ -202,11 +202,11 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>Accelerating Toward the Digital Future</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           Digital transformation is no longer optional; it's a necessity. Saudi Arabia's Vision 2030
           emphasizes digitalization and regulatory compliance, pushing automotive businesses toward adopting
@@ -216,7 +216,7 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           Embracing digitalization today with Accqrate doesn’t only mean staying compliant. It also means
           unlocking significant growth opportunities and achieving lasting competitive advantage.
@@ -225,11 +225,11 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2>
+      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
         <T>Ready to Drive Your Business Forward?</T>
       </h2>
 
-      <p>
+      <p className="text-fluid-small mb-6 tracking-para">
         <T>
           To learn more about Accqrate’s ERP or Middleware solutions,{" "}
           <a href="https://accqrate-erp.com/" className="text-blue-600 hover:underline">
