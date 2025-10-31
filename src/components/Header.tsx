@@ -257,7 +257,7 @@ const menus = [
           {
             title: "Case Studies",
             description: "Live and recorded sessions from experts",
-            href: "/resources/case-studies",
+            href: "/success-stories",
             icon: "/images/header/navbar/outline/case.png",
           },
           {
@@ -311,7 +311,7 @@ const menus = [
           {
             title: "Events",
             description: "Upcoming events and webinars",
-            href: "/resources/events",
+            href: "/resources/webinars",
             icon: "/images/header/navbar/outline/event.png",
           },
           {
