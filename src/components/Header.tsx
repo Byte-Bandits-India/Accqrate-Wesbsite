@@ -347,12 +347,7 @@ const menus = [
         images: "/images/header/line/pro3.svg",
         xl: "/images/header/navbar/image/Community solution.webp",
         subItems: [
-          {
-            title: "Find an Accountant",
-            description: "Connect with Accqrate certified experts to manage accounting — stress-free and accurate.",
-            img: "/images/header/navbar/fill/accountant.webp",
-            href: "/community/find-accountant",
-          },
+         
           {
             title: "Accqrate Sprouts",
             description: "Empowering young professionals & Students with tools to scale smart and grow faster.",
@@ -365,12 +360,7 @@ const menus = [
             img: "/images/header/navbar/fill/become-partner.webp",
             href: "/community/become-partner",
           },
-          {
-            title: "Work with a Partner",
-            description: "Team up with trusted professionals to accelerate successful implementations.",
-            img: "/images/header/navbar/fill/partner.webp",
-            href: "/community/work-with-partner",
-          },
+          
           {
             title: "Community Forum",
             description: "Where Accqrate users learn, share, and solve together.",
