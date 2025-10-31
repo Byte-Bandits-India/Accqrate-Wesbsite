@@ -15,7 +15,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-   overflow-x:hidden
+  overflow-x: hidden;
 }
 
 /* Chrome, Safari, Edge */
@@ -171,31 +171,30 @@ body {
   .tracking--2 { letter-spacing: -0.02em; }
 }
 
-@layer utilities {
-  .text-fill-bg {
-    @apply font-bold text-transparent bg-clip-text bg-no-repeat text-center;
-    background-image: url('/images/h1.png');
-    background-position: 50%;
-    background-size: 720px;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: 1px;
-    font-size: 36px;
-    line-height: 40px;
-  }
-
-  @screen sm {
-    .text-fill-bg {
-      font-size: 30px;
-      line-height: 38px;
-    }
-  }
-
-  @screen md {
-    .text-fill-bg {
-      font-size: 36px;
-      line-height: 40px;
-    }
-  }
+.story ul,
+.story ol {
+  padding: 0;
+  margin: 1rem 0;
 }
 
+.story li {
+  list-style: none;
+  margin-bottom: 8px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.story li:last-child {
+  margin-bottom: 0;
+}
+
+.story li::before {
+  color: #2334de;
+  content: "\2022";
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  width: 20px;
+}
