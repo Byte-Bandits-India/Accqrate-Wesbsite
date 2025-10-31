@@ -692,7 +692,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <Switch checked={enabled} onCheckedChange={setEnabled} />
                     </div>
 
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 xl:px-0 mt-[32px] grid xl:grid-cols-2 gap-6">
+                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 mt-[32px] grid xl:grid-cols-2 gap-6">
                         {/* Left Side: Full‑Suite ERP */}
                         <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[804px] rounded-xl md:rounded-2xl p-6 md:p-8">
                             <div>
@@ -716,7 +716,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <div className="space-y-6">
                             <FadeUp className="bg-[#FFFFFF] font-inter lg:h-[280px] rounded-xl md:rounded-2xl p-6">
                                 <h2 className="text-[24px] font-medium tracking-heading">Modules included:</h2>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-relaxed list-disc pl-5">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-relaxed list-disc pl-5">
                                     <li>POS</li>
                                     <li>Sales</li>
                                     <li>Purchase</li>
@@ -790,7 +790,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             <p className="pb-4 md:pb-6 tracking-para text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-tight mt-[30px] lg:mt-[60px]">
                                 Work faster and decide smarter with AI embedded across the suite.
                             </p>
-                            <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] lg:mt-[60px] text-fluid-small tracking-heading leading-tight">
+                            <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-fluid-small tracking-heading leading-tight">
                                 <li><b>Natural‑language actions:</b> Ask, "Show last month's receivables by region" and get the answer, fast.</li>
                                 <li><b>Automations:</b> Generate e‑invoices, match POs, trigger approvals and alerts.</li>
                                 <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
@@ -827,7 +827,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             <h2 className="text-black lg:hidden tracking-para text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap mb-6">
                                 Compliance & Connectivity
                             </h2>
-                            <ul className="list-disc space-y-1 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
+                            <ul className="list-disc space-y-4 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
                                 <li>ZATCA Phase II: Generate compliant e‑invoices at scale; integrate with KSA tax authority.</li>
                                 <li>PEPPOL: Cross‑border e‑invoicing via standardized network.</li>
                                 <li>Open integrations: Connect any ERP, POS or homegrown system through APIs and adapters.</li>
