@@ -386,7 +386,7 @@ export default function Section4(): JSX.Element {
       </div >
       <section
 
-        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] text-[#333333] lg:mb-10"
+        className="mt-48px px-24px text-center min-h-full md:mt-[64px] md:px-[32px] text-[#333333] mb-8 md:mb-10"
 
       >
         <FadeUp>
