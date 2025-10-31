@@ -9,7 +9,7 @@ const CTASection = () => {
 
   return (
     <div className="w-full bg-gradient-to-l from-[#242087] to-[#1A0C48]  relative shadow-xl">
-      <div className="md:flex gap-8 max-h-[336px] relative z-10 max-w-[1440px] p-6 md:p-10 lg:pb-0 mx-auto">
+      <div className="md:flex gap-8 xl:max-h-[336px] relative z-10 max-w-[1440px] p-6 md:p-10 lg:pb-0 mx-auto">
         {/* LEFT CONTENT */}
         <div className="text-white md:max-w-[300px] lg:max-w-[500px] xl:max-w-full ">
           <h2 className="text-fluid-h2 lg:text-[50px] font-medium mb-4">
@@ -79,7 +79,7 @@ const CTASection = () => {
             key={i}
             className="
         relative
-        lg:w-[300px] w-[270px]
+        lg:w-[300px] w-[270px] md:w-[240px]
         h-[46px] md:h-[52px]
         flex items-center justify-center
         bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]
@@ -100,7 +100,7 @@ const CTASection = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              className="absolute right-5 text-white"
+              className="absolute right-4 text-white"
             >
               <path
                 d="M9 6l6 6-6 6"
