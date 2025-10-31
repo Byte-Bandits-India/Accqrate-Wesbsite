@@ -8,8 +8,8 @@ const CTASection = () => {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="w-full max-h-fit bg-gradient-to-l from-[#242087] to-[#1A0C48]  relative shadow-xl">
-      <div className="md:flex gap-8  relative z-10 max-w-[1440px] p-6 md:p-10 lg:pb-0 mx-auto">
+    <div className="w-full bg-gradient-to-l from-[#242087] to-[#1A0C48]  relative shadow-xl">
+      <div className="md:flex gap-8 max-h-[336px] relative z-10 max-w-[1440px] p-6 md:p-10 lg:pb-0 mx-auto">
         {/* LEFT CONTENT */}
         <div className="text-white md:max-w-[300px] lg:max-w-[500px] xl:max-w-full ">
           <h2 className="text-fluid-h2 lg:text-[50px] font-medium mb-4">
@@ -21,7 +21,7 @@ const CTASection = () => {
             and exclusive Company editorials?
           </p>
 
-          <p className="text-sm mb-8 text-white/80 leading-relaxed xl:max-w-[773px] ">
+          <p className="text-sm text-white/80 leading-relaxed xl:max-w-[773px] ">
             Get fresh product insights and exclusive company editorials delivered straight to
             your <br className="hidden xl:block" /> inbox. Subscribe now to never miss a beat!
           </p>
@@ -69,7 +69,7 @@ const CTASection = () => {
 
 
       {/* Bottom Buttons */}
-      <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-4 lg:gap-8 py-6 md:py-8 lg:py-10">
+      <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-4 lg:gap-8 pb-6 md:pb-8 lg:pb-10">
         {[
           "Get a Free Proof of Concept",
           "Start 30-Day Free Trial",
@@ -77,16 +77,30 @@ const CTASection = () => {
         ].map((text, i) => (
           <button
             key={i}
-            className="h-[40px] md:h-[59px] max-w-[339px] text-nowrap flex items-center justify-between bg-[#F05A28] rounded-[50px] px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
+            className="
+        relative
+        lg:w-[300px] w-[270px]
+        h-[46px] md:h-[52px]
+        flex items-center justify-center
+        bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]
+        rounded-[50px]
+        px-2
+        text-white
+        text-fluid-small md:text-[14px] lg:text-[16px] whitespace-nowrap
+        mt-[32px]
+      "
           >
-            {text}
+            {/* Centered Text */}
+            <span className="mx-auto">{text}</span>
+
+            {/* Arrow aligned to the right */}
             <svg
-              width="20"
-              height="20"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              className="text-white"
+              className="absolute right-5 text-white"
             >
               <path
                 d="M9 6l6 6-6 6"
@@ -98,6 +112,8 @@ const CTASection = () => {
           </button>
         ))}
       </div>
+
+
 
 
       {/* Decorative Circles */}

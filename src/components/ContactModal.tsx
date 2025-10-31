@@ -43,7 +43,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/40 isolate"
       aria-modal="true"
       role="dialog"
     >
@@ -58,7 +58,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
         </button>
 
         {/* Title */}
-        <h2 className="text-lg font-medium mb-2">Contact</h2>
+        <h2 className="text-lg font-semibold mb-2 text-gray-900">Contact</h2>
 
         {/* Divider Line */}
         <div className="h-[1px] bg-gray-300 w-full mb-6"></div>

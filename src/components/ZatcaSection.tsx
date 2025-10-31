@@ -1,9 +1,14 @@
 "use client";
+
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { ContactModal } from "./ContactModal";
+import dynamic from "next/dynamic";
 
+// ✅ Dynamically import ContactModal — prevents RSC static flag errors
+const ContactModal = dynamic(() => import("@/components/ContactModal").then(mod => mod.ContactModal), {
+  ssr: false, // Ensures it renders only on the client
+});
 export default function ZatcaSection() {
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -28,8 +33,8 @@ export default function ZatcaSection() {
         {/* COLUMN 1 — LEFT CONTENT */}
         <div className="z-20 text-left order-2 md:order-1">
           <h2 className="text-fluid-h2 xl:text-[40px] font-medium mb-6 leading-snug">
-            Get 100% ZATCA Phase <br className="hidden md:block xl:hidden" /> II
-            compliant <br className="hidden xl:block" /> with Accqrate
+            Get 100% ZATCA Phase II
+            compliant with Accqrate
           </h2>
 
           <ul className="space-y-4 md:space-y-5 mb-8 md:mb-10">
@@ -97,8 +102,10 @@ export default function ZatcaSection() {
         </div>
       </div>
 
-      {/* CONTACT MODAL */}
-      <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
+      {/* ✅ Modal rendered client-side only */}
+      {isModalOpen && (
+        <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
+      )}
     </section>
   );
 }

@@ -549,7 +549,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Mobile & Tablet Featured Solutions */}
                 <div className="lg:hidden px-6 md:px-8">
-                    <div className="max-w-[1440px] mx-auto py-8">
+                    <div className="max-w-[1280px] mx-auto py-8">
                         <h1 className="text-fluid-body font-medium mb-4"><T>Featured Solutions:</T></h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -586,7 +586,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* /Why Accqrate? */}
                 <div>
-                    <div className="max-w-[1677px] w-full mx-auto px-6 md:px-8 mt-[48px]">
+                    <div className="max-w-[1280px] w-full mx-auto px-6 md:px-8 xl:px-0 mt-[48px]">
                         <div className="grid grid-cols-1 lg:grid-cols-2">
                             {/* Left Column */}
                             <div>
@@ -629,7 +629,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 </div>
 
                 {/* Trusted text */}
-                <div className="mt-[80px] rounded-[30px] bg-[linear-gradient(180deg,#FFFFFF_0%,#E9E8FF_50%,#4F52FF_100%)] py-6 md:py-8 max-w-[1440px] mx-auto">
+                <div className="mt-[80px] rounded-[30px] bg-[linear-gradient(180deg,#FFFFFF_0%,#E9E8FF_50%,#4F52FF_100%)] py-6 md:py-8  max-w-[1280px] mx-auto">
 
                     <FadeUp className="mb-8 md:mb-[40px]">
                         <h3 className="text-fluid-h3 max-w-[354px]  tracking-heading leading-tight font-medium text-[#333333] text-center mx-auto">
@@ -638,7 +638,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                     </FadeUp>
 
                     {/* Logo Marquee */}
-                    <div className="relative ">
+                    <div className="relative">
                         <div className="max-w-5xl overflow-hidden py-6 mx-auto">
                             <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-14 md:w-20" />
                             <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-14 md:w-20" />
@@ -692,7 +692,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <Switch checked={enabled} onCheckedChange={setEnabled} />
                     </div>
 
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 mt-[32px] grid xl:grid-cols-2 gap-6">
+                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 xl:px-0 mt-[32px] grid xl:grid-cols-2 gap-6">
                         {/* Left Side: Full‑Suite ERP */}
                         <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[804px] rounded-xl md:rounded-2xl p-6 md:p-8">
                             <div>
@@ -703,7 +703,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                         The Full‑Suite ERP
                                     </span>
                                 </div>
-                                <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] mt-[30px]">
+                                <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] xl:text-[18px] mt-[30px]">
                                     Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
                                 </p>
                                 <div className="w-full mt-6 md:mt-0">
@@ -714,9 +714,9 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                         {/* Right Side: Modules included + What you'll achieve */}
                         <div className="space-y-6">
-                            <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[280px] rounded-xl md:rounded-2xl p-6 md:p-8">
+                            <FadeUp className="bg-[#FFFFFF] font-inter lg:h-[280px] rounded-xl md:rounded-2xl p-6">
                                 <h2 className="text-[24px] font-medium tracking-heading">Modules included:</h2>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small tracking-para list-disc pl-5">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-relaxed list-disc pl-5">
                                     <li>POS</li>
                                     <li>Sales</li>
                                     <li>Purchase</li>
@@ -738,7 +738,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                             <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[505px] rounded-xl md:rounded-2xl p-6 md:p-8">
                                 <h2 className="text-fluid-h3 lg:text-[24px] font-medium tracking-heading">What you'll achieve:</h2>
-                                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small leading-tight tracking-para">
+                                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small lg:text-[16px] leading-tight tracking-para">
                                     <li>Unified operations: Finance to factory on a single source of truth.</li>
                                     <li>Quicker close, cleaner audits: Built‑in controls and automated reconciliations.</li>
                                     <li>Smarter planning: AI‑assisted forecasting and scenario modeling.</li>
@@ -746,7 +746,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 </ul>
 
                                 <h2 className="mt-8 text-fluid-h3 lg:text-[24px] font-medium tracking-heading">Migration advantages:</h2>
-                                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small leading-tight tracking-para">
+                                <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small lg:text-[16px] leading-tight tracking-para">
                                     <li>Rapid implementation with minimal downtime.</li>
                                     <li>Proven playbooks for moving from ERPs & Applications</li>
                                     <li>Coexistence options while you phase out legacy.</li>
@@ -780,7 +780,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Your AI Copilot */}
                 <div className="hidden md:block">
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 mt-[72px] grid lg:grid-cols-2 gap-6">
+                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6">
                         {/* Left Side: Text + list + button */}
                         <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col">
                             <h2 className="text-[#000000] tracking-heading text-[20px] font-medium md:text-[32px] lg:text-[50px] leading-tight whitespace-nowrap">
@@ -813,7 +813,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         </div>
                     </div>
 
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-8 mt-[72px] grid lg:grid-cols-2 gap-6 items-center pb-[36px]  md:pb-[200px] lg:pb-[300px]">
+                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-center pb-[36px]  md:pb-[200px] lg:pb-[300px]">
                         {/* Left Side: Image (Desktop) */}
                         <div className="hidden lg:flex flex-col items-start justify-center">
                             <h2 className="text-black hidden lg:block tracking-para text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap mb-6">
@@ -889,7 +889,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             </div>
 
             {/* Testimonials Section */}
-            <div className="max-w-[1440px] mx-auto px-0 md:px-8">
+            <div className="max-w-[1280px] mx-auto px-0 md:px-8">
                 <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 px-6">Testimonials</h2>
                 <Carousel items={testimonialCards} autoplay autoplayDelay={4000} />
                 <div className="flex items-center justify-center">
@@ -906,8 +906,8 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             </div>
 
             {/* Our ValuesDrive Everything We Do */}
-            <div className="bg-[#F8F6FF] my-[50px]  ">
-                <div className="px-6 md:px-8 xl:flex items-end xl:gap-20 max-w-[1440px] mx-auto">
+            <div className="bg-[#F8F6FF] py-[50px]  ">
+                <div className="px-6 md:px-8 xl:px-0 xl:flex items-end xl:gap-20 max-w-[1280px] mx-auto">
                     <div>
                         <h1 className="text-[20px] md:text-[32px] lg:text-[50px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
                         <p className="text-fluid-body max-w-[662px] tracking-para leading-tight">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
@@ -926,7 +926,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 </div>
 
                 {/* CarouselCard */}
-                <div className="solutions-carousel relative max-w-[1380px] mx-auto pl-6 md:pl-8 xl:pl-0 mt-[40px] md:mt-[38px] lg:mt-[70px]">
+                <div className="solutions-carousel relative max-w-[1280px] mx-auto pl-6 md:pl-8 xl:pl-0 mt-[40px] md:mt-[38px] lg:mt-[70px]">
                     <div ref={carouselRef} className="carousel-wrapper overflow-x-auto scrollbar-hide">
                         <div
                             className="carousel-track flex transition-transform duration-500 ease-in-out gap-8"
@@ -955,7 +955,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Frequently Answered Questions */}
                 <div>
-                    <div className="px-0 md:px-8 max-w-[1440px] mx-auto py-6">
+                    <div className="px-0 md:px-8 max-w-[1280px] mx-auto py-6 xl:px-0">
                         <div className="bg-white lg:flex lg:items-start lg:justify-between rounded-[20px] p-6 md:p-8 gap-12">
 
                             {/* Heading */}
@@ -997,35 +997,52 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
                         <p className="md:text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
                     </div>
-                    <div className="flex flex-col items-center md:flex md:flex-row md:justify-center md:gap-[10px] lg:gap-[30px]">
-                        <button
-                            className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
-                            style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
-                        >
-                            Get a Free Proof of Concept
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-                                <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <button
-                            className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
-                            style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
-                        >
-                            Start 30‑Day Free Trial
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-                                <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-                        <button
-                            className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
-                            style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
-                        >
-                            Talk to Sales
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-                                <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
+                    <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-4 lg:gap-8 py-6 md:py-8 lg:py-10">
+                        {[
+                            "Get a Free Proof of Concept",
+                            "Start 30-Day Free Trial",
+                            "Talk to Sales",
+                        ].map((text, i) => (
+                            <button
+                                key={i}
+                                className="
+        relative
+        lg:w-[303px] w-[270px]
+        h-[46px] md:h-[59px]
+        flex items-center justify-center
+        rounded-[5px]
+        px-6
+        text-white
+        text-fluid-small md:text-[14px] lg:text-[16px] whitespace-nowrap
+        mt-[32px]
+      "
+                                style={{
+                                    background: "linear-gradient(90deg, #194BED 0%, #29266E 100%)",
+                                }}
+                            >
+                                {/* Centered text */}
+                                <span className="mx-auto">{text}</span>
+
+                                {/* Arrow aligned to right */}
+                                <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    className="absolute right-5 text-white"
+                                >
+                                    <path
+                                        d="M9 6l6 6-6 6"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            </button>
+                        ))}
                     </div>
+
                 </div>
             </div>
         </main>

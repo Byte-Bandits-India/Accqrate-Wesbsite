@@ -1,15 +1,21 @@
 "use client";
+
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { ContactModal } from "@/components/ContactModal";
+import dynamic from "next/dynamic";
+
+// ✅ Dynamically import ContactModal — prevents RSC static flag errors
+const ContactModal = dynamic(() => import("@/components/ContactModal").then(mod => mod.ContactModal), {
+  ssr: false, // Ensures it renders only on the client
+});
 
 export default function ZatcaSection() {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
     <section
-      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white relative py-6 md:py-8"
+      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white relative pt-6 md:pt-8"
       data-aos="fade-up"
     >
       <div
@@ -44,9 +50,9 @@ export default function ZatcaSection() {
 
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-[#F05A28] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
           >
-            Book a Demo <ArrowRight className="w-4 h-4" />
+            Contact Your Consultant <ArrowRight className="w-4 h-4" />
           </button>
         </div>
 
@@ -62,8 +68,10 @@ export default function ZatcaSection() {
         </div>
       </div>
 
-      {/* CONTACT MODAL */}
-      <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
+      {/* ✅ Modal rendered client-side only */}
+      {isModalOpen && (
+        <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />
+      )}
     </section>
   );
 }

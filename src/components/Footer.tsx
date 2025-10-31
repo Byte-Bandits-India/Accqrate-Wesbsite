@@ -112,7 +112,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#212121] xl:border-t lg:border-gray-200 font-inter text-black">
+    <footer className="bg-[#212121] font-inter text-black">
       {/* ---------- Main Footer Section ---------- */}
       <div className="hidden xl:block max-w-[1600px] mx-auto px-8 py-12">
         <div className="flex justify-between items-start gap-12">
