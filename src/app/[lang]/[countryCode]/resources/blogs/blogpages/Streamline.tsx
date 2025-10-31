@@ -18,7 +18,7 @@ function Streamline() {
         alt="Streamlining Business Transactions: e-Invoicing in the United Arab Emirates"
       />
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           The adoption of the e-invoicing system is accelerating in the Gulf nations, signaling a remarkable
           shift towards digital invoicing in the region. The Kingdom of Saudi Arabia set a precedent in the
@@ -38,18 +38,18 @@ function Streamline() {
         <T>as per ZATCA requirements.</T>
       </p>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           The United Arab Emirates (UAE), showing its commitment to technological progress, has announced
           plans to make the e-invoicing system mandatory as well.
         </T>
       </p>
 
-      <h1 className="text-2xl md:text-3xl font-semibold mt-6 mb-3 text-gray-900">
+      <h1 className="text-fluid-body font-semibold mt-6 mb-3 text-gray-900">
         <T>Compliance with UAE VAT Law: e-Invoicing Requirements</T>
       </h1>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           Since January 1, 2018, when the UAE implemented Value Added Tax (VAT), digital or electronic
           invoicing has been recognized by the UAE's Federal Tax Authority as a valid method for generating
@@ -57,7 +57,7 @@ function Streamline() {
         </T>
       </p>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           The UAE's "Federal Law No. 1 of 2006 on Electronic Commerce and Transactions" facilitates the
           legality of electronic records, documents, and signatures. It sets uniform rules and standards for
@@ -65,18 +65,18 @@ function Streamline() {
         </T>
       </p>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>Under this Federal Law, government departments are authorized to:</T>
       </p>
 
-      <ul className="list-disc pl-6 text-base md:text-lg leading-relaxed text-gray-800 space-y-2">
+      <ul className="list-disc pl-6 text-fluid-small leading-relaxed text-gray-800 space-y-2">
         <li><T>Create, submit, file, and retain documents electronically.</T></li>
         <li><T>Issue decisions, approvals, licenses, and permits electronically.</T></li>
         <li><T>Accept fees and payments electronically.</T></li>
         <li><T>Conduct tenders and receive bids for government procurement electronically.</T></li>
       </ul>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           The Ministry of Finance (MoF) in the UAE adopted the e-Procurement system to streamline the entire
           purchase cycle. Vendors can participate online in tenders and auctions, monitor purchase orders,
@@ -84,7 +84,7 @@ function Streamline() {
         </T>
       </p>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           In addition, the Telecommunications Regulatory Authority has implemented its electronic invoicing
           system for contract suppliers. This digital structure also allows for contract follow-ups,
@@ -93,11 +93,11 @@ function Streamline() {
         </T>
       </p>
 
-      <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-2 text-gray-900">
+      <h3 className="text-fluid-body font-semibold mt-5 mb-2 text-gray-900">
         <T>Advancing Towards a Paperless UAE: Strategy for 2021 and Beyond</T>
       </h3>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           In 2021, the Dubai Smart Government unveiled an ambitious project aimed at becoming entirely
           paper-free. This initiative is projected to phase out over 1 billion paper pieces annually used in
@@ -105,7 +105,7 @@ function Streamline() {
         </T>
       </p>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           As part of this far-reaching plan, all transactions within the government will be digitized,
           leading to a comprehensive shift towards paperless operations. Smart Dubai is actively focusing on
@@ -114,11 +114,11 @@ function Streamline() {
         </T>
       </p>
 
-      <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-2 text-gray-900">
+      <h3 className="text-fluid-body font-semibold mt-5 mb-2 text-gray-900">
         <T>Enforcing e-Invoicing: Upcoming Mandatory Implementation in the UAE</T>
       </h3>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           Currently, the UAE government has officially recognized the significance of e-invoices in
           modernizing business transactions. Although not yet compulsory, experts foresee the UAE following
@@ -127,15 +127,15 @@ function Streamline() {
         </T>
       </p>
 
-      <h3 className="text-xl md:text-2xl font-semibold mt-5 mb-2 text-gray-900">
+      <h3 className="text-fluid-body font-semibold mt-5 mb-2 text-gray-900">
         <T>Top Tips for Successful e-Invoicing Implementation in the UAE</T>
       </h3>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>E-invoicing in the UAE adheres to specific rules, including:</T>
       </p>
 
-      <ul className="list-disc pl-6 text-base md:text-lg leading-relaxed text-gray-800 space-y-2">
+      <ul className="list-disc pl-6 text-fluid-small leading-relaxed text-gray-800 space-y-2">
         <li>
           <b><T>Maintenance of Original Format:</T></b>{" "}
           <T>
@@ -159,7 +159,7 @@ function Streamline() {
         </li>
       </ul>
 
-      <p className="text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="text-fluid-small leading-relaxed text-gray-800">
         <T>
           These guidelines are essential in ensuring the integrity, security, and authenticity of e-invoices
           in the UAE, thereby fostering transparency and efficiency in digital invoicing practices. The shift

@@ -20,7 +20,7 @@ function OracleInvoicing() {
         alt="Oracle E-invoicing Integration with ZATCA Phase 2: A Seamless Fusion"
       />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           <a href="https://www.oracle.com/in/cx/service/" className="text-blue-600 underline">
             <T>Oracle Fusion</T>
@@ -43,10 +43,10 @@ function OracleInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>How Oracle Fusion and ZATCA Integration Works?</T>
       </h3>
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           Accqrate’s E-invoicing package for Oracle Fusion operates in real-time for Tax invoices and in batch
           mode for Simplified invoices, establishing a bridge with ZATCA (Fatoora Portal).
@@ -55,10 +55,10 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle14.png" className="w-full  mb-4" alt="integration1" />
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Company Onboarding:</T>
       </h3>
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           Upon successful registration in Fatoora and receipt of the OTP, Accqrate provides an avenue to
           onboard your firm to ZATCA’s e-invoicing portal.
@@ -67,7 +67,7 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle10.png" className="w-full  mb-4" alt="oracle10" />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           Subsequently, essential components like Certificates, CSIDs, Digital signatures, and secret keys are
           automatically generated. This API will do the magic for you to integrate with your Oracle ERP.
@@ -76,10 +76,10 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle8.png" className="w-full  mb-4" alt="oracle8" />
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>E-invoicing Package Deployment:</T>
       </h3>
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           The below example shows the OCI-based integration. In the background, this integration process will
           call the Accqrate plug-in that can seamlessly communicate with ZATCA and get the invoice approvals.
@@ -88,10 +88,10 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle6.png" className="w-full  mb-4" alt="oracle6" />
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Invoice Generation within Oracle:</T>
       </h3>
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           This is illustrated using sales order-based invoice integration. However, the procedure remains
           consistent for other forms like direct invoices, credit, and debit memos.
@@ -100,7 +100,7 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle13.png" className="w-full  mb-4" alt="oracle13" />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>Search the order and select the “Fulfillment View”</T>
       </p>
 
@@ -108,10 +108,10 @@ function OracleInvoicing() {
       <img src="/images/invoicing/oracle4.png" className="w-full  mb-4" alt="oracle4" />
       <img src="/images/invoicing/oracle7.png" className="w-full  mb-4" alt="oracle7" />
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Transmission of Invoice to ZATCA:</T>
       </h3>
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           The system, post the billing stage, processes the invoices automatically. Nonetheless, users retain
           the discretion to initiate this procedure manually. Ideally for Simplified invoices, the integration
@@ -121,13 +121,13 @@ function OracleInvoicing() {
 
       <img src="/images/invoicing/oracle5.png" className="w-full  mb-4" alt="oracle5" />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>In a few milliseconds, the response (approval or rejection) is received from ZATCA.</T>
       </p>
 
       <img src="/images/invoicing/oracle1.png" className="w-full  mb-4" alt="oracle1" />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           For rejected invoices, the error messages are recorded. For approved invoices, the XML, QR code, and
           UDIDs are returned back to Oracle from Accqrate middleware.
@@ -135,16 +135,16 @@ function OracleInvoicing() {
       </p>
 
       <img src="/images/invoicing/oracle2.png" className="w-full  mb-4" alt="oracle2" />
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>The XML is saved in Oracle for Auditing purposes.</T>
       </p>
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Document Archiving in Oracle:</T>
       </h3>
       <img src="/images/invoicing/oracle3.png" className="w-full  mb-4" alt="oracle3" />
 
-      <p className="text-[16px] leading-relaxed text-gray-700 mb-4">
+      <p className="text-fluid-small leading-relaxed text-gray-700 mb-4">
         <T>
           PDFs and XMLs are archived in Oracle and can be referenced anytime. The invoice is customized to show
           the PDF and XMLs.
@@ -155,10 +155,10 @@ function OracleInvoicing() {
       <img src="/images/invoicing/oracle9.png" className="w-full  mb-4" alt="oracle9" />
       <img src="/images/invoicing/oracle15.png" className="w-full  mb-4" alt="oracle15" />
 
-      <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>The Accqrate Advantage in Oracle Integration</T>
       </h3>
-      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-4 space-y-2">
+      <ul className="list-disc ml-6 text-fluid-small text-gray-700 mb-4 space-y-2">
         <li>
           <strong>
             <T>🔒 Unparalleled Security:</T>
@@ -189,7 +189,7 @@ function OracleInvoicing() {
       <section className="demo mt-10">
         <Row justify="center">
           <Col xs={24}>
-            <h3 className="text-xl md:text-[25px] font-semibold text-gray-900 mb-3 text-left">
+            <h3 className="text-fluid-body font-semibold text-gray-900 mb-3 text-left">
               <T>Accqrate Solution Offerings For Your Business</T>
             </h3>
             <iframe

@@ -17,11 +17,11 @@ export default function GoodsReceipts() {
         alt="Goods Receipts Accounting"
       />
 
-      <h3 className="text-xl md:text-2xl font-semibold mb-2">
+      <h3 className="text-fluid-small font-semibold mb-2">
         <T>The more inventory a company has, the less likely they will have what they need</T>
       </h3>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Stock refers to the value of all available finished goods directly sold to customers. It helps
           determine business revenue and is an essential asset for any organisation. Stocks are either
@@ -29,7 +29,7 @@ export default function GoodsReceipts() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           A typical procurement process starts with a purchase request, which is an internal document
           providing the requirements for materials to the buyer in the purchasing department. Purchase
@@ -38,7 +38,7 @@ export default function GoodsReceipts() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           The supplier then delivers the goods to the buyer. The goods receipt is the document that records
           the incoming goods and stores the materials in the inventory. Some companies also conduct
@@ -46,7 +46,7 @@ export default function GoodsReceipts() {
         </T>
       </p>
 
-      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <div className="story text-fluid-small leading-relaxed text-gray-800">
         <T>The Goods Receipt performs the following tasks:</T>
         <ul className="list-disc pl-6 mt-2">
           <li>
@@ -58,7 +58,7 @@ export default function GoodsReceipts() {
         </ul>
       </div>
 
-      <table className="w-[90%] my-4  text-lg ">
+      <table className="w-[90%] my-4  text-fluid-body">
         <thead className="">
           <tr>
             <th></th>
@@ -80,14 +80,14 @@ export default function GoodsReceipts() {
         </tbody>
       </table>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Few systems have a clear split of local and foreign purchasing accounts. For example, when the
           procurement is done from a local supplier, the goods receipt accounting entries will be as follows:
         </T>
       </p>
 
-      <table className="w-[90%] my-4  text-lg">
+      <table className="w-[90%] my-4  text-fluid-body">
         <thead >
           <tr>
             <th></th>
@@ -109,14 +109,14 @@ export default function GoodsReceipts() {
         </tbody>
       </table>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           When the procurement is done from a foreign supplier, also known as import supplies, the goods
           receipt accounting entries will be as follows:
         </T>
       </p>
 
-      <table className="w-[90%] my-4  text-lg">
+      <table className="w-[90%] my-4  text-fluid-body">
         <thead>
           <tr>
             <th></th>
@@ -138,7 +138,7 @@ export default function GoodsReceipts() {
         </tbody>
       </table>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           The purchase account is a parking account in the procurement process from a foreign supplier. In the
           subsequent process, when invoices are generated for the purchase orders/goods receipts, it gets

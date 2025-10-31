@@ -47,7 +47,7 @@ function AdaptingBusiness() {
         </T>
       </p>
 
-      <h1 className="my-6 text-fluid-h3 font-semibold">
+      <h1 className="my-6 text-fluid-body font-semibold">
         <T>Phase 1 e-Invoicing process</T>
       </h1>
 
@@ -115,7 +115,7 @@ function AdaptingBusiness() {
       </ul>
 
 
-      <h1 className="mt-6 font-semibold text-fluid-h3">
+      <h1 className="mt-6 font-semibold text-fluid-body">
         <T>Phase 2 e-Invoicing process</T>
       </h1>
 

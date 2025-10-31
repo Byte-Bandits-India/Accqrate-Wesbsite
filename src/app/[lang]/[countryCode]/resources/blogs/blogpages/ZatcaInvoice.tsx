@@ -23,10 +23,10 @@ export default function ZatcaInvoice() {
         alt="Adapting Business Processes for ZATCA e-Invoicing Phase 2 Compliance"
       />
 
-      <p className="story">
+      <p className="story text-fluid-body font-semibold mb-4">
         <T>1. E-invoices that comply with ZATCA requirements:</T>
       </p>
-      <p className="story">
+      <p className="story text-fluid-small mb-4">
         <T>
           For Phase I, the e-invoicing software that you select should comply
           with ZATCA guidelines, including the generation of QR codes and
@@ -37,10 +37,10 @@ export default function ZatcaInvoice() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-fluid-body font-semibold mb-4">
         <T>2. Integrate with all your business functions:</T>
       </p>
-      <p className="story">
+      <p className="story text-fluid-small mb-4">
         <T>
           When selecting e-invoice software for your business in Saudi Arabia,
           ensure that it is flexible and easily integrates with your other
@@ -50,10 +50,10 @@ export default function ZatcaInvoice() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-fluid-body font-semibold mb-4">
         <T>3. Easy to integrate with existing applications:</T>
       </p>
-      <p className="story">
+      <p className="story text-fluid-small mb-4">
         <T>
           The e-invoice software should easily integrate with your current
           accounting software or any other systems handling accounting, VAT,
@@ -63,10 +63,10 @@ export default function ZatcaInvoice() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-fluid-body font-semibold mb-4">
         <T>4. Simple to deploy:</T>
       </p>
-      <p className="story">
+      <p className="story text-fluid-small mb-4">
         <T>
           Choose e-invoicing software that can be deployed in just 4–5 simple
           steps to get the final invoice output. The provider should work
@@ -75,10 +75,10 @@ export default function ZatcaInvoice() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-fluid-body font-semibold mb-4">
         <T>5. Pricing:</T>
       </p>
-      <p className="story">
+      <p className="story text-fluid-small mb-4">
         <T>
           Pricing is a key factor that can make or break an agreement. It’s
           essential to carefully review the pricing structure of the

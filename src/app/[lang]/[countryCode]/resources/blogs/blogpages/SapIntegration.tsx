@@ -19,7 +19,7 @@ function SapIntegration() {
         alt="SAP E-Invoicing and Its Integration with ZATCA: Paving the Way for Digital Excellence"
       />
 
-      <div className="story text-[16px] leading-relaxed">
+      <div className="story text-fluid-small leading-relaxed">
         <T>In the evolving digital landscape, Saudi Arabia&apos;s Zakat, Tax, and Customs Authority</T>
         <a href="https://zatca.gov.sa/en/Pages/default.aspx" className="text-blue-600 underline"> (ZATCA) </a>
         <T>
@@ -29,10 +29,10 @@ function SapIntegration() {
         </T>
       </div>
 
-      <h3 className="text-[20px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Accqrate E-Invoicing Solutions: Bridging SAP and ZATCA</T>
       </h3>
-      <div className="story text-[16px] leading-relaxed">
+      <div className="story text-fluid-small leading-relaxed">
         <T>Accqrate provides specialized</T>
         <a href="https://accqrate-erp.com/en/e-invoicing-plugin" className="text-blue-600 underline">
           <T> ERP integrators </T>
@@ -52,11 +52,11 @@ function SapIntegration() {
         </ul>
       </div>
 
-      <h3 className="text-[20px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Integration Process Overview:</T>
       </h3>
 
-      <div className="story text-[16px] leading-relaxed">
+      <div className="story text-fluid-small leading-relaxed">
         <img src="/images/integration/integration1.webp" className="w-100 mb-2" alt="integration1" />
         <T>1. An invoice is generated in SAP.</T>
 
@@ -91,10 +91,10 @@ function SapIntegration() {
         <T>11. Once submitted, ZATCA approval is typically received within milliseconds.</T>
       </div>
 
-      <h3 className="text-[20px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Seamless Integration with Accqrate: A Trusted ZATCA Provider</T>
       </h3>
-      <div className="story text-[16px] leading-relaxed">
+      <div className="story text-fluid-small leading-relaxed">
         <T>
           Accqrate, an approved ZATCA provider, leads SAP integration by ensuring security, speed, and compliance:
         </T>
@@ -121,7 +121,7 @@ function SapIntegration() {
       <section className="demo mt-10">
         <Row justify="center">
           <Col xs={24}>
-            <h3 className="text-[20px] font-semibold mb-3">
+            <h3 className="text-fluid-body font-semibold mb-3">
               <T>Accqrate Solution Offerings For Your Business</T>
             </h3>
             <iframe

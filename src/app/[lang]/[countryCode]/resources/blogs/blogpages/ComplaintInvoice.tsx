@@ -13,12 +13,12 @@ function ComplaintInvoice() {
     >
       {/* Header Image */}
       <img
-        src="/images/invoice.jpg"
+        src="/images/a-compliant-e-invoicing-fatoorah-software.webp"
         alt="A compliant e-invoicing (Fatoorah) software"
         className="w-full mb-6 rounded-lg"
       />
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>
           E-invoicing is becoming a critical requirement for businesses in Saudi
           Arabia. With ZATCA (Zakat, Tax, and Customs Authority) regulations, it
@@ -27,7 +27,7 @@ function ComplaintInvoice() {
         </T>
       </p>
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>
           Accqrate provides a <b>ZATCA-approved e-invoicing solution</b> that
           enables businesses to easily generate, store, and transmit digital
@@ -38,11 +38,11 @@ function ComplaintInvoice() {
 
       <hr className="my-6" />
 
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>What is E-Invoicing in Saudi Arabia?</T>
       </h3>
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>
           E-invoicing, or Fatoora, refers to the process of issuing, storing,
           and transmitting invoices electronically in a{" "}
@@ -53,11 +53,11 @@ function ComplaintInvoice() {
         </T>
       </p>
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>There are two phases of e-invoicing compliance in Saudi Arabia:</T>
       </p>
 
-      <ul className="space-y-2 text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <ul className="space-y-2 text-gray-700 mb-6 text-fluid-small">
         <li>
           <b>Phase 1:</b> Businesses must issue digital invoices with a QR code
           and unique invoice number.
@@ -68,7 +68,7 @@ function ComplaintInvoice() {
         </li>
       </ul>
 
-      <p className="text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-6 text-fluid-small">
         <T>
           Failing to comply with these regulations can result in{" "}
           <b>significant penalties</b>. Implementing a
@@ -79,15 +79,15 @@ function ComplaintInvoice() {
 
       <hr className="my-6" />
 
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Why Do Businesses Need E-Invoicing?</T>
       </h3>
 
-      <p className="text-gray-700 mb-3 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-3 text-fluid-small">
         <T>E-invoicing offers numerous advantages beyond compliance:</T>
       </p>
 
-      <ul className="space-y-2 text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <ul className="space-y-2 text-gray-700 mb-6 text-fluid-small">
         <li>✅ <b>Create digital invoices in a few clicks</b></li>
         <li>✅ <b>Embed QR codes for compliance</b></li>
         <li>✅ <b>Store and retrieve invoices anytime for audits</b></li>
@@ -95,7 +95,7 @@ function ComplaintInvoice() {
         <li>✅ <b>Transmit invoices to ZATCA seamlessly</b></li>
       </ul>
 
-      <p className="text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-6 text-fluid-small">
         <T>
           To get a free demo:{" "}
           <a
@@ -111,22 +111,22 @@ function ComplaintInvoice() {
 
       <hr className="my-6" />
 
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>E-Invoicing Made Easy with Accqrate</T>
       </h3>
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>
           Accqrate’s e-invoicing solution offers a fast and seamless process to
           generate ZATCA-compliant invoices.
         </T>
       </p>
 
-      <p className="text-gray-700 mb-3 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-3 text-fluid-small">
         <b>Key Features of Accqrate’s E-Invoicing Software:</b>
       </p>
 
-      <ul className="space-y-2 text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <ul className="space-y-2 text-gray-700 mb-6 text-fluid-small">
         <li>📌 <b>Automatic QR code embedding</b></li>
         <li>📌 <b>Generate tax invoices or simplified invoices</b></li>
         <li>📌 <b>Customize invoice templates with your logo and branding</b></li>
@@ -145,25 +145,25 @@ function ComplaintInvoice() {
 
       <hr className="my-6" />
 
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>How to Start E-Invoicing with Accqrate</T>
       </h3>
 
-      <p className="text-gray-700 mb-4 text-base sm:text-lg md:text-xl">
+      <p className="text-gray-700 mb-4 text-fluid-small">
         <T>
           Getting started with Accqrate is simple, whether you’re new to
           e-invoicing or switching from another software.
         </T>
       </p>
 
-     
+
       <div>
         <T>
-          <h4 className="text-semibold text-lg md:text-2xl">1. If You’re Not Using Any Software:</h4>
+          <h4 className="text-semibold text-fluid-body">1. If You’re Not Using Any Software:</h4>
         </T>
       </div>
 
-      <div className="space-y-2 text-gray-700 mb-6 text-base sm:text-lg md:text-xl story">
+      <div className="space-y-2 text-gray-700 mb-6 text-fluid-small story">
         <ul>
           <li>
             <T>
@@ -195,11 +195,11 @@ function ComplaintInvoice() {
 
       <div>
         <T>
-          <h4 className="text-semibold text-lg md:text-2xl">2. If You’re Using Another Software:</h4>
+          <h4 className="text-semibold text-fluid-body">2. If You’re Using Another Software:</h4>
         </T>
       </div>
 
-      <div className="story space-y-2 text-gray-700 mb-6 text-base sm:text-lg md:text-xl">
+      <div className="story space-y-2 text-gray-700 mb-6 text-fluid-small">
         <ul>
           <li>
             <T>
@@ -224,17 +224,17 @@ function ComplaintInvoice() {
         </ul>
       </div>
       <hr />
-      <h3 className="text-semibold text-lg md:text-2xl mt-4">
+      <h3 className="text-semibold text-fluid-body mt-4">
         <T>E-Invoicing Process Flow in Accqrate</T>
       </h3>
       <div className="">
         <T>
-          <p className="story text-semibold mt-2 text-md md:text-xl">
+          <p className="story text-semibold mt-2 text-fluid-small">
             Here’s a <b>step-by-step guide</b> to how Accqrate’s e-invoicing system works:
           </p>
         </T>
       </div>
-      <div className="story space-y-2  mb-6  sm:text-md md:text-lg">
+      <div className="story space-y-2  mb-6  text-fluid-small">
         <ul>
           <li>
             <T>
@@ -299,10 +299,10 @@ function ComplaintInvoice() {
         </ul>
       </div>
       <hr />
-      <h3 className="story text-semibold mt-2 text-md md:text-xl">
+      <h3 className="story text-semibold mt-2 text-fluid-body">
         <T>Benefits of Using Accqrate for E-Invoicing</T>
       </h3>
-      <div className="story space-y-2  mb-6  sm:text-md md:text-lg ">
+      <div className="story space-y-2  mb-6  text-fluid-small ">
         <ul>
           <li>
             <T>
@@ -332,24 +332,24 @@ function ComplaintInvoice() {
         </ul>
       </div>
       <hr />
-      <h3 className="  mb-2 mt-4 sm:text-lg md:text-2xl font-semibold">
+      <h3 className="  mb-2 mt-4 text-fluid-body font-semibold">
         <T>Get Your Free E-Invoicing Demo Today!</T>
       </h3>
-      <p className="story space-y-2  mb-6  sm:text-md md:text-lg">
+      <p className="story space-y-2  mb-6  text-fluid-small">
         Take the first step toward {""}
         <b>transforming your business with Accqrate’s E-invoicing and ERP solutions.</b>
         Experience the ease and power of our e-invoicing software by requesting a <b>free demo.</b>
       </p>
-      <p className="story space-y-2  mb-2  sm:text-md md:text-lg">
+      <p className="story space-y-2  mb-2  text-fluid-small">
         📞 Call us at <b>+(966 13) 833200</b>
       </p>
-      <p className="story space-y-2  mb-6  sm:text-md md:text-lg">
+      <p className="story space-y-2  mb-6  text-fluid-small">
         📧 Or email us at <b>contact: @accqrate-erp.com</b>
       </p>
-      <h3 className="font-semibold  mb-4  sm:text-lg md:text-2xl">
+      <h3 className="font-semibold  mb-4  text-fluid-body">
         <T>About Accqrate</T>
       </h3>
-      <p className="story space-y-2  mb-6  sm:text-md md:text-lg">
+      <p className="story space-y-2  mb-6  text-fluid-small">
         <T>
           <a href="https://accqrate-erp.com/" target="_blank" rel="noreferrer">
             Accqrate
@@ -362,7 +362,7 @@ function ComplaintInvoice() {
           inter-department collaboration.
         </T>
       </p>
-      <p className="story space-y-2  mb-6  sm:text-md md:text-lg">
+      <p className="story space-y-2  mb-6 text-fluid-small">
         <T>
           {' '}
           With scalability and flexibility at its core, Accqrate offers both cloud and on-premise solutions,

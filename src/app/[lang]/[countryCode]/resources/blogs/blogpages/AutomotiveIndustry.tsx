@@ -45,7 +45,7 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>Navigating the Road to Mandatory E-invoicing</T>
       </h2>
 
@@ -58,7 +58,7 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>Why is ZATCA Compliance Crucial for the Automotive Sector?</T>
       </h2>
 
@@ -103,7 +103,7 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>How Accqrate Simplifies E-invoicing for Automotive Businesses</T>
       </h2>
 
@@ -116,7 +116,7 @@ function AutomotiveIndustry() {
         </T>
       </p>
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>Already Using an ERP or POS? Accqrate Middleware Has You Covered</T>
       </h2>
 
@@ -156,7 +156,7 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>No ERP Yet? Accqrate ERP Solutions Offer Comprehensive Digitalization</T>
       </h2>
 
@@ -202,7 +202,7 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>Accelerating Toward the Digital Future</T>
       </h2>
 
@@ -225,7 +225,7 @@ function AutomotiveIndustry() {
 
       <hr className="my-6" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-4 tracking-heading">
+      <h2 className="text-fluid-body font-semibold mb-4 tracking-heading">
         <T>Ready to Drive Your Business Forward?</T>
       </h2>
 

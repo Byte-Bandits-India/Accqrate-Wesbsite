@@ -9,10 +9,10 @@ import BlogLayout from "../layout/BlogLayout";
 import { useParams } from "next/navigation";
 
 export default function CreditNote() {
-   const params = useParams();
-    const lang = params?.lang as string;
-    const countryCode = params?.countryCode as string;
-  
+  const params = useParams();
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
+
   return (
     <BlogLayout
       pageTitle={<T>Integrating Credit Notes with ZATCA: A Comprehensive Guide</T>}
@@ -25,7 +25,7 @@ export default function CreditNote() {
         alt="Integrating Credit Notes with ZATCA: A Comprehensive Guide"
       />
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           <a
             href="https://zatca.gov.sa/en/E-Invoicing/Introduction/Guidelines/Documents/E-Invoicing_Detailed__Guideline.pdf"
@@ -45,10 +45,10 @@ export default function CreditNote() {
         </T>
       </p>
 
-      <h2 className="text-xl md:text-[25px] font-semibold mt-6 mb-3 text-gray-900">
+      <h2 className="text-fluid-body font-semibold mt-6 mb-3 text-gray-900">
         <T>Scenarios Leading to the Issuance of Credit Notes:</T>
       </h2>
-      <ul className="list-disc ml-6 mb-6 text-[16px] text-gray-700">
+      <ul className="list-disc ml-6 mb-6 text-fluid-small text-gray-700">
         <li>
           <T>
             To rectify invoice errors. For instance, if the invoice amount is overstated or the correct
@@ -69,11 +69,11 @@ export default function CreditNote() {
         </li>
       </ul>
 
-      <h4 className="text-lg md:text-[20px] font-semibold text-gray-900 mb-3">
+      <h4 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Illustrating Credit Note Integration with ZATCA</T>
       </h4>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>Below illustrates a scenario where a buyer procures products worth:</T>
         <br />
         <T>Net amount - 10,000 SAR</T> <br />
@@ -105,11 +105,11 @@ export default function CreditNote() {
         </T>
       </p>
 
-      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mt-6 mb-3">
         <T>Key Points on Credit Note Integration with ZATCA:</T>
       </h3>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           With Accqrate, handling credit note generation and its integration with ZATCA becomes seamless. Here
           are essential integration steps:
@@ -124,10 +124,10 @@ export default function CreditNote() {
 
       <img src="/images/blogs/creditnote1.png" alt="creditnote1" className="w-full mb-4 rounded-lg shadow" />
 
-      <p className="text-gray-700 leading-relaxed text-[16px] mb-4">
+      <p className="text-gray-700 leading-relaxed text-fluid-small mb-4">
         <T>Tags to remember for ZATCA submission:</T>
       </p>
-      <ul className="list-disc ml-6 text-gray-700 text-[16px] mb-4">
+      <ul className="list-disc ml-6 text-gray-700 text-fluid-small mb-4">
         <li>
           <T>Reference document: cbd:ID</T>
         </li>
@@ -136,21 +136,21 @@ export default function CreditNote() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>The approved XML from ZATCA will contain the references as shown below</T>
       </p>
 
       <img src="/images/blogs/creditnote2.png" alt="creditnote2" className="w-full mb-4 rounded-lg shadow" />
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-6">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-6">
         <T>Once approved, the VAT will be deducted from the relevant invoice immediately.</T>
       </p>
 
-      <h4 className="text-lg md:text-[20px] font-semibold text-gray-900 mb-3">
+      <h4 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Why Choose Accqrate?</T>
       </h4>
 
-      <p className="text-gray-700 leading-relaxed mb-4 text-[16px]">
+      <p className="text-gray-700 leading-relaxed mb-4 text-fluid-small">
         <a
           href="https://accqrate-erp.com/en/e-invoicing-plugin"
           className="text-blue-600 underline"

@@ -27,7 +27,7 @@ function DebitNote() {
       />
 
       {/* Intro Paragraph */}
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           Navigating the financial landscape of today, especially with the introduction of{" "}
         </T>
@@ -44,11 +44,11 @@ function DebitNote() {
       </p>
 
       {/* Section: Seller Perspective */}
-      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mt-6 mb-3">
         <T>Understanding Debit Notes from the Seller's Perspective</T>
       </h3>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           A debit note, commonly referred to as a debit memo, serves as a financial document from the seller
           to the buyer. Its main purpose is to inform the buyer about their current debts. Before issuing an
@@ -96,7 +96,7 @@ function DebitNote() {
         <T>ZATCA has introduced classifications for debit notes:</T>
       </p>
 
-      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-4">
+      <ul className="list-disc ml-6 text-fluid-small text-gray-700 mb-4">
         <li>
           <T>B2C Debit notes are termed "Simplified Debit notes".</T>
         </li>
@@ -105,7 +105,7 @@ function DebitNote() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           It's crucial for sellers to report these debit notes to ZATCA, regardless of whether they're in
           Phase 1 or Phase 2. Taxes from these notes are logged into ZATCA, with the seller responsible for
@@ -127,11 +127,11 @@ function DebitNote() {
       </p>
 
       {/* Section: Buyer Perspective */}
-      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mt-6 mb-3">
         <T>Debit Notes from the Buyer's Angle</T>
       </h3>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           From the buyer's standpoint, a debit note is typically issued when there's a need to return a
           portion of a delivery or shipment to the seller. This action from the buyer corresponds with a
@@ -139,11 +139,11 @@ function DebitNote() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>Below is an explanation of the scenario:</T>
       </p>
 
-      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-4">
+      <ul className="list-disc ml-6 text-fluid-small text-gray-700 mb-4">
         <li>
           <T>The buyer creates a Purchase Order for the seller.</T>
         </li>
@@ -174,7 +174,7 @@ function DebitNote() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>Example:</T>
         <br />
         <T>
@@ -194,7 +194,7 @@ function DebitNote() {
         <T>Following the transaction:</T>
       </p>
 
-      <ul className="list-disc ml-6 text-[16px] text-gray-700 mb-6">
+      <ul className="list-disc ml-6 text-fluid-small text-gray-700 mb-6">
         <li>
           <T>The seller will debit its accounts receivable by 2,000 SAR.</T>
         </li>
@@ -204,11 +204,11 @@ function DebitNote() {
       </ul>
 
       {/* Section: Accqrate Edge */}
-      <h3 className="text-lg md:text-[20px] font-semibold text-gray-900 mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mt-6 mb-3">
         <T>The Accqrate Edge</T>
       </h3>
 
-      <p className="text-gray-700 text-[16px] leading-relaxed mb-6">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-6">
         <a
           href="https://accqrate-erp.com/en/e-invoicing-plugin"
           className="text-blue-600 underline"

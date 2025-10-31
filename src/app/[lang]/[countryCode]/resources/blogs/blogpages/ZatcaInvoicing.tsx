@@ -47,7 +47,7 @@ export default function ZatcaPhaseTwoBlog() {
             />
           </div>
 
-          <p className="text-[#1c2041] font-normal text-base leading-[177%] font-['Inter'] mb-4">
+          <p className="text-[#1c2041] font-normal text-fluid-small leading-[177%] font-['Inter'] mb-4">
             <a href="https://zatca.gov.sa/" className="text-[#194bed] no-underline hover:text-[#194bed] hover:no-underline">
               <T>ZATCA (Zakat, Tax and Customs Authority)</T>
             </a>{" "}
@@ -64,11 +64,11 @@ export default function ZatcaPhaseTwoBlog() {
 
           <hr className="my-6 border-[#ebecf3]" />
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mb-4">
             <T>What Are the ZATCA Phase 2 Waves?</T>
           </h3>
 
-          <p className="text-[#1c2041] font-normal text-base leading-[177%] font-['Inter'] mb-4">
+          <p className="text-[#1c2041] font-normal text-fluid-small leading-[177%] font-['Inter'] mb-4">
             <T>
               <a href="https://zatca.gov.sa/en/E-Invoicing/PreparingYourBusiness/Phase2/Pages/default.aspx" className="text-[#194bed] no-underline hover:text-[#194bed] hover:no-underline">
                 <T>Phase 2 of ZATCA's E-Invoicing initiative</T>
@@ -78,7 +78,7 @@ export default function ZatcaPhaseTwoBlog() {
             </T>
           </p>
 
-          <h3 className="text-lg font-bold leading-[28px] font-['Inter'] mt-6 mb-4">How Waves Are Determined</h3>
+          <h3 className="text-fluid-body font-bold leading-[28px] font-['Inter'] mt-6 mb-4">How Waves Are Determined</h3>
 
           <ul className="p-0 m-0 mb-4 text-fluid-small">
             <li className="mb-2">
@@ -129,8 +129,8 @@ export default function ZatcaPhaseTwoBlog() {
 
           <hr className="my-6 border-[#ebecf3]" />
 
-          <h5 className="text-lg font-bold font-['Inter'] mb-4 text-fluid-small">Latest Updates (as of 2025)</h5>
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">New Revenue Thresholds & Extended Deadlines</h3>
+          <h5 className="text-fluid-body font-bold font-['Inter'] mb-4">Latest Updates (as of 2025)</h5>
+          <h3 className="text-fluid-h3 font-bold leading-[39px] font-['Inter'] mb-4">New Revenue Thresholds & Extended Deadlines</h3>
 
           <ZatcaPhaseTwoWaves />
 
@@ -153,7 +153,7 @@ export default function ZatcaPhaseTwoBlog() {
             </ul>
           </div>
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Clarification on Grace Period Usage</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Clarification on Grace Period Usage</h3>
 
           <div className="story">
             <ul className="p-0 m-0 text-fluid-small">
@@ -173,7 +173,7 @@ export default function ZatcaPhaseTwoBlog() {
             </ul>
           </div>
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Example of Compliance Timelines</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Example of Compliance Timelines</h3>
 
           <p className="story mb-4 text-fluid-small">
             <T>
@@ -194,7 +194,7 @@ export default function ZatcaPhaseTwoBlog() {
             </li>
           </ul>
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Missed Your Wave Deadline?</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mt-6 mb-4">Missed Your Wave Deadline?</h3>
 
           <div className="story">
             <ul className="p-0 m-0 text-fluid-small">
@@ -215,7 +215,7 @@ export default function ZatcaPhaseTwoBlog() {
 
           <hr className="my-6 border-[#ebecf3]" />
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">
+          <h3 className="text-fluid-h3 font-bold leading-[39px] font-['Inter'] mb-4">
             <T>Best Practices for ZATCA Phase 2 Compliance</T>
           </h3>
 
@@ -332,7 +332,7 @@ export default function ZatcaPhaseTwoBlog() {
 
           <hr className="my-6 border-[#ebecf3]" />
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">Conclusion</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mb-4">Conclusion</h3>
 
           <p className="story text-fluid-small mb-4">
             <T>
@@ -352,7 +352,7 @@ export default function ZatcaPhaseTwoBlog() {
 
           <hr className="my-6 border-[#ebecf3]" />
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">Disclaimer:</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mb-4">Disclaimer:</h3>
 
           <p className="story mb-4 text-fluid-small">
             This blog post provides general information based on ZATCA guidelines and updates available as of
@@ -360,7 +360,7 @@ export default function ZatcaPhaseTwoBlog() {
             or reach out directly to ZATCA.
           </p>
 
-          <h3 className="text-2xl font-bold leading-[39px] font-['Inter'] mb-4">About Accqrate</h3>
+          <h3 className="text-fluid-body font-bold leading-[39px] font-['Inter'] mb-4">About Accqrate</h3>
 
           <p className="story mb-4 text-fluid-small">
             <T>

@@ -19,7 +19,7 @@ export default function Microsoft365() {
         alt="Microsoft Dynamics 365 E-invoicing and Integration with ZATCA Phase 2 E-invoicing"
       />
 
-      <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-4">
+      <p className="text-fluid-small text-gray-700 leading-relaxed mb-4">
         <T>As one of the top-tier ERP providers in Saudi Arabia,</T>{" "}
         <a href="https://dynamics.microsoft.com/en-in/" className="text-blue-600 hover:underline">
           <T>Microsoft Dynamics 365</T>
@@ -35,11 +35,11 @@ export default function Microsoft365() {
         <T>for Microsoft Dynamics 365 means your solution can be up and running within a week.</T>
       </p>
 
-      <h3 className="text-[22px] md:text-[26px] font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         <T>How Microsoft Dynamics 365 and ZATCA Integration Works?</T>
       </h3>
 
-      <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-3">
+      <p className="text-fluid-small text-gray-700 leading-relaxed mb-3">
         <T>Accqrate’s E-invoicing package for</T>{" "}
         <a href="https://zatca.gov.sa/en/Pages/default.aspx" className="text-blue-600 hover:underline">
           <T>Microsoft Dynamics 365</T>
@@ -52,7 +52,7 @@ export default function Microsoft365() {
         </T>
       </p>
 
-      <ul className="list-disc pl-6 mb-4 text-[15px] md:text-[16px] text-gray-700 leading-relaxed">
+      <ul className="list-disc pl-6 mb-4 text-fluid-small text-gray-700 leading-relaxed">
         <li><T>Order-based invoices</T></li>
         <li><T>Direct invoices</T></li>
         <li><T>Credit and Debit memos</T></li>
@@ -63,12 +63,12 @@ export default function Microsoft365() {
         </li>
       </ul>
 
-      <h3 className="text-[22px] md:text-[26px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>The Integration Process:</T>
       </h3>
 
       <img src="/images/microsoft/image1.webp" className="w-full my-3 rounded-md" alt="integration1" />
-      <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-4">
+      <p className="text-fluid-small text-gray-700 leading-relaxed mb-4">
         <T>The process of handshake between Microsoft Dynamics 365 to ZATCA happens as explained below</T>
       </p>
 
@@ -116,11 +116,11 @@ export default function Microsoft365() {
         },
       ].map((step, idx) => (
         <div key={idx}>
-          <h3 className="font-semibold text-[18px] md:text-[20px] mt-5 mb-2">
+          <h3 className="font-semibold text-fluid-body mt-5 mb-2">
             <T>{step.title}</T>
           </h3>
           <img src={`/images/microsoft/${step.img}`} className="w-full my-3 rounded-md" alt={step.title} />
-          <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-4">
+          <p className="text-fluid-small text-gray-700 leading-relaxed mb-4">
             <T>{step.text}</T>
           </p>
         </div>
@@ -128,18 +128,18 @@ export default function Microsoft365() {
 
       <img src="/images/microsoft/image9.webp" className="w-full my-4 rounded-md" alt="extra-image" />
 
-      <h3 className="text-[22px] md:text-[26px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-small font-semibold mt-6 mb-3">
         <T>Seamless Integration with Accqrate: The Trusted ZATCA Provider</T>
       </h3>
 
-      <p className="text-[15px] md:text-[16px] text-gray-700 leading-relaxed mb-3">
+      <p className="text-fluid-small text-gray-700 leading-relaxed mb-3">
         <T>
           Accqrate, an approved ZATCA provider, sets the standard for integration within Microsoft Dynamics
           365, supporting both cloud and on-premises setups.
         </T>
       </p>
 
-      <ul className="list-disc pl-6 mb-5 text-[15px] md:text-[16px] text-gray-700 leading-relaxed space-y-2">
+      <ul className="list-disc pl-6 mb-5 text-fluid-small text-gray-700 leading-relaxed space-y-2">
         <li>
           <b><T>🔒 Security Above All:</T></b>{" "}
           <T>End-to-end encryption ensures safety, privacy, and compliance for all e-invoicing data.</T>
@@ -161,16 +161,16 @@ export default function Microsoft365() {
       <section className="demo my-8">
         <Row justify="center">
           <Col xs={24} sm={24} md={24} lg={26}>
-            <h3 className="text-[22px] md:text-[26px] font-semibold mb-4 text-left">
+            <h3 className="text-fluid-body font-semibold mb-4 text-left">
               <T>Accqrate Solution Offerings For Your Business</T>
             </h3>
             <div className="aspect-video w-full  overflow-hidden">
               <iframe
                 className=""
-                 width="100%"
-              height="450"
-              style={{ border: "none" }}
-                
+                width="100%"
+                height="450"
+                style={{ border: "none" }}
+
                 src="https://www.youtube.com/embed/8Ji66DQ9bC4"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

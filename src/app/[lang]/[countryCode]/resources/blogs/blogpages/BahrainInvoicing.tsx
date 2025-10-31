@@ -17,7 +17,7 @@ function BahrainInvoicing() {
         className="w-full mb-6 rounded-lg"
       />
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           The{" "}
           <a
@@ -38,7 +38,7 @@ function BahrainInvoicing() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           The Kingdom of Saudi Arabia set a precedent in the region by
           introducing e-invoicing and implementing phase 1 as of December 4,
@@ -71,11 +71,11 @@ function BahrainInvoicing() {
       </p>
 
       {/* Headings */}
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>What is E-Invoicing?</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           E-invoicing is not merely a digital copy of a paper invoice; it
           involves the full-fledged process of electronically issuing invoices
@@ -88,18 +88,18 @@ function BahrainInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Why Introduce E-Invoicing in Bahrain?</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           The rationale behind introducing e-invoicing in Bahrain centers on
           three objectives:
         </T>
       </p>
 
-      <ul className="story text-gray-700 text-sm sm:text-base md:text-[17px] mb-6 space-y-2">
+      <ul className="story text-gray-700 text-fluid-small mb-6 space-y-2">
         <li>
           <b>
             <T>Supporting Businesses:</T>
@@ -129,11 +129,11 @@ function BahrainInvoicing() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Applicability and Phasing</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           E-invoicing applies to VAT-Registered Businesses and Third Parties
           Issuing Tax Invoices, with variations based on business nature,
@@ -142,11 +142,11 @@ function BahrainInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Implementation Timeline</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           While the official timeline has yet to be announced, expectations
           point to an 18-month horizon, subject to NBR's internal
@@ -155,11 +155,11 @@ function BahrainInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Technical Prerequisites</T>
       </h3>
 
-      <ul className="story text-gray-700 text-sm sm:text-base md:text-[17px] mb-6 space-y-3">
+      <ul className="story text-gray-700 text-fluid-small mb-6 space-y-3">
         <li>
           <b>
             <T>Internet Connectivity:</T>
@@ -183,15 +183,15 @@ function BahrainInvoicing() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Challenges in Implementation</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>Businesses may face challenges such as:</T>
       </p>
 
-      <ul className="story text-gray-700 text-sm sm:text-base md:text-[17px] mb-6 space-y-2">
+      <ul className="story text-gray-700 text-fluid-small mb-6 space-y-2">
         <li>
           <T>Internet Connectivity: Essential for seamless data exchange.</T>
         </li>
@@ -215,18 +215,18 @@ function BahrainInvoicing() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-6">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-6">
         <T>
           Proactive planning, technology investment, and employee training can
           help overcome these challenges.
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold mt-6 mb-2">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-2">
         <T>Preparing for E-Invoicing in Bahrain</T>
       </h3>
 
-      <ul className="story text-gray-700 text-sm sm:text-base md:text-[17px] mb-6 space-y-2">
+      <ul className="story text-gray-700 text-fluid-small mb-6 space-y-2">
         <li>
           <T>Conducting a Gap Analysis: To understand affected systems.</T>
         </li>
@@ -250,7 +250,7 @@ function BahrainInvoicing() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed">
+      <p className="text-gray-700 text-fluid-small leading-relaxed">
         <T>
           The move toward e-invoicing in Bahrain is an exciting development
           expected to streamline business transactions and enhance efficiency

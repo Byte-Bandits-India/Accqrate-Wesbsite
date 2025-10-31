@@ -18,7 +18,7 @@ function OmanInvoicing() {
         className="w-100 mb-3"
       />
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           The
           <a href="https://tms.taxoman.gov.om/portal/web/taxportal/home">
@@ -32,7 +32,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           However, uncertainty looms as specific details about the e-invoicing proposal, including the
           timeline for mandatory implementation, remain undisclosed. This lack of information is vital for
@@ -40,7 +40,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Additionally, the approach to e-invoicing in Oman, whether a post-audit model or a clearance model,
           is yet to be determined. These varying models will significantly impact how businesses and tax
@@ -48,11 +48,11 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-[19px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>An Overview: e-Invoicing Regulations and Definitions in Oman</T>
       </h3>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           In Decision No. 456 of 2022, the Omani Tax Authority has provided an unambiguous definition of
           electronic tax invoices, an essential update to the
@@ -62,7 +62,7 @@ function OmanInvoicing() {
         </a>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           According to this landmark decision, an electronic tax invoice is defined as a structured document
           generated electronically, encompassing specific details as outlined in the VAT Executive
@@ -71,7 +71,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Furthermore, the Tax Authority has made significant amendments to Article 202 of the "VAT
           Regulations." The updated article emphasizes that failure to issue a valid tax invoice or an
@@ -80,11 +80,11 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-[19px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Achieving VAT Compliance through e-Invoicing in Oman</T>
       </h3>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Since introducing VAT in 2021, the Sultanate of Oman’s Tax Authority has focused on phased VAT
           registration, initially targeting large companies. Like many nations worldwide, Oman sees e-invoicing
@@ -93,7 +93,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           By embracing electronic invoicing, the Omani government aims to enhance tax compliance. E-invoicing
           facilitates the detection of irregularities and promotes efficiency in business interactions, paving
@@ -101,7 +101,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           VAT-registered businesses in Oman must remain alert and ready to align their procedures with the
           impending implementation of e-invoicing. Proactively integrating the latest compliance technology
@@ -109,11 +109,11 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-[19px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Preparing Your Business for e-Invoicing in Oman</T>
       </h3>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Prudent businesses in Oman should closely observe and learn from the e-invoicing implementations in
           other Gulf Cooperation Council (GCC) countries, such as the Kingdom of Saudi Arabia (KSA), the
@@ -128,7 +128,7 @@ function OmanInvoicing() {
         .
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Specifically, studying KSA’s e-invoicing model will yield valuable insights into the process flow of
           e-invoice generation. These lessons can be tailored and applied to meet Oman’s unique e-invoicing
@@ -142,7 +142,7 @@ function OmanInvoicing() {
         <T>in Saudi Arabia, is set to launch its services to cater to Oman’s unique requirements.</T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           As the Sultanate of Oman’s Tax Authority finalizes its e-invoicing plans, businesses must remain
           vigilant for official announcements concerning implementation timelines and scope. Continuous
@@ -151,11 +151,11 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <h3 className="text-[19px] font-semibold mt-6 mb-3">
+      <h3 className="text-fluid-body font-semibold mt-6 mb-3">
         <T>Embracing the Future of Invoicing in Oman</T>
       </h3>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           The introduction of e-invoicing in Oman marks a critical step towards modernizing business
           operations and increasing tax compliance. Although uncertainties exist regarding specific
@@ -163,7 +163,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
+      <p className="story text-fluid-small leading-relaxed text-gray-800">
         <T>
           Businesses must remain adaptable and proactive, utilizing insights from other GCC countries and
           integrating the necessary technological advancements to align with the imminent e-invoicing
@@ -171,7 +171,7 @@ function OmanInvoicing() {
         </T>
       </p>
 
-      <ul className="list-disc ml-6 text-base md:text-lg leading-relaxed text-gray-800 space-y-2 marker:text-blue-500">
+      <ul className="list-disc ml-6 text-fluid-small leading-relaxed text-gray-800 space-y-2 marker:text-blue-500">
         <li>
           <T>Prepare internal accounting systems for integration readiness.</T>
         </li>
@@ -183,7 +183,7 @@ function OmanInvoicing() {
         </li>
       </ul>
 
-      <p className="story text-base md:text-lg leading-relaxed text-gray-800 mt-4">
+      <p className="story text-fluid-small leading-relaxed text-gray-800 mt-4">
         <T>
           By preparing early and adapting to the upcoming regulatory changes, businesses in Oman can position
           themselves for success in the era of electronic invoicing, maintaining compliance, and enjoying the

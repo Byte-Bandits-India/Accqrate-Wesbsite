@@ -16,38 +16,38 @@ const Pos: React.FC = () => {
         alt="Fines and Financial Penalties Exemption by ZATCA, Saudi Arabia"
       />
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body md:text-xl font-semibold mb-3">
         Introduction: The Changing Landscape of POS Systems in Saudi Arabia
       </h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Point of Sales (POS) systems are critical to improving customer satisfaction and ensuring seamless
         business operations. However, with the launch of{" "}
         <b>E-invoicing Phase 2 by ZATCA (Zakat, Tax, and Customs Authority),</b> businesses in Saudi Arabia
         face new challenges in integrating legacy POS systems with ZATCA’s compliance requirements.
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Our research reveals that <b>30–40% of businesses</b> continue to use outdated, standalone POS
         machines that cannot communicate with external systems like ZATCA. Migrating to a modern POS system
         isn’t always feasible, especially for businesses heavily reliant on their existing setup.
       </p>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         The Challenge: Integrating Legacy POS Systems with ZATCA
       </h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Many POS machines currently in use are built on obsolete technology and lack the capability to
         integrate with external systems like ZATCA. Below are the key challenges businesses face when trying
         to achieve compliance:
       </p>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         Key Obstacles in POS–ZATCA Integration
       </h3>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>
           <b>Obsolete Technology:</b> Legacy POS applications are outdated and lack the scalability to
           integrate with modern APIs.
@@ -66,26 +66,26 @@ const Pos: React.FC = () => {
         </li>
       </ul>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         The Solution: Accqrate POS ZATCA Integrator
       </h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         To address these challenges, <b>Accqrate</b> developed a range of <b>POS integrators</b> that
         provide seamless <b>ZATCA compliance</b> for both <b>offline and online POS systems.</b>
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         With a proven track record of integrating widely used POS systems in Saudi Arabia — including{" "}
         <b>SAGE, AX, Denali,</b> and more — Accqrate has successfully helped businesses from{" "}
         <b>retail, pharma, and education sectors</b> achieve <b>E-invoicing compliance.</b>
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Here’s how Accqrate’s integrators solve the problem:
       </p>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         1. Offline POS Billing Software Integrator
       </h3>
 
@@ -94,22 +94,22 @@ const Pos: React.FC = () => {
         className="w-full mb-4 rounded-lg"
         alt="Offline POS Billing Software"
       />
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         This solution is ideal for <b>offline POS systems</b> that operate without a constant internet
         connection. Many retail shops use standalone POS devices that store data locally and reconcile with
         the server at the end of the business day.
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Here’s how the <b>Accqrate Offline POS ZATCA Integrator</b> works:
       </p>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>
           A lightweight <b>.exe file</b> is installed on the POS device.
         </li>
         <li>
-          The POS system communicates with the .exe through a <b>localhost call</b> to generate a 
+          The POS system communicates with the .exe through a <b>localhost call</b> to generate a
           <b>ZATCA-compliant QR code</b> in real time.
         </li>
         <li>The QR code is printed on the customer invoice.</li>
@@ -118,13 +118,13 @@ const Pos: React.FC = () => {
         </li>
       </ul>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">Alternative Solution:</h3>
+      <h3 className="text-fluid-body font-semibold mb-3">Alternative Solution:</h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         If your POS system cannot modify the PDF invoice to include a QR code, Accqrate offers an alternative:
       </p>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>
           <b>Accqrate generates the compliant invoice</b> on your behalf.
         </li>
@@ -133,7 +133,7 @@ const Pos: React.FC = () => {
         </li>
       </ul>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         Online POS Billing Software Integrator
       </h3>
 
@@ -143,16 +143,16 @@ const Pos: React.FC = () => {
         alt="Online POS Billing Software"
       />
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
-        This solution is best suited for <b>online POS systems</b> that communicate in real time with their 
+      <p className="text-fluid-small leading-relaxed mb-4">
+        This solution is best suited for <b>online POS systems</b> that communicate in real time with their
         servers. Accqrate provides <b>cloud-based APIs</b> that interact directly with ZATCA’s servers to ensure instant compliance.
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Here’s how the <b>Accqrate Online POS Integrator</b> works:
       </p>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>The POS system generates the customer invoice.</li>
         <li>
           Accqrate’s cloud API connects with ZATCA and gets the <b>invoice approval in milliseconds.</b>
@@ -161,12 +161,12 @@ const Pos: React.FC = () => {
           The cashier can immediately issue a <b>fully compliant invoice</b> to the customer.
         </li>
         <li>
-          If your POS system cannot update the PDF print format, Accqrate can <b>generate and print</b> the 
+          If your POS system cannot update the PDF print format, Accqrate can <b>generate and print</b> the
           compliant invoice using the same template you currently use.
         </li>
       </ul>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         POS Solution for Modern Businesses
       </h3>
 
@@ -176,17 +176,17 @@ const Pos: React.FC = () => {
         alt="POS Solution for Modern Businesses"
       />
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
-        Accqrate is more than just an <b>E-invoicing solution.</b> It offers a 
-        <b>full-fledged cloud-based ERP system</b> with a robust <b>POS module</b> designed for 
+      <p className="text-fluid-small leading-relaxed mb-4">
+        Accqrate is more than just an <b>E-invoicing solution.</b> It offers a
+        <b>full-fledged cloud-based ERP system</b> with a robust <b>POS module</b> designed for
         <b>modern businesses.</b>
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         Key features of <b>Accqrate POS</b> include:
       </p>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>
           <b>Device Flexibility:</b> Use the POS system on <b>any device</b> — laptop, desktop, tablet, or smartphone.
         </li>
@@ -198,11 +198,11 @@ const Pos: React.FC = () => {
         </li>
       </ul>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         <b>Functions Offered by Accqrate POS Module</b>
       </p>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>Product / Service Management</li>
         <li>Category and Subcategory Setup</li>
         <li>Multiple Payment Types (Cash, Card, Wallet)</li>
@@ -215,13 +215,13 @@ const Pos: React.FC = () => {
 
       <hr className="my-6" />
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">
+      <h3 className="text-fluid-body font-semibold mb-3">
         Why Choose Accqrate for ZATCA Compliance?
       </h3>
 
-      <ul className="story pl-5 text-sm md:text-base leading-relaxed space-y-2 mb-6">
+      <ul className="story pl-5 text-fluid-small leading-relaxed space-y-2 mb-6">
         <li>
-          <b>Proven Experience:</b> Accqrate has worked with over <b>5000+ businesses</b> across 
+          <b>Proven Experience:</b> Accqrate has worked with over <b>5000+ businesses</b> across
           <b>multiple industries</b> to ensure smooth ZATCA integration.
         </li>
         <li>
@@ -234,9 +234,9 @@ const Pos: React.FC = () => {
           <b>Technology Agnostic:</b> Works with <b>SAGE, AX, D365, SAP Business One, Netsuite,</b> and more.
         </li>
       </ul>
-      <h3 className="text-lg md:text-xl font-semibold mb-3">Summary</h3>
+      <h3 className="text-fluid-body font-semibold mb-3">Summary</h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         The deployment of{" "}
         <a
           href="https://accqrate-erp.com/en/e-invoicing-plugin"
@@ -285,9 +285,9 @@ const Pos: React.FC = () => {
         <b>embrace the future of e-invoicing.</b>
       </p>
 
-      <h3 className="text-lg md:text-xl font-semibold mb-3">About Accqrate</h3>
+      <h3 className="text-fluid-body font-semibold mb-3">About Accqrate</h3>
 
-      <p className="text-sm md:text-base leading-relaxed mb-4">
+      <p className="text-fluid-small leading-relaxed mb-4">
         <a
           href="https://accqrate-erp.com/"
           target="_blank"
@@ -302,7 +302,7 @@ const Pos: React.FC = () => {
         it enhances user experience through intelligent automation and cross-department collaboration.
       </p>
 
-      <p className="text-sm md:text-base leading-relaxed mb-10">
+      <p className="text-fluid-small leading-relaxed mb-10">
         With scalability and flexibility at its core, Accqrate offers both cloud and on-premise solutions,
         encouraging KSA businesses to embrace digital transformation. Trusted across MENA, European, and ASEAN markets,
         Accqrate helps organizations achieve operational excellence globally.

@@ -23,7 +23,7 @@ function BreakingBarriers() {
       />
 
       {/* Paragraphs */}
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           The Zakat, Tax, and Customs Authority (ZATCA) of the Kingdom of Saudi
           Arabia (KSA) launched{" "}
@@ -43,7 +43,7 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>ZATCA is now progressively implementing </T>
         <a
           href="https://zatca.gov.sa/en/E-Invoicing/PreparingYourBusiness/Phase1/Pages/default.aspx"
@@ -60,13 +60,13 @@ function BreakingBarriers() {
       </p>
 
       {/* Headings */}
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>
           Understanding ERP Integration Challenges with ZATCA’s Fatoora Portal
         </T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small md:text-[17px] leading-relaxed mb-4">
         <T>
           Phase 2 of KSA’s e-invoicing regulations requires businesses to
           integrate their ERP systems with{" "}
@@ -85,13 +85,13 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-2">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-2">
         <T>
           <b>Why Can’t Some ERP Systems Connect to External Systems?</b>
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           Not all ERP systems are built to seamlessly interact with external
           platforms. Businesses may face difficulties due to:
@@ -99,7 +99,7 @@ function BreakingBarriers() {
       </p>
 
       {/* List */}
-      <ul className="story mb-6 space-y-2 text-gray-700 text-sm sm:text-base md:text-[17px]">
+      <ul className="story mb-6 space-y-2 text-gray-700 text-fluid-small">
         <li>
           <b>Legacy Systems:</b> Older ERP systems often lack the necessary APIs
           or integration capabilities.
@@ -114,11 +114,11 @@ function BreakingBarriers() {
         </li>
       </ul>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Does ZATCA Provide an E-Invoicing Platform?</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           As of now, ZATCA does not offer a dedicated platform for generating
           e-invoices. Instead, it provides APIs that businesses can use for
@@ -128,14 +128,14 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>
           How Can Accqrate Help If Your ERP Cannot Integrate with ZATCA’s
           Fatoora Portal?
         </T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           Accqrate offers a specialized{" "}
           <a
@@ -150,11 +150,11 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-3 font-semibold">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-3 font-semibold">
         <T>Key Steps Performed by Accqrate’s Middleware:</T>
       </p>
 
-      <ul className="story mb-6 space-y-2 text-gray-700 text-sm sm:text-base md:text-[17px]">
+      <ul className="story mb-6 space-y-2 text-gray-700 text-fluid-small">
         <li>
           <T>
             <b>Data Collection:</b> The middleware collects invoice data from
@@ -193,7 +193,7 @@ function BreakingBarriers() {
         </li>
       </ul>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-6">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-6">
         <T>
           By leveraging Accqrate’s middleware, businesses can achieve seamless
           compliance with KSA’s e-invoicing regulations, regardless of their ERP
@@ -201,11 +201,11 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3">
+      <h3 className="text-fluid-body font-semibold text-gray-900 mb-3">
         <T>Conclusion</T>
       </h3>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           As ZATCA continues to roll out its phased e-invoicing regulations,
           businesses must ensure compliance readiness. Whether your ERP
@@ -214,18 +214,18 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mb-4">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mb-4">
         <T>
           Stay ahead of regulatory changes by adopting flexible and scalable
           solutions that evolve with your business needs.
         </T>
       </p>
 
-      <p className="font-semibold text-gray-900 text-sm sm:text-base md:text-[17px] mt-4">
+      <p className="font-semibold text-gray-900 text-fluid-small mt-4">
         <T>About Accqrate</T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed">
+      <p className="text-gray-700 text-fluid-small] leading-relaxed">
         <T>
           <a
             href="https://accqrate-erp.com/"
@@ -242,7 +242,7 @@ function BreakingBarriers() {
         </T>
       </p>
 
-      <p className="text-gray-700 text-sm sm:text-base md:text-[17px] leading-relaxed mt-3">
+      <p className="text-gray-700 text-fluid-small leading-relaxed mt-3">
         <T>
           With scalability and flexibility at its core, Accqrate offers both
           cloud and on-premise deployments, serving clients across MENA, Europe,

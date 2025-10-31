@@ -19,7 +19,7 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         alt="Integrating Credit Notes with ZATCA: A Comprehensive Guide"
       />
 
-      <h2 className="text-fluid-h3 font-semibold mb-3">
+      <h2 className="text-fluid-body font-semibold mb-3">
         <T>Introduction: Accounting Software for the Modern MSME</T>
       </h2>
 
@@ -53,7 +53,7 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
 
       <hr className="my-6 border-gray-300" />
 
-      <h2 className="text-fluid-h3 font-semibold mb-3">
+      <h2 className="text-fluid-body font-semibold mb-3">
         <T>20 Reasons Why Accqrate Books Stands Out as the Top MSME Accounting Software</T>
       </h2>
 
@@ -185,7 +185,7 @@ const AccqrateBooksMSMEAccounting: React.FC = () => {
         </li>
       </ul>
 
-      <h2 className="text-fluid-h3 font-semibold mb-3">
+      <h2 className="text-fluid-body font-semibold mb-3">
         <T>Accqrate Books: The Accounting Solution Built for MSMEs</T>
       </h2>
 
