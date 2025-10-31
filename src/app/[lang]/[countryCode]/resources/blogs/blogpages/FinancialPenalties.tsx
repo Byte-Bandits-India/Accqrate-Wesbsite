@@ -4,6 +4,7 @@
 import T from '@/components/T'
 import BlogLayout from '../layout/BlogLayout'
 
+
 function FinancialPenalties() {
   return (
     <BlogLayout
@@ -17,7 +18,7 @@ function FinancialPenalties() {
         alt="Fines and Financial Penalties Exemption by ZATCA, Saudi Arabia"
       />
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           The Zakat, Tax and Customs Authority (ZATCA) re-launched an initiative to cancel fines and exempt
           financial penalties imposed on taxpayers for six months, beginning on <b>June 1, 2022</b>, and
@@ -26,7 +27,7 @@ function FinancialPenalties() {
         </T>
       </p>
 
-      <p className="story">
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           <b>Note (Updated)</b>: While the exemption period mentioned above ended on November 30, 2022, ZATCA
           has periodically introduced and extended certain programs to support taxpayers. As of the latest
@@ -38,8 +39,8 @@ function FinancialPenalties() {
       </p>
 
       <hr />
-      <h3 style={{ fontSize: '19px' }}>Scope of the Exemption</h3>
-      <p className="story">
+      <h3 className="text-lg font-semibold mt-4 mb-2">Scope of the Exemption</h3>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Under the initial exemption (June 1 – November 30, 2022), the cancellation of fines covered the
           following areas:
@@ -52,11 +53,11 @@ function FinancialPenalties() {
           <li><b>Violations of VAT field control</b> related to e-invoicing regulations</li>
           <li><b>Other general regulations</b> under ZATCA’s purview</li>
         </ol>
-      </p>
+      </div>
 
       <hr />
-      <h3 style={{ fontSize: '19px' }}>Eligibility Criteria</h3>
-      <p className="story">
+      <h3 className="text-lg font-semibold mt-4 mb-2">Eligibility Criteria</h3>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           To qualify for and fully benefit from the exemption initiative (when it was in effect), ZATCA
           specified the following requirements:
@@ -82,11 +83,11 @@ function FinancialPenalties() {
           installment plans or other accommodations to facilitate compliance and minimize penalties, but these
           are handled on a <b>case-by-case basis</b>.
         </T>
-      </p>
+      </div>
 
       <hr />
-      <h3 style={{ fontSize: '19px' }}>Exclusions from the Initiative</h3>
-      <p className="story">
+      <h3 className="text-lg font-semibold mt-4 mb-2">Exclusions from the Initiative</h3>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>The following were explicitly not included in the original initiative:</T>
         <ol>
           <li className="mt-3"><b>Tax evasion violations</b></li>
@@ -95,11 +96,11 @@ function FinancialPenalties() {
             <b>Late payment fines</b> related to any tax installment due <b>after November 30, 2022</b>
           </li>
         </ol>
-      </p>
+      </div>
 
       <hr />
-      <h3 style={{ fontSize: '19px' }}>Contacting ZATCA</h3>
-      <p className="story">
+      <h3 className="text-lg font-semibold mt-4 mb-2">Contacting ZATCA</h3>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           If you have questions regarding any ZATCA initiatives, exemptions, or e-invoicing requirements, you
           can reach the authority via:
@@ -118,13 +119,13 @@ function FinancialPenalties() {
             </a>
           </li>
         </ol>
-      </p>
+      </div>
 
       <hr />
-      <h3>E-Invoicing Compliance: Phase I and Phase II</h3>
+      <h3 className="text-lg font-semibold mt-4 mb-2">E-Invoicing Compliance: Phase I and Phase II</h3>
 
-      <h3 style={{ fontSize: '19px' }}>Phase I: Core E-Invoicing Requirements</h3>
-      <p className="story">
+      <h4 className="text-lg font-semibold mt-3 mb-2">Phase I: Core E-Invoicing Requirements</h4>
+      <p className="story text-base md:text-lg leading-relaxed text-gray-800">
         <a
           href="https://zatca.gov.sa/en/E-Invoicing/PreparingYourBusiness/Phase1/Pages/default.aspx"
           target="_blank"
@@ -138,8 +139,8 @@ function FinancialPenalties() {
         tax ecosystem.
       </p>
 
-      <h3 style={{ fontSize: '19px' }}>Phase II: Integration Phase</h3>
-      <p className="story">
+      <h4 className="text-lg font-semibold mt-3 mb-2">Phase II: Integration Phase</h4>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <a
           href="https://zatca.gov.sa/en/E-Invoicing/PreparingYourBusiness/Phase2/Pages/default.aspx"
           target="_blank"
@@ -169,11 +170,11 @@ function FinancialPenalties() {
           To avoid last-minute hassles and ensure smooth compliance, implement a robust e-invoicing solution
           that meets ZATCA’s Phase II technical specifications.
         </T>
-      </p>
+      </div>
 
       <hr />
-      <h3 style={{ fontSize: '19px' }}>Conclusion</h3>
-      <div className="story">
+      <h3 className="text-lg font-semibold mt-4 mb-2">Conclusion</h3>
+      <div className="story text-base md:text-lg leading-relaxed text-gray-800">
         <T>
           Although the broad fines and penalty exemption window introduced in mid-2022 has ended, ZATCA
           continues to facilitate compliance through <b>targeted relief measures</b> and <b>ongoing
@@ -196,7 +197,7 @@ function FinancialPenalties() {
           evolving economic environment.
         </T>
 
-        <p className="mt-3"><b>About Accqrate</b></p>
+        <p className="mt-3 text-lg font-medium"><b>About Accqrate</b></p>
 
         <T>
           <a href="https://accqrate-erp.com/" target="_blank" rel="noreferrer">
