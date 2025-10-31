@@ -33,7 +33,7 @@ export default function RecentBlogPosts() {
           />
         </FadeUp>
         <div className="p-4">
-          <FadeUp className="font-semibold text-fluid-body lg:h-[70px] lg:mt-10 text-gray-900 line-clamp-2 leading-tight mb-[10px] md:mb-[30px]">
+          <FadeUp className="font-semibold text-fluid-body lg:h-[70px] lg:mt-10 text-gray-900 line-clamp-2 leading-tight mb-[10px] ">
             {post.title}
           </FadeUp>
           <FadeUp className="text-gray-600 text-fluid-small line-clamp-3 leading-tight">
@@ -73,4 +73,5 @@ export default function RecentBlogPosts() {
       </div>
     </section>
   );
+
 }
