@@ -70,7 +70,7 @@ export default function Button({
         <span className="ml-2 flex items-center">
           <ArrowRight
             size={20}
-            className="inline-block text-current -rotate-45"
+            className="inline-block text-current "
             color="currentColor"
           />
         </span>
