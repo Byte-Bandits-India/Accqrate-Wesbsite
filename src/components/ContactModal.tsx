@@ -68,20 +68,24 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
           {/* Name & Email */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Name</label>
+              <label className="block text-sm font-medium mb-1 text-[#333333]">
+                Name
+              </label>
               <input
                 type="text"
                 {...formik.getFieldProps("name")}
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
+                className="w-full border border-[#333333] text-[#333333] rounded-md p-2 outline-none"
                 placeholder="Enter your name"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Email</label>
+              <label className="block text-sm font-medium mb-1 text-[#333333]">
+                Email
+              </label>
               <input
                 type="email"
                 {...formik.getFieldProps("email")}
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
+                className="w-full border border-[#333333] text-[#333333] rounded-md p-2 outline-none"
                 placeholder="Enter your email"
               />
             </div>
@@ -90,20 +94,24 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
           {/* Phone & Company */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium mb-1">Phone</label>
+              <label className="block text-sm font-medium mb-1 text-[#333333]">
+                Phone
+              </label>
               <input
                 type="text"
                 {...formik.getFieldProps("phone")}
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
+                className="w-full border border-[#333333] text-[#333333] rounded-md p-2 outline-none"
                 placeholder="Enter your phone number"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium mb-1">Company Name</label>
+              <label className="block text-sm font-medium mb-1 text-[#333333]">
+                Company Name
+              </label>
               <input
                 type="text"
                 {...formik.getFieldProps("companyName")}
-                className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-[#2A45C2] outline-none"
+                className="w-full border border-[#333333] text-[#333333] rounded-md p-2 outline-none"
                 placeholder="Enter your company name"
               />
             </div>
@@ -111,10 +119,12 @@ export const ContactModal: React.FC<ContactModalProps> = ({ open, onClose }) => 
 
           {/* Message */}
           <div className="pt-4">
-            <label className="block text-sm font-medium mb-1">Message</label>
+            <label className="block text-sm font-medium mb-1 text-[#333333]">
+              Message
+            </label>
             <textarea
               {...formik.getFieldProps("message")}
-              className="w-full border border-gray-300 rounded-md p-2 resize-y focus:ring-2 focus:ring-[#2A45C2] outline-none"
+              className="w-full border border-[#333333] text-[#333333] rounded-md p-2 resize-y outline-none"
               rows={4}
               placeholder="Type your message here..."
             />

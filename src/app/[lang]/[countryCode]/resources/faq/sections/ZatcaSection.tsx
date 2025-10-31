@@ -15,7 +15,7 @@ export default function ZatcaSection() {
 
   return (
     <section
-      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white relative pt-6 md:pt-8"
+      className="w-full bg-gradient-to-r from-[#242087] to-[#1A0C48] text-white relative py-6 md:py-8"
       data-aos="fade-up"
     >
       <div
