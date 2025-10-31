@@ -483,7 +483,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                     className="h-fit xl:min-h-fit bg-cover bg-no-repeat bg-center lg:bg-local"
                     style={{ backgroundImage: `url('${bgImage}')` }}
                 >
-                    <div className="max-w-[1440px] mx-auto px-6 md:px-8">
+                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
