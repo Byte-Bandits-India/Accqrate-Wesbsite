@@ -62,9 +62,9 @@ export default function VATCalculator() {
 
 
       <div className="bg-[#F8F6FF]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-8 pt-[80px] pb-[40px]">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 pt-[80px] pb-[40px]">
           <h1
-            className="text-[20px] md:text-[32px] lg:text-[50px] font-medium pb-[30px] md:pb-[37px] text-[#000000] tracking-heading leading-tight"
+            className="text-[26px] md:text-[32px] lg:text-[50px] font-medium pb-[30px] md:pb-[37px] text-[#000000] tracking-heading leading-tight"
             data-aos="fade-up"
           >
             VAT Calculator
@@ -240,42 +240,42 @@ export default function VATCalculator() {
 
       {/* Additional Text Sections with AOS */}
       <div>
-        <div className="max-w-[1440px] mx-auto mt-[40px] px-6 md:px-8 pb-8 md:pb-10 lg:pb-12" data-aos="fade-up">
+        <div className="max-w-[1280px] mx-auto mt-[40px] px-6 md:px-8 xl:px-0 pb-8 md:pb-10 lg:pb-12" data-aos="fade-up">
           <div>
-            <h2 className="text-fluid-body font-semibold">Simplify VAT Calculations with Our KSA VAT Calculator</h2>
-            <p className="text-fluid-small mt-[25px]">
+            <h2 className="text-fluid-h3 lg:text-[26px] font-semibold">Simplify VAT Calculations with Our KSA VAT Calculator</h2>
+            <p className="text-fluid-body lg:text-[24px] mt-[25px]">
               Navigating VAT calculations has never been easier. Our KSA VAT Calculator removes the hassle, accurately calculating VAT for any sale amount instantly. Forget the formulas; with just a few clicks, determine the final sale price and VAT amount effortlessly.
             </p>
           </div>
 
           <div className="mt-[30px]" data-aos="fade-up">
-            <h2 className="text-fluid-body font-semibold">What Is VAT?</h2>
-            <p className="text-fluid-small mt-[25px]">
+            <h2 className="text-fluid-h3 lg:text-[26px] font-semibold">What Is VAT?</h2>
+            <p className="text-fluid-body lg:text-[24px] mt-[25px]">
               Value Added Tax (VAT) is an indirect tax levied on most goods and services at each stage of the supply chain, from production to point-of-sale. Implemented in KSA in 2018 at 5%, the rate was adjusted to 15% in July 2020 to address COVID-19 impacts.
             </p>
           </div>
 
           <div className="mt-[30px]" data-aos="fade-up">
-            <h2 className="text-fluid-body font-semibold">How to Calculate VAT in KSA</h2>
-            <p className="text-fluid-small mt-[25px]">
+            <h2 className="text-fluid-h3 lg:text-[26px] font-semibold">How to Calculate VAT in KSA</h2>
+            <p className="text-fluid-body lg:text-[24px] mt-[25px]">
               Whether adding VAT to a sale price or extracting it, our calculator handles both with precision:
             </p>
-            <ul className="list-disc pl-6 space-y-1 text-fluid-small text-[#555555] mt-2">
+            <ul className="list-disc pl-6 space-y-1 text-fluid-body lg:text-[24px] text-[#555555] mt-2">
               <li>Adding VAT: Perfect for when sales are exclusive of VAT.</li>
               <li>Excluding VAT: Ideal for sales prices that already include VAT.</li>
             </ul>
           </div>
 
           <div className="mt-[30px] lg:mb-[60px]" data-aos="fade-up">
-            <h2 className="text-fluid-body font-semibold">VAT Calculation Made Simple</h2>
-            <p className="text-fluid-small mt-[25px]">With our KSA VAT Calculator, enjoy:</p>
-            <ul className="list-disc pl-6 space-y-1 text-fluid-small text-[#555555] mt-2">
+            <h2 className="text-fluid-h3 lg:text-[26px] font-semibold">VAT Calculation Made Simple</h2>
+            <p className="text-fluid-body lg:text-[24px] mt-[25px]">With our KSA VAT Calculator, enjoy:</p>
+            <ul className="list-disc pl-6 space-y-1 text-fluid-body lg:text-[24px] text-[#555555] mt-2">
               <li>Instant Calculations: Quick and straightforward VAT computations.</li>
               <li>Accuracy: Precise invoicing every time.</li>
               <li>Error Reduction: Minimize manual calculation mistakes.</li>
               <li>Time Savings: Spend less time on math and more on your business.</li>
             </ul>
-            <p className="text-fluid-small mt-[25px]">
+            <p className="text-fluid-body lg:text-[24px] mt-[25px]">
               Leverage our VAT calculator for hassle-free tax calculations, ensuring your business stays compliant and efficient.
             </p>
           </div>

@@ -535,7 +535,7 @@ const LangCountryDropdown: React.FC<
                 alt={selectedCountry.name}
                 className="w-[26px] h-[26px] rounded"
               />
-              <span className="text-black truncate text-sm lg:text-base flex-1 text-left">
+              <span className="text-black truncate text-[12px] xl:text-[14px] flex-1 text-left">
                 {selectedLanguage.display} / {selectedCountry.code}
               </span>
               <i
@@ -592,7 +592,7 @@ const LangCountryDropdown: React.FC<
                     alt={country.name}
                     className="w-5 h-5 mr-2 rounded"
                   />
-                  <span className="text-black">{country.name}</span>
+                  <span className="text-black ">{country.name}</span>
                 </div>
               ))}
             </div>
@@ -724,7 +724,7 @@ const MegaMenu: React.FC<{
         <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
           <Link
             href={createHref("/book-demo")}
-            className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+            className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[12px] xl:text-[14px] hover:text-[#534ED3] transition-colors"
             onClick={onItemClick}
           >
             <T>Book a Demo</T>
@@ -741,7 +741,7 @@ const MegaMenu: React.FC<{
 
           <Link
             href={createHref("/contact-sales")}
-            className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+            className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[12px] xl:text-[14px] hover:text-[#534ED3] transition-colors"
             onClick={onItemClick}
           >
             <T>Contact Sales</T>
@@ -758,7 +758,7 @@ const MegaMenu: React.FC<{
 
           <Link
             href={createHref("/connect-with-concierge")}
-            className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+            className="group inline-flex items-center gap-2 py-2 px-6 rounded-[80px] text-[12px] xl:text-[14px] hover:text-[#534ED3] transition-colors"
             onClick={onItemClick}
           >
             <T>Connect with Concierge</T>
@@ -867,7 +867,7 @@ const Header: React.FC = () => {
         ref={headerRef}
         className="xl:sticky xl:top-0 z-50 m-0 p-0 w-full bg-white xl:border-b border-gray-200 pb-4 xl:pb-0"
       >
-        <div className="max-w-[1355px] mx-auto">
+        <div className="max-w-[1280px] mx-auto">
           <div className="w-full px-6 pt-6 xl:pt-0 md:px-[32px] xl:px-0">
             <div className="flex items-center justify-between gap-2">
               {/* Logo */}
@@ -1044,7 +1044,7 @@ const Header: React.FC = () => {
                                 <div className="mt-auto -mx-8 -mb-10 bg-[#F7F8FF] flex justify-end py-4 gap-4 rounded-b-xl">
                                   <Link
                                     href={createHref("/book-demo")}
-                                    className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] text-[14px] hover:text-[#534ED3] transition-colors"
+                                    className="group inline-flex items-center justify-center gap-2 py-2 px-6 rounded-[80px] lg:text-[12px] xl:text-[14px] hover:text-[#534ED3] transition-colors"
                                     onClick={handleMenuItemClick}
                                   >
                                     <T>Book a Demo</T>
@@ -1136,16 +1136,15 @@ const Header: React.FC = () => {
                 />
                 <Link
                   href={createHref("/contact-sales")}
-                  className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[41px] w-[155px] rounded-[80px] text-[14px] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
+                  className="hidden xl:inline-flex items-center justify-center gap-2 text-[#F05A28] h-[34px] w-[119px] font-medium rounded-[80px] text-[12px] xl:text-[14px] border border-[#29266E] bg-gradient-to-r from-[#194BED] to-[#29266E] bg-clip-text text-transparent"
                 >
                   <T>{contactInfo.salesText}</T>
                 </Link>
                 <Link
                   href={createHref("/book-demo")}
-                  className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[41px] w-[155px] rounded-[80px] text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
+                  className="hidden xl:inline-flex items-center justify-center gap-2 text-white h-[34px] font-medium w-[121px] rounded-[80px] text-[12px] xl:text-[14px] bg-gradient-to-r from-[#194BED] to-[#29266E]"
                 >
                   <T>Book a Demo</T>
-                  <span className="inline-block mt-0.5"><FaArrowRight /></span>
                 </Link>
               </div>
 

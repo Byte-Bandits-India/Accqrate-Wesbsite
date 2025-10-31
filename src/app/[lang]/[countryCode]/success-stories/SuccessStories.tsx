@@ -62,7 +62,7 @@ const stories = [
 
 export default function SuccessStories() {
   return (
-    <section className="pt-8 md:pt-10 lg:py-[60px] px-4 ">
+    <section className="pt-8 md:pt-10 lg:py-[60px] px-4 max-w-[1228px] mx-auto">
       <div className="max-w-[1188px] mx-auto">
         <FadeUp className="text-fluid-h1 lg:text-[50px] leading-tight text-center mx-auto font-medium max-w-[952px] text-[#000000] mb-8 md:mb-10 lg:mb-[80px] ">
           Success Stories from Brands Who Choose Accqrate

@@ -14,7 +14,7 @@ export default function ZatcaSection() {
     >
       <div
         className="
-          max-w-[1440px]
+          max-w-[1280px]
           mx-auto
           lg:h-[370px]
           grid
@@ -23,7 +23,7 @@ export default function ZatcaSection() {
           items-center
           justify-between
           gap-y-10
-          px-6 md:px-8
+          px-6 md:px-8 xl:px-0
         "
       >
         {/* COLUMN 1 — LEFT CONTENT */}

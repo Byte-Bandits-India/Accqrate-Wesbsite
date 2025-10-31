@@ -1,6 +1,3 @@
-import { Card } from "@/components/ui/card";
-
-
 interface UpdateCardProps {
   image: string;
   title: string;

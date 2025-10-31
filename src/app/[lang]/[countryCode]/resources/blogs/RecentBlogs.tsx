@@ -56,7 +56,7 @@ export default function RecentBlogPosts() {
 
   return (
     <section className="py-10 md:py-12 lg:py-[90px]">
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-8 xl:px-0">
         <FadeUp className="text-2xl md:text-3xl font-semibold mb-8 md:mb-12 lg:mb-[70px] text-gray-900">
           Recent Blog Posts from Accqrate
         </FadeUp>

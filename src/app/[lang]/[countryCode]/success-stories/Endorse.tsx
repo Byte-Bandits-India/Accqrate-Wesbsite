@@ -72,7 +72,7 @@ export default function EndorsedTestimonials() {
 
   return (
     <section className="bg-gradient-to-b from-[#EFF3FF00] to-[#EFF3FF]">
-      <div className="mx-auto px-6 md:px-8 max-w-[1440px] pt-8 md:pt-12 lg:pt-[90px]">
+      <div className="mx-auto px-6 md:px-8 max-w-[1236px] pt-8 md:pt-12 lg:pt-[90px]">
         {/* Header */}
         <FadeUp className="text-left">
           <h2 className="text-fluid-h1 lg:text-[50px] leading-tight text-left font-medium text-[#000000]">
@@ -85,7 +85,7 @@ export default function EndorsedTestimonials() {
         </FadeUp>
 
         {/* Filter & Arrows */}
-        <div className="flex items-center justify-between flex-col sm:flex-row gap-4 max-w-[1440px] mx-auto mt-8 md:mt-12 lg:mt-[80px] mb-10">
+        <div className="flex items-center justify-between flex-col sm:flex-row gap-4 max-w-[1236px] mx-auto mt-8 md:mt-12 lg:mt-[80px] mb-10">
           {/* Filter Buttons */}
           <FadeUp className="flex items-center justify-around flex-wrap gap-2 sm:gap-4 w-full sm:w-auto order-1 sm:order-1">
             {testimonials.map((t, i) => (
@@ -111,7 +111,7 @@ export default function EndorsedTestimonials() {
           </FadeUp>
 
           {/* Arrow Buttons */}
-          <FadeUp className="flex items-end justify-end gap-3 shrink-0 order-2 sm:order-2 w-full md:justify-start md:pr-8 lg:pr-6 xl:pr-[126px] sm:justify-start sm:w-auto max-w-[1000px]">
+          <FadeUp className="flex items-end justify-end gap-3 shrink-0 order-2 sm:order-2 w-full md:justify-start sm:justify-start sm:w-auto max-w-[1000px]">
             <button
               onClick={() =>
                 setActiveIndex((p) => (p === 0 ? testimonials.length - 1 : p - 1))
@@ -132,7 +132,7 @@ export default function EndorsedTestimonials() {
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto items-stretch pb-8 md:pb-12 lg:pb-[80px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-[1236px] mx-auto items-stretch pb-8 md:pb-12 lg:pb-[80px]">
           {/* Left: Testimonial Card */}
           <div className="lg:col-span-2 bg-white rounded-3xl p-10 shadow-md border border-gray-100 flex flex-col justify-between h-full">
             {/* Stars */}

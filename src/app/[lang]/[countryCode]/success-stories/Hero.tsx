@@ -16,7 +16,7 @@ export default function IndustriesSection() {
   return (
     <section>
       <div className="bg-gradient-to-b from-[#EFF3FF00] to-[#EFF3FF] py-20">
-        <div className="container mx-auto px-6 md:px-16">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-16">
           {/* Header Section */}
           <div className="text-center mb-10">
             <p className="text-fluid-body text-[#F05A28] mb-8 md:mb-10 lg:mb-12 ">Our Success Stories</p>

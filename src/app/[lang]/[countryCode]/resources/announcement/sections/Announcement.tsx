@@ -19,7 +19,7 @@ const Index = () => {
     <div className="min-h-screen bg-[#F8F6FF]">
       <main className="container mx-auto pt-12 md:py-20">
         {/* Hero Section */}
-        <section className="max-w-[1440px] px-6 md:px-8 mx-auto mb-8 md:mb-10 lg:mb-[62px]">
+        <section className="max-w-[1280px] px-6 md:px-8 xl:px-0 mx-auto mb-8 md:mb-10 lg:mb-[62px]">
           <h1 className="text-fluid-h1 lg:text-[58px] text-black font-semibold mb-6 max-lg:mb-8 lg:mb-[56px] leading-tight">
             We Will Keep You Updated At All{" "}
             <br className="hidden lg:block" /> Times
@@ -41,31 +41,36 @@ const Index = () => {
         </section>
 
         {/* Update Cards Section */}
-        <section className="max-w-[1440px] px-6 md:px-8 mx-auto md:flex gap-[36px] mb-16">
-          {/* ✅ Dynamic Link to Zatca Updates */}
-          <Link
-            href={`${announcementBase}/ZatcaUpdates`}
-            className="block w-full md:w-1/2"
-          >
-            <UpdateCard
-              image="/images/resources/zatcaup.png"
-              title="ZATCA Updates"
-              description="Stay informed with the latest news, announcements, and software rollouts from ZATCA."
-            />
-          </Link>
+        {/* Update Cards Section */}
+        <section className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mb-16">
+          {/* Wrapper that controls spacing */}
+          <div className="flex flex-col md:flex-row md:gap-[34px] max-w-[1034px] gap-8">
+            {/* ✅ ZATCA Updates Card */}
+            <Link
+              href={`${announcementBase}/ZatcaUpdates`}
+              className="block w-full md:w-1/2"
+            >
+              <UpdateCard
+                image="/images/resources/zatcaup.png"
+                title="ZATCA Updates"
+                description="Stay informed with the latest news, announcements, and software rollouts from ZATCA."
+              />
+            </Link>
 
-          {/* ✅ Dynamic Link to Product Updates */}
-          <Link
-            href={`${announcementBase}/ProductUpdates`}
-            className="block w-full md:w-1/2"
-          >
-            <UpdateCard
-              image="/images/resources/zatcaprod.png"
-              title="Accqrate Product Evolutions"
-              description="Discover the latest upgrades, feature enhancements, and bug resolutions for Accqrate E-Invoicing platform."
-            />
-          </Link>
+            {/* ✅ Product Updates Card */}
+            <Link
+              href={`${announcementBase}/ProductUpdates`}
+              className="block w-full md:w-1/2"
+            >
+              <UpdateCard
+                image="/images/resources/zatcaprod.png"
+                title="Accqrate Product Evolutions"
+                description="Discover the latest upgrades, feature enhancements, and bug resolutions for Accqrate E-Invoicing platform."
+              />
+            </Link>
+          </div>
         </section>
+
       </main>
 
       {/* CTA Section */}
