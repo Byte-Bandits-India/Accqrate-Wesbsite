@@ -65,7 +65,7 @@ export const CountryFAQ = () => {
           </h2>
           <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[45px]"></div>
 
-          <p className="text-foreground text-fluid-body font-medium lg:text-[24px]">
+          <p className="text-foreground text-fluid-body font-medium">
             Ask Everything You Need To Know About Our Solutions And Services
           </p>
 
@@ -82,10 +82,10 @@ export const CountryFAQ = () => {
                         value={`faq-${index}`}
                         className="border-b border-border py-4"
                       >
-                        <AccordionTrigger className="text-[20px] md:text-[24px] lg:text-[26px] font-semibold hover:no-underline leading-tight text-left">
+                        <AccordionTrigger className="text-[18px] md:text-[20px] font-semibold hover:no-underline leading-tight text-left">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-[14px] md:text-[18px] lg:text-[24px] font-normal text-[#000000] leading-tight mt-2">
+                        <AccordionContent className="text-[14px] md:text-[18px] font-normal text-[#262626] leading-tight mt-2">
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>

@@ -61,7 +61,7 @@ export default function WebinarSection() {
                     priority
                   />
                   <div className="py-4 md:py-6">
-                    <h3 className="mt-2 text-fluid-h3 font-semibold text-gray-900">
+                    <h3 className="mt-2 text-fluid-body font-semibold text-gray-900">
                       {webinar.title}
                     </h3>
                     <p className="mt-3 text-fluid-small text-gray-600 mb-2">

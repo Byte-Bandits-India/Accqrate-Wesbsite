@@ -590,7 +590,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <div className="grid grid-cols-1 lg:grid-cols-2">
                             {/* Left Column */}
                             <div>
-                                <h2 className="font-medium text-fluid-small lg:text-[20px] tracking-heading uppercase">
+                                <h2 className="font-medium text-fluid-body tracking-heading uppercase">
                                     <T>/Why Accqrate?</T>
                                 </h2>
                                 <h3 className="text-fluid-h3 md:text-[32px] lg:text-[50px] font-medium mt-6 md:mt-8 lg:mt-[60px] tracking-heading leading-tight">
@@ -753,7 +753,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 </ul>
 
                                 <button
-                                    className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
+                                    className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-[12px] md:text-[18px] mt-[32px]"
                                     style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                                 >
                                     Request an ERP Migration Assessment
@@ -906,7 +906,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             </div>
 
             {/* Our ValuesDrive Everything We Do */}
-            <div className="bg-[#F8F6FF] py-[50px]  ">
+            <div className="bg-[#F8F6FF] py-[50px] mt-8 md:mt-10 ">
                 <div className="px-6 md:px-8 xl:px-0 xl:flex items-end xl:gap-20 max-w-[1280px] mx-auto">
                     <div>
                         <h1 className="text-[20px] md:text-[32px] lg:text-[50px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
@@ -939,7 +939,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     style={{ scrollSnapAlign: "start", background: item.bg }}
                                 >
                                     <div className="flex flex-col justify-start items-start gap-6">
-                                        <h3 className="font-medium leading-tight tracking-heading text-[18px] md:text-[20px] text-black">
+                                        <h3 className="font-medium leading-tight tracking-heading text-fluid-body md:text-[20px] text-black">
                                             {item.title}
                                         </h3>
                                         <p className="text-fluid-small mt-2 md:mt-3 tracking-para leading-tight text-black">
@@ -973,11 +973,11 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                                 value={`faq-${index}`}
                                                 className="border-b border-[#BDBDBD] py-4"
                                             >
-                                                <AccordionTrigger className="text-[18px] md:text-[20px] lg:text-[30px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight text-left">
+                                                <AccordionTrigger className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight text-left">
                                                     {item.question}
                                                 </AccordionTrigger>
 
-                                                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[20px] font-light text-gray-600 tracking-para leading-relaxed mt-2">
+                                                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px] font-light text-gray-600 tracking-para leading-relaxed mt-2">
                                                     {item.answer}
                                                 </AccordionContent>
                                             </AccordionItem>
@@ -995,7 +995,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 <div className="max-w-[1440px] mx-auto pb-6 md:pb-8 px-6">
                     <div className="flex flex-col items-center">
                         <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
-                        <p className="md:text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
+                        <p className="text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
                     </div>
                     <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-4 lg:gap-8 py-6 md:py-8 lg:py-10">
                         {[

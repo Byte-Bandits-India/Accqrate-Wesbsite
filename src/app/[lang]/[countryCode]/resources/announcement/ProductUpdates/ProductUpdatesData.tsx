@@ -12,14 +12,6 @@ const ProductUpdatesData = [
                     30 days free trial is given. Prior to that you get a practice account for 14 days. So in total the
                     trial period is 44 days.
                 </p>
-                <p>
-                    30 days free trial is given. Prior to that you get a practice account for 14 days. So in total the
-                    trial period is 44 days.
-                </p>
-                <p>
-                    30 days free trial is given. Prior to that you get a practice account for 14 days. So in total the
-                    trial period is 44 days.
-                </p>
             </div>
         )
     },

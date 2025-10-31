@@ -32,7 +32,7 @@ export default function InfoCard({ icon, title, description, color, link }: Info
                   className="w-[40px] h-[40px] object-contain"
                 />
               </div>
-              <h3 className="text-[24px] md:text-[20px] font-medium text-gray-900 leading-tight tracking-heading truncate">
+              <h3 className="text-[20px] font-medium text-gray-900 leading-tight tracking-heading truncate">
                 <T>{title}</T>
               </h3>
             </div>
