@@ -64,5 +64,10 @@ export default async function BlogPage({
   const Component = blogComponents[url];
   if (!Component) return notFound();
 
-  return Component;
+  // ✅ Wrap in a div with overflow-x-hidden to prevent horizontal scroll
+  return (
+    <div className="overflow-x-hidden">
+      {Component}
+    </div>
+  );
 }
