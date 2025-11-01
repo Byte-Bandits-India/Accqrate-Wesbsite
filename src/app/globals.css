@@ -15,7 +15,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  
 }
 
 /* Chrome, Safari, Edge */
@@ -201,5 +201,6 @@ body {
 a{
   color: #1890ff;
 }
+
 
 
