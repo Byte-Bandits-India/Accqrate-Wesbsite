@@ -34,7 +34,7 @@ export default function ZatcaSection() {
       >
         {/* COLUMN 1 — LEFT CONTENT */}
         <div className="z-20 text-left order-2 md:order-1">
-          <h2 className="text-fluid-h2 xl:text-[42px] font-medium mb-6 leading-snug">
+          <h2 className="text-fluid-h2 xl:text-[38px] font-medium mb-6 leading-tight">
             If you have any other questions not <br className="hidden md:block" /> addressed here
           </h2>
 
@@ -50,7 +50,7 @@ export default function ZatcaSection() {
 
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
+            className="inline-flex text-fluid-body items-center justify-center gap-2 bg-[#F05A28] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
           >
             Contact Your Consultant <ArrowRight className="w-4 h-4" />
           </button>
