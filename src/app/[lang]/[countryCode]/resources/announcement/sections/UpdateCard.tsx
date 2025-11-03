@@ -16,8 +16,8 @@ const UpdateCard = ({ image, title, description }: UpdateCardProps) => {
 
       </div>
       <div className="py-6 max-w-lg">
-        <h3 className="text-fluid-body font-semibold mb-4 md:mb-6">{title}</h3>
-        <p className="text-muted-foreground text-fluid-small text-left leading-relaxed">{description}</p>
+        <h3 className="text-[18px] md:text-fluid-body text-black font-semibold mb-2 md:mb-4 ">{title}</h3>
+        <p className="text-[15px] text-fluid-small text-left text-black leading-tight">{description}</p>
       </div>
     </div>
   );
