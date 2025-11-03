@@ -82,7 +82,7 @@ const blogPosts: BlogPost[] = [
     url: "good-receipts",
     title: "Goods Receipts Accounting",
     image: "/images/blogs/goods-receipts-accounting.webp",
-    desc: "The more inventory a company has, the less likely they will have what they need — Taiichi Ohno, Toyota...",
+    desc: "The more inventory a company has, the less likely they will have what they need Taiichi Ohno, Toyota...",
   },
   {
     id: 12,
@@ -166,8 +166,9 @@ const blogPosts: BlogPost[] = [
     url: "accqrate-books-msme-accounting",
     title: "Why Accqrate Books Is the Top Choice for MSME Accounting in 2025",
     image: "/images/blogs/msme.png",
-    desc: "Accounting software built for the modern MSME—Accqrate Books brings simplicity, accuracy, and compliance...",
+    desc: "Accounting software built for the modern MSME Accqrate Books brings simplicity, accuracy, and compliance...",
   },
 ];
 
 export default blogPosts;
+
