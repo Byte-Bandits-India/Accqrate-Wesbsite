@@ -2,10 +2,15 @@
 
 import React, { useState } from "react";
 import { ArrowRight, Sparkles, Clock, Zap } from "lucide-react";
-import { ContactModal } from "../../../../../../components/ContactModal"; // adjust path if needed
+import { ContactModal } from "../../../../../../components/ContactModal"; 
+import { useParams } from "next/navigation";
+import Link from "next/link";
 
 const CTASection = () => {
   const [isModalOpen, setModalOpen] = useState(false);
+   const params = useParams();
+  const lang = params?.lang as string;
+  const countryCode = params?.countryCode as string;
 
   return (
     <div className="w-full bg-gradient-to-l from-[#242087] to-[#1A0C48]  relative shadow-xl">
@@ -75,8 +80,10 @@ const CTASection = () => {
           "Start 30-Day Free Trial",
           "Talk to Sales",
         ].map((text, i) => (
-          <button
+          <Link
+           href={`/${lang}/${countryCode}/contact-us`}
             key={i}
+           
             className="
         relative
         lg:w-[300px] w-[270px] md:w-[240px]
@@ -109,7 +116,8 @@ const CTASection = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
+          
         ))}
       </div>
 
