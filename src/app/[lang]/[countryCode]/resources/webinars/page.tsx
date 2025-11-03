@@ -32,13 +32,13 @@ export default function WebinarSection() {
         <div className="mx-auto px-6 md:px-8 xl:px-0 max-w-[1280px]">
           {/* Heading */}
           <div>
-            <h2 className="text-fluid-h1 lg:text-[58px] font-bold leading-tightfont-semibold text-[#333333] text-left">
+            <h2 className="text-fluid-h1 lg:text-[38px] font-semibold leading-tight  text-left">
               Unlocking Insights Of Webinar
             </h2>
 
-            <div className="w-16 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-10" />
+            <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 " />
 
-            <p className="text-[#333333] text-fluid-body text-left max-w-[800px]">
+            <p className="text-[16px] md:text-[18px] text-left max-w-[900px]">
               This Webinar Is Essential For Professionals Who Handle Invoicing And Compliance In Their Organizations
             </p>
           </div>
@@ -61,10 +61,10 @@ export default function WebinarSection() {
                     priority
                   />
                   <div className="py-4 md:py-6">
-                    <h3 className="mt-2 text-fluid-body font-semibold text-gray-900">
+                    <h3 className="mt-2 text-fluid-body md:text-[24px] text-black font-semibold leading-tight">
                       {webinar.title}
                     </h3>
-                    <p className="mt-3 text-fluid-small text-gray-600 mb-2">
+                    <p className="mt-3 text-[18px] text-gray-500 mb-2">
                       {webinar.description}
                     </p>
                   </div>
