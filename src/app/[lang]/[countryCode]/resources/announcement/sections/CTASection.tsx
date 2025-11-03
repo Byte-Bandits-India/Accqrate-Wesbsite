@@ -12,16 +12,16 @@ const CTASection = () => {
       <div className="md:flex gap-8 xl:max-h-[336px] relative z-10 max-w-[1440px] p-6 md:p-10 lg:pb-0 mx-auto">
         {/* LEFT CONTENT */}
         <div className="text-white md:max-w-[300px] lg:max-w-[500px] xl:max-w-full ">
-          <h2 className="text-fluid-h2 lg:text-[50px] font-medium mb-4">
+          <h2 className="text-fluid-h2 lg:text-[38px] font-medium mb-6">
             Save time, save money
           </h2>
 
-          <p className="text-fluid-h3 lg:text-[26px] mb-6 text-white/90 leading-relaxed xl:max-w-[848px] ">
+          <p className="text-fluid-body lg:text-[24px] mb-6 text-white/90 leading-tight xl:max-w-[848px] ">
             Want the latest on ZATCA updates, fresh product insights,
             and exclusive Company editorials?
           </p>
 
-          <p className="text-sm text-white/80 leading-relaxed xl:max-w-[773px] ">
+          <p className="text-sm text-white/80 leading-tight xl:max-w-[773px] ">
             Get fresh product insights and exclusive company editorials delivered straight to
             your <br className="hidden xl:block" /> inbox. Subscribe now to never miss a beat!
           </p>
@@ -82,7 +82,7 @@ const CTASection = () => {
         lg:w-[300px] w-[270px] md:w-[240px]
         h-[46px] md:h-[52px]
         flex items-center justify-center
-        bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]
+        bg-[#F05A28]
         rounded-[50px]
         px-2
         text-white
@@ -91,7 +91,7 @@ const CTASection = () => {
       "
           >
             {/* Centered Text */}
-            <span className="mx-auto">{text}</span>
+            <span className="mx-auto ">{text}</span>
 
             {/* Arrow aligned to the right */}
             <svg
