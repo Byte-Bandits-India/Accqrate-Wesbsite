@@ -32,7 +32,7 @@ export default function ZatcaSection() {
       >
         {/* COLUMN 1 — LEFT CONTENT */}
         <div className="z-20 text-left order-2 md:order-1">
-          <h2 className="text-fluid-h2 xl:text-[40px] font-medium mb-6 leading-snug">
+          <h2 className="text-[20px] md:text-[30px] font-medium mb-6 leading-tight">
             Get 100% ZATCA Phase II
             compliant with Accqrate
           </h2>
@@ -54,7 +54,7 @@ export default function ZatcaSection() {
                   height={20}
                   className="mt-1 flex-shrink-0"
                 />
-                <span className="text-lg md:text-xl lg:text-2xl xl:text-[26px]">
+                <span className="text-[15px] md:text-[20px]">
                   {text}
                 </span>
               </li>
@@ -63,7 +63,7 @@ export default function ZatcaSection() {
 
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 bg-[#F05A28] text-[#FFFFFF] font-medium px-6 py-3 rounded-full"
+            className="inline-flex text-[14px] md:text-[18px] items-center justify-center gap-2 bg-[#F05A28] text-[#FFFFFF] font-medium px-6 py-4 rounded-full"
           >
             Book a Demo <ArrowRight className="w-4 h-4" />
           </button>
