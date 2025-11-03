@@ -32,14 +32,13 @@ const Switch = React.forwardRef<
       )}
       {...props}
     >
-      {/* Thumb */}
+      {/* Thumb - exact same dimensions as outer container */}
       <SwitchPrimitives.Thumb
         className={cn(
-          "pointer-events-none absolute block h-[40px] w-[144px] rounded-full bg-[linear-gradient(90deg,#194BED_0%,#29266E_100%)] transition-transform duration-200",
-          checked ? "translate-x-[8px]" : "translate-x-[148px]"
+          "pointer-events-none absolute block h-[40px] w-[148px] rounded-full bg-[linear-gradient(90deg,#194BED_0%,#29266E_100%)] transition-transform duration-200",
+          checked ? "translate-x-0" : "translate-x-[148px]"
         )}
       />
-
 
       {/* Labels */}
       <div className="flex w-full z-10 relative">

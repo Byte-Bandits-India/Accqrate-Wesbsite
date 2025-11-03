@@ -32,13 +32,13 @@ export default function InfoCard({ icon, title, description, color, link }: Info
                   className="w-[40px] h-[40px] object-contain"
                 />
               </div>
-              <h3 className="text-[20px] font-medium text-gray-900 leading-tight tracking-heading truncate">
+              <h3 className="text-[20px] font-medium text-[#000000] leading-tight tracking-heading truncate">
                 <T>{title}</T>
               </h3>
             </div>
 
             {/* Description below */}
-            <p className="text-gray-700 text-[14px] sm:text-[15px] md:text-[16px] leading-tight mt-3 tracking-para">
+            <p className="text-[#333333] text-[14px] sm:text-[15px] md:text-[16px] leading-tight mt-3 tracking-para">
               <T>{description}</T>
             </p>
           </div>
@@ -54,10 +54,10 @@ export default function InfoCard({ icon, title, description, color, link }: Info
             </div>
 
             <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
-              <h3 className="text-[20px] lg:text-[24px] font-medium text-gray-900 leading-tight tracking-heading">
+              <h3 className="text-[20px] lg:text-[24px] font-medium text-[#000000] leading-tight tracking-heading">
                 <T>{title}</T>
               </h3>
-              <p className="text-gray-700 text-[16px] lg:text-[18px] leading-tight mt-1 tracking-para line-clamp-2">
+              <p className="text-[#333333] text-[16px] lg:text-[18px] leading-tight mt-1 tracking-para line-clamp-2">
                 <T>{description}</T>
               </p>
             </div>

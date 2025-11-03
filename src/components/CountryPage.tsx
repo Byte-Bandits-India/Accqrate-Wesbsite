@@ -8,12 +8,15 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, PanInfo } from "motion/react";
 import { useCountryContent } from "@/hooks/useCountryContent";
 import T from "@/components/T"
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
+
 
 // ---------------- CarouselCard ----------------
 interface CarouselCardProps {
@@ -47,13 +50,13 @@ const CarouselCardComponent: React.FC<CarouselCardProps> = ({
     return (
         <div
             className="absolute rounded-2xl shadow-xl flex
-             w-[320px] sm:w-[320px] md:w-[600px] h-[180px] md:h-[200px]
+             w-[320px] sm:w-[320px] md:w-[423px] h-[180px] md:h-[200px]
              transition-all duration-500 ease-in-out overflow-hidden bg-[#E6F2FF] cursor-pointer"
             style={style}
             onClick={onClick}
         >
             {/* Background Image - Fixed left section */}
-            <div className="relative h-full w-[100px] md:w-[180px] flex-shrink-0">
+            <div className="relative h-full w-[100px] md:w-[100px] flex-shrink-0">
                 <img
                     src={bg}
                     alt="background"
@@ -65,14 +68,14 @@ const CarouselCardComponent: React.FC<CarouselCardProps> = ({
                     <img
                         src={avatar}
                         alt={name}
-                        className="absolute top-1/2 left-[75px] md:left-36 lg:left-[124px] transform -translate-y-1/2 w-12 h-12 md:w-[70px] md:h-[70px] lg:w-[100px] lg:h-[100px] rounded-full object-cover border-2 border-white z-20"
+                        className="absolute top-1/2 left-[75px] md:left-[70px] transform -translate-y-1/2 w-12 h-12 md:h-[60px] md:w-[60px] rounded-full object-cover border-2 border-white z-20"
                     />
                 </div>
             </div>
 
             <div className="flex flex-col justify-center items-start p-6 md:pl-8 lg:px-[60px] relative z-20">
                 {/* Quote text */}
-                <p className="text-[#000000] text-fluid-small md:text-[18px] lg:text-[20px] leading-tight tracking-heading drop-shadow-md font-bold mb-0">
+                <p className="text-[#000000] text-fluid-small md:text-[18px] leading-tight tracking-heading drop-shadow-md font-bold mb-0">
                     &quot;{quote}&quot;
                 </p>
 
@@ -87,6 +90,20 @@ const CarouselCardComponent: React.FC<CarouselCardProps> = ({
         </div>
     );
 };
+
+// Arrow
+const Arrow45: React.FC = () => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-4 h-4 transform -rotate-45"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
+    >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+    </svg>
+);
 
 // ---------------- CarouselDots ----------------
 interface CarouselDotsProps {
@@ -184,7 +201,7 @@ const Carousel: React.FC<CarouselProps> = ({
         >
             <motion.div
                 ref={containerRef}
-                className="relative w-full max-w-[900px] h-[220px] sm:h-[400px] flex items-center justify-center cursor-grab"
+                className="relative w-full max-w-[423px] h-[220px] sm:h-[300px] flex items-center justify-center cursor-grab"
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.1}
@@ -262,47 +279,70 @@ interface CountryPageProps {
     countryCode: string;
 }
 
+interface Feature {
+    img: string;
+    title: string;
+    sub?: string;
+    description: string;
+}
+
+interface FeatureCarouselProps {
+    features: Feature[];
+}
+
 const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
     const { countryContent } = useCountryContent();
     const [enabled, setEnabled] = React.useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
     const bgImage = countryContent.backgroundImage;
+    const scrollRef = useRef<HTMLDivElement | null>(null);
+
+    const scroll = (direction: "left" | "right") => {
+        const container = scrollRef.current;
+        if (container) {
+            const scrollAmount = container.offsetWidth * 0.8; // scroll ~80% width per click
+            container.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
+    };
 
     const cards = countryContent.cards;
 
     const features = [
         {
-            img: "/images/landingpage/one.png",
+            img: "/images/home/1.png",
             title: "One platform.",
             description: "All modules run on a single, integrated data model.",
             sub: " Zero silos."
         },
         {
-            img: "/images/landingpage/grade.png",
+            img: "/images/home/2.png",
             title: "Enterprise‑grade.",
             description: "Security, scalability and performance proven across 30+ industries.",
             sub: ""
         },
         {
-            img: "/images/landingpage/ai.png",
+            img: "/images/home/3.png",
             title: "AI, everywhere.",
             description: "Accelera, our AI copilot ,accelerates routine work, insights and decisions.",
             sub: ""
         },
         {
-            img: "/images/landingpage/time.png",
+            img: "/images/home/4.png",
             title: "Fast time‑to‑value.",
             description: "Lightning‑fast UI, one‑click installs, and low‑disruption migrations from SAP/Microsoft/Oracle or disjointed tools.",
             sub: ""
         },
         {
-            img: "/images/landingpage/built.png",
+            img: "/images/home/5.png",
             title: "Built‑in Global compliance:",
             description: "Connect ERP/POS to tax authorities; from ZATCA Phase II to PEPPOL standards.",
             sub: ""
         },
         {
-            img: "/images/landingpage/deploy.png",
+            img: "/images/home/6.png",
             title: "Deploy your way.",
             description: "Cloud (managed, subscription) or On‑Prem (full control over infra & data).",
             sub: ""
@@ -481,49 +521,64 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             <div className="bg-[#F8F6FF]">
                 <div
                     className="h-fit xl:min-h-fit bg-cover bg-no-repeat bg-center lg:bg-local"
-                    style={{ backgroundImage: `url('${bgImage}')` }}
+                    style={{
+                        backgroundImage: `url('${bgImage}')`,
+                    }}
                 >
                     <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
-                                <h1 className="text-[30px] md:text-[38px] lg:text-[50px] max-w-full lg:max-w-[685px] font-normal tracking-heading leading-tight">
+                                <h1 className="text-[24px] md:text-[28px] lg:text-[38px] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
                                     <T>{countryContent.heroTitle}</T>
                                 </h1>
-                                <p className="font-medium text-fluid-body mt-6 lg:mt-10 tracking-para">
+                                <p className="font-medium text-fluid-body lg:text-[22px] text-[#FFFFFF] mt-8 md:mt-10 lg:mt-[50px] tracking-para">
                                     <T>{countryContent.heroSubtitle}</T>
                                 </p>
-                                <p className="border-t-2 border-[#29266E] w-[60px] mt-6 lg:mt-10"></p>
 
-                                <div className="bg-white/50 rounded-[20px] p-6 md:p-8 flex flex-col justify-center text-center mt-6 lg:mt-10 max-w-full md:max-w-[700px] mx-auto md:mx-0">
-                                    <p className="text-black text-fluid-small tracking-para leading-tight text-left font-normal">
-                                        <T>{countryContent.heroDescription}</T>
-                                    </p>
-                                    <h2 className="mt-6 md:mt-8 text-fluid-body lg:text-[24px] font-medium text-black hidden tracking-heading lg:block">
-                                        <T>{countryContent.heroTagline}</T>
-                                    </h2>
-                                </div>
+                                <p className="border-t-2 border-[#FFFFFF] w-[50px] mt-8 md:mt-10 lg:mt-[50px]"></p>
 
-                                <div className="flex flex-wrap md:flex-nowrap items-center justify-center md:justify-start gap-3 md:gap-4 my-[64px] md:my-8 lg:mt-10">
-                                    {["Book a Demo", "Get a 30 Day Trial", "Talk to Us"].map((text, i) => (
-                                        <button
-                                            key={i}
-                                            className="w-[280px] sm:w-[180px] md:w-[221px] h-[47px] bg-gradient-to-r from-[#FFFFFF] tracking-para to-[#C5E1FF] text-[#000000] text-fluid-body lg:text-[18px] xl:text-[20px] font-medium rounded-[5px] hover:from-[#C5E1FF] hover:to-[#FFFFFF] transition-all"
-                                        >
-                                            <T>{text}</T>
-                                        </button>
+                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[50px] tracking-para leading-tight text-left font-normal">
+                                    <T>{countryContent.heroDescription}</T>
+                                </p>
+
+
+                                <Link
+                                    href={("/book-demo")}
+                                    className="inline-flex items-center justify-center gap-2 text-white h-[42px] lg:h-[57px] w-[190px] my-8 md:my-12 lg:my-[66px] font-normal lg:w-[221px] rounded-[80px] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
+                                >
+                                    <T>Meet an Expert</T>
+                                    <Arrow45 />
+                                </Link>
+
+
+                                <h2 className="mt-6 md:mt-8 text-fluid-body font-medium text-[#ffffff] hidden tracking-heading lg:flex lg:items-center lg:flex-wrap gap-6">
+                                    {countryContent.heroTagline.split(".").filter(Boolean).map((part, index, arr) => (
+                                        <React.Fragment key={index}>
+                                            <T>{part.trim()}</T>
+                                            {index < arr.length - 1 && (
+                                                <img
+                                                    src="/images/home/Star.png"
+                                                    alt="star"
+                                                    className="inline-block w-5 h-5 mx-1"
+                                                />
+                                            )}
+                                        </React.Fragment>
                                     ))}
+                                </h2>
+                                <div className="p-6 md:p-8 text-left  max-w-full md:max-w-[700px] mx-auto md:mx-0">
+
                                 </div>
                             </div>
 
                             {/* RIGHT COLUMN */}
                             <div className="hidden lg:flex flex-col justify-center mb-8 lg:mt-0 gap-4">
-                                <h1 className="text-fluid-body font-medium"><T>Featured Solutions:</T></h1>
+                                <h1 className="text-fluid-body font-medium text-[#ffffff]"><T>Products to power every team</T></h1>
                                 {cards.map((card) => (
                                     <InfoCard key={card.title} {...card} />
                                 ))}
-                                <div className="h-[50px] max-w-full md:max-w-[418px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
-                                    <h3 className="text-[14px] tracking-heading leading-tight"><T>Explore All Products</T></h3>
+                                <div className="h-[50px] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
+                                    <h3 className="text-[14px] tracking-heading leading-tight text-nowrap"><T>Explore All Products ... </T></h3>
                                     <div className="flex-shrink-0 ml-6">
                                         <svg
                                             width="20"
@@ -550,7 +605,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 {/* Mobile & Tablet Featured Solutions */}
                 <div className="lg:hidden px-6 md:px-8">
                     <div className="max-w-[1280px] mx-auto py-8">
-                        <h1 className="text-fluid-body font-medium mb-4"><T>Featured Solutions:</T></h1>
+                        <h1 className="text-fluid-body font-medium mb-4"><T>Products to power every team</T></h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {cards.map((card) => (
@@ -561,7 +616,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             <div
                                 className="cursor-pointer flex items-center justify-between w-full h-[50px] mx-auto overflow-hidden shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5 bg-[#D6E0FF]"
                             >
-                                <h3 className="text-[14px] font-medium"><T>Explore All Products</T></h3>
+                                <h3 className="text-[14px] font-medium"><T>Explore All Products...</T></h3>
                                 <div className="flex-shrink-0 ml-2">
                                     <svg
                                         width="20"
@@ -586,16 +641,25 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* /Why Accqrate? */}
                 <div>
-                    <div className="max-w-[1280px] w-full mx-auto px-6 md:px-8 xl:px-0 mt-[48px]">
-                        <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className=" px-6 md:px-8 xl:px-0 mt-[48px]">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1280px] mx-auto w-full">
                             {/* Left Column */}
                             <div>
-                                <h2 className="font-medium text-fluid-body tracking-heading uppercase">
-                                    <T>/Why Accqrate?</T>
+                                <h2 className="font-medium text-fluid-small tracking-heading uppercase">
+                                    <T>Why Accqrate?</T>
                                 </h2>
-                                <h3 className="text-fluid-h3 md:text-[32px] lg:text-[50px] font-medium mt-6 md:mt-8 lg:mt-[60px] tracking-heading leading-tight">
-                                    <T>We specialize in providing reliable and efficient Solutions</T>
+                                <img
+                                    src="/images/home/blue_star.png"
+                                    alt="groupstar"
+                                    className="w-auto h-[28px] md:h-[28px] lg:hidden"
+                                />
+
+                                <h3 className="text-[24px] md:text-[28px] lg:text-[38px] max-w-[555px] font-medium mt-6 md:mt-8 lg:mt-[40px] leading-tight">
+                                    <T>We <span className="text-[#194BED]">specialize</span> in providing <span className="text-[#194BED]">reliable</span> and efficient Solutions</T>
                                 </h3>
+                                <div className="hidden lg:flex justify-center max-w-[555px] mt-6 md:mt-8 lg:mt-[43px]">
+                                    <img src="/images/home/blue_star.png" className="h-[64px]" alt="groupstar" />
+                                </div>
                             </div>
 
                             {/* Right Column */}
@@ -612,19 +676,76 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             </div>
                         </div>
 
-                        <div className="mt-[73px] grid grid-cols-1 md:grid-cols-3 xl:grid-cols-6 gap-[30px]">
-                            {features.map((feature, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col items-center lg:items-start text-center max-w-[242px] mx-auto "
+                        <div className="relative mt-[32px] md:mt-[60px] lg:mt-[80px]">
+                            {/* 🔹 Top Section (Buttons) */}
+                            <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 flex justify-end mb-6 gap-3">
+                                <button
+                                    onClick={() => scroll("left")}
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:bg-gray-100 transition"
                                 >
-                                    <img className="mb-4" src={feature.img} alt={feature.title} />
-                                    <h2 className="text-fluid-h3 xl:text-[23px] font-medium md:text-left tracking-heading leading-tight"><T>{feature.title}</T></h2>
-                                    <h2 className="text-fluid-h3 xl:text-[23px] font-medium mb-6 lg:mb-[30px] md:text-left tracking-heading leading-tight">{feature.sub}</h2>
-                                    <p className="text-fluid-small md:text-left tracking-para leading-tight"><T>{feature.description}</T></p>
+                                    <ChevronLeft className="w-5 h-5 text-gray-700" />
+                                </button>
+                                <button
+                                    onClick={() => scroll("right")}
+                                    className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:bg-gray-100 transition"
+                                >
+                                    <ChevronRight className="w-5 h-5 text-gray-700" />
+                                </button>
+                            </div>
+
+                            {/* 🔹 Scrollable Row */}
+                            <div className="overflow-x-auto scrollbar-hide" ref={scrollRef}>
+                                <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
+                                    <div
+                                        className="flex gap-4 sm:gap-6 md:gap-8 pr-[calc(50vw-640px)]"
+                                        style={{ scrollSnapType: "x mandatory" }}
+                                    >
+                                        {features.map((feature, index) => (
+                                            <div
+                                                key={index}
+                                                className="relative flex-shrink-0 bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] scroll-snap-align-start 
+              w-[260px] sm:w-[300px] md:w-[340px] lg:w-[380px] 
+              min-h-[360px] sm:min-h-[400px] lg:h-[456px] 
+              p-8 flex flex-col justify-between overflow-hidden 
+              transition-all hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+                                            >
+                                                {/* Image + Number */}
+                                                <div className="relative flex justify-between items-end">
+                                                    <img
+                                                        src={feature.img}
+                                                        alt={feature.title}
+                                                        className="w-[140px] sm:w-[160px] md:w-[180px] h-auto object-contain z-10"
+                                                    />
+                                                    <span
+                                                        className="font-anonymous text-[60px] sm:text-[70px] md:text-[90px] lg:text-[100px] pb-2 font-bold text-[#E6E6E6] leading-none select-none"
+                                                    >
+                                                        {String(index + 1).padStart(2, "0")}
+                                                    </span>
+                                                </div>
+
+                                                {/* Title */}
+                                                <div className="mt-4 z-10">
+                                                    <h2 className="text-fluid-h3 font-medium text-[#000000] leading-tight mb-1">
+                                                        <T>{feature.title}</T>
+                                                    </h2>
+                                                    {feature.sub && (
+                                                        <h2 className="text-fluid-h3 font-medium text-[#000000] leading-tight">
+                                                            <T>{feature.sub}</T>
+                                                        </h2>
+                                                    )}
+                                                </div>
+
+                                                {/* Description */}
+                                                <p className="mt-3 sm:mt-4 text-[#000000] text-fluid-body leading-snug tracking-para line-clamp-5">
+                                                    <T>{feature.description}</T>
+                                                </p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            ))}
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -632,7 +753,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 <div className="mt-[80px] rounded-[30px] bg-[linear-gradient(180deg,#FFFFFF_0%,#E9E8FF_50%,#4F52FF_100%)] py-6 md:py-8  max-w-[1280px] mx-auto">
 
                     <FadeUp className="mb-8 md:mb-[40px]">
-                        <h3 className="text-fluid-h3 max-w-[354px]  tracking-heading leading-tight font-medium text-[#333333] text-center mx-auto">
+                        <h3 className="text-[24px] md:text-[28px] lg:text-[38px] tracking-heading leading-tight font-medium text-[#333333] text-center mx-auto">
                             <T>Trusted by  </T><br className="md:hidden" /><span className="text-[#194BED]"><T>5,000+ Global companies</T></span>
                         </h3>
                     </FadeUp>
@@ -684,7 +805,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
                             <i className="fas fa-star"></i>
-                            <span className="text-[#333333] text-fluid-small tracking-para lg:text-[16px] ml-2">Based on reviews</span>
+                            <span className="text-[#333333] text-fluid-small lg:text-[16px] tracking-para ml-2">Based on reviews</span>
                         </div>
                     </div>
 
@@ -692,30 +813,37 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <Switch checked={enabled} onCheckedChange={setEnabled} />
                     </div>
 
+                    <div className="flex items-center justify-end md:pr-20">
+                        <img src="/images/home/orange_star.png" className="h-[64px]" alt="orstar" />
+                    </div>
+
                     <div className="max-w-[1440px] mx-auto px-6 md:px-8 mt-[32px] grid xl:grid-cols-2 gap-6">
-                        {/* Left Side: Full‑Suite ERP */}
-                        <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[804px] rounded-xl md:rounded-2xl p-6 md:p-8">
-                            <div>
-                                <div className="flex items-center space-x-4">
-                                    <img src="/images/landingpage/one-erp.png" alt="one" className="h-[40px] md:h-[50px] lg:h-[60px] xl:h-[100px]" />
-                                    <span className="text-[#000000] tracking-heading leading-tight text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] whitespace-nowrap">
-                                        Accqrate ONE <br />
-                                        The Full‑Suite ERP
-                                    </span>
+                        {/* Left Side: Full-Suite ERP */}
+                        <FadeUp className="bg-[#FFFFFF] font-inter rounded-xl md:rounded-2xl p-6 md:p-8 flex flex-col xl:h-full">
+                            <div className="flex flex-col flex-1">
+                                <div>
+                                    <div className="flex items-center space-x-4">
+                                        <img src="/images/landingpage/one-erp.png" alt="one" className="h-[40px] md:h-[50px]" />
+                                        <span className="text-[#000000] tracking-heading leading-tight text-fluid-body whitespace-nowrap">
+                                            Accqrate ONE <br />
+                                            The Full-Suite ERP
+                                        </span>
+                                    </div>
+                                    <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] xl:text-[18px] mt-[30px]">
+                                        Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
+                                    </p>
                                 </div>
-                                <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] xl:text-[18px] mt-[30px]">
-                                    Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
-                                </p>
-                                <div className="w-full mt-6 md:mt-0">
+
+                                <div className="w-full mt-auto">
                                     <div className="bg-[#D9D9D9] h-[436px] md:h-[386px] rounded-[20px]"></div>
                                 </div>
                             </div>
                         </FadeUp>
 
-                        {/* Right Side: Modules included + What you'll achieve */}
-                        <div className="space-y-6">
-                            <FadeUp className="bg-[#FFFFFF] font-inter lg:h-[280px] rounded-xl md:rounded-2xl p-6">
-                                <h2 className="text-[24px] font-medium tracking-heading">Modules included:</h2>
+                        {/* Right Side: Modules + What you'll achieve */}
+                        <div className="flex flex-col gap-6 xl:h-full">
+                            <FadeUp className="bg-[#FFFFFF] font-inter rounded-xl md:rounded-2xl p-6 flex-1">
+                                <h2 className="text-fluid-body font-medium tracking-heading">Modules included:</h2>
                                 <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-relaxed list-disc pl-5">
                                     <li>POS</li>
                                     <li>Sales</li>
@@ -723,7 +851,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     <li>Accounting</li>
                                     <li>Project Management</li>
                                     <li>CRM</li>
-                                    <li>E‑Invoicing</li>
+                                    <li>E-Invoicing</li>
                                     <li>Production</li>
                                     <li>HR & Payroll</li>
                                     <li>Cycle Management</li>
@@ -733,30 +861,82 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     <li>Fixed Assets</li>
                                     <li>Gold Management</li>
                                 </ul>
-
                             </FadeUp>
 
-                            <FadeUp className="bg-[#FFFFFF] font-inter xl:h-[505px] rounded-xl md:rounded-2xl p-6 md:p-8">
-                                <h2 className="text-fluid-h3 lg:text-[24px] font-medium tracking-heading">What you'll achieve:</h2>
+                            <FadeUp className="bg-[#FFFFFF] font-inter rounded-xl md:rounded-2xl p-6 flex-1">
+                                <h2 className="text-fluid-body font-medium tracking-heading">What you'll achieve:</h2>
                                 <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small lg:text-[16px] leading-tight tracking-para">
                                     <li>Unified operations: Finance to factory on a single source of truth.</li>
-                                    <li>Quicker close, cleaner audits: Built‑in controls and automated reconciliations.</li>
-                                    <li>Smarter planning: AI‑assisted forecasting and scenario modeling.</li>
+                                    <li>Quicker close, cleaner audits: Built-in controls and automated reconciliations.</li>
+                                    <li>Smarter planning: AI-assisted forecasting and scenario modeling.</li>
                                     <li>Happier teams: Intuitive UI reduces training time and boosts productivity.</li>
                                 </ul>
 
-                                <h2 className="mt-8 text-fluid-h3 lg:text-[24px] font-medium tracking-heading">Migration advantages:</h2>
+                                <h2 className="mt-8 text-fluid-body font-medium tracking-heading">Migration advantages:</h2>
                                 <ul className="text-left list-disc pl-5 space-y-1 mt-[15px] text-fluid-small lg:text-[16px] leading-tight tracking-para">
                                     <li>Rapid implementation with minimal downtime.</li>
-                                    <li>Proven playbooks for moving from ERPs & Applications</li>
+                                    <li>Proven playbooks for moving from ERPs & Applications.</li>
                                     <li>Coexistence options while you phase out legacy.</li>
                                 </ul>
+                            </FadeUp>
+                        </div>
+                    </div>
+
+
+                    <div className="px-6 md:px-8 mt-[32px]">
+                        <button
+                            className="h-[46px] md:h-[55px] max-w-[481px] w-full text-center flex items-center gap-4 justify-center px-4 rounded-[100px] text-white text-[12px] md:text-[18px] mt-[32px] bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"                        >
+                            Request an ERP Migration Assessment
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                className="text-white"
+                            >
+                                <path
+                                    d="M9 6l6 6-6 6"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Your AI Copilot */}
+                <div className="hidden md:block">
+                    <div
+                        className="bg-cover bg-no-repeat bg-center"
+                        style={{ backgroundImage: "url('/images/home/wave_vector.png')" }}
+                    >
+                        <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch">
+                            {/* Left Side: Text + list + button */}
+                            <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col justify-between p-6 md:p-8">
+                                <div>
+                                    <h2 className="text-[#000000] tracking-heading text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight whitespace-nowrap">
+                                        Accelera <br /> Your AI Copilot
+                                    </h2>
+
+                                    <p className="pb-4 md:pb-6 tracking-para text-[#333333] text-[14px] md:text-[16px] leading-tight mt-[30px] lg:mt-[60px]">
+                                        Work faster and decide smarter with AI embedded across the suite.
+                                    </p>
+
+                                    <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-[14px] md:text-[16px] tracking-heading leading-tight">
+                                        <li><b>Natural-language actions:</b> Ask, "Show last month's receivables by region" and get the answer, fast.</li>
+                                        <li><b>Automations:</b> Generate e-invoices, match POs, trigger approvals and alerts.</li>
+                                        <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
+                                        <li><b>Assistive UX:</b> Contextual help, data enrichment and guided workflows.</li>
+                                    </ul>
+                                </div>
 
                                 <button
-                                    className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-[12px] md:text-[18px] mt-[32px]"
+                                    className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px] tracking-para lg:mt-[60px]"
                                     style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                                 >
-                                    Request an ERP Migration Assessment
+                                    See Accelera in a 5-Minute Demo
                                     <svg
                                         width="20"
                                         height="20"
@@ -774,71 +954,63 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     </svg>
                                 </button>
                             </FadeUp>
-                        </div>
-                    </div>
-                </div>
 
-                {/* Your AI Copilot */}
-                <div className="hidden md:block">
-                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6">
-                        {/* Left Side: Text + list + button */}
-                        <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col">
-                            <h2 className="text-[#000000] tracking-heading text-[20px] font-medium md:text-[32px] lg:text-[50px] leading-tight whitespace-nowrap">
-                                Accelera <br />
-                                Your AI Copilot
-                            </h2>
-                            <p className="pb-4 md:pb-6 tracking-para text-[#333333] text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] leading-tight mt-[30px] lg:mt-[60px]">
-                                Work faster and decide smarter with AI embedded across the suite.
-                            </p>
-                            <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-fluid-small tracking-heading leading-tight">
-                                <li><b>Natural‑language actions:</b> Ask, "Show last month's receivables by region" and get the answer, fast.</li>
-                                <li><b>Automations:</b> Generate e‑invoices, match POs, trigger approvals and alerts.</li>
-                                <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
-                                <li><b>Assistive UX:</b> Contextual help, data enrichment and guided workflows.</li>
-                            </ul>
-                            <button
-                                className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px] tracking-para lg:mt-[60px]"
-                                style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
-                            >
-                                See Accelera in a 5‑Minute Demo
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-                                    <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                        </FadeUp>
-
-                        {/* Right Side: Image/placeholder */}
-                        <div className="flex items-start justify-start">
-                            <div className="bg-[#D9D9D9] h-[436px] md:h-[386px] lg:h-[547px] w-full"></div>
+                            {/* Right Side: Image/placeholder */}
+                            <FadeUp className="p-6 md:p-8 flex items-center justify-center">
+                                <div className="bg-[#D9D9D9] w-full h-[380px] md:h-[420px]"></div>
+                            </FadeUp>
                         </div>
                     </div>
 
-                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-center pb-[36px]  md:pb-[200px] lg:pb-[300px]">
+
+
+                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch pb-[36px] md:pb-[200px] lg:pb-[300px]">
                         {/* Left Side: Image (Desktop) */}
-                        <div className="hidden lg:flex flex-col items-start justify-center">
-                            <h2 className="text-black hidden lg:block tracking-para text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap mb-6">
+                        <div className="hidden lg:flex flex-col items-start justify-between p-6 md:p-8">
+                            <h2 className="text-black tracking-para text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight whitespace-nowrap mb-6">
                                 Compliance & Connectivity
                             </h2>
-                            <div className="bg-[#D9D9D9] h-[436px] md:h-[386px] w-full"></div>
+                            <div className="bg-[#D9D9D9] w-full h-full"></div>
                         </div>
 
                         {/* Right Side: Text + List + Button */}
-                        <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col items-start text-center">
+                        <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col justify-between p-6 md:p-8">
+                            {/* Heading (mobile only) */}
                             <h2 className="text-black lg:hidden tracking-para text-[20px] font-medium md:text-[24px] lg:text-[30px] xl:text-[48px] leading-tight whitespace-nowrap mb-6">
                                 Compliance & Connectivity
                             </h2>
-                            <ul className="list-disc space-y-4 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
-                                <li>ZATCA Phase II: Generate compliant e‑invoices at scale; integrate with KSA tax authority.</li>
-                                <li>PEPPOL: Cross‑border e‑invoicing via standardized network.</li>
-                                <li>Open integrations: Connect any ERP, POS or homegrown system through APIs and adapters.</li>
-                            </ul>
+
+                            <div>
+                                <ul className="list-disc space-y-4 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
+                                    <li>
+                                        ZATCA Phase II: Generate compliant e-invoices at scale; integrate with KSA tax authority.
+                                    </li>
+                                    <li>PEPPOL: Cross-border e-invoicing via standardized network.</li>
+                                    <li>
+                                        Open integrations: Connect any ERP, POS or homegrown system through APIs and adapters.
+                                    </li>
+                                </ul>
+                            </div>
+
                             <button
                                 className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
-                                style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
+                                style={{ background: "linear-gradient(90deg, #194BED 0%, #29266E 100%)" }}
                             >
                                 Talk to a Compliance Expert
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
-                                    <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    className="text-white"
+                                >
+                                    <path
+                                        d="M9 6l6 6-6 6"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
                                 </svg>
                             </button>
                         </FadeUp>
@@ -852,10 +1024,10 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             </div>
 
             {/* Outcomes and The Impact */}
-            <div className="md:mx-8">
+            <div className="md:mx-8" >
                 <div className="relative md:-top-[150px] lg:-top-[200px] max-w-[1151px] pb-8 mx-auto md:border md:rounded-[40px] bg-white min-h-[400px]">
                     <div>
-                        <h2 className="text-fluid-h2 font-medium text-center mt-8 tracking-heading leading-tight">Outcomes and The Impact</h2>
+                        <h2 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium text-center mt-8 tracking-heading leading-tight">Outcomes and The Impact</h2>
                     </div>
                     <div className="mt-[73px] grid grid-cols-1 md:grid-cols-3 gap-10">
                         {icon.map((icon, index) => (
@@ -886,11 +1058,11 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div >
 
             {/* Testimonials Section */}
-            <div className="max-w-[1280px] mx-auto px-0 md:px-8">
-                <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 px-6">Testimonials</h2>
+            <div className="max-w-[1280px] mx-auto px-0 md:px-8 mt-8 md:mt-0" >
+                <h2 className="text-[24px] md:text-[28px] lg:text-[38px] text-left mb-8 px-6">Testimonials</h2>
                 <Carousel items={testimonialCards} autoplay autoplayDelay={4000} />
                 <div className="flex items-center justify-center">
                     <button
@@ -903,21 +1075,21 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         </svg>
                     </button>
                 </div>
-            </div>
+            </div >
 
             {/* Our ValuesDrive Everything We Do */}
-            <div className="bg-[#F8F6FF] py-[50px] mt-8 md:mt-10 ">
+            <div className="bg-[#F8F6FF] py-[50px] mt-8 md:mt-10 " >
                 <div className="px-6 md:px-8 xl:px-0 xl:flex items-end xl:gap-20 max-w-[1280px] mx-auto">
                     <div>
-                        <h1 className="text-[20px] md:text-[32px] lg:text-[50px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
-                        <p className="text-fluid-body max-w-[662px] tracking-para leading-tight">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
+                        <h1 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
+                        <p className="text-fluid-body lg:text-[16px] max-w-[662px] tracking-para leading-tight">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
                     </div>
                     <div>
                         <button
                             className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
                             style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                         >
-                            Speak to a Reference Customer
+                            Book a Personalized Walkthrough
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
                                 <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
@@ -955,15 +1127,18 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Frequently Answered Questions */}
                 <div>
-                    <div className="px-0 md:px-8 max-w-[1280px] mx-auto py-6 xl:px-0">
-                        <div className="bg-white lg:flex lg:items-start lg:justify-between rounded-[20px] p-6 md:p-8 gap-12">
+                    <div className="px-0 md:px-8 max-w-[1280px] mx-auto py-6 xl:px-0 mt-8 md:mt-12 lg:mt-[100px]">
+                        <div className="bg-white rounded-[20px] p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 relative">
 
-                            {/* Heading */}
-                            <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left mb-8 lg:mb-0 pt-[30px] md:pt-[37px] lg:pt-[22px] tracking-heading leading-tight max-w-[505px] flex-shrink-0">
-                                Frequently Answered <br className="md:hidden" /> Questions
-                            </h2>
+                            {/* Left Section */}
+                            <div className="flex flex-col w-full lg:max-w-[505px]">
+                                {/* Heading */}
+                                <h2 className="text-[24px] md:text-[28px] lg:text-[38px] text-left mb-6 tracking-heading leading-tight">
+                                    Frequently Answered <br className="md:hidden" /> Questions
+                                </h2>
+                            </div>
 
-                            {/* Accordion FAQ Section */}
+                            {/* Accordion Section */}
                             <div className="mt-[20px] lg:mt-0 flex flex-col gap-8 w-full max-w-[800px]">
                                 <FadeUp>
                                     <Accordion type="single" collapsible className="w-full text-left">
@@ -985,8 +1160,21 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     </Accordion>
                                 </FadeUp>
                             </div>
+
+                            {/* ✅ Image fixed at the bottom inside the white card */}
+                            <div className="absolute bottom-0 hidden lg:-left-[200px] xl:-left-[400px] w-full lg:flex justify-center">
+                                <img
+                                    src="/images/home/clip.png"
+                                    alt="faq"
+                                    className="h-full lg:max-h-[181px] object-contain"
+                                />
+                            </div>
+
                         </div>
                     </div>
+
+
+
 
 
                 </div>
@@ -994,7 +1182,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 {/* Final Conversion Band */}
                 <div className="max-w-[1440px] mx-auto pb-6 md:pb-8 px-6">
                     <div className="flex flex-col items-center">
-                        <h2 className="text-fluid-h3 md:text-[32px] lg:text-[50px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
+                        <h2 className="text-[24px] md:text-[28px] lg:text-[38px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
                         <p className="text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
                     </div>
                     <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-4 lg:gap-8 py-6 md:py-8 lg:py-10">
@@ -1008,7 +1196,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 className="
         relative
         lg:w-[303px] w-[270px]
-        h-[46px] md:h-[59px]
+        h-[46px]
         flex items-center justify-center
         rounded-[5px]
         px-6
@@ -1044,8 +1232,8 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                     </div>
 
                 </div>
-            </div>
-        </main>
+            </div >
+        </main >
     );
 };
 
