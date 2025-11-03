@@ -49,15 +49,15 @@ export default function InfoCard({ icon, title, description, color, link }: Info
               <img
                 src={icon}
                 alt={title}
-                className="w-[40px] h-[40px] object-contain"
+                className="w-[30px] h-[30px] object-contain"
               />
             </div>
 
             <div className="flex-1 min-w-0 flex flex-col justify-center overflow-hidden">
-              <h3 className="text-[20px] lg:text-[24px] font-medium text-[#000000] leading-tight tracking-heading">
+              <h3 className="text-[20px] font-medium text-[#000000] leading-tight tracking-heading">
                 <T>{title}</T>
               </h3>
-              <p className="text-[#333333] text-[16px] lg:text-[18px] leading-tight mt-1 tracking-para line-clamp-2">
+              <p className="text-[#333333] text-[16px] leading-tight mt-1 tracking-para line-clamp-2">
                 <T>{description}</T>
               </p>
             </div>

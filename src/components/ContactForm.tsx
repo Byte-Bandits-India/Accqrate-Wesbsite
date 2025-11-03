@@ -88,7 +88,7 @@ const ContactFormPage = () => {
 
         {/* ✅ Left Section - Info */}
         <div className="w-full lg:w-1/2 text-left">
-          <h2 className="text-[26px] md:text-[36px] lg:text-[50px] font-medium">Get In Touch</h2>
+          <h2 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium">Get In Touch</h2>
           <div className="w-[100px] md:w-[156px] h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[40px]"></div>
           <p className="text-[#000000] text-fluid-body mb-8 max-w-[556px]">
             {content.description}

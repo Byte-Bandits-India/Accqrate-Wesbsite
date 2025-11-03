@@ -1,11 +1,10 @@
 "use client";
 
 import * as React from "react";
-import FadeUp from "../ui/FadeUp"
+import FadeUp from "@/components/ui/FadeUp";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
-import { ChevronDown } from "lucide-react";
-
-import { cn } from "../../lib/utils";
+import { Plus, Minus } from "lucide-react"; // ✅ use lucide-react icons
+import { cn } from "@/lib/utils";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -25,21 +24,39 @@ const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
+  <AccordionPrimitive.Header className="flex w-full">
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-3 text-sm font-normal transition-all hover:underline text-left [&[data-state=open]>svg]:rotate-180",
+        "group flex flex-1 items-center justify-between py-3 text-sm font-normal transition-all text-left hover:no-underline",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-6 w-6 shrink-0 text-[#979797] transition-transform duration-200" />
+
+      {/* Morphing + / - Animation */}
+      <span className="relative ml-3 flex items-center justify-center w-6 h-6">
+        {/* Horizontal line (stays visible) */}
+        <span
+          className={cn(
+            "absolute block w-4 h-[2px] bg-[#333333] rounded transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+            "group-data-[state=open]:rotate-0 rotate-0"
+          )}
+        ></span>
+
+        {/* Vertical line (rotates and fades out to form minus) */}
+        <span
+          className={cn(
+            "absolute block h-4 w-[2px] bg-[#333333] rounded transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+            "group-data-[state=open]:rotate-90 group-data-[state=open]:opacity-0 rotate-0 opacity-100"
+          )}
+        ></span>
+      </span>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
-AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
+
 
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
@@ -55,7 +72,7 @@ const AccordionContent = React.forwardRef<
 ));
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
 
-// ✅ Define props for AccordionCard
+// ✅ AccordionCard
 interface AccordionCardProps {
   value: string;
   icon: string;
@@ -73,11 +90,14 @@ function AccordionCard({ value, icon, title, content }: AccordionCardProps) {
       >
         <AccordionTrigger className="flex justify-between items-start w-full hover:no-underline">
           <div className="flex flex-col items-start gap-[20px] px-4 sm:px-2">
-            <img src={icon} alt={`${title} Icon`} className="w-[40px] h-[40px]" />
-            <span className="tracking-heading text-[#333333] text-left font-medium  text-[18px]">
+            <img
+              src={icon}
+              alt={`${title} Icon`}
+              className="w-[40px] h-[40px]"
+            />
+            <span className="tracking-heading text-[#333333] text-left font-medium text-[18px]">
               {title}
             </span>
-
           </div>
         </AccordionTrigger>
 

@@ -73,7 +73,7 @@ const CarouselCardComponent: React.FC<CarouselCardProps> = ({
                 </div>
             </div>
 
-            <div className="flex flex-col justify-center items-start p-6 md:pl-8 lg:px-[60px] relative z-20">
+            <div className="flex flex-col justify-center items-start p-6 md:pl-8 lg:px-[32px] relative z-20">
                 {/* Quote text */}
                 <p className="text-[#000000] text-fluid-small md:text-[18px] leading-tight tracking-heading drop-shadow-md font-bold mb-0">
                     &quot;{quote}&quot;
@@ -538,7 +538,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                                 <p className="border-t-2 border-[#FFFFFF] w-[50px] mt-8 md:mt-10 lg:mt-[50px]"></p>
 
-                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[50px] tracking-para leading-tight text-left font-normal">
+                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[50px] tracking-para leading-[30px] text-left font-normal">
                                     <T>{countryContent.heroDescription}</T>
                                 </p>
 
@@ -579,23 +579,6 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 ))}
                                 <div className="h-[50px] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
                                     <h3 className="text-[14px] tracking-heading leading-tight text-nowrap"><T>Explore All Products ... </T></h3>
-                                    <div className="flex-shrink-0 ml-6">
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            className="text-[#333333]"
-                                        >
-                                            <path
-                                                d="m9 6 6 6-6 6"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -617,23 +600,6 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 className="cursor-pointer flex items-center justify-between w-full h-[50px] mx-auto overflow-hidden shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5 bg-[#D6E0FF]"
                             >
                                 <h3 className="text-[14px] font-medium"><T>Explore All Products...</T></h3>
-                                <div className="flex-shrink-0 ml-2">
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        className="text-[#333333]"
-                                    >
-                                        <path
-                                            d="m9 6 6 6-6 6"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -664,7 +630,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                             {/* Right Column */}
                             <div className="flex flex-col justify-start lg:justify-center">
-                                <p className="text-fluid-small font-normal mt-[20px] md:mt-[38px] tracking-para leading-tight lg:mt-0">
+                                <p className="text-fluid-small font-normal mt-[20px] md:mt-[38px] leading-[24px] lg:mt-0">
                                     <T>Unlock a world of efficiency with our extensive suite of business modules. Simplify and enhance any task with seamless, one-click installations. Experience unparalleled speed, integration, and smart AI technology, enabling operations faster than a blink. Empower your team with the right tools for every job, all within a lightning-fast UI</T>
                                 </p>
                                 <button
@@ -829,7 +795,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                             The Full-Suite ERP
                                         </span>
                                     </div>
-                                    <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-fluid-body mt-[30px]">
+                                    <p className="pb-6 md:pb-[32px] tracking-para leading-[24px] text-[#333333] text-fluid-body mt-[30px]">
                                         Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
                                     </p>
                                 </div>
@@ -844,7 +810,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         <div className="flex flex-col gap-6 xl:h-full">
                             <FadeUp className="bg-[#FFFFFF] font-inter rounded-xl md:rounded-2xl p-6 flex-1">
                                 <h2 className="text-fluid-body font-medium tracking-heading">Modules included:</h2>
-                                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-relaxed list-disc pl-5">
+                                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 mt-8 text-fluid-small lg:text-[16px] text-nowrap tracking-para leading-[26px] list-disc pl-5">
                                     <li>POS</li>
                                     <li>Sales</li>
                                     <li>Purchase</li>
@@ -924,7 +890,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                         Work faster and decide smarter with AI embedded across the suite.
                                     </p>
 
-                                    <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-[14px] md:text-[16px] tracking-heading leading-tight">
+                                    <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-[14px] md:text-[16px] tracking-heading leading-[24px]">
                                         <li><b>Natural-language actions:</b> Ask, "Show last month's receivables by region" and get the answer, fast.</li>
                                         <li><b>Automations:</b> Generate e-invoices, match POs, trigger approvals and alerts.</li>
                                         <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
@@ -981,7 +947,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             </h2>
 
                             <div>
-                                <ul className="list-disc space-y-4 mt-[15px] text-fluid-small text-left pl-5 leading-tight tracking-para">
+                                <ul className="list-disc space-y-4 mt-[15px] text-fluid-small text-left pl-5 leading-[24px] tracking-para">
                                     <li>
                                         ZATCA Phase II: Generate compliant e-invoices at scale; integrate with KSA tax authority.
                                     </li>
@@ -1079,23 +1045,38 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
             {/* Our ValuesDrive Everything We Do */}
             <div className="bg-[#F8F6FF] py-[50px] mt-8 md:mt-10 " >
-                <div className="px-6 md:px-8 xl:px-0 xl:flex items-end xl:gap-20 max-w-[1280px] mx-auto">
-                    <div>
-                        <h1 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">Our Values <br />Drive Everything We Do</h1>
-                        <p className="text-fluid-body lg:text-[16px] max-w-[662px] tracking-para leading-tight">Built on trust, innovation and excellence, we deliver measurable results that transform business and create last impact. </p>
+                <div className="px-6 md:px-8 xl:px-0 max-w-[1280px] mx-auto xl:flex items-end justify-between gap-20">
+                    {/* Left Text */}
+                    <div className="flex-1">
+                        <h1 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">
+                            Our Values <br />Drive Everything We Do
+                        </h1>
+                        <p className="text-fluid-body lg:text-[16px] max-w-[662px] tracking-para leading-tight">
+                            Built on trust, innovation and excellence, we deliver measurable results that transform business and create lasting impact.
+                        </p>
                     </div>
-                    <div>
+
+                    {/* Right Button */}
+                    <div className="mt-[32px] xl:mt-0 flex justify-start xl:justify-end">
                         <button
-                            className="h-[40px] md:h-[46px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px]"
+                            className="h-[40px] md:h-[46px] w-full xl:w-auto max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px]"
                             style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                         >
                             Book a Personalized Walkthrough
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="text-white">
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                className="text-white"
+                            >
                                 <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                         </button>
                     </div>
                 </div>
+
 
                 {/* CarouselCard */}
                 <div className="solutions-carousel relative max-w-[1280px] mx-auto pl-6 md:pl-8 xl:pl-0 mt-[40px] md:mt-[38px] lg:mt-[70px]">
@@ -1114,7 +1095,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                         <h3 className="font-medium leading-tight tracking-heading text-fluid-body md:text-[20px] text-black">
                                             {item.title}
                                         </h3>
-                                        <p className="text-fluid-small mt-2 md:mt-3 tracking-para leading-tight text-black">
+                                        <p className="text-fluid-small lg:text-[16px] mt-2 md:mt-3 tracking-para leading-tight text-black">
                                             {item.desc}
                                         </p>
                                     </div>
@@ -1148,11 +1129,11 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                                 value={`faq-${index}`}
                                                 className="border-b border-[#BDBDBD] py-4"
                                             >
-                                                <AccordionTrigger className="text-[16px] md:text-[18px] lg:text-[20px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight text-left">
+                                                <AccordionTrigger className="text-[16px] md:text-[18px] font-medium text-gray-800 hover:no-underline tracking-heading leading-tight text-left">
                                                     {item.question}
                                                 </AccordionTrigger>
 
-                                                <AccordionContent className="text-[14px] md:text-[16px] lg:text-[18px] font-light text-gray-600 tracking-para leading-relaxed mt-2">
+                                                <AccordionContent className="text-[14px] md:text-[16px] font-light text-gray-600 tracking-para leading-relaxed mt-2">
                                                     {item.answer}
                                                 </AccordionContent>
                                             </AccordionItem>
@@ -1180,7 +1161,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 </div>
 
                 {/* Final Conversion Band */}
-                <div className="max-w-[1440px] mx-auto pb-6 md:pb-8 px-6">
+                <div className="max-w-[1440px] mx-auto pb-6 md:pb-8 px-6 font-inter">
                     <div className="flex flex-col items-center">
                         <h2 className="text-[24px] md:text-[28px] lg:text-[38px] text-left py-[20px] md:py-[37px] tracking-heading leading-tight">Final Conversion Band</h2>
                         <p className="text-fluid-body max-w-[315px] md:max-w-[1440px] tracking-para text-center leading-tight">Run compliant, AI‑powered operations with Accqrate.</p>
