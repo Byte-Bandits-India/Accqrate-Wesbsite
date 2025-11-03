@@ -60,18 +60,18 @@ export const CountryFAQ = () => {
       <div className="min-h-screen bg-[#F8F6FF] py-12 font-inter">
         <div className="max-w-[1280px] px-6 md:px-8 xl:px-0 mx-auto flex flex-col relative mt-10 md:mt-[72px]">
           {/* Heading Section */}
-          <h2 className="text-fluid-h2 lg:text-[50px] font-semibold text-foreground leading-tight">
+          <h2 className="text-fluid-h2 lg:text-[38px] font-semibold text-foreground leading-tight">
             Frequently Asked Questions
           </h2>
-          <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[45px]"></div>
+          <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[25px]"></div>
 
-          <p className="text-foreground text-fluid-body font-medium">
+          <p className=" text-fluid-body font-medium">
             Ask Everything You Need To Know About Our Solutions And Services
           </p>
 
           {/* FAQ Section Container */}
           <div>
-            <div className="flex flex-col lg:flex-row gap-12 w-full mt-10 md:mt-12 lg:mt-[70px] xl:mt-[117px]">
+            <div className="flex flex-col lg:flex-row gap-12 w-full mt-8 md:mt-10 lg:mt-[40px] xl:mt-[80px]">
               {/* Right (Scrollable FAQs) */}
               <div className="overflow-y-auto pr-2">
                 {faqs.length > 0 ? (
