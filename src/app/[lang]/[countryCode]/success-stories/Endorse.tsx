@@ -75,7 +75,7 @@ export default function EndorsedTestimonials() {
       <div className="mx-auto px-6 md:px-8 max-w-[1236px] pt-8 md:pt-12 lg:pt-[90px]">
         {/* Header */}
         <FadeUp className="text-left">
-          <h2 className="text-fluid-h1 lg:text-[50px] leading-tight text-left font-medium text-[#000000]">
+          <h2 className="text-fluid-h1 lg:text-[38px] leading-tight text-left font-medium text-[#000000]">
             Endorsed by industry Leaders
           </h2>
           <p className="text-[#000000] font-medium mt-6 md:mt-8 text-fluid-body max-w-[777px]">
@@ -147,7 +147,7 @@ export default function EndorsedTestimonials() {
                 />
               </div>
 
-              <h3 className="text-fluid-h3 lg:text-[50px] font-medium text-[#000000] mb-4">
+              <h3 className="text-fluid-h3 lg:text-[38px] font-medium text-[#000000] mb-4">
                 {active.title}
               </h3>
               <p className="text-[#000000] text-fluid-small leading-relaxed mb-10">

@@ -100,6 +100,23 @@ export default function ZatcaSection() {
             className="lg:h-[100px] lg:w-fit md:h-[150px] xl:h-[160px] md:hidden lg:block"
           />
         </div>
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `linear-gradient(#fff 1px, transparent 1px),
+                      linear-gradient(90deg, #fff 1px, transparent 1px)`,
+            backgroundSize: '50px 50px'
+          }} />
+        </div>
+
+        {/* Geometric Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 left-10 w-20 h-20 border-2 border-white rounded-lg rotate-45" />
+          <div className="absolute bottom-20 right-20 w-16 h-16 border border-white rounded-full" />
+          <div className="absolute top-40 right-40 w-12 h-12 border-2 border-white rotate-12" />
+        </div>
+
       </div>
 
       {/* ✅ Modal rendered client-side only */}

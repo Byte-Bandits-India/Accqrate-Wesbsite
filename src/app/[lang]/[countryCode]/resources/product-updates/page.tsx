@@ -47,15 +47,15 @@ export default function ProductUpdates() {
   return (
     <>
       {/* 🔹 TOP SECTION WITH BACKGROUND */}
-      <section className="bg-[#f7f6fb] py-12 md:py-16">
+      <section className="bg-gradient-to-t from-[#EFF3FF] to-transparent py-12 md:py-16">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 text-left">
-          <h1 className="text-[30px] sm:text-[38px] md:text-[50px] font-medium  leading-tight">
+          <h1 className="text-[30px] sm:text-[38px] font-medium  leading-tight">
             <T>Accqrate Product Updates</T>
           </h1>
 
           <div className="h-[3px] w-[90px] bg-blue-600 my-4 "></div>
 
-          <p className="text-gray-700 text-base sm:text-lg md:text-[20px] md:mt-10 md:mb-10 mb-6 max-w-[800px]">
+          <p className="text-gray-700 text-fluid-body md:mt-10 md:mb-10 mb-6 max-w-[800px]">
             <T>{getCountryText()}</T>
           </p>
 
@@ -64,12 +64,12 @@ export default function ProductUpdates() {
             rightArrowIcon
             label={<T>Subscribe Now</T>}
             onClick={() => router.push(`/${lang}/${countryCode}/contact-us`)}
-            className="bg-[#F05A28] hover:bg-[#e14f28] text-white md:text-[20px] font-semibold px-6 py-4 rounded-full shadow-sm transition-all duration-200"
+            className="bg-[#F05A28] hover:bg-[#e14f28] text-white text-fluid-body tracking-para font-semibold px-6 py-4 rounded-full shadow-sm transition-all duration-200"
           />
         </div>
       </section>
 
-      
+
       <section className="bg-white py-10 md:py-14">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12 mb-10">
           {['MY', 'MU'].includes(storedCountry?.AlphaCode || '') ? (

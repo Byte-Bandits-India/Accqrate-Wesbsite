@@ -57,21 +57,26 @@ export const CountryFAQ = () => {
 
   return (
     <div>
-      <div className="min-h-screen bg-[#F8F6FF] py-12 font-inter">
-        <div className="max-w-[1280px] px-6 md:px-8 xl:px-0 mx-auto flex flex-col relative mt-10 md:mt-[72px]">
-          {/* Heading Section */}
-          <h2 className="text-fluid-h2 lg:text-[38px] font-semibold text-foreground leading-tight">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[25px]"></div>
+      <div className="font-inter">
+        <div className="bg-gradient-to-t from-[#EFF3FF] to-transparent max-h-[290px] py-12">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
+            {/* Heading Section */}
+            <h2 className="text-fluid-h2 lg:text-[38px] font-semibold text-foreground leading-tight">
+              Frequently Asked Questions
+            </h2>
+            <div className="w-20 h-[2px] bg-[#194BED] my-6 md:my-8 lg:my-[45px]"></div>
 
-          <p className=" text-fluid-body font-medium">
-            Ask Everything You Need To Know About Our Solutions And Services
-          </p>
+            <p className=" text-fluid-body font-medium mb-6 md:mb-8 lg:mb-[60px]">
+              Ask Everything You Need To Know About Our Solutions And Services
+            </p>
+          </div>
+        </div>
 
+
+        <div className="max-w-[1280px] px-6 md:px-8 xl:px-0 mx-auto flex flex-col mt-6 md:mt-8 lg:mt-[60px]">
           {/* FAQ Section Container */}
           <div>
-            <div className="flex flex-col lg:flex-row gap-12 w-full mt-8 md:mt-10 lg:mt-[40px] xl:mt-[80px]">
+            <div className="flex flex-col lg:flex-row gap-12 w-full">
               {/* Right (Scrollable FAQs) */}
               <div className="overflow-y-auto pr-2">
                 {faqs.length > 0 ? (
@@ -82,10 +87,10 @@ export const CountryFAQ = () => {
                         value={`faq-${index}`}
                         className="border-b border-border py-4"
                       >
-                        <AccordionTrigger className="text-[18px] md:text-[20px] font-semibold hover:no-underline leading-tight text-left">
+                        <AccordionTrigger className="text-[16px] md:text-[18px] font-semibold hover:no-underline leading-tight text-left">
                           {faq.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-[14px] md:text-[18px] font-normal text-[#262626] leading-tight mt-2">
+                        <AccordionContent className="text-[14px] md:text-[16px] font-normal text-[#262626] leading-tight mt-2">
                           {faq.answer}
                         </AccordionContent>
                       </AccordionItem>

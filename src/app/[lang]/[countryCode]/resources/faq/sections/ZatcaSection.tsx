@@ -68,6 +68,32 @@ export default function ZatcaSection() {
         </div>
       </div>
 
+
+      {/* Shiny Particle Field */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 25 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${4 + Math.random() * 3}s`,
+              width: `${2 + Math.random() * 3}px`,
+              height: `${2 + Math.random() * 3}px`,
+              background: `radial-gradient(circle, 
+          rgba(255,255,255,0.8) 0%, 
+          rgba(255,255,255,0.4) 30%, 
+          rgba(255,255,255,0.2) 70%, 
+          transparent 100%)`,
+              boxShadow: `0 0 ${8 + Math.random() * 8}px rgba(255,255,255,0.6)`,
+              filter: `blur(${Math.random() * 0.5}px)`
+            }}
+          />
+        ))}
+      </div>
+
       {/* ✅ Modal rendered client-side only */}
       {isModalOpen && (
         <ContactModal open={isModalOpen} onClose={() => setModalOpen(false)} />

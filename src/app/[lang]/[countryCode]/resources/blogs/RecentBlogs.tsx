@@ -23,7 +23,7 @@ export default function RecentBlogPosts() {
   const BlogCard = ({ post, isLink = false }: { post: typeof blogPosts[0], isLink?: boolean }) => (
     <div className="block">
       <div className="rounded-xl overflow-hidden duration-300 mb-[50px] md:mb-0">
-        <FadeUp className="relative w-full rounded-xl h-[188px] xl:h-[250px]">
+        <FadeUp className="relative w-full shadow-[0_4px_10px_rgba(0,0,0,0.25)] rounded-xl h-[188px] xl:h-[250px]">
           <Image
             src={post.image}
             alt={post.title}
@@ -33,7 +33,7 @@ export default function RecentBlogPosts() {
           />
         </FadeUp>
         <div className="p-4">
-          <FadeUp className="font-semibold text-[18px] lg:h-[45px] lg:mt-10 text-gray-900 line-clamp-2 leading-tight mb-[10px] ">
+          <FadeUp className="font-semibold text-[18px] lg:h-[45px] mt-[20px] text-gray-900 line-clamp-2 leading-tight mb-[10px] ">
             {post.title}
           </FadeUp>
           <FadeUp className="text-gray-600 text-[16px] line-clamp-3 leading-tight">

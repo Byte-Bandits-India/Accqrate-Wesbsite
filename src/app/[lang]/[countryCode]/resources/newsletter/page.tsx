@@ -6,12 +6,12 @@ import ZatcaSection from "../faq/sections/ZatcaSection";
 const NewsLetter: React.FC = () => {
   return (
     <>
-      <section className="bg-[#f7f6fb] py-16 px-6 md:px-12">
+      <section className="bg-gradient-to-t from-[#EFF3FF] to-transparent py-16 px-6 md:px-12">
         <div className="max-w-[1200px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* LEFT CONTENT */}
           <div className="flex flex-col justify-center max-w-[560px] w-full">
             <h1 className="text-2xl sm:text-3xl md:text-[50px] font-semibold text-gray-900 leading-tight md:mb-6">
-              Trusted Feedback That 
+              Trusted Feedback That
             </h1>
             <h1 className="text-2xl sm:text-3xl md:text-[50px] mb-4 font-semibold text-gray-900 leading-tight md:mb-10">Drives Accqrate</h1>
 
