@@ -20,20 +20,20 @@ export default function IndustriesSection() {
           {/* Header Section */}
           <div className="text-center mb-10">
             <p className="text-fluid-body text-[#F05A28] mb-8 md:mb-10 lg:mb-12 ">Our Success Stories</p>
-            <FadeUp className="text-fluid-h1 lg:text-[38px] font-medium text-gray-900 leading-tight">
-              Digitalising Businesses Across <br className="hidden md:block" /> Industries
+            <FadeUp className="text-fluid-h2 lg:text-[38px] font-medium text-gray-900 leading-tight">
+              Digitalising Businesses Across Industries
             </FadeUp>
 
-            <div className="max-w-[1074px] mx-auto  ">
+             <div className="max-w-[1074px] mx-auto  ">
+              <FadeUp className="text-fluid-body md:text-[18px] font-medium text-[#194BED] mt-6 md:mt-8 ">
+                Explore How We've Digitized And Empowered Businesses Across Various Industries
+              </FadeUp>
 
-
-              <h2 className="text-[#333333] text-fluid-body lg:text-[24px] leading-[40px] max-w-[970px] mx-auto mt-6 md:mt-8">
-                <span className=" text-[#194BED]">
-                  Explore How We've Digitized And Empowered Businesses Across Various Industries
-                </span> At Accqrate, we've had the privilege of working with clients from across
+              <FadeUp className="text-[#333333] text-fluid-small mt-6 md:mt-8">
+                At Accqrate, we've had the privilege of working with clients from across
                 25+ sectors & industries, delivering ERP & E-invoicing solutions that
                 drive success and Compliance. Here are some of our notable success stories.
-              </h2>
+              </FadeUp>
             </div>
 
             {/* CTA Button */}
@@ -103,3 +103,4 @@ export default function IndustriesSection() {
   );
 
 }
+
