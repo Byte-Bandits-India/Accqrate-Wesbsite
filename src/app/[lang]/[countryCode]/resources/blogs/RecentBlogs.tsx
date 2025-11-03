@@ -33,10 +33,10 @@ export default function RecentBlogPosts() {
           />
         </FadeUp>
         <div className="p-4">
-          <FadeUp className="font-semibold text-[16px] md:text-[18px] lg:h-[45px] lg:mt-10 text-gray-900 line-clamp-2 leading-tight mb-[10px] ">
+          <FadeUp className="font-semibold text-[18px] lg:h-[45px] lg:mt-10 text-gray-900 line-clamp-2 leading-tight mb-[10px] ">
             {post.title}
           </FadeUp>
-          <FadeUp className="text-gray-600 text-[14px] md:text-[16px] line-clamp-3 leading-tight">
+          <FadeUp className="text-gray-600 text-[16px] line-clamp-3 leading-tight">
             {post.desc}
           </FadeUp>
         </div>

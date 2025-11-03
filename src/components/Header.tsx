@@ -347,7 +347,7 @@ const menus = [
         images: "/images/header/line/pro3.svg",
         xl: "/images/header/navbar/image/Community solution.webp",
         subItems: [
-         
+
           {
             title: "Accqrate Sprouts",
             description: "Empowering young professionals & Students with tools to scale smart and grow faster.",
@@ -360,7 +360,7 @@ const menus = [
             img: "/images/header/navbar/fill/become-partner.webp",
             href: "/community/become-partner",
           },
-          
+
           {
             title: "Community Forum",
             description: "Where Accqrate users learn, share, and solve together.",
@@ -1169,6 +1169,15 @@ const Header: React.FC = () => {
           <div className="xl:hidden fixed top-[60px] md:top-[80px] left-0 right-0 bottom-0 bg-white z-50 overflow-y-auto">
             <div className="p-6 md:px-[32px] pb-32">
               <Accordion type="single" collapsible className="w-full">
+                {/* Contact Sales link */}
+                <Link
+                  href={createHref("/")}
+                  className="block w-full text-[17px] font-normal py-[16px] text-[#333333]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  <T>Home</T>
+                </Link>
+                <hr />
                 {menus.map(({ id, title, sections }) => (
                   <AccordionItem key={id} value={id}>
                     <AccordionTrigger className="text-[#333333] font-normal py-4 text-[17px] hover:text-[#534ED3]">

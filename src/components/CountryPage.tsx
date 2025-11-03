@@ -829,7 +829,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                             The Full-Suite ERP
                                         </span>
                                     </div>
-                                    <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-[14px] md:text-[16px] xl:text-[18px] mt-[30px]">
+                                    <p className="pb-6 md:pb-[32px] tracking-para leading-tight text-[#333333] text-fluid-body mt-[30px]">
                                         Replace fragmented tools and legacy monoliths with a modern ERP suite designed for speed and adoption.
                                     </p>
                                 </div>
@@ -885,7 +885,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                     <div className="px-6 md:px-8 mt-[32px]">
                         <button
-                            className="h-[46px] md:h-[55px] max-w-[481px] w-full text-center flex items-center gap-4 justify-center px-4 rounded-[100px] text-white text-[12px] md:text-[18px] mt-[32px] bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"                        >
+                            className="h-[46px] md:h-[55px] max-w-[481px] w-full text-center flex items-center gap-4 justify-center px-4 rounded-[100px] text-white text-[14px] md:text-[18px] mt-[32px] bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"                        >
                             Request an ERP Migration Assessment
                             <svg
                                 width="20"
