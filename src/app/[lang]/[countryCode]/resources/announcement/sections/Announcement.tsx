@@ -20,12 +20,11 @@ const Index = () => {
       <main className="container mx-auto pt-12 md:py-20">
         {/* Hero Section */}
         <section className="max-w-[1280px] px-6 md:px-8 xl:px-0 mx-auto mb-8 md:mb-10 lg:mb-[62px]">
-          <h1 className="text-fluid-h1 lg:text-[58px] text-black font-semibold mb-6 max-lg:mb-8 lg:mb-[56px] leading-tight">
-            We Will Keep You Updated At All{" "}
-            <br className="hidden lg:block" /> Times
+          <h1 className="text-fluid-h3 lg:text-[38px] text-black font-semibold mb-4 max-lg:mb-8 lg:mb-[26px] leading-tight">
+            We Will Keep You Updated At All Times
           </h1>
-          <div className="w-[156px] h-[2px] bg-[#194BED] mb-6 md:mb-8" />
-          <p className="text-fluid-body text-foreground mb-8 md:mb-[43px] leading-relaxed">
+          <div className="w-[126px] h-[2px] bg-[#194BED] mb-6 md:mb-8" />
+          <p className="text-fluid-body max-w-[1100px] font-medium  mb-8 md:mb-[43px] leading-tight">
             Stay Updated With The Latest News And Updates From ZATCA Or LHDN Or
             MRA Or OTA Or NBR Or ISTD, And Accurate E-Invoicing Enhancements For
             Seamless Business Operations.
@@ -34,7 +33,7 @@ const Index = () => {
           {/* ✅ Dynamic route link */}
           <Link
             href={`/${lang}/${countryCode}/contact-us`}
-            className="inline-flex items-center text-white border font-semibold px-6 py-3 rounded-full bg-gradient-to-r from-[#29266E] to-[#194BED]"
+            className="inline-flex items-center text-white border font-medium px-6 py-3 rounded-full bg-gradient-to-r from-[#29266E] to-[#194BED]"
           >
             Subscribe Now <ArrowRight className="ml-2 h-5 w-5" />
           </Link>
