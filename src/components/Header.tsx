@@ -152,7 +152,7 @@ const menus = [
             title: "Accqrate E-Invoicing",
             description: "Effortless invoicing and compliance, ZATCA Phase 2 approved and enterprise-ready.",
             img: "/images/header/navbar/fill/einvoicing.webp",
-            href: "/e-invoicing/accqrate",
+            href: "/e-invocing/",
           },
           {
             title: "E-Invoicing Integration",
