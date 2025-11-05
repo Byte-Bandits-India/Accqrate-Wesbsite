@@ -525,8 +525,8 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         backgroundImage: `url('${bgImage}')`,
                     }}
                 >
-                    <div className="max-w-[1280px] h-[100vh] 2xl:h-fit mx-auto px-6 md:px-8 xl:px-6">
-                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px] lg:pt-[64px] 2xl:pt-[95px]">
+                    <div className="max-w-[1280px] lg:h-[100dvh] 2xl:h-fit mx-auto px-6 md:px-8 xl:px-6 overflow-hidden">
+                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px] lg:pt-[64px] 2xl:pt-[95px] h-full overflow-y-auto">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
                                 <h1 className="text-[24px] md:text-[28px] lg:text-[38px] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
@@ -542,7 +542,6 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     <T>{countryContent.heroDescription}</T>
                                 </p>
 
-
                                 <Link
                                     href={("/book-demo")}
                                     className="inline-flex items-center justify-center gap-2 text-white h-[42px] lg:h-[57px] w-[190px] my-8 md:my-12 lg:my-[44px] xl:mt-[50px] 2xl:my-[66px] font-normal lg:w-[221px] rounded-[80px] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
@@ -550,7 +549,6 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     <T>Meet an Expert</T>
                                     <Arrow45 />
                                 </Link>
-
 
                                 <h2 className="mt-6 md:mt-8 text-fluid-body font-medium text-[#ffffff] hidden tracking-heading lg:flex lg:items-center lg:flex-wrap gap-6">
                                     {countryContent.heroTagline.split(".").filter(Boolean).map((part, index, arr) => (
@@ -566,8 +564,8 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                         </React.Fragment>
                                     ))}
                                 </h2>
-                                <div className="p-6 md:p-8 text-left  max-w-full md:max-w-[700px] mx-auto md:mx-0">
-
+                                <div className="p-6 md:p-8 text-left max-w-full md:max-w-[700px] mx-auto md:mx-0">
+                                    {/* Additional content can go here */}
                                 </div>
                             </div>
 
