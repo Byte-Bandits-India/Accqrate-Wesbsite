@@ -94,68 +94,75 @@ const software = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <div className="relative overflow-hidden h-[74px] bg-gradient-to-t from-[#1C2041] to-[#194BED]">
-                    {/* center wrapper */}
-                    <div className="absolute inset-0 flex items-center">
-                        {/* scroll track: contains two identical copies side-by-side */}
+            <div className="marquee-wrapper relative overflow-hidden h-[74px]">
+                {/* gradient background + shadow */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1C2041] to-[#194BED] shadow-[0_8px_30px_rgba(0,0,0,0.18)]" />
+
+                {/* center container (constrains content to 1280px) */}
+                <div className="relative z-10 flex items-center h-full">
+                    <div className="w-full max-w-[1280px] mx-auto relative overflow-hidden">
+
+                        {/* Track container (flex row contains two copies) */}
                         <div
-                            className="scroll-track flex"
-                            style={{ "--marquee-duration": "22s" } as React.CSSProperties}
+                            className="marquee-track flex items-center"
+                            style={{ ['--marquee-duration' as any]: '22s' }}
+                            aria-hidden="false"
                         >
                             {/* FIRST COPY */}
-                            <ul className="inline-flex items-center whitespace-nowrap gap-12 min-w-max px-6 text-fluid-small font-medium text-white">
-                                <li>Free Proof of Concept</li>
-                                <li>PDF/A3 with XML invoices</li>
-                                <li>Data Hosted in Saudi Cloud</li>
-                                <li>Ready for all Waves of ZATCA Phase 2</li>
-                                <li>Flexible Solution: Cloud or On-Premises</li>
-                            </ul>
+                            <div className="marquee-copy flex-none">
+                                <ul className="inline-flex items-center whitespace-nowrap gap-12 min-w-max px-6 text-fluid-small font-medium text-white pointer-events-none">
+                                    <li>Free Proof of Concept</li>
+                                    <li>PDF/A3 with XML invoices</li>
+                                    <li>Data Hosted in Saudi Cloud</li>
+                                    <li>Ready for all Waves of ZATCA Phase 2</li>
+                                    <li>Flexible Solution: Cloud or On-Premises</li>
+                                </ul>
+                            </div>
 
-                            {/* SECOND COPY (identical) */}
-                            <ul className="inline-flex items-center whitespace-nowrap gap-12 min-w-max px-6 text-fluid-small font-medium text-white">
-                                <li>Free Proof of Concept</li>
-                                <li>PDF/A3 with XML invoices</li>
-                                <li>Data Hosted in Saudi Cloud</li>
-                                <li>Ready for all Waves of ZATCA Phase 2</li>
-                                <li>Flexible Solution: Cloud or On-Premises</li>
-                            </ul>
+                            {/* SECOND COPY */}
+                            <div className="marquee-copy flex-none" aria-hidden="true">
+                                <ul className="inline-flex items-center whitespace-nowrap gap-12 min-w-max px-6 text-fluid-small font-medium text-white pointer-events-none">
+                                    <li>Free Proof of Concept</li>
+                                    <li>PDF/A3 with XML invoices</li>
+                                    <li>Data Hosted in Saudi Cloud</li>
+                                    <li>Ready for all Waves of ZATCA Phase 2</li>
+                                    <li>Flexible Solution: Cloud or On-Premises</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <style jsx>{`
-    .scroll-track {
-      /* ensure the track width is exactly the sum of both copies */
-      width: max-content;
-      /* animate from 0 to -50% (move by one copy width) */
+                <style jsx>{`
+    .marquee-track {
       animation: marquee var(--marquee-duration) linear infinite;
-    }
-
-    @keyframes marquee {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* optional: pause on hover */
-    .relative:hover .scroll-track {
-      animation-play-state: paused;
-    }
-
-    /* small tweak: prevent text selection while scrolling */
-    .scroll-track, .scroll-track * {
+      will-change: transform;
       user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none;
     }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); } /* moves by exactly one copy */
+    }
+
+    /* pause on hover / active (works on desktop hover and mobile press) */
+    .marquee-wrapper:hover .marquee-track,
+    .marquee-wrapper:active .marquee-track {
+      animation-play-state: paused;
+    }
+
+    /* accessibility: prefer-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none !important; transform: none !important; }
+    }
+
+    /* small safety: ensure copies don't shrink or wrap */
+    .marquee-copy { flex: 0 0 auto; display: flex; align-items: center; }
   `}</style>
-                </div>
-
-
             </div>
+
         </section>
     );
 };

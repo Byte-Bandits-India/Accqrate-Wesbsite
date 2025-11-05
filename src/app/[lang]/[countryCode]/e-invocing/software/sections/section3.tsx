@@ -61,26 +61,41 @@ const Section3 = () => {
                         />
                     </div>
 
-                    <div className="grid gap-8 md:gap-10 lg:gap-[60px] grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[60px] justify-items-center mt-8 md:mt-10 lg:mt-12">
                         {sections.map((item, i) => (
                             <div
                                 key={i}
-                                className="flex flex-col items-center text-center p-4 md:p-6 max-w-[400px]"
+                                className="
+        flex flex-col justify-center md:items-start text-left
+        bg-white rounded-[20px] border-[#5A6183] border-[0.1px]
+        shadow-[0_4px_20px_rgba(0,0,0,0.06)]
+        hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
+        transition-all duration-300
+        w-full max-w-[380px]
+        p-5 sm:p-6 md:p-8
+        h-auto min-h-[280px]
+      "
                             >
+                                {/* Image */}
                                 <img
                                     src={item.img}
                                     alt={item.title}
-                                    className="w-[70px] h-auto mb-4 md:mb-6"
+                                    className="w-[60px] sm:w-[70px] h-auto mb-4 sm:mb-5"
                                 />
-                                <h3 className="text-fluid-body text-[#1C2041] font-medium mb-2">
+
+                                {/* Title */}
+                                <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] text-[#1C2041] font-semibold mb-2 leading-tight">
                                     {item.title}
                                 </h3>
-                                <p className="text-fluid-small text-[#5A6183] leading-[30px] md:leading-[37px] max-w-[350px]">
+
+                                {/* Description */}
+                                <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#5A6183] leading-[24px] sm:leading-[28px] md:leading-[32px]">
                                     {item.desc}
                                 </p>
                             </div>
                         ))}
                     </div>
+
                 </div>
             </section>
 
