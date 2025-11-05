@@ -130,7 +130,7 @@ const DemoVideoSection: React.FC = () => {
                                     Talk to our expert
                                 </p>
 
-                                <h1 className="text-white text-fluid-h2 lg:text-[38px] font-semibold leading-tight mb-3">
+                                <h1 className="text-white text-fluid-h2 lg:text-[38px] font-medium leading-tight mb-3">
                                     Do You Want To Know More?
                                 </h1>
 
@@ -139,8 +139,8 @@ const DemoVideoSection: React.FC = () => {
                                 </p>
 
                                 {/* Small Feature Text */}
-                                <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8 mb-8">
-                                    <p className="text-sm md:text-fluid-body text-white font-light">
+                                <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-6 mb-8 lg:text-nowrap">
+                                    <p className="text-fluid-small text-white font-light">
                                         No credit card needed
                                     </p>
                                     <img
@@ -148,7 +148,7 @@ const DemoVideoSection: React.FC = () => {
                                         alt="orange_star"
                                         className="w-5 h-5 md:w-auto md:h-auto"
                                     />
-                                    <p className="text-sm md:text-fluid-body text-white font-light">
+                                    <p className="text-fluid-small text-white font-light">
                                         Unlimited time on Free plan
                                     </p>
                                 </div>
@@ -181,7 +181,7 @@ const DemoVideoSection: React.FC = () => {
                         </div>
 
                         {/* RIGHT IMAGE SECTION */}
-                        <div className="relative flex justify-center items-center w-full md:w-1/2 z-10 order-1 md:order-2 bg-[#F3F3FF] md:bg-transparent py-10 md:py-0 overflow-hidden">
+                        <div className="relative flex justify-center items-center w-full top-8 md:top-0 md:w-1/2 z-10 order-1 md:order-2 bg-[#F3F3FF] md:bg-transparent py-10 md:py-0 overflow-hidden">
                             <img
                                 src="/images/invoicing/manage-team.webp"
                                 alt="Accqrate software illustration"
@@ -190,15 +190,6 @@ const DemoVideoSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
-
-
-
-
-
-
-
-
             </section>
 
             {/* Modal */}

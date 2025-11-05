@@ -10,11 +10,11 @@ export default function ZatcaProofSection() {
     ]
 
     const rightItems = [
+        "Integration of your ERP or application with ZATCA Sandbox",
         "No contracts or advances taken. We sign the NDA",
         "Accqrate Team is also specialised in ERPs like SAP, Oracle, Dynamics etc",
         "We work together to ensure your company is 100% compliant",
-        "Guaranteed integration in 5 working days",
-        "Free support during the proof of concept period",
+        "Guaranteed integration in 5 working days.",
     ]
 
     return (

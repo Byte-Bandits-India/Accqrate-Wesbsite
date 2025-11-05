@@ -77,10 +77,6 @@ const bottomRow = [
 
 
 const Section1 = () => {
-    const { countryContent } = useCountryContent();
-    const [enabled, setEnabled] = React.useState(false);
-    const carouselRef = useRef<HTMLDivElement>(null);
-    const bgImage = countryContent.backgroundImage;
     const scrollRef = useRef<HTMLDivElement | null>(null);
 
     const scroll = (direction: "left" | "right") => {
@@ -145,10 +141,10 @@ const Section1 = () => {
             <div className="px-6 md:px-8 xl:px-0 max-w-[1280px] mx-auto xl:flex items-end justify-between gap-20">
                 {/* Left Text */}
                 <div className="flex-1">
-                    <h1 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium pt-[30px] md:pt-[37px] tracking-heading leading-tight">
+                    <h1 className="text-fluid-h2 lg:text-[38px] font-medium pt-[30px] md:pt-[37px] tracking-heading leading-tight">
                         Customize and send invoices easily
                     </h1>
-                    <div className='space-y-2 md:space-y-4 mt-4'>
+                    <div className='space-y-3 md:space-y-4 mt-4'>
                         <p className="text-fluid-body lg:text-[16px] max-w-[662px] tracking-para leading-tight">
                             Sending an invoice should be easy - and we`ve made it so
                         </p>
@@ -159,7 +155,7 @@ const Section1 = () => {
                             Invoices Custom-Made for Your Business
                         </p>
                         <button
-                            className="h-[40px] md:h-[46px] w-[200px] xl:w-auto max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px]"
+                            className="h-[40px] md:h-[46px] w-[170px] xl:w-auto max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px]"
                             style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                         >
                             See It in Action
@@ -199,7 +195,7 @@ const Section1 = () => {
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
-                                    className="relative flex-shrink-0 bg-white rounded-[16px] shadow-[0_4px_20px_rgba(0,0,0,0.05)] scroll-snap-align-start 
+                                    className="relative flex-shrink-0 bg-white rounded-[16px] shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-snap-align-start 
           w-[280px] sm:w-[300px] md:w-[340px] 
           h-[320px] lg:h-[372px]
           p-6 md:p-8 
@@ -251,7 +247,7 @@ const Section1 = () => {
                     <h1 className="text-fluid-h2 lg:text-[38px] font-medium text-[#000000] text-center leading-tight">
                         Requirements for ZATCA-Compliant <span className='text-[#194BED]'>E-Invoicing</span> in Phase 1 & 2
                     </h1>
-                    <p className='text-fluid-body text-[#5A6183] mt-6 md:mt-8 lg:mt-10'>Effortless ZATCA Compliance: Your Guide to Phase 1 & 2 with Accqrate</p>
+                    <p className='text-fluid-body text-[#5A6183] mt-4 md:mt-6'>Effortless ZATCA Compliance: Your Guide to Phase 1 & 2 with Accqrate</p>
                 </div>
 
                 <div className="mt-10 md:mt-12 lg:mt-[80px] px-6 md:px-8 xl:px-0">

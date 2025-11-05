@@ -22,10 +22,10 @@ const software = () => {
 
                         <div className="h-[2px] w-[80px] bg-blue-600 my-6 md:my-8 lg:my-10"></div>
 
-                        <p className="text-gray-700 text-fluid-body max-w-[560px] leading-[30px]">
+                        <p className="text-[#000000] text-fluid-body max-w-[560px] leading-[30px]">
                             Enable Your Business With <span className="text-[#194BED]">E-invoicing.</span>
                         </p>
-                        <p className="text-gray-700 text-fluid-body max-w-[560px] leading-[30px]">
+                        <p className="text-[#000000] text-fluid-body max-w-[560px] leading-[30px]">
                             Saudi Based E-invoicing Solution For Saudi Companies.
                         </p>
 
@@ -67,7 +67,7 @@ const software = () => {
                         </div>
 
                         <div className="flex flex-col items-start justify-center gap-2 text-center md:flex-row md:gap-8">
-                            <p className="text-sm md:text-fluid-body font-light">
+                            <p className="text-sm md:text-fluid-body text-[#1C2041] font-light">
                                 No credit card needed
                             </p>
                             <img
@@ -75,7 +75,7 @@ const software = () => {
                                 alt="orange_star"
                                 className="w-5 h-5 md:w-auto md:h-auto"
                             />
-                            <p className="text-sm md:text-fluid-body font-light">
+                            <p className="text-sm md:text-fluid-body text-[#1C2041] font-light">
                                 Unlimited time on Free plan
                             </p>
                         </div>

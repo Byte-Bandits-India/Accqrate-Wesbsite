@@ -90,10 +90,10 @@ export default function IntegrationFlow({ }: IntegrationFlowProps) {
                             </Col>
 
                             <Col xs={24} md={11} className={`${index % 2 === 0 ? 'pl-8 text-left' : 'pr-8 text-right'}`}>
-                                <div className="text-[#FF8D67] text-[32px] md:text-[40px] font-bold mb-2">
+                                <div className="text-[#FF8D67] text-[32px] md:text-[40px] font-medium mb-2">
                                     {step.number}
                                 </div>
-                                <h3 className="text-fluid-body font-bold text-[#1C2041] mb-4">
+                                <h3 className="text-fluid-body font-medium text-[#1C2041] mb-4">
                                     {step.title}
                                 </h3>
                                 <p className="text-[#5A6183] text-fluid-small leading-relaxed">
@@ -124,7 +124,7 @@ export default function IntegrationFlow({ }: IntegrationFlowProps) {
 
                             {/* Content */}
                             <div className="flex-1">
-                                <div className="text-[#FF8D67] text-[28px] font-bold mb-1">
+                                <div className="text-[#FF8D67] text-[28px] font-medium mb-1">
                                     {step.number}
                                 </div>
                                 <img
@@ -132,7 +132,7 @@ export default function IntegrationFlow({ }: IntegrationFlowProps) {
                                     alt={`Step ${step.number}`}
                                     className="w-full mb-4 rounded-lg"
                                 />
-                                <h4 className="text-[18px] font-bold text-[#1C2041] mb-3">
+                                <h4 className="text-[18px] font-medium text-[#1C2041] mb-3">
                                     {step.title}
                                 </h4>
                                 <p className="text-[#5A6183] text-[14px] leading-relaxed">

@@ -200,10 +200,10 @@ export default function Solutions({ malaysia, mra, istd }: SolutionsProps) {
             <div className="max-w-[1280px] mx-auto px-6 lg:px-0">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h3 className="text-[28px] md:text-[34px] lg:text-[38px] font-semibold text-[#1C2041] leading-tight">
+                    <h3 className="text-fluid-h2 lg:text-[38px] font-medium text-[#1C2041] leading-tight">
                         Accqrate E-Invoicing Solutions
                     </h3>
-                    <p className="text-[#5A6183] text-base md:text-lg mt-3">
+                    <p className="text-[#5A6183] text-fluid-body mt-3">
                         Streamline Operations and Accelerate Business Growth
                     </p>
                 </div>
@@ -280,10 +280,10 @@ export default function Solutions({ malaysia, mra, istd }: SolutionsProps) {
 
                     {/* Right Content */}
                     <div className="w-full lg:w-[50%]">
-                        <h4 className="text-[28px] md:text-[34px] lg:text-[38px] font-normal text-[#1C2041] leading-[40px]">
+                        <h4 className="text-fluid-h2 lg:text-[38px] font-normal text-[#1C2041] leading-[40px]">
                             {selectedContent.content}
                         </h4>
-                        <p className="text-[#5A6183] text-fluid-small leading-[37px] mt-6 mb-8 max-w-[580px]">
+                        <p className="text-[#5A6183] text-fluid-small leading-[37px] mt-4 md:mt-6 mb-8 max-w-[580px]">
                             {selectedContent.desc}
                         </p>
 

@@ -5,14 +5,14 @@ const Section2 = () => {
     return (
         <>
             <section>
-                <div className='max-w-[1280px] mx-auto py-8 md:py-10 lg:py-[80px]'>
+                <div className='max-w-[1280px] mx-auto py-8 md:py-10 lg:py-12'>
                     <div className='px-6 md:px-8 xl:px-0'>
                         <h3 className="text-fluid-h2 lg:text-[38px] font-normal text-[#000000] leading-tight">
                             Accqrate Offerings
                         </h3>
-                        <p className='text-[#333333] text-fluid-small max-w-[428px] mt-6 md:mt-8 lg:mt-10 '>E-invoicing Solutions from Micro to Enterprise businesses</p>
+                        <p className='text-[#333333] text-fluid-body max-w-[428px] mt-4 md:mt-6 '>E-invoicing Solutions from Micro to Enterprise businesses</p>
 
-                        <div className="py-8 md:py-10 lg:py-[80px]">
+                        <div className="py-6 md:py-8 lg:py-10">
                             <div className="flex flex-col lg:flex-row justify-start items-stretch gap-8 md:gap-10 lg:gap-[60px] md:pl-10">
                                 {/* Cloud Based Solutions */}
                                 <div className="rounded-[27px] border max-w-[400px] w-full p-6 shadow-md md:px-10 space-y-4 flex flex-col">
@@ -85,7 +85,7 @@ const Section2 = () => {
                     <h3 className="text-fluid-h2 lg:text-[38px] font-normal leading-tight">
                         Easy Onboarding Process
                     </h3>
-                    <p className="text-fluid-h3 leading-[30px] md:leading-[59px] mt-6">
+                    <p className="text-fluid-body mt-4 md:mt-6">
                         Get Digital In Just 30 Minutes With Our Quick On Boarding Process
                     </p>
 
@@ -97,7 +97,7 @@ const Section2 = () => {
                         />
                     </div>
 
-                    <p className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mt-8 text-[12px] md:text-fluid-body text-white md:text-center">
+                    <p className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mt-8 text-[14px] md:text-fluid-body text-white md:text-center">
                         <span>No credit card needed</span>
                         <img
                             src="/images/invoicing/Stargold.svg"

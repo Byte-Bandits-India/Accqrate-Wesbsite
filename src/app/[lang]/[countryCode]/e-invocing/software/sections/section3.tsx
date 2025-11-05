@@ -57,7 +57,7 @@ const Section3 = () => {
                         <img
                             src="/images/invoicing/green.svg"
                             alt="decoration"
-                            className="absolute -right-[10px] lg:-right-[80px] -top-[50px] lg:-top-[30px] -translate-y-1/2 w-[40px]"
+                            className="absolute -right-[10px] lg:-right-[80px] -top-[40px] lg:-top-[30px] -translate-y-1/2 w-[40px]"
                         />
                     </div>
 
@@ -73,7 +73,7 @@ const Section3 = () => {
         transition-all duration-300
         w-full max-w-[380px]
         p-5 sm:p-6 md:p-8
-        h-auto min-h-[280px]
+        h-auto min-h-[200px]
       "
                             >
                                 {/* Image */}
@@ -84,12 +84,12 @@ const Section3 = () => {
                                 />
 
                                 {/* Title */}
-                                <h3 className="text-[18px] sm:text-[20px] lg:text-[22px] text-[#1C2041] font-semibold mb-2 leading-tight">
+                                <h3 className="text-fluid-body text-[#1C2041] font-semibold mb-2 leading-tight">
                                     {item.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-[14px] sm:text-[15px] md:text-[16px] text-[#5A6183] leading-[24px] sm:leading-[28px] md:leading-[32px]">
+                                <p className="text-fluid-small text-[#5A6183] leading-[24px] sm:leading-[28px] md:leading-[32px]">
                                     {item.desc}
                                 </p>
                             </div>
