@@ -158,7 +158,7 @@ const menus = [
             title: "E-Invoicing Integration",
             description: "Seamless ZATCA integration for any ERP, POS, or custom application.",
             img: "/images/header/navbar/fill/einvoice-integration.webp",
-            href: "/e-invoicing/integration",
+            href: "/e-invocing/integration",
           },
           {
             title: "E-invoicing with SAP Suite",
