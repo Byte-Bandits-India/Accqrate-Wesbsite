@@ -1,6 +1,7 @@
 "use client";
 import T from "@/components/T"
 import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Section {
     img: string;
@@ -89,8 +90,8 @@ const section2 = () => {
                             key={i}
                             className="
         flex flex-col justify-center md:items-start text-left
-        bg-white rounded-[20px] border-[#5A6183] border-[0.1px]
-        shadow-[0_4px_20px_rgba(0,0,0,0.06)]
+        bg-white rounded-[20px]
+        shadow-[0_8px_30px_rgba(0,0,0,0.12)]
         hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
         transition-all duration-300
         w-full max-w-[430px]
@@ -106,7 +107,7 @@ const section2 = () => {
                             />
 
                             {/* Title */}
-                            <h3 className="text-fluid-body text-[#303030] font-semibold mb-2 leading-tight">
+                            <h3 className="text-fluid-body text-[#303030] font-medium mb-2 leading-tight">
                                 {item.title}
                             </h3>
 
@@ -128,6 +129,21 @@ const section2 = () => {
             </div>
 
             <div className="relative mt-6 md:mt-8">
+                {/* 🔹 Top Section (Buttons) */}
+                <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 flex justify-end mb-6 gap-3">
+                    <button
+                        onClick={() => scroll("left")}
+                        className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:bg-gray-100 transition"
+                    >
+                        <ChevronLeft className="w-5 h-5 text-gray-700" />
+                    </button>
+                    <button
+                        onClick={() => scroll("right")}
+                        className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:bg-gray-100 transition"
+                    >
+                        <ChevronRight className="w-5 h-5 text-gray-700" />
+                    </button>
+                </div>
 
                 {/* 🔹 Scrollable Row - Fixed ref placement */}
                 <div
@@ -143,8 +159,8 @@ const section2 = () => {
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
-                                    className="relative flex-shrink-0 bg-white rounded-[16px] border-[#5A6183] border-[0.1px]
-        shadow-[0_4px_20px_rgba(0,0,0,0.06)]
+                                    className="relative flex-shrink-0 bg-white rounded-[16px]
+        shadow-[0_8px_30px_rgba(0,0,0,0.12)]
         hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)]
         transition-all duration-300 scroll-snap-align-start max-w-[290px] md:max-w-fit h-auto max-h-[242px] p-6 md:p-8 flex flex-col gap-2 "
                                 >

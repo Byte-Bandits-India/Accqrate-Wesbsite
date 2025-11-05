@@ -221,7 +221,7 @@ export default function Onboarding(): JSX.Element {
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] shadow-[0_0_4px_0_rgba(0,0,0,0.25)] rounded-xl p-6 text-center [backface-visibility:hidden]">
                   <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] ">
                     Seamless Integration
                   </h4>
@@ -248,7 +248,7 @@ export default function Onboarding(): JSX.Element {
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] shadow-[0_0_4px_0_rgba(0,0,0,0.25)] rounded-xl p-6 text-center [backface-visibility:hidden]">
                   <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
                     Digital Archive
                   </h4>
@@ -280,7 +280,7 @@ export default function Onboarding(): JSX.Element {
               <div className="relative h-full w-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateX(180deg)]">
 
                 {/* Front */}
-                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] border border-[#737373] rounded-xl shadow-lg p-6 text-center [backface-visibility:hidden]">
+                <section className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#F0F0F0] shadow-[0_0_5px_0_rgba(0,0,0,0.35)] rounded-xl p-6 text-center [backface-visibility:hidden]">
                   <h4 className="text-[24px] lg:text-[28px] font-medium text-[#1976D2] leading-tight">
                     Regulation-Ready
                   </h4>

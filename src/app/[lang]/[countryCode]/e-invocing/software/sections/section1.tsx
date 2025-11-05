@@ -195,7 +195,7 @@ const Section1 = () => {
                             {features.map((feature, index) => (
                                 <div
                                     key={index}
-                                    className="relative flex-shrink-0 bg-white rounded-[16px] shadow-[0_0_4px_rgba(0,0,0,0.25)] scroll-snap-align-start 
+                                    className="relative flex-shrink-0 bg-white rounded-[16px] shadow-[0_8px_30px_rgba(0,0,0,0.12)] scroll-snap-align-start 
           w-[280px] sm:w-[300px] md:w-[340px] 
           h-[320px] lg:h-[372px]
           p-6 md:p-8 

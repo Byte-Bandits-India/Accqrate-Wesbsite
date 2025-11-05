@@ -32,7 +32,7 @@ export default function ZatcaProofSection() {
             {/* GRID SECTION */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-10 md:gap-x-6 max-w-[1100px] lg:px-6 xl:px-0 mx-auto">
                 {/* LEFT COLUMN */}
-                <div className="grid grid-rows-[auto] gap-y-8 md:gap-y-10">
+                <div className="grid grid-rows-[auto] gap-y-[2rem]">
                     {leftItems.map((item, i) => (
                         <div
                             key={`left-${i}`}
@@ -43,7 +43,7 @@ export default function ZatcaProofSection() {
                                 alt="arrow"
                                 className="mt-1 w-[40px] md:w-[26px] lg:w-[34px] xl:w-[66px]"
                             />
-                            <p className="text-[#5A6183] text-[16px] md:text-[18px] lg:text-[20px] max-w-[428px] leading-relaxed">
+                            <p className="text-[#5A6183] text-[16px] md:text-[18px] max-w-[428px] leading-relaxed">
                                 {item}
                             </p>
                         </div>
@@ -51,7 +51,7 @@ export default function ZatcaProofSection() {
                 </div>
 
                 {/* RIGHT COLUMN */}
-                <div className="grid grid-rows-[auto] gap-y-8 md:gap-y-10">
+                <div className="grid grid-rows-[auto] gap-y-[2rem] ">
                     {rightItems.map((item, i) => (
                         <div
                             key={`right-${i}`}
@@ -62,7 +62,7 @@ export default function ZatcaProofSection() {
                                 alt="arrow"
                                 className="mt-1 w-[40px] md:w-[26px] lg:w-[34px] xl:w-[66px]"
                             />
-                            <p className="text-[#5A6183] text-[16px] md:text-[18px] lg:text-[20px] max-w-[428px] leading-relaxed">
+                            <p className="text-[#5A6183] text-[16px] md:text-[18px]  max-w-[428px] leading-relaxed">
                                 {item}
                             </p>
                         </div>

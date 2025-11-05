@@ -65,7 +65,7 @@ const DemoVideoSection: React.FC = () => {
     return (
         <>
             <section className="mt-8 md:mt-10 lg:mt-12 relative">
-                <div className="text-center mb-8">
+                <div className="text-center mb-8 px-6 md:px-8 xl:px-0">
                     <h2 className="text-fluid-h2 lg:text-[38px] font-medium text-[#1C2041] mb-3">
                         Free proof of concept for <span className="text-[#46A833]">ZATCA Integration</span>
                     </h2>
@@ -124,7 +124,7 @@ const DemoVideoSection: React.FC = () => {
                     {/* CONTENT */}
                     <div className="relative flex flex-col md:flex-row items-center justify-between max-w-[1280px] mx-auto w-full h-full md:px-8 px-0 md:py-0 gap-0 md:gap-0">
                         {/* LEFT CONTENT */}
-                        <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left w-full md:w-1/2 z-20 order-2 md:order-1 bg-gradient-to-br from-[#1A0C48] to-[#242087] md:bg-transparent rounded-t-[30px] md:rounded-none px-6 md:px-0 py-10 md:py-0">
+                        <div className="relative flex flex-col justify-center items-center md:items-start text-center md:text-left w-full md:w-1/2 z-20 order-2 md:order-1 md:bg-transparent rounded-t-[30px] md:rounded-none px-6 md:px-0 py-10 md:py-0">
                             <div className="max-w-[520px] md:pl-4 lg:pl-8 w-full">
                                 <p className="text-white uppercase text-fluid-small leading-[30px] mb-4 md:mb-6">
                                     Talk to our expert
