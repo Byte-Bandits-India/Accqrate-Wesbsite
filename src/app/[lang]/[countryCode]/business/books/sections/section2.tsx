@@ -134,7 +134,7 @@ export default function AccountSections(): React.JSX.Element {
             value="card-1"
             icon="/images/business/books/Mask group.png"
             title="Custom Invoice Templates"
-            content={
+            children={
               <>Add your logo, adjust fields, and localize content
                 no developer needed.</>
             }
@@ -144,7 +144,7 @@ export default function AccountSections(): React.JSX.Element {
             value="card-2"
             icon="/images/business/books/Mask group (1).png"
             title="Comprehensive Audit Trails "
-            content={
+            children={
               <>Every transaction and e-invoice is tracked, always audit ready for ZATCA and KSA requirements.</>
             }
           />
