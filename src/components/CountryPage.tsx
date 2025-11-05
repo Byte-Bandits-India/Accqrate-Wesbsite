@@ -520,32 +520,32 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
         <main className="overflow-x-hidden font-inter">
             <div className="bg-[#F8F6FF]">
                 <div
-                    className="h-fit xl:min-h-fit bg-cover bg-no-repeat bg-center lg:bg-local"
+                    className="h-fit bg-cover bg-no-repeat bg-center lg:bg-local"
                     style={{
                         backgroundImage: `url('${bgImage}')`,
                     }}
                 >
-                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
-                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px]">
+                    <div className="max-w-[1280px] h-[100vh] 2xl:h-fit mx-auto px-6 md:px-8 xl:px-6">
+                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px] lg:pt-[64px] 2xl:pt-[95px]">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
                                 <h1 className="text-[24px] md:text-[28px] lg:text-[38px] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
                                     <T>{countryContent.heroTitle}</T>
                                 </h1>
-                                <p className="font-medium text-fluid-body lg:text-[22px] text-[#FFFFFF] mt-8 md:mt-10 lg:mt-[50px] tracking-para">
+                                <p className="font-medium text-fluid-body lg:text-[22px] text-[#FFFFFF] mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px] tracking-para">
                                     <T>{countryContent.heroSubtitle}</T>
                                 </p>
 
-                                <p className="border-t-2 border-[#FFFFFF] w-[50px] mt-8 md:mt-10 lg:mt-[50px]"></p>
+                                <p className="border-t-2 border-[#FFFFFF] w-[50px] mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px]"></p>
 
-                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[50px] tracking-para leading-[30px] text-left font-normal">
+                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px] tracking-para leading-[30px] text-left font-normal">
                                     <T>{countryContent.heroDescription}</T>
                                 </p>
 
 
                                 <Link
                                     href={("/book-demo")}
-                                    className="inline-flex items-center justify-center gap-2 text-white h-[42px] lg:h-[57px] w-[190px] my-8 md:my-12 lg:my-[66px] font-normal lg:w-[221px] rounded-[80px] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
+                                    className="inline-flex items-center justify-center gap-2 text-white h-[42px] lg:h-[57px] w-[190px] my-8 md:my-12 lg:my-[44px] xl:mt-[50px] 2xl:my-[66px] font-normal lg:w-[221px] rounded-[80px] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
                                 >
                                     <T>Meet an Expert</T>
                                     <Arrow45 />
@@ -572,12 +572,12 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                             </div>
 
                             {/* RIGHT COLUMN */}
-                            <div className="hidden lg:flex flex-col justify-center mb-8 lg:mt-0 gap-4">
+                            <div className="hidden lg:flex flex-col justify-start mb-8 lg:mt-0 gap-4">
                                 <h1 className="text-fluid-body font-medium text-[#ffffff]"><T>Products to power every team</T></h1>
                                 {cards.map((card) => (
                                     <InfoCard key={card.title} {...card} />
                                 ))}
-                                <div className="h-[50px] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
+                                <div className="h-[40px] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
                                     <h3 className="text-[14px] tracking-heading leading-tight text-nowrap"><T>Explore All Products ... </T></h3>
                                 </div>
                             </div>

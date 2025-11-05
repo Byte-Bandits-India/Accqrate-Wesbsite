@@ -112,7 +112,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#212121] font-inter text-black">
+    <footer className="bg-[#212121] font-inter text-black overflow-x-hidden">
       {/* ---------- Main Footer Section ---------- */}
       <div className="hidden xl:block max-w-[1600px] mx-auto px-8 py-12">
         <div className="flex justify-between items-start gap-12">
@@ -176,7 +176,7 @@ export default function Footer() {
             </div>
 
             {/* Enterprise section BELOW main columns */}
-            <div className="border-t border-gray-300 mt-12 pt-8 flex justify-between gap-6 text-sm text-gray-700">
+            <div className="border-t border-gray-300 mt-12 pt-8 flex justify-start gap-6 text-sm text-gray-700">
               <div>
                 <h4 className="font-medium mb-4 text-[#FFFFFF] text-fluid-small tracking-heading">
                   Enterprise Solution
@@ -220,7 +220,7 @@ export default function Footer() {
                 </ul>
               </div>
 
-              <div className="max-w-[500px] leading-6 flex items-center justify-start">
+              <div className="max-w-[400px] leading-6 flex items-start justify-start">
                 <p className="lg:text-[14px] xl:text-[16px] text-[#F0F0F0] tracking-para">
                   One unified platform with zero silos—integrated modules on a single data model, global compliance built-in, AI-powered automation, flexible cloud or on-prem deployment, fast implementation, and enterprise-grade security and scalability.
                 </p>

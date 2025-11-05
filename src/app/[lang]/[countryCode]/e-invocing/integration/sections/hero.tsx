@@ -16,7 +16,7 @@ const software = () => {
                         <p className="text-[#F05A28] text-fluid-small max-w-[560px] leading-[30px] mb-6 md:mb-8 lg:mb-10">
                             E-invoicing Integration
                         </p>
-                        <h1 className="text-fluid-h2 lg:text-[38px] tracking-heading font-medium text-[#000000] leading-tight">
+                        <h1 className="text-fluid-h2 lg:text-[38px] font-medium text-[#000000]">
                             Integrate Your Existing <span className="text-[#448E32]">ERPs, POS</span> & Applications With ZATCA.
                         </h1>
 
