@@ -526,31 +526,31 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                     }}
                 >
                     <div className="max-w-[1280px] lg:h-[100dvh] 2xl:h-fit mx-auto px-6 md:px-8 xl:px-6 overflow-hidden">
-                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-10 lg:gap-12 pt-[95px] lg:pt-[64px] 2xl:pt-[95px] h-full overflow-y-auto">
+                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-6 lg:gap-8 pt-[4rem] lg:pt-[3rem] 2xl:pt-[4rem] h-full overflow-y-auto">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
-                                <h1 className="text-[24px] md:text-[28px] lg:text-[38px] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
+                                <h1 className="text-[1.5rem] md:text-[1.75rem] lg:text-[2.375rem] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
                                     <T>{countryContent.heroTitle}</T>
                                 </h1>
-                                <p className="font-medium text-fluid-body lg:text-[22px] text-[#FFFFFF] mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px] tracking-para">
+                                <p className="font-medium text-fluid-body lg:text-[1.375rem] text-[#FFFFFF] mt-4 md:mt-5 lg:mt-[1.5rem] xl:mt-[2rem] 2xl:mt-[2rem] tracking-para">
                                     <T>{countryContent.heroSubtitle}</T>
                                 </p>
 
-                                <p className="border-t-2 border-[#FFFFFF] w-[50px] mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px]"></p>
+                                <p className="border-t-2 border-[#FFFFFF] w-[3.125rem] mt-4 md:mt-5 lg:mt-[1.5rem] xl:mt-[2rem] 2xl:mt-[2rem]"></p>
 
-                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-8 md:mt-10 lg:mt-[30px] xl:mt-[50px] 2xl:mt-[50px] tracking-para leading-[30px] text-left font-normal">
+                                <p className="text-[#FFFFFF] max-w-[586px] text-fluid-small mt-4 md:mt-5 lg:mt-[1.5rem] xl:mt-[2rem] 2xl:mt-[2rem] tracking-para leading-[1.875rem] text-left font-normal">
                                     <T>{countryContent.heroDescription}</T>
                                 </p>
 
                                 <Link
                                     href={("/book-demo")}
-                                    className="inline-flex items-center justify-center gap-2 text-white h-[42px] lg:h-[57px] w-[190px] my-8 md:my-12 lg:my-[44px] xl:mt-[50px] 2xl:my-[66px] font-normal lg:w-[221px] rounded-[80px] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
+                                    className="inline-flex items-center justify-center gap-2 text-white h-[2.625rem] lg:h-[3.563rem] w-[11.875rem] my-4 md:my-6 lg:my-[2.25rem] xl:mt-[2rem] 2xl:my-[3rem] font-normal lg:w-[13.813rem] rounded-[5rem] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
                                 >
                                     <T>Meet an Expert</T>
                                     <Arrow45 />
                                 </Link>
 
-                                <h2 className="mt-6 md:mt-8 text-fluid-body font-medium text-[#ffffff] hidden tracking-heading lg:flex lg:items-center lg:flex-wrap gap-6">
+                                <h2 className="mt-4 md:mt-5 text-fluid-body font-medium text-[#ffffff] hidden tracking-heading lg:flex lg:items-center lg:flex-wrap gap-4">
                                     {countryContent.heroTagline.split(".").filter(Boolean).map((part, index, arr) => (
                                         <React.Fragment key={index}>
                                             <T>{part.trim()}</T>
@@ -558,25 +558,25 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                                 <img
                                                     src="/images/home/Star.png"
                                                     alt="star"
-                                                    className="inline-block w-5 h-5 mx-1"
+                                                    className="inline-block w-4 h-4 mx-1"
                                                 />
                                             )}
                                         </React.Fragment>
                                     ))}
                                 </h2>
-                                <div className="p-6 md:p-8 text-left max-w-full md:max-w-[700px] mx-auto md:mx-0">
+                                <div className="p-4 md:p-5 text-left max-w-full md:max-w-[700px] mx-auto md:mx-0">
                                     {/* Additional content can go here */}
                                 </div>
                             </div>
 
                             {/* RIGHT COLUMN */}
-                            <div className="hidden lg:flex flex-col justify-start mb-8 lg:mt-0 gap-4">
+                            <div className="hidden lg:flex flex-col justify-start mb-5 lg:mt-0 gap-3">
                                 <h1 className="text-fluid-body font-medium text-[#ffffff]"><T>Products to power every team</T></h1>
                                 {cards.map((card) => (
                                     <InfoCard key={card.title} {...card} />
                                 ))}
-                                <div className="h-[40px] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[5px] mt-3 flex items-center justify-start px-4 md:px-6 cursor-pointer">
-                                    <h3 className="text-[14px] tracking-heading leading-tight text-nowrap"><T>Explore All Products ... </T></h3>
+                                <div className="h-[2.5rem] max-w-full md:max-w-[221px] bg-[#D6E0FF] rounded-[0.313rem] mt-2 flex items-center justify-start px-3 md:px-4 cursor-pointer">
+                                    <h3 className="text-[0.875rem] tracking-heading leading-tight text-nowrap"><T>Explore All Products ... </T></h3>
                                 </div>
                             </div>
                         </div>
@@ -585,19 +585,19 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Mobile & Tablet Featured Solutions */}
                 <div className="lg:hidden px-6 md:px-8">
-                    <div className="max-w-[1280px] mx-auto py-8">
-                        <h1 className="text-fluid-body font-medium mb-4"><T>Products to power every team</T></h1>
+                    <div className="max-w-[1280px] mx-auto py-6">
+                        <h1 className="text-fluid-body font-medium mb-3"><T>Products to power every team</T></h1>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                             {cards.map((card) => (
                                 <InfoCard key={card.title} {...card} />
                             ))}
 
                             {/* "Explore All Products" card */}
                             <div
-                                className="cursor-pointer flex items-center justify-between w-full h-[50px] mx-auto overflow-hidden shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-4 sm:p-5 bg-[#D6E0FF]"
+                                className="cursor-pointer flex items-center justify-between w-full h-[3.125rem] mx-auto overflow-hidden shadow-[0_0_2px_rgba(0,0,0,0.25)] transition-all hover:shadow-md p-3 sm:p-4 bg-[#D6E0FF]"
                             >
-                                <h3 className="text-[14px] font-medium"><T>Explore All Products...</T></h3>
+                                <h3 className="text-[0.875rem] font-medium"><T>Explore All Products...</T></h3>
                             </div>
                         </div>
                     </div>
