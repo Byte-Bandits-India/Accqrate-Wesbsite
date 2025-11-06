@@ -123,10 +123,10 @@ const menus = [
             href: "/business/plan360",
           },
           {
-            title: "E-invoicing Integration Solution",
+            title: "Accqrate Services",
             description: "Service operations streamlined: assign, track, resolve, delight.",
-            img: "/images/header/navbar/fill/einvoice-integration.webp",
-            href: "/business/e-invoicing/accqrate",
+            img: "/images/header/navbar/fill/service.webp",
+            href: "/business/services",
           },
           {
             title: "Accqrate Filehub",

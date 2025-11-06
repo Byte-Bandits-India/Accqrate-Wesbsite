@@ -56,5 +56,8 @@ export const comingSoonRoutes = [
   'Enterprise-Solution/Business-Process-Automations',
 
   'contact-sales',
-  'book-demo'
+  'book-demo',
+
+  '/business/services'
+  
 ]
