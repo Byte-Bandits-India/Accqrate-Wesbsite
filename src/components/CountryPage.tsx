@@ -520,13 +520,13 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
         <main className="overflow-x-hidden font-inter">
             <div className="bg-[#F8F6FF]">
                 <div
-                    className="h-fit bg-cover bg-no-repeat bg-center lg:bg-local"
+                    className="h-fit max-h-[1440px] bg-cover bg-no-repeat bg-center lg:bg-local"
                     style={{
                         backgroundImage: `url('${bgImage}')`,
                     }}
                 >
-                    <div className="max-w-[1280px] lg:h-[100dvh] 2xl:h-fit mx-auto px-6 md:px-8 xl:px-6 overflow-hidden">
-                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-6 lg:gap-8 pt-[4rem] lg:pt-[3rem] 2xl:pt-[4rem] h-full overflow-y-auto">
+                    <div className="max-w-[1280px] lg:h-[100dvh] mx-auto px-6 overflow-hidden">
+                        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-6 lg:gap-8 pt-[3rem] lg:pt-[3rem] 2xl:pt-[4rem] h-full overflow-y-auto">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
                                 <h1 className="text-[1.5rem] md:text-[1.75rem] lg:text-[2.375rem] text-[#FFFFFF] max-w-full lg:max-w-[639px] font-normal leading-tight">
