@@ -16,6 +16,7 @@ import {
     AccordionTrigger,
 } from "@/components/Home-accordion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 
 // ---------------- CarouselCard ----------------
@@ -290,8 +291,23 @@ interface FeatureCarouselProps {
     features: Feature[];
 }
 
+const useDynamicRouting = () => {
+    const pathname = usePathname();
+
+    const createHref = (path: string): string => {
+        const segments = pathname.split('/').filter(segment => segment);
+        const lang = segments[0] || 'en';
+        const countryCode = segments[1] || 'sa';
+        const cleanPath = path.startsWith('/') ? path : `/${path}`;
+        return `/${lang}/${countryCode}${cleanPath}`;
+    };
+
+    return { createHref };
+};
+
 const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
     const { countryContent } = useCountryContent();
+    const { createHref } = useDynamicRouting();
     const [enabled, setEnabled] = React.useState(false);
     const carouselRef = useRef<HTMLDivElement>(null);
     const bgImage = countryContent.backgroundImage;
@@ -543,7 +559,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                 </p>
 
                                 <Link
-                                    href={("/book-demo")}
+                                    href={createHref("/contact-us")}
                                     className="inline-flex items-center justify-center gap-2 text-white h-[2.625rem] lg:h-[3.563rem] w-[11.875rem] my-4 md:my-6 lg:my-[2.25rem] xl:mt-[2rem] 2xl:my-[3rem] font-normal lg:w-[13.813rem] rounded-[5rem] text-fluid-body bg-gradient-to-r from-[#B4441E] via-[#F05A28] to-[#F48B69]"
                                 >
                                     <T>Meet an Expert</T>
