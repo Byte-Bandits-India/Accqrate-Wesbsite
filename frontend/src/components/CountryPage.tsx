@@ -541,7 +541,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         backgroundImage: `url('${bgImage}')`,
                     }}
                 >
-                    <div className="max-w-[1280px] lg:h-[100dvh] mx-auto px-6 overflow-hidden">
+                    <div className="max-w-[1177px] lg:h-[100dvh] mx-auto px-6 overflow-hidden">
                         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_520px] gap-6 lg:gap-8 pt-[3rem] lg:pt-[3rem] 2xl:pt-[4rem] h-full overflow-y-auto">
                             {/* LEFT COLUMN */}
                             <div className="flex flex-col justify-start">
@@ -601,7 +601,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Mobile & Tablet Featured Solutions */}
                 <div className="lg:hidden px-6 md:px-8">
-                    <div className="max-w-[1280px] mx-auto py-6">
+                    <div className="max-w-[1177px] mx-auto py-6">
                         <h1 className="text-fluid-body font-medium mb-3"><T>Products to power every team</T></h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -622,7 +622,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 {/* /Why Accqrate? */}
                 <div>
                     <div className=" px-6 md:px-8 xl:px-8 mt-[48px]">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-6 max-w-[1280px] mx-auto w-full">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-6 max-w-[1177px] mx-auto w-full">
                             {/* Left Column */}
                             <div>
                                 <h2 className="font-medium text-fluid-small tracking-heading uppercase">
@@ -658,7 +658,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                         <div className="relative mt-[32px] md:mt-[60px] lg:mt-[80px]">
                             {/* 🔹 Top Section (Buttons) */}
-                            <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 flex justify-end mb-6 gap-3">
+                            <div className="max-w-[1177px] mx-auto px-6 md:px-8 xl:px-0 flex justify-end mb-6 gap-3">
                                 <button
                                     onClick={() => scroll("left")}
                                     className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 shadow hover:bg-gray-100 transition"
@@ -675,7 +675,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                             {/* 🔹 Scrollable Row */}
                             <div className="overflow-x-auto scrollbar-hide" ref={scrollRef}>
-                                <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0">
+                                <div className="max-w-[1177px] mx-auto px-6 md:px-8 xl:px-0">
                                     <div
                                         className="flex gap-4 sm:gap-6 md:gap-8 pr-[calc(50vw-640px)]"
                                         style={{ scrollSnapType: "x mandatory" }}
@@ -730,7 +730,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 </div>
 
                 {/* Trusted text */}
-                <div className="mt-[80px] rounded-[30px] bg-[linear-gradient(180deg,#FFFFFF_0%,#E9E8FF_50%,#4F52FF_100%)] py-6 md:py-8  max-w-[1280px] mx-auto">
+                <div className="mt-[80px] rounded-[30px] bg-[linear-gradient(180deg,#FFFFFF_0%,#E9E8FF_50%,#4F52FF_100%)] py-6 md:py-8  max-w-[1177px] mx-auto">
 
                     <FadeUp className="mb-8 md:mb-[40px]">
                         <h3 className="text-[24px] md:text-[28px] lg:text-[38px] tracking-heading leading-tight font-medium text-[#333333] text-center mx-auto">
@@ -890,7 +890,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 <div className="hidden md:block">
 
                     {/* HERO SECTION */}
-                    <div className="relative min-h-[420px] mt-10">
+                    <div className="relative max-h-[420px] mt-20">
                         {/* Background Image */}
                         <img
                             src="/images/home/wave_vector.png"
@@ -901,7 +901,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                         {/* Content */}
                         <div className="absolute inset-0 flex items-center">
-                            <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 grid lg:grid-cols-2 gap-6">
+                            <div className="max-w-[1177px] mx-auto px-6 md:px-8 xl:px-0 grid lg:grid-cols-2 gap-6">
 
                                 {/* Left Part */}
                                 <FadeUp className="font-inter rounded-2xl flex flex-col justify-between p-8 bg-transparent flex-shrink-0">
@@ -944,7 +944,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
 
                     {/* COMPLIANCE SECTION */}
-                    <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch pb-[36px] md:pb-[200px] lg:pb-[300px]">
+                    <div className="max-w-[1177px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch pb-[36px] md:pb-[200px] lg:pb-[300px]">
                         {/* Left Side: Image (Desktop) */}
                         <div className="hidden lg:flex flex-col items-start justify-between p-6 md:p-8">
                             <h2 className="text-black tracking-para text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight whitespace-nowrap mb-6">
@@ -1042,7 +1042,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
             </div >
 
             {/* Testimonials Section */}
-            <div className="max-w-[1280px] mx-auto px-0 md:px-8 mt-8 md:mt-0" >
+            <div className="max-w-[1177px] mx-auto px-0 md:px-8 mt-8 md:mt-0" >
                 <h2 className="text-[24px] md:text-[28px] lg:text-[38px] text-left mb-8 px-6">Testimonials</h2>
                 <Carousel items={testimonialCards} autoplay autoplayDelay={4000} />
                 <div className="flex items-center justify-center">
@@ -1060,7 +1060,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
             {/* Our ValuesDrive Everything We Do */}
             <div className="bg-[#F8F6FF] py-[50px] mt-8 md:mt-10 " >
-                <div className="px-6 md:px-8 xl:px-0 max-w-[1280px] mx-auto xl:flex items-end justify-between gap-20">
+                <div className="px-6 md:px-8 xl:px-0 max-w-[1177px] mx-auto xl:flex items-end justify-between gap-20">
                     {/* Left Text */}
                     <div className="flex-1">
                         <h1 className="text-[24px] md:text-[28px] lg:text-[38px] font-medium py-[30px] md:py-[37px] tracking-heading leading-tight">
@@ -1094,7 +1094,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
 
                 {/* CarouselCard */}
-                <div className="solutions-carousel relative max-w-[1280px] mx-auto pl-6 md:pl-8 xl:pl-0 mt-[40px] md:mt-[38px] lg:mt-[70px]">
+                <div className="solutions-carousel relative max-w-[1177px] mx-auto pl-6 md:pl-8 xl:pl-0 mt-[40px] md:mt-[38px] lg:mt-[70px]">
                     <div ref={carouselRef} className="carousel-wrapper overflow-x-auto scrollbar-hide">
                         <div
                             className="carousel-track flex transition-transform duration-500 ease-in-out gap-8"
@@ -1123,7 +1123,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Frequently Answered Questions */}
                 <div>
-                    <div className="px-0 md:px-8 max-w-[1280px] mx-auto py-6 xl:px-0 mt-8 md:mt-12 lg:mt-[100px]">
+                    <div className="px-0 md:px-8 max-w-[1177px] mx-auto py-6 xl:px-0 mt-8 md:mt-12 lg:mt-[100px]">
                         <div className="bg-white rounded-[20px] p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-12 relative">
 
                             {/* Left Section */}
