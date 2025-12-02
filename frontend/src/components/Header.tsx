@@ -510,7 +510,7 @@ const LangCountryDropdown: React.FC<
       <div
         className={`relative ${className}`}
         ref={dropdownRef}
-        onClick={(e) => e.stopPropagation()} // Add this to prevent propagation
+        onClick={(e) => e.stopPropagation()}
       >
         {/* Button */}
         <button
@@ -548,10 +548,11 @@ const LangCountryDropdown: React.FC<
         {show && (
           <div
             className={`absolute ${align === "right" ? "right-0" : "left-0"} ${dropdownPosition} 
-          w-full sm:w-60 max-w-xs bg-white rounded-md shadow-lg z-[9999] p-4 text-sm text-gray-700 overflow-hidden`}
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+      w-full sm:w-60 max-w-xs bg-white rounded-md shadow-lg z-[9999] p-4 text-sm text-gray-700 overflow-visible`}
+            onClick={(e) => e.stopPropagation()}
           >
             <div className="mb-2 font-semibold text-black">Select Language</div>
+
             <div className="flex flex-wrap gap-2 mb-4">
               {languages.map((lang) => (
                 <button
@@ -569,7 +570,9 @@ const LangCountryDropdown: React.FC<
             </div>
 
             <div className="mb-2 font-semibold text-black">Select Country</div>
-            <div className="space-y-2 max-h-40 overflow-y-auto">
+
+            {/* FULL height, NO scrolling */}
+            <div className="space-y-2">
               {countries.map((country) => (
                 <div
                   key={country.code}
@@ -582,7 +585,7 @@ const LangCountryDropdown: React.FC<
                     alt={country.name}
                     className="w-5 h-5 mr-2 rounded"
                   />
-                  <span className="text-black ">{country.name}</span>
+                  <span className="text-black">{country.name}</span>
                 </div>
               ))}
             </div>
@@ -890,7 +893,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[#333333]">
+                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -917,13 +920,13 @@ const Header: React.FC = () => {
                       .map((menu) => (
                         <li key={menu.id} className="relative">
                           <button
-                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
+                            className={`flex items-center gap-1 px-2 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
                               ? "text-[#534ED3]"
                               : "text-gray-700 hover:text-[#534ED3]"
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[#333333]">
+                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -950,13 +953,13 @@ const Header: React.FC = () => {
                       .map((menu) => (
                         <li key={menu.id} className="relative">
                           <button
-                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
+                            className={`flex items-center gap-1 px-2 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
                               ? "text-[#534ED3]"
                               : "text-gray-700 hover:text-[#534ED3]"
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[#333333]">
+                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -983,13 +986,13 @@ const Header: React.FC = () => {
                       .map((menu) => (
                         <li key={menu.id} className="relative">
                           <button
-                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
+                            className={`flex items-center gap-1 px-2 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
                               ? "text-[#534ED3]"
                               : "text-gray-700 hover:text-[#534ED3]"
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[#333333]">
+                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -1087,13 +1090,13 @@ const Header: React.FC = () => {
                       .map((menu) => (
                         <li key={menu.id} className="relative">
                           <button
-                            className={`flex items-center gap-1 px-3 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
+                            className={`flex items-center gap-1 px-2 py-2 font-normal rounded-md transition-colors hover:bg-[#f0f3ff] ${activeMenu === menu.id
                               ? "text-[#534ED3]"
                               : "text-gray-700 hover:text-[#534ED3]"
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[#333333]">
+                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown

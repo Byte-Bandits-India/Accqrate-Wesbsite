@@ -31,7 +31,7 @@ interface CarouselCardProps {
 
 interface CountryPageProps {
     countryCode: string;
-    lang?: string; // Make lang optional if it's not used in the component
+    lang?: string;
 }
 
 interface ServiceCard {
@@ -115,7 +115,7 @@ interface CarouselDotsProps {
 
 const CarouselDots: React.FC<CarouselDotsProps> = ({ total, currentIndex, onDotClick }) => {
     return (
-        <div className="flex justify-center mt-4 relative z-10 cursor-pointer">
+        <div className="flex justify-center mt-2 relative z-10 cursor-pointer mb-2">
             {Array.from({ length: total }).map((_, index) => (
                 <motion.div
                     key={index}
@@ -621,8 +621,8 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* /Why Accqrate? */}
                 <div>
-                    <div className=" px-6 md:px-8 xl:px-0 mt-[48px]">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 max-w-[1280px] mx-auto w-full">
+                    <div className=" px-6 md:px-8 xl:px-8 mt-[48px]">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 lg:px-6 max-w-[1280px] mx-auto w-full">
                             {/* Left Column */}
                             <div>
                                 <h2 className="font-medium text-fluid-small tracking-heading uppercase">
@@ -634,7 +634,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                                     className="w-auto h-[28px] md:h-[28px] lg:hidden"
                                 />
 
-                                <h3 className="text-[24px] md:text-[28px] lg:text-[38px] max-w-[555px] font-medium mt-6 md:mt-8 lg:mt-[40px] leading-tight">
+                                <h3 className="text-[24px] md:text-[28px] lg:text-[36px] max-w-[555px] font-medium mt-6 md:mt-8 lg:mt-[40px] leading-tight">
                                     <T>We <span className="text-[#194BED]">specialize</span> in providing <span className="text-[#194BED]">reliable</span> and efficient Solutions</T>
                                 </h3>
                                 <div className="hidden lg:flex justify-center max-w-[555px] mt-6 md:mt-8 lg:mt-[43px]">
@@ -888,62 +888,62 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
 
                 {/* Your AI Copilot */}
                 <div className="hidden md:block">
-                    <div
-                        className="bg-cover bg-no-repeat bg-center"
-                        style={{ backgroundImage: "url('/images/home/wave_vector.png')" }}
-                    >
-                        <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch">
-                            {/* Left Side: Text + list + button */}
-                            <FadeUp className="font-inter rounded-xl md:rounded-2xl flex flex-col justify-between p-6 md:p-8">
-                                <div>
-                                    <h2 className="text-[#000000] tracking-heading text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight whitespace-nowrap">
-                                        Accelera <br /> Your AI Copilot
-                                    </h2>
 
-                                    <p className="pb-4 md:pb-6 tracking-para text-[#333333] text-[14px] md:text-[16px] leading-tight mt-[30px] lg:mt-[60px]">
-                                        Work faster and decide smarter with AI embedded across the suite.
-                                    </p>
+                    {/* HERO SECTION */}
+                    <div className="relative min-h-[420px] mt-10">
+                        {/* Background Image */}
+                        <img
+                            src="/images/home/wave_vector.png"
+                            alt="Wave Vector"
+                            className="w-full h-full object-cover object-center rounded-xl"
+                        />
 
-                                    <ul className="text-left list-disc pl-5 space-y-4 mt-[15px] lg:mt-[30px] text-[14px] md:text-[16px] tracking-heading leading-[24px]">
-                                        <li><b>Natural-language actions:</b> Ask, "Show last month's receivables by region" and get the answer, fast.</li>
-                                        <li><b>Automations:</b> Generate e-invoices, match POs, trigger approvals and alerts.</li>
-                                        <li><b>Insight to action:</b> Spot anomalies, forecast demand, and recommend next steps.</li>
-                                        <li><b>Assistive UX:</b> Contextual help, data enrichment and guided workflows.</li>
-                                    </ul>
-                                </div>
 
-                                <button
-                                    className="h-[40px] max-w-[399px] flex items-center justify-between px-4 text-white text-fluid-small md:text-[18px] mt-[32px] tracking-para lg:mt-[60px]"
-                                    style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
-                                >
-                                    See Accelera in a 5-Minute Demo
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        className="text-white"
+                        {/* Content */}
+                        <div className="absolute inset-0 flex items-center">
+                            <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 grid lg:grid-cols-2 gap-6">
+
+                                {/* Left Part */}
+                                <FadeUp className="font-inter rounded-2xl flex flex-col justify-between p-8 bg-transparent flex-shrink-0">
+                                    <div>
+                                        <h2 className="text-black text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight">
+                                            Accelera <br /> Your AI Copilot
+                                        </h2>
+
+                                        <p className="text-[#333333] text-[14px] md:text-[16px] mt-[40px] mb-6">
+                                            Work faster and decide smarter with AI embedded across the suite.
+                                        </p>
+
+                                        <ul className="list-disc pl-5 space-y-4 text-[14px] md:text-[16px]">
+                                            <li><b>Natural-language actions:</b> Ask, "Show last month's receivables by region"</li>
+                                            <li><b>Automations:</b> Generate e-invoices, trigger approvals</li>
+                                            <li><b>Insight to action:</b> Spot anomalies, forecast demand</li>
+                                            <li><b>Assistive UX:</b> Contextual help & guided workflows</li>
+                                        </ul>
+                                    </div>
+
+                                    <button
+                                        className="h-[40px] max-w-[399px] mt-10 flex items-center justify-between px-4 text-white text-[16px]"
+                                        style={{ background: 'linear-gradient(90deg, #194BED 0%, #29266E 100%)' }}
                                     >
-                                        <path
-                                            d="M9 6l6 6-6 6"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                            </FadeUp>
+                                        See Accelera in a 5-Minute Demo
+                                        <svg width="20" height="20" fill="none" stroke="currentColor">
+                                            <path d="M9 6l6 6-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
+                                </FadeUp>
 
-                            {/* Right Side: Image/placeholder */}
-                            <FadeUp className="p-6 md:p-8 flex items-center justify-center">
-                                <div className="bg-[#D9D9D9] w-full h-[380px] md:h-[420px]"></div>
-                            </FadeUp>
+                                {/* Right Part */}
+                                <FadeUp className="flex items-center justify-center p-8">
+                                    <div className="bg-[#D9D9D9] w-full h-[380px] md:h-[420px] flex-shrink-0"></div>
+                                </FadeUp>
+
+                            </div>
                         </div>
                     </div>
 
 
-
+                    {/* COMPLIANCE SECTION */}
                     <div className="max-w-[1280px] mx-auto px-6 md:px-8 xl:px-0 mt-[72px] grid lg:grid-cols-2 gap-6 items-stretch pb-[36px] md:pb-[200px] lg:pb-[300px]">
                         {/* Left Side: Image (Desktop) */}
                         <div className="hidden lg:flex flex-col items-start justify-between p-6 md:p-8">
@@ -1001,6 +1001,7 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                         </div>
                     </div>
                 </div>
+
             </div>
 
             {/* Outcomes and The Impact */}

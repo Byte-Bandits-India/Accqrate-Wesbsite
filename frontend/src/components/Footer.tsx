@@ -127,7 +127,7 @@ export default function Footer() {
                 className="mb-4 cursor-pointer"
               />
             </Link>
-            <div className="flex flex-col space-y-[34px] lg:text-[16px] xl:text-[18px] underline mt-[32px]">
+            <div className="flex flex-col space-y-[34px] lg:text-[16px] underline mt-[32px]">
               {leftColumnLinks.map((link, idx) => (
                 <Link
                   key={idx}
@@ -150,10 +150,10 @@ export default function Footer() {
             <div className="flex justify-between gap-4 xl:gap-8">
               {footerSections.map((section, idx) => (
                 <div key={idx} className="flex flex-col min-w-[180px]">
-                  <h3 className="font-medium mb-6 text-[#FFFFFF] lg:text-[16px] tracking-heading xl:text-[18px]">
+                  <h3 className="font-medium mb-6 text-[#FFFFFF] lg:text-[16px] tracking-heading">
                     {section.title}
                   </h3>
-                  <ul className="space-y-2 lg:text-[14px] font-normal xl:text-[16px]">
+                  <ul className="space-y-2 lg:text-[14px] font-normal">
                     {section.items.map((item, i) => (
                       <li key={i}>
                         <Link
@@ -178,10 +178,10 @@ export default function Footer() {
             {/* Enterprise section BELOW main columns */}
             <div className="border-t border-gray-300 mt-12 pt-8 flex justify-start gap-6 text-sm text-gray-700">
               <div>
-                <h4 className="font-medium mb-4 text-[#FFFFFF] text-fluid-small tracking-heading">
+                <h4 className="font-medium mb-4 text-[#FFFFFF] text-fluid-small lg:text-[16px]  tracking-heading">
                   Enterprise Solution
                 </h4>
-                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#F0F0F0]">
+                <ul className="space-y-2 lg:text-[14px] text-[#F0F0F0]">
                   {enterpriseLinks.map((link, index) => (
                     <li key={index}>
                       <Link
@@ -200,8 +200,8 @@ export default function Footer() {
               </div>
 
               <div>
-                <h4 className="font-medium mb-4 lg:text-[16px] xl:text-[18px] text-[#FFFFFF] tracking-heading">Contact Sales</h4>
-                <ul className="space-y-2 lg:text-[14px] xl:text-[16px] text-[#F0F0F0] tracking-para">
+                <h4 className="font-medium mb-4 lg:text-[16px]  text-[#FFFFFF] tracking-heading">Contact Sales</h4>
+                <ul className="space-y-2 lg:text-[14px] text-[#F0F0F0] tracking-para">
                   <li><span className="text-[#FFFFFF]">Call:</span> +966 54 199 9357</li>
                   <li><span className="text-[#FFFFFF]">Email:</span> contact@accqrate-erp.com</li>
                   <li><span className="text-[#FFFFFF]">WhatsApp:</span> +966 50 763 5216</li>
@@ -221,7 +221,7 @@ export default function Footer() {
               </div>
 
               <div className="max-w-[400px] leading-6 flex items-start justify-start">
-                <p className="lg:text-[14px] xl:text-[16px] text-[#F0F0F0] tracking-para">
+                <p className="lg:text-[14px] text-[#F0F0F0] tracking-para">
                   One unified platform with zero silos—integrated modules on a single data model, global compliance built-in, AI-powered automation, flexible cloud or on-prem deployment, fast implementation, and enterprise-grade security and scalability.
                 </p>
               </div>
