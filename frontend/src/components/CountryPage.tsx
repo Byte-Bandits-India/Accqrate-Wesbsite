@@ -890,12 +890,12 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 <div className="hidden md:block">
 
                     {/* HERO SECTION */}
-                    <div className="relative h-[420px] mt-40">
+                    <div className="relative h-[420px] mt-20">
                         {/* Background Image */}
                         <img
                             src="/images/home/wave_vector.png"
                             alt="Wave Vector"
-                            className="w-full h-[300px] object-cover object-center rounded-xl"
+                            className="w-full h-full object-cover object-center rounded-xl"
                         />
 
 
