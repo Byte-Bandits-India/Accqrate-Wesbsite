@@ -52,6 +52,21 @@ const countries = [
         language: "Arabic",
         currency: "JOD",
     },
+    // ✅ ADD THESE TWO COUNTRIES
+    {
+        name: "Belgium",
+        code: "BE",
+        flag: "/images/header/language/Belgium.webp",
+        language: "English",
+        currency: "MUR",
+    },
+    {
+        name: "Poland",
+        code: "PL",
+        flag: "/images/header/language/poland.svg",
+        language: "English",
+        currency: "MUR",
+    },
 ];
 
 // Define supported languages as a type

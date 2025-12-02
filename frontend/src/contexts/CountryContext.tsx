@@ -74,6 +74,20 @@ export const countries: Country[] = [
         currency: "MUR",
     },
     {
+        name: "Belgium",
+        code: "BE",
+        flag: "/images/header/language/Belgium.webp",
+        language: "English",
+        currency: "MUR",
+    },
+    {
+        name: "Poland",
+        code: "PL",
+        flag: "/images/header/language/poland.svg",
+        language: "English",
+        currency: "MUR",
+    },
+    {
         name: "Jordan",
         code: "JD",
         flag: "/images/header/language/flag-jordan.svg",

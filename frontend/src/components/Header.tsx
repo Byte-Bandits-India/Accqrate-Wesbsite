@@ -893,7 +893,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
+                            <span className="whitespace-nowrap text-[14px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -926,7 +926,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
+                            <span className="whitespace-nowrap text-[14px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -959,7 +959,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
+                            <span className="whitespace-nowrap text-[14px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -992,7 +992,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
+                            <span className="whitespace-nowrap text-[14px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown
@@ -1096,7 +1096,7 @@ const Header: React.FC = () => {
                               }`}
                             onClick={() => handleMenuClick(menu.id)}
                           >
-                            <span className="whitespace-nowrap text-[12px] text-[#333333]">
+                            <span className="whitespace-nowrap text-[14px] text-[#333333]">
                               <T>{menu.title}</T>
                             </span>
                             <IoChevronDown

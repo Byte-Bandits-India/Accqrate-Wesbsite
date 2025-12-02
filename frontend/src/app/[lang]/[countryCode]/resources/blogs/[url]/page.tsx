@@ -26,6 +26,17 @@ import ZatcaComprehensive from "../blogpages/ZatcaComprehensive";
 import ZatcaFatooraDeviceRequirments from "../blogpages/ZatcaFatooraDeviceRequirments";
 import ZatcaInvoice from "../blogpages/ZatcaInvoice";
 import ZatcaInvoicing from "../blogpages/ZatcaInvoicing";
+import BelgiumCreditNotes from "../blogpages/BelgiumCreditNotes";
+import BelgiumEInvoicingFAQs from "../blogpages/BelgiumEInvoicingFAQs";
+import BelgiumEInvoicingMandate from "../blogpages/BelgiumEInvoicingMandate";
+import BelgiumCorporateTax from "../blogpages/BelgiumCorporateTax";
+import BelgiumTechnicalRules from "../blogpages/BelgiumTechnicalRules";
+import BelgiumTaxSystem2025 from "../blogpages/BelgiumTaxSystem2025";
+import BelgiumIncomeTax from "../blogpages/BelgiumIncomeTax";
+import BelgiumVAT from "../blogpages/BelgiumVAT";
+import BelgiumVATNumber from "../blogpages/BelgiumVATNumber";
+import PeppolMercuriusBelgium from "../blogpages/PeppolMercuriusBelgium";
+import ErpAdoption2025 from "../blogpages/ErpAdoption2025";
 
 export default async function BlogPage({
   params,
@@ -59,12 +70,24 @@ export default async function BlogPage({
     "automotive-industry": <AutomotiveIndustry />,
     "sap-ecc-challenge": <SapEcc />,
     "accqrate-books-msme-accounting": <AccqrateBooksMSMEAccounting />,
+    //belgium
+    "belgium-credit-notes": <BelgiumCreditNotes />,
+    "belgium-e-invoicing-faqs": <BelgiumEInvoicingFAQs />,
+    "belgium-e-invoicing-mandate": <BelgiumEInvoicingMandate />,
+    "belgium-corporate-tax": <BelgiumCorporateTax />,
+    "belgium-technical-rules": <BelgiumTechnicalRules />,
+    "belgium-tax-system-2025": <BelgiumTaxSystem2025 />,
+    "belgium-income-tax": <BelgiumIncomeTax />,
+    "belgium-vat": <BelgiumVAT />,
+    "belgium-vat-number": <BelgiumVATNumber />,
+    "peppol-mercurius-belgium": <PeppolMercuriusBelgium />,
+    "erp-adoption-2025": <ErpAdoption2025 />
   };
 
   const Component = blogComponents[url];
   if (!Component) return notFound();
 
-  // ✅ Wrap in a div with overflow-x-hidden to prevent horizontal scroll
+  // Wrap in a div with overflow-x-hidden to prevent horizontal scroll
   return (
     <div className="overflow-x-hidden">
       {Component}
