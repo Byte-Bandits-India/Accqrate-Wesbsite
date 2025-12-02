@@ -2,18 +2,18 @@ services:
   frontend:
     container_name: erp_frontend
     build:
-      context: .
-      dockerfile: frontend.dockerfile
+      context: ./frontend
+      dockerfile: ../frontend.dockerfile
     volumes:
-      - ./src:/home/node/app/src
-      - ./public:/home/node/app/public
-      - ./next.config.mjs:/home/node/app/next.config.mjs
-      - ./package.json:/home/node/app/package.json
-      - ./package-lock.json:/home/node/app/package-lock.json
-      - ./tsconfig.json:/home/node/app/tsconfig.json
-      - ./tailwind.config.js:/home/node/app/tailwind.config.js
-      - ./components.json:/home/node/app/components.json
-      - ./postcss.config.js:/home/node/app/postcss.config.js
+      - ./frontend/src:/home/node/app/src
+      - ./frontend/public:/home/node/app/public
+      - ./frontend/package.json:/home/node/app/package.json
+      - ./frontend/package-lock.json:/home/node/app/package-lock.json
+      - ./frontend/tsconfig.json:/home/node/app/tsconfig.json
+      - ./frontend/tailwind.config.js:/home/node/app/tailwind.config.js
+      - ./frontend/postcss.config.js:/home/node/app/postcss.config.js
+      - ./frontend/components.json:/home/node/app/components.json
+      - ./frontend/next.config.mjs:/home/node/app/next.config.mjs
     environment:
       - NODE_ENV=development
       - CHOKIDAR_USEPOLLING=true
