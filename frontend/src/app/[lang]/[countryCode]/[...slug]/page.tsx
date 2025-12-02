@@ -3,7 +3,6 @@
 import React from 'react'
 import { use } from 'react'
 import ComingSoon from '@/components/CommingSoon'
-import { notFound } from 'next/navigation'
 import { comingSoonRoutes } from '@/lib/ComingSoonRoutes'
 
 export default function CatchAllPage({
@@ -18,6 +17,4 @@ export default function CatchAllPage({
     if (comingSoonRoutes.includes(path)) {
         return <ComingSoon />
     }
-
-    notFound()
 }
