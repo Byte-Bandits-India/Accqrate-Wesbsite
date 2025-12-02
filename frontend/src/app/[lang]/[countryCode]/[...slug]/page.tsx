@@ -3,7 +3,7 @@
 import React from 'react'
 import { use } from 'react'
 import ComingSoon from '@/components/CommingSoon'
-import { comingSoonRoutes } from '@/lib/ComingSoonRoutes'
+import { comingSoonRoutes } from '../../../../lib/ComingSoonRoutes'
 
 export default function CatchAllPage({
     params,
