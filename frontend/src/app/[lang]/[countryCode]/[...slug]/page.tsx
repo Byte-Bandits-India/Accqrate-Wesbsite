@@ -3,7 +3,7 @@
 import React, { use } from 'react'
 import ComingSoon from '@/components/CommingSoon'
 
-export const comingSoonRoutes = [
+const comingSoonRoutes = [
     // E-invoicing Solution
     'e-invoicing/accqrate',
     'e-invoicing/integration',
@@ -78,4 +78,6 @@ export default function CatchAllPage({
     if (comingSoonRoutes.includes(path)) {
         return <ComingSoon />
     }
+
+    return <div>Page not found</div>
 }
