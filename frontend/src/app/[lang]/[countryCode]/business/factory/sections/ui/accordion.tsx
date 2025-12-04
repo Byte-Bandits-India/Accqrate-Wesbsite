@@ -86,9 +86,9 @@ const AccordionCard: React.FC<AccordionCardProps> = ({ title, desc, video, isOpe
           "relative rounded-lg w-full overflow-hidden transition-colors duration-300 md:!h-[299px] lg:!h-[350px] text-[#333333]",
           isDesktop
             ? isOpen
-              ? "bg-[#F57C00] text-white"
-              : "bg-[#6666669C] text-white hover:bg-[#F57C00]"
-            : "bg-[#F57C00] text-white"
+              ? "bg-[#f07900] text-white"
+              : "bg-[#6666669C] text-white hover:bg-[#f07900]"
+            : "bg-[#f07900] text-white"
         )}
         onMouseEnter={() => isDesktop && onToggle(true)}
         onMouseLeave={() => isDesktop && onToggle(false)}
@@ -125,7 +125,7 @@ const AccordionCard: React.FC<AccordionCardProps> = ({ title, desc, video, isOpe
                   loop
                   muted
                   playsInline
-                  className="w-full h-[200px] md:h-[157px] tracking-para rounded-lg object-contain"
+                  className="w-full h-[200px] md:h-[157px] tracking-para rounded-lg object-cover"
                 />
               )}
             </motion.div>
