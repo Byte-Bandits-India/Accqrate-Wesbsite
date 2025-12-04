@@ -16,7 +16,7 @@ export const metadata = {
   title: "ACQRATE",
   description: "Business and Retail Solutions",
   icons: {
-    icon: "/images/favicon/A-Letter-png-icon 1.svg",
+    icon: "/images/favicon/A-Letter-png-icon 1.png",
   },
 };
 
