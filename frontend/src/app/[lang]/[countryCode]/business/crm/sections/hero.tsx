@@ -129,20 +129,17 @@ export default function Accqrate(): JSX.Element {
             </section>
 
             {/* DASHBOARD SECTION */}
-            <section className="w-full flex items-center justify-center box-border px-24px md:px-[32px] mt-8">
+            <section className="w-full flex items-center justify-center box-border px-24px md:px-[32px] mt-12 md:mt-20">
                 <div className="relative w-full max-w-[1200px] overflow-visible">
-                    <video
-                        src="/videos/business/retail/accqratedashboard.mp4"
-                        muted
-                        autoPlay
-                        loop
-                        playsInline
-                        controls={false}
-                        preload="auto"
+                    <img
+                        src="/images/business/crm/crm_hero.png"
+                        alt="CRM Hero"
                         className="w-full h-auto block object-contain max-h-[60vh] sm:max-h-[60vh]"
                     />
                 </div>
             </section>
+
+           
 
             {/* BUILT SECTION */}
             <section className={sectionClasses}>
