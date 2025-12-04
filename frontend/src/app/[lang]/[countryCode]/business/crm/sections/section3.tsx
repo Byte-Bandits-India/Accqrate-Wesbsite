@@ -52,7 +52,7 @@ const Crack: FC = () => {
             <div className="flex flex-col items-center relative mt-6 text-[#333333]">
                 {/* Marquee Card */}
                 <div className="sticky h-[240px] md:h-[300px] bg-white border border-gray-400 rounded-2xl shadow-xl p-4 max-w-4xl w-full z-10">
-                    <div className="text-fluid-h3 leading-tight font-bold text-pink-700 text-center mb-5">
+                    <div className="text-fluid-h3 leading-tight font-bold text-[#7B1FA2] text-center mb-5">
                         10+ Promotions & Discount Engines
                     </div>
                     <div className="overflow-hidden w-full">
@@ -74,7 +74,7 @@ const Crack: FC = () => {
                         className="sticky h-[300px] md:h-[450px] mt-6 border border-gray-400 top-10 md:top-20 bg-white rounded-2xl shadow-xl p-6 max-w-4xl w-full"
                         style={{ zIndex: 20 + idx }}
                     >
-                        <div className="text-fluid-h3 font-bold text-[#C2185B] text-center mb-5">{card.title}</div>
+                        <div className="text-fluid-h3 font-bold text-[#7B1FA2] text-center mb-5">{card.title}</div>
                         <video
                             src={card.src}
                             muted
