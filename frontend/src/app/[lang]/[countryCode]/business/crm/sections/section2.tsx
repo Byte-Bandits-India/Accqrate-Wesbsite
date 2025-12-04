@@ -137,13 +137,10 @@ export default function Capture(): JSX.Element {
                     className="max-w-[1000px] mx-auto"
                 >
                     <FadeUp>
-                        <video
-                            src="/videos/business/retail/barcode.mp4"
-                            muted
-                            autoPlay
-                            loop
-                            playsInline
-                            className="w-full h-auto object-contain rounded-lg mt-24px md:mt-[32px] lg:mt-[40px]"
+                        <img
+                            src="/images/business/crm/crm_track.png" 
+                            alt="Lead Capture"
+                            className="w-full h-auto object-contain rounded-lg mt-24px md:mt-[32px] lg:mt-[40px] "
                         />
                     </FadeUp>
 
@@ -152,7 +149,7 @@ export default function Capture(): JSX.Element {
                         collapsible
                         className="flex flex-col gap-[24px]
               sm:grid sm:grid-cols-2
-              md:grid md:grid-cols-3 md:max-w-5xl mx-auto mt-24px md:mt-[32px] lg:mt-[40px]"
+              md:grid md:grid-cols-3 md:max-w-5xl mx-auto mt-24px md:mt-[32px] lg:mt-[60px]"
                     >
                         <AccordionCard
                             value="card-1"
@@ -212,17 +209,20 @@ export default function Capture(): JSX.Element {
                         {
                             text: "Automated Lead Assignment:",
                             desc: "Automatically assign leads based on predefined criteria.",
-                            video: "/videos/business/retail/pos.mp4",
+                            img: "/images/business/crm/crm_lead.png",
+                            isVideo: false,
                         },
                         {
                             text: "Automated Follow-Ups:",
                             desc: "Ensure that no lead is forgotten with automated reminders for your sales reps.",
-                            video: "/videos/business/retail/dashboard.mp4",
+                            img: "/images/business/crm/crm_follow.png",
+                            isVideo: false,
                         },
                         {
                             text: "Custom Workflows:",
                             desc: "Design workflows to match your business processes, ensuring every action is streamlined and efficient.",
-                            video: "/videos/business/retail/crm.mp4",
+                            img: "/images/business/crm/crm_work.png",
+                            isVideo: false,
                         },
                     ].map((feature, i) => (
                         <div
@@ -242,16 +242,21 @@ export default function Capture(): JSX.Element {
                             </FadeUp>
 
                             <FadeUp className="flex-1 flex justify-center">
-                                <video
-                                    src={feature.video}
-                                    muted
-                                    autoPlay
-                                    loop
-                                    playsInline
-                                    controls={false}
-                                    preload="auto"
-                                    className="w-full max-w-md h-auto"
-                                />
+                                {feature.isVideo ? (
+                                    <video
+                                        src={feature.img}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="w-full max-w-md h-auto rounded-lg"
+                                    />
+                                ) : (
+                                    <img
+                                        src={feature.img}
+                                        className="w-full max-w-md h-auto"
+                                    />
+                                )}
                             </FadeUp>
                         </div>
                     ))}
