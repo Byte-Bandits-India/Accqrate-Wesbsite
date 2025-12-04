@@ -890,24 +890,24 @@ const CountryPage: React.FC<CountryPageProps> = ({ countryCode }) => {
                 <div className="hidden md:block">
 
                     {/* HERO SECTION */}
-                    <div className="relative h-[420px] mt-20">
-                        {/* Background Image */}
+                    <div className="relative min-h-[450px] mt-20">
+                        {/* Background Image - Positioned at bottom */}
                         <img
                             src="/images/home/wave_vector.png"
                             alt="Wave Vector"
-                            className="w-full h-full object-cover object-center rounded-xl"
+                            className="absolute bottom-0 left-0 w-full h-[300px] md:h-[350px] rounded-xl z-0"
                         />
 
 
                         {/* Content */}
-                        <div className="absolute inset-0 flex items-center">
+                        <div className="relative z-10 flex items-center min-h-[450px]">
                             <div className="max-w-[1177px] mx-auto px-6 md:px-8 xl:px-0 grid lg:grid-cols-2 gap-6">
 
                                 {/* Left Part */}
                                 <FadeUp className="font-inter rounded-2xl flex flex-col justify-between p-8 bg-transparent flex-shrink-0">
                                     <div>
                                         <h2 className="text-black text-[24px] md:text-[28px] lg:text-[38px] font-medium leading-tight">
-                                            Accelera <br /> Your AI Copilot
+                                            Accelerate <br /> Your AI Copilot
                                         </h2>
 
                                         <p className="text-[#333333] text-[14px] md:text-[16px] mt-[40px] mb-6">
