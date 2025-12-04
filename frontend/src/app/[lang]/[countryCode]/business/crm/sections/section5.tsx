@@ -133,21 +133,14 @@ export default function Choose(): JSX.Element {
                 >
                     <FadeUp className="relative inline-block max-w-[600px] md:max-w-[400px]">
                         <Image
-                            src="/images/business/retail/choose.svg"
+                            src="/images/business/crm/crm_foot.png"
                             alt="Why Choose Accqrate CRM"
                             width={700}
                             height={300}
-                            className="w-full h-auto md:h-[450px] lg:h-[350px] block"
+                            className="w-full h-auto md:h-auto lg:h-auto block"
                             loading="lazy"
                         />
-                        <Image
-                            src="/images/business/retail/gif/Shopping.gif"
-                            alt="Animated Character"
-                            width={80}
-                            height={80}
-                            className="absolute right-0 bottom-0 md:bottom-16 md:right-[-10px] w-[100px] h-auto pointer-events-none"
-                            loading="lazy"
-                        />
+                  
                     </FadeUp>
 
                     <FadeUp className="max-w-[600px] text-left md:max-w-[500px]">
