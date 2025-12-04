@@ -94,9 +94,9 @@ export default function AccordionCard({
         "relative rounded-lg w-full overflow-hidden transition-colors duration-300 md:!h-[299px] lg:!h-[350px]",
         isDesktop
           ? isOpen
-            ? "bg-[#7B1FA2] text-white"
-            : "bg-[#7B1FA2] text-white hover:bg-[#7B1FA2]"
-          : "bg-[#7B1FA2] text-white"
+            ? "bg-[#771e9d] text-white"
+            : "bg-[#771e9d] text-white hover:bg-[#771e9d]"
+          : "bg-[#771e9d] text-white"
       )}
       onMouseEnter={() => isDesktop && onToggle(true)}
       onMouseLeave={() => isDesktop && onToggle(false)}
@@ -141,7 +141,7 @@ export default function AccordionCard({
               loop
               muted
               playsInline
-              className="w-full h-[200px] md:h-[157px] rounded-lg object-contain"
+              className="w-full h-[200px] md:h-[150px] rounded-lg object-cover"
             />
           </motion.div>
         )}
