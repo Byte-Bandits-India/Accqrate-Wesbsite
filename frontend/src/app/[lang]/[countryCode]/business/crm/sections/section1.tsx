@@ -86,22 +86,22 @@ const Smart: FC = () => {
         {
             title: "Disjointed communication",
             desc: "Works instantly on Android, iOS, Windows, and Mac",
-            video: "/videos/business/retail/card1.mp4",
+            video: "/videos/business/crm/crm_communication.mp4",
         },
         {
             title: "Lost leads",
             desc: "Cloud-based and ready to use — no installations or IT assistance needed.",
-            video: "/videos/business/retail/card2.mp4",
+            video: "/videos/business/crm/crm_leads.mp4",
         },
         {
             title: "Inconsistent data",
             desc: "No drivers, no manual setup—automatic detection and configuration",
-            video: "/videos/business/retail/card3.mp4",
+            video: "/videos/business/crm/crm_inconsistent.mp4",
         },
         {
             title: "Inefficiency",
             desc: "Receipts print, cut and display for customers instantly.",
-            video: "/videos/business/retail/card4.mp4",
+            video: "/videos/business/crm/crm_inefficiency.mp4",
         },
     ];
 
