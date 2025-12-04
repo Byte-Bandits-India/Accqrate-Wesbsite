@@ -9,6 +9,7 @@ interface Section {
     title: string;
     text: string;
     video: string;
+    isVideo?: boolean;
 }
 
 const Tools: FC = () => {
@@ -92,16 +93,19 @@ const Tools: FC = () => {
             title: "Lead Conversion Metrics:",
             text: "See exactly where each lead is in your pipeline and optimize your approach accordingly",
             video: "/videos/business/retail/manageroles.mp4",
+            isVideo: true,
         },
         {
             title: "Customizable Reports:",
             text: "Generate detailed reports tailored to your needs, tracking everything from lead sources to campaign performance.",
-            video: "/videos/business/retail/dayclosure.mp4",
+            video: "/images/business/crm/crm_campaign.png",
+            isVideo: false,
         },
         {
             title: "Campaign Analytics:",
             text: "Measure which campaigns are converting the most leads and adjust your strategies in real time.",
-            video: "/videos/business/retail/productsearch.mp4",
+            video: "/images/business/crm/crm_metrics.png",
+            isVideo: false,
         },
     ];
 
@@ -144,14 +148,22 @@ const Tools: FC = () => {
                         </p>
                     </FadeUp>
                     <FadeUp className="flex-1 flex justify-center">
-                        <video
-                            src={section.video}
-                            muted
-                            autoPlay
-                            loop
-                            playsInline
-                            className="w-full max-w-md rounded-lg"
-                        />
+                        {section.isVideo ? (
+                            <video
+                                src={section.video}
+                                muted
+                                autoPlay
+                                loop
+                                playsInline
+                                className="w-full max-w-md rounded-lg"
+                            />
+                        ) : (
+                            <img
+                                src={section.video}
+                                alt={section.title}
+                                className="w-full max-w-md rounded-lg"
+                            />
+                        )}
                     </FadeUp>
                 </div>
             ))}
