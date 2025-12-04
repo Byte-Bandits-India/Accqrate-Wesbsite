@@ -78,10 +78,10 @@ export default function FeatureSection(): JSX.Element {
     };
 
     const cards: Card[] = [
-        { title: "ZATCA Phase 2 E-Invoicing", desc: "Works instantly on Android, iOS, Windows, and Mac", video: "/videos/business/retail/card1.mp4" },
-        { title: "Full Bilingual Support", desc: "Cloud-based and ready to use — no installations or IT assistance needed.", video: "/videos/business/retail/card2.mp4" },
-        { title: "Cloud or On-Premises", desc: "No drivers, no manual setup—automatic detection and configuration", video: "/videos/business/retail/card3.mp4" },
-        { title: "Unified Modules", desc: "Receipts print, cut and display for customers instantly.", video: "/videos/business/retail/card4.mp4" },
+        { title: "ZATCA Phase 2 E-Invoicing", desc: "Works instantly on Android, iOS, Windows, and Mac", video: "/videos/business/factory/factory_phase2.mp4" },
+        { title: "Full Bilingual Support", desc: "Cloud-based and ready to use — no installations or IT assistance needed.", video: "/videos/business/factory/factory_bilingual.mp4" },
+        { title: "Cloud or On-Premises", desc: "No drivers, no manual setup—automatic detection and configuration", video: "/videos/business/factory/factory_cloud.mp4" },
+        { title: "Unified Modules", desc: "Receipts print, cut and display for customers instantly.", video: "/videos/business/factory/factory_unified.mp4" },
     ];
 
     return (
