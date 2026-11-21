@@ -1,0 +1,11 @@
+node_modules
+
+# Next.js build output
+.next
+
+.DS_Store
+next-env.d.ts
+node_modules/
+.next/
+out/
+.env*
